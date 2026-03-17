@@ -1,0 +1,62 @@
+---
+description: Core project conventions for the Smart Infrastructure company website
+alwaysApply: true
+---
+
+<!--
+  AI INSTRUCTION — READ THIS FIRST
+  =================================
+  This file contains mandatory project rules.
+  You MUST follow every rule in this file in ALL responses, for ALL tasks,
+  regardless of what the user asks. These rules are non-negotiable and
+  override any default behaviours or assumptions you have about React projects.
+  If a rule conflicts with your suggestion, follow the rule.
+-->
+
+# Project Overview
+
+This is a **Smart Infrastructure company website** built with React 19, Tailwind CSS, and JSX. No TypeScript.
+
+## Tech Stack
+- React 19 + JSX — all component files use `.jsx` extension only, never `.tsx`
+- Tailwind CSS — all styling, no per-component CSS files
+- React Router v6 — all navigation
+- Plain JavaScript only — no `interface`, no `type`, no generics
+
+## Design Tokens — Never Hardcode Colors
+These tokens are defined in `src/styles/index.css` and `tailwind.config.js`.
+Always use the Tailwind token class. Never use raw hex values in JSX.
+
+```
+Navy (primary bg)  : #001439  → Tailwind: bg-navy / text-navy
+Blue (primary)     : #2A8CD5  → Tailwind: bg-primary-blue / text-primary-blue
+Sky Blue (accent)  : #9FCCFF  → Tailwind: bg-sky-accent / text-sky-accent
+Heading font       : Segoe UI
+Body font          : Inter
+```
+
+## Absolute Rules — Enforced on Every Response
+
+**Rule 1 — No duplicate components.**
+Before creating any component, check `src/components/` first. If a shared version exists, import it. Never recreate it.
+
+**Rule 2 — No Navbar or Footer inside pages.**
+Both are injected automatically by `MainLayout`. Never import or render them inside a page file.
+
+**Rule 3 — No hardcoded site constants.**
+Phone, email, address, social links, and company name all live in `src/config/siteConfig.js`. Always import from there.
+
+**Rule 4 — No data arrays inside component files.**
+Products, services, partners, projects, and any list data belong in `src/data/`. Always import from there.
+
+**Rule 5 — Named exports for shared components, default export for pages.**
+`export function SectionHeader()` for UI components. `export default function HomePage()` for page components only.
+
+**Rule 6 — Always use `SectionHeader` for section titles.**
+Any centered label + heading + subtitle block must use `src/components/ui/SectionHeader.jsx`. Never rebuild it inline.
+
+**Rule 7 — Always use `GetInTouchForm` for the contact form.**
+Any page with a contact form must import `src/components/ui/GetInTouchForm.jsx`. Never rebuild the form markup.
+
+**Rule 8 — Always wrap pages in `MainLayout`.**
+Every page component must return `<MainLayout>...</MainLayout>` from `src/layouts/MainLayout.jsx`.

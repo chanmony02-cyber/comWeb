@@ -1,0 +1,137 @@
+---
+description: How to write components — coding standards, patterns, and conventions
+globs:
+  - "src/components/**/*.jsx"
+  - "src/pages/**/*.jsx"
+  - "src/layouts/**/*.jsx"
+---
+
+<!--
+  AI INSTRUCTION
+  ==============
+  Apply this rule whenever you are writing or editing ANY .jsx file,
+  including files in src/components/, src/pages/, and src/layouts/.
+  These are the coding standards every component in this project must follow.
+  Do not apply your own defaults — follow these patterns exactly.
+-->
+
+# Component Authoring Standards
+
+## Scope
+Apply these rules to every file matching:
+- `src/components/**/*.jsx`
+- `src/pages/**/*.jsx`
+- `src/layouts/**/*.jsx`
+
+---
+
+## Standard File Structure
+
+Every component file must follow this import order:
+
+```jsx
+// 1. React imports first
+import { useState } from 'react';
+
+// 2. Third-party library imports
+import { Link } from 'react-router-dom';
+
+// 3. Internal component imports — always use @/ alias
+import SectionHeader from '@/components/ui/SectionHeader';
+import GetInTouchForm from '@/components/ui/GetInTouchForm';
+
+// 4. Data imports
+import { products } from '@/data/products';
+
+// 5. Named export for all shared/UI components
+export function ExampleCard({ title, description, image }) {
+  return (
+    <div className="...">
+      {/* JSX here */}
+    </div>
+  );
+}
+```
+
+---
+
+## Page Component Template
+
+```jsx
+// src/pages/PageName/PageName.jsx
+import MainLayout from '@/layouts/MainLayout';
+import SectionHeader from '@/components/ui/SectionHeader';
+import GetInTouchForm from '@/components/ui/GetInTouchForm';
+import { HeroSection } from './components/HeroSection';
+import { ContentSection } from './components/ContentSection';
+
+export default function PageName() {
+  return (
+    <MainLayout>
+      <HeroSection />
+      <ContentSection />
+      <GetInTouchForm />
+    </MainLayout>
+  );
+}
+```
+
+---
+
+## index.js Pattern
+
+Every page folder must have an `index.js` re-export:
+
+```js
+// src/pages/PageName/index.js
+export { default } from './PageName';
+```
+
+---
+
+## Tailwind CSS Rules
+
+- Use Tailwind utility classes exclusively
+- No inline `style={{}}` — except for truly dynamic values that Tailwind cannot express
+- Use responsive prefixes: `sm:`, `md:`, `lg:`, `xl:`
+- Use design token classes from `tailwind.config.js` (e.g. `text-navy`, `bg-primary-blue`)
+- Never use arbitrary pixel values like `w-[347px]` for layout — use spacing scale
+- Arbitrary values are acceptable only for specific image dimensions
+
+---
+
+## Props
+
+- Destructure at the function signature: `function Card({ title, image, href })`
+- Provide defaults for optional props: `function Card({ align = 'center' })`
+- Never hardcode content strings — they must come from props or `src/data/`
+- All site config (phone, email, address, socials) → import from `src/config/siteConfig.js`
+
+---
+
+## Import Alias
+
+Always use `@/` for any cross-folder import. Never use deep relative paths.
+
+```jsx
+// ✅ Correct
+import SectionHeader from '@/components/ui/SectionHeader';
+import { products } from '@/data/products';
+import { ROUTES } from '@/config/routes';
+
+// ❌ Wrong
+import SectionHeader from '../../../components/ui/SectionHeader';
+```
+
+---
+
+## Hard Rules — Never Break These
+
+| Rule | Wrong | Correct |
+|---|---|---|
+| HTML class attribute | `class="..."` | `className="..."` |
+| TypeScript syntax | `interface Props`, `: string` | Plain JS only |
+| Per-component CSS | `import './Card.css'` | Tailwind classes only |
+| React function type | `React.FC` | Plain function |
+| Shared component export | `export default SectionHeader` | `export function SectionHeader` |
+| Page component export | `export function HomePage` | `export default function HomePage` |

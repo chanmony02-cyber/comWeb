@@ -1,0 +1,128 @@
+---
+description: Step-by-step checklist to follow when creating any new page
+alwaysApply: false
+---
+
+<!--
+  AI INSTRUCTION
+  ==============
+  Load and follow this checklist in full whenever the user asks you to:
+  - "create a new page"
+  - "build a [PageName] page"
+  - "add a [PageName] route"
+  - "scaffold [PageName]"
+
+  Work through every step in order. Do not skip steps.
+  Do not output code until you have mentally completed Steps 1 and 2.
+-->
+
+# New Page Creation Checklist
+
+When asked to create any new page, follow these steps in order without skipping.
+
+---
+
+## Step 1 — Identify Shared Components to Import (Do This Before Writing Code)
+
+Check each item. If the answer is yes, import the component — never recreate it.
+
+- Does this page have any section with a label + title + subtitle? → Import `SectionHeader` from `@/components/ui/SectionHeader`
+- Does this page have a contact form? → Import `GetInTouchForm` from `@/components/ui/GetInTouchForm`
+- Does this page have a FAQ section? → Import `FAQAccordion` from `@/components/ui/FAQAccordion`
+- Does this page show product cards? → Import `ProductCard` from `@/components/ui/ProductCard`
+- Does this page show service cards? → Import `ServiceCard` from `@/components/ui/ServiceCard`
+- Is this a detail or sub-page? → Import `BackButton` from `@/components/ui/BackButton`
+- Does this page have a row of stats/numbers? → Import `StatsBar` from `@/components/ui/StatsBar`
+
+---
+
+## Step 2 — Decide File Placement
+
+Run the folder structure decision tree:
+```
+Is this component used on 2+ unrelated pages?
+  YES → src/components/ui/
+  NO  → src/pages/[PageName]/components/
+```
+
+---
+
+## Step 3 — Create the Folder Structure
+
+```
+src/pages/[PageName]/
+├── [PageName].jsx        ← main page component
+├── index.js              ← re-export only
+└── components/           ← page-specific sections only
+    └── [SectionName].jsx
+```
+
+---
+
+## Step 4 — Write index.js First
+
+```js
+// src/pages/[PageName]/index.js
+export { default } from './[PageName]';
+```
+
+---
+
+## Step 5 — Write the Page Shell
+
+```jsx
+// src/pages/[PageName]/[PageName].jsx
+import MainLayout from '@/layouts/MainLayout';
+import GetInTouchForm from '@/components/ui/GetInTouchForm';
+// ... other shared component imports
+// ... page-specific section imports
+
+export default function [PageName]() {
+  return (
+    <MainLayout>
+      {/* sections listed top to bottom, matching the visual design */}
+      <GetInTouchForm />
+    </MainLayout>
+  );
+}
+```
+
+---
+
+## Step 6 — Write Page-Specific Section Components
+
+For each section that does not match any shared component:
+- File goes in `src/pages/[PageName]/components/[SectionName].jsx`
+- Use a named export: `export function SectionName() {}`
+- Import all data from `src/data/` — never define arrays inside the component
+
+---
+
+## Step 7 — Register the Route
+
+1. Add a constant to `src/config/routes.js`:
+   ```js
+   NEW_PAGE: '/new-page-path',
+   ```
+2. Add a lazy import and `<Route>` to `src/router.jsx`:
+   ```jsx
+   const NewPage = lazy(() => import('@/pages/NewPage'));
+   <Route path={ROUTES.NEW_PAGE} element={<NewPage />} />
+   ```
+
+---
+
+## Step 8 — Final Sanity Check
+
+Before submitting any code, verify every item:
+
+- [ ] No `<Navbar>` or `<Footer>` rendered inside the page
+- [ ] No contact form markup rebuilt from scratch
+- [ ] No section header rebuilt inline
+- [ ] No data arrays defined inside any `.jsx` file
+- [ ] All `<Link to="">` and `navigate()` calls use `ROUTES` constants
+- [ ] All cross-folder imports use the `@/` alias
+- [ ] All shared/UI components use named exports
+- [ ] The page default export is wrapped in `<MainLayout>`
+- [ ] `index.js` exists in the page folder
+- [ ] Route is registered in both `routes.js` and `router.jsx`

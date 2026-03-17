@@ -1,0 +1,147 @@
+---
+description: Rules for routing setup and page layout wrapping
+globs:
+  - "src/router.jsx"
+  - "src/config/routes.js"
+  - "src/layouts/**"
+  - "src/pages/**/*.jsx"
+---
+
+<!--
+  AI INSTRUCTION
+  ==============
+  Apply this rule whenever you are working on:
+  - Any file in src/pages/
+  - src/router.jsx
+  - src/config/routes.js
+  - src/layouts/
+
+  The two core rules: every page MUST be wrapped in MainLayout,
+  and every route path MUST use a ROUTES constant — never a hardcoded string.
+-->
+
+# Routing & Layout Rules
+
+## Scope
+Apply these rules to every file in:
+- `src/pages/**/*.jsx`
+- `src/router.jsx`
+- `src/config/routes.js`
+- `src/layouts/`
+
+---
+
+## Rule 1 — Every Page Must Be Wrapped in MainLayout
+
+`MainLayout` injects `<TopBar>`, `<Navbar>`, and `<Footer>` automatically.
+Never add them manually inside a page file.
+
+```jsx
+// ✅ Correct
+import MainLayout from '@/layouts/MainLayout';
+
+export default function ServicesPage() {
+  return (
+    <MainLayout>
+      <ServicesHero />
+      <OurServicesGrid />
+      <WhyChooseUsSection />
+      <FAQAccordion items={serviceFaqs} />
+      <GetInTouchForm />
+    </MainLayout>
+  );
+}
+
+// ❌ Wrong — never render Navbar or Footer inside a page
+export default function ServicesPage() {
+  return (
+    <>
+      <Navbar />        {/* Remove — injected by MainLayout */}
+      <ServicesHero />
+      <Footer />        {/* Remove — injected by MainLayout */}
+    </>
+  );
+}
+```
+
+---
+
+## Rule 2 — All Routes Defined in routes.js
+
+All route path strings live in `src/config/routes.js` as named constants.
+Never hardcode a URL string in `<Link to="">` or `navigate()`.
+
+```js
+// src/config/routes.js
+export const ROUTES = {
+  HOME: '/',
+  ABOUT: '/about',
+  PRODUCTS: '/products',
+  PRODUCT_DETAIL: '/products/:id',
+  SERVICES: '/services',
+  CONSULTANTS: '/services/consultants',
+  MAINTENANCE: '/services/maintenance',
+  INSPECTIONS: '/services/inspections',
+  DISTRIBUTION_GRID: '/industries/distribution-grid',
+  CITY_INFRASTRUCTURE: '/industries/city-infrastructure',
+  AGRICULTURE: '/industries/agriculture',
+  SOFTWARE: '/solutions/software-application',
+  CONTACT: '/contact',
+  NEWS: '/news',
+  NOT_FOUND: '*',
+};
+```
+
+```jsx
+// ✅ Correct
+import { ROUTES } from '@/config/routes';
+<Link to={ROUTES.PRODUCTS}>View All Products</Link>
+<Link to={ROUTES.PRODUCT_DETAIL.replace(':id', product.id)}>View</Link>
+
+// ❌ Wrong — never hardcode URL strings
+<Link to="/products">View All Products</Link>
+<Link to={`/products/${product.id}`}>View</Link>
+```
+
+---
+
+## Rule 3 — Adding a New Page (Always Follow All 3 Steps)
+
+**Step A — Add route constant to `src/config/routes.js`:**
+```js
+export const ROUTES = {
+  ...
+  NEW_PAGE: '/new-page-path',   // ← add here
+};
+```
+
+**Step B — Register in `src/router.jsx` with lazy loading:**
+```jsx
+import { lazy, Suspense } from 'react';
+const NewPage = lazy(() => import('@/pages/NewPage'));
+
+// Inside the router:
+<Route path={ROUTES.NEW_PAGE} element={<NewPage />} />
+```
+
+**Step C — Create the page folder with index.js:**
+```
+src/pages/NewPage/
+├── NewPage.jsx
+├── index.js          ← export { default } from './NewPage';
+└── components/
+```
+
+---
+
+## Rule 4 — All Pages Use Lazy Loading
+
+```jsx
+// src/router.jsx
+import { lazy, Suspense } from 'react';
+
+const HomePage     = lazy(() => import('@/pages/Home'));
+const AboutPage    = lazy(() => import('@/pages/About'));
+const ProductsPage = lazy(() => import('@/pages/Products'));
+// ... all pages lazy-loaded
+```
