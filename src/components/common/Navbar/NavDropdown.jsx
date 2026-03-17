@@ -1,0 +1,54 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+
+const NavDropdown = ({ label, items, triggerClassName = "" }) => {
+  const [open, setOpen] = useState(false);
+
+  const itemClassName =
+    "cursor-pointer rounded-lg px-5 py-3 text-lg font-medium outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[highlighted]:bg-primary-blue data-[highlighted]:text-accent-foreground focus:bg-primary-blue focus:text-accent-foreground";
+
+  return (
+    <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          className={cn(
+            "flex items-center gap-1 text-md font-medium text-foreground hover:text-navy transition-colors",
+            triggerClassName,
+          )}
+        >
+          {label}
+          <ChevronDown
+            className={cn(
+              "w-3.5 h-3.5 text-muted-foreground transition-transform",
+              open && "rotate-180",
+            )}
+          />
+        </button>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent
+        align="start"
+        sideOffset={10}
+        className="w-full rounded-xl border-border/60 p-2 shadow-lg"
+      >
+        {items.map((item) => (
+          <DropdownMenuItem key={item.label} asChild className={itemClassName}>
+            <a href={item.href} className="w-full">
+              {item.label}
+            </a>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+};
+
+export default NavDropdown;
