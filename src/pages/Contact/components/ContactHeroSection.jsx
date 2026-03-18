@@ -10,7 +10,7 @@ export function ContactHeroSection() {
   return (
     <section className="py-16 bg-background">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Left — title + contact info */}
           <div className="pt-4">
             <h1 className="text-4xl md:text-5xl font-bold text-navy font-display mb-4">
@@ -37,7 +37,7 @@ export function ContactHeroSection() {
           </div>
 
           {/* Right — GetInTouchForm in a card */}
-          <div className="bg-card border border-border rounded-2xl shadow-sm p-8">
+          <div className="bg-card border border-border rounded-2xl shadow-sm p-8 lg:col-start-3">
             <GetInTouchForm />
           </div>
         </div>
