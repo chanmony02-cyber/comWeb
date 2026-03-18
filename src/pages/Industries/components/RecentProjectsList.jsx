@@ -5,32 +5,28 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function RecentProjectsList({ label, title, items }) {
   return (
-    <section className="py-16 md:py-20 bg-background">
-      <div className="container">
-        <SectionHeader
-          label={label}
-          title={title}
-          align="center"
-        />
+    <section className="py-16 md:py-14 bg-background">
+      <div className="container mb-14">
+        <SectionHeader label={label} title={title} align="center" />
 
-        <div className="mt-12 flex flex-col gap-8">
+        <div className="mt-12 flex flex-col gap-14">
           {items.map((project) => (
             <div
               key={project.id}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start"
+              className="grid grid-cols-1 sm:grid-cols-5 rounded-2xl overflow-hidden shadow-sm"
             >
-              {/* Image */}
-              <div className="rounded-xl overflow-hidden shadow-sm">
+              {/* Left — image, spans 2 of 5 columns */}
+              <div className="sm:col-span-2">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-56 lg:h-[400px] object-cover"
                 />
               </div>
 
-              {/* Text */}
-              <div className="sm:col-span-2 flex flex-col justify-center gap-3">
-                <h3 className="text-lg font-bold text-navy font-display">
+              {/* Right — text on section-alt bg, spans 3 of 5 columns */}
+              <div className="sm:col-span-3 bg-section-alt flex flex-col justify-center gap-4 p-8 md:p-10">
+                <h3 className="text-lg md:text-xl font-bold text-navy font-display">
                   {project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-sans">
