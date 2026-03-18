@@ -11,6 +11,9 @@ export function OurSolutionsGrid({ label, title, subtitle, items }) {
           title={title}
           subtitle={subtitle}
           align="center"
+          labelClassName="text-lg tracking-widest"
+          titleClassName="text-3xl md:text-4xl text-navy"
+          subtitleClassName="text-base max-w-xl"
         />
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
