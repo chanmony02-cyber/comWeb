@@ -1,11 +1,12 @@
 // src/data/industries/agriculture.js
+import agricultureHero from "@/assets/images/industries/agriculture-hero.jpg";
 
 export const agricultureData = {
   hero: {
     title: "Agriculture",
     subtitle:
       "Empowering farming communities with smart energy and automation solutions that boost productivity and sustainability.",
-    backgroundImage: "/assets/images/industries/agriculture-hero.jpg",
+    backgroundImage: agricultureHero,
   },
   problem: {
     title: "We Understand Your Problem.",
@@ -14,7 +15,7 @@ export const agricultureData = {
       "From remote field electrification to automated greenhouse control, agricultural operations require specialized electrical and automation expertise that understands both the technical and environmental demands of farming.",
       "We work alongside agricultural stakeholders to deliver energy-efficient, weather-resilient solutions — helping farms operate smarter, reduce costs, and increase yields across every season.",
     ],
-    image: "/assets/images/industries/agriculture-problem.jpg",
+    image: agricultureHero,
   },
   solutions: {
     label: "INDUSTRY SOLUTIONS",
@@ -25,17 +26,17 @@ export const agricultureData = {
       {
         id: 1,
         title: "Solar-Powered Irrigation Systems",
-        image: "/assets/images/industries/solution-solar-irrigation.jpg",
+        image: agricultureHero,
       },
       {
         id: 2,
         title: "Rural Electrification Networks",
-        image: "/assets/images/industries/solution-rural-electrification.jpg",
+        image: agricultureHero,
       },
       {
         id: 3,
         title: "Precision Agriculture Monitoring",
-        image: "/assets/images/industries/solution-precision-agriculture.jpg",
+        image: agricultureHero,
       },
     ],
   },
@@ -48,7 +49,7 @@ export const agricultureData = {
         title: "Rice Farm Electrification",
         description:
           "Deployed a complete rural power distribution network across 500 hectares of rice farmland, providing stable electricity to irrigation pumps and processing facilities year-round.",
-        image: "/assets/images/industries/project-rice-farm.jpg",
+        image: agricultureHero,
         href: "#",
       },
       {
@@ -56,7 +57,7 @@ export const agricultureData = {
         title: "Irrigation Control System",
         description:
           "Installed a solar-powered smart irrigation system with automated scheduling and remote monitoring, reducing water consumption by 40% while maintaining optimal crop yields.",
-        image: "/assets/images/industries/project-irrigation.jpg",
+        image: agricultureHero,
         href: "#",
       },
       {
@@ -64,7 +65,7 @@ export const agricultureData = {
         title: "Greenhouse Automation Project",
         description:
           "Engineered the full electrical and control infrastructure for a large-scale greenhouse complex, including climate control, grow lighting, and integrated SCADA monitoring systems.",
-        image: "/assets/images/industries/project-greenhouse.jpg",
+        image: agricultureHero,
         href: "#",
       },
     ],
