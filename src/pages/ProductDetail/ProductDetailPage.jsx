@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 
 import MainLayout from "@/layouts/MainLayout";
-import BackButton from "@/components/ui/BackButton";
-import GetInTouchForm from "@/components/ui/GetInTouchForm";
+import { BackButton } from "@/components/ui/BackButton";
+import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
 
 import { ProductImageGallery } from "./components/ProductImageGallery";
 import { ProductInfoPanel } from "./components/ProductInfoPanel";
