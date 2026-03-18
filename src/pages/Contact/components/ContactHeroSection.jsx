@@ -5,12 +5,12 @@ import { siteConfig } from "@/config/siteConfig";
 import { contactData } from "@/data/contact/contact";
 
 export function ContactHeroSection() {
-  const { hero, info } = contactData;
+  const { hero } = contactData;
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left — title + contact info */}
           <div className="pt-4">
             <h1 className="text-4xl md:text-5xl font-bold text-navy font-display mb-4">
@@ -36,8 +36,8 @@ export function ContactHeroSection() {
             </div>
           </div>
 
-          {/* Right — GetInTouchForm in a card */}
-          <div className="bg-card border border-border rounded-2xl shadow-sm p-8 lg:col-start-3">
+          {/* Right — GetInTouchForm card */}
+          <div className="bg-card border border-border rounded-2xl shadow-sm p-8">
             <GetInTouchForm />
           </div>
         </div>

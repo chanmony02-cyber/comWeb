@@ -3,12 +3,19 @@
 import MainLayout from "@/layouts/MainLayout";
 import { ContactHeroSection } from "./components/ContactHeroSection";
 import { OurLocationSection } from "./components/OurLocationSection";
+import { NetworkBackground } from "./components/NetworkBackground";
 
 export default function ContactPage() {
   return (
     <MainLayout>
-      <ContactHeroSection />
-      <OurLocationSection />
+      {/* Wrapper covers both sections with the live network behind everything */}
+      <div className="relative overflow-hidden">
+        <NetworkBackground />
+        <div className="relative z-10">
+          <ContactHeroSection />
+          <OurLocationSection />
+        </div>
+      </div>
     </MainLayout>
   );
 }
