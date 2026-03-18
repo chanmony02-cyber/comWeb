@@ -1,4 +1,5 @@
-﻿import { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import MainLayout from "@/layouts/MainLayout";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -9,12 +10,12 @@ import {
   electricalEquipmentContent,
 } from "@/data/electricalEquipment/electricalEquipment";
 import { products } from "@/data/products/products";
+import { ROUTES } from "@/config/routes";
 
 export default function ElectricalEquipment() {
   const allCategoryValue = electricalEquipmentCategories[0]?.value ?? "all";
   const [activeCategory, setActiveCategory] = useState(allCategoryValue);
   const [currentPage, setCurrentPage] = useState(1);
-  // max products to display
   const pageSize = 12;
 
   const filteredProducts =
@@ -48,7 +49,7 @@ export default function ElectricalEquipment() {
       <main className="flex-1 bg-background">
         <section className="bg-navy">
           <div className="container">
-            <div className="min-h-[450px] py-16 md:py-20 flex items-center justify-center ">
+            <div className="min-h-[450px] py-16 md:py-20 flex items-center justify-center">
               <SectionHeader
                 title={electricalEquipmentContent.heroTitle}
                 align="center"
@@ -91,7 +92,18 @@ export default function ElectricalEquipment() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
               {visibleProducts.map((product) => (
-                <ProductCard key={product.id} {...product} />
+                <Link
+                  key={product.id}
+                  to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+                  className="block w-full"
+                >
+                  <ProductCard
+                    id={product.id}
+                    image={product.image}
+                    name={product.name}
+                    category={product.category}
+                  />
+                </Link>
               ))}
             </div>
 
@@ -142,19 +154,7 @@ export default function ElectricalEquipment() {
           </div>
         </section>
 
-        <section className="bg-section-alt pt-20 pb-20">
-          <div className="container">
-            <div className="max-w-md mx-auto bg-card border border-border rounded-2xl shadow-sm p-8 ">
-              <SectionHeader
-                title={electricalEquipmentContent.contactTitle}
-                subtitle={electricalEquipmentContent.contactSubtitle}
-                align="left"
-                titleClassName="text-3xl md:text-3xl lg:text-4xl"
-              />
-              <GetInTouchForm content={electricalEquipmentContent.form} />
-            </div>
-          </div>
-        </section>
+        <GetInTouchForm />
       </main>
     </MainLayout>
   );
