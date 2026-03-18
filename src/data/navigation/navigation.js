@@ -16,7 +16,7 @@ export const productsDropdownItems = [
 
 export const companyDropdownItems = [
   { label: "About Us", href: "#" },
-  { label: "Contact Us", href: "#" },
+  { label: "Contact Us", href: "Contact" },
   { label: "Career", href: "#" },
   { label: "News & Events", href: "#" },
 ];
