@@ -14,9 +14,9 @@ export function OurLocationSection() {
           {location.sectionTitle}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-60 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-60 items-start h-[500px]">
           {/* Left — address block + business hours */}
-          <div className="space-y-8">
+          <div className="flex flex-col space-y-8">
             {/* Address */}
             <div>
               <div className="flex items-center gap-2 mb-3">
@@ -49,7 +49,7 @@ export function OurLocationSection() {
             </div>
 
             {/* Contact details */}
-            <div className="space-y-3 pl-1">
+            <div className="space-y-3">
               {/* Phone */}
               <a
                 href={`tel:${siteConfig.phone}`}
@@ -117,7 +117,7 @@ export function OurLocationSection() {
             </div>
 
             {/* Business Hours card */}
-            <div className="bg-sky-accent/20 rounded-xl p-6">
+            <div className="mt-auto bg-sky-accent/20 rounded-xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <svg
                   className="w-5 h-5 text-primary-blue flex-shrink-0"
@@ -153,7 +153,7 @@ export function OurLocationSection() {
           </div>
 
           {/* Right — Google Map embed */}
-          <div className="w-full h-96 lg:h-full min-h-80 rounded-xl overflow-hidden border border-border shadow-sm">
+          <div className="w-full lg:h-full rounded-xl overflow-hidden border border-border shadow-sm">
             <iframe
               title="Our Location"
               src={location.mapEmbedUrl}
