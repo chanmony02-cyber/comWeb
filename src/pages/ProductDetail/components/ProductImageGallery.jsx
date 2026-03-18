@@ -18,7 +18,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
         <img
           src={images[activeIndex]}
           alt={name}
-          className="w-full h-full object-contain p-4"
+          className="w-full h-full object-cover"
         />
 
         {images.length > 1 && (
