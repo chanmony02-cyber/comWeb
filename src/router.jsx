@@ -1,11 +1,10 @@
-﻿import { lazy, Suspense } from "react";
-
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import { ROUTES } from "@/config/routes";
 
 const Home = lazy(() => import("@/pages/Home"));
 const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
+const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 const AppRouter = () => {
@@ -18,6 +17,7 @@ const AppRouter = () => {
           path={ROUTES.ELECTRICAL_EQUIPMENT}
           element={<ElectricalEquipment />}
         />
+        <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Routes>
     </Suspense>

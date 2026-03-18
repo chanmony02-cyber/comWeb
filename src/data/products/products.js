@@ -1,4 +1,4 @@
-﻿import productCircuitBreaker from "@/assets/images/products/product-circuit-breaker.jpg";
+import productCircuitBreaker from "@/assets/images/products/product-circuit-breaker.jpg";
 import productCapacitor from "@/assets/images/products/product-capacitor.jpg";
 import productCurrentTransformer from "@/assets/images/products/product-current-transformer.jpg";
 import productFuse from "@/assets/images/products/product-fuse.jpg";
@@ -13,8 +13,20 @@ export const products = [
     name: "Circuit Breaker",
     category: "LV",
     image: productCircuitBreaker,
+    images: [productCircuitBreaker],
     description:
       "Protects low-voltage circuits from overloads and short circuits.",
+    features: [
+      "Class 0.5S accuracy for precise protection",
+      "Thermal-magnetic trip mechanism",
+      "Built-in short circuit indicator",
+      "Tamper detection and event logging",
+    ],
+    scopeOfApplication: [
+      "Residential and commercial LV panels",
+      "Industrial distribution boards",
+      "Motor protection circuits",
+    ],
     specs: {
       rating: "Up to 63A",
       standard: "IEC 60898-1",
@@ -25,9 +37,21 @@ export const products = [
     name: "Fuse Link",
     category: "LV",
     image: productFuse,
+    images: [productFuse],
     description: "Fast-acting fuse links for reliable LV protection.",
+    features: [
+      "Fast-acting response for overload protection",
+      "High breaking capacity",
+      "Wide current range coverage",
+      "Tamper-resistant housing",
+    ],
+    scopeOfApplication: [
+      "Utility revenue metering",
+      "Industrial energy management",
+      "Panel board overcurrent protection",
+    ],
     specs: {
-      rating: "10A-125A",
+      rating: "10A–125A",
       standard: "IEC 60269",
     },
   },
@@ -36,7 +60,19 @@ export const products = [
     name: "Current Transformer",
     category: "MV",
     image: productCurrentTransformer,
+    images: [productCurrentTransformer],
     description: "Accurate measurement and protection for MV systems.",
+    features: [
+      "High accuracy class measurement",
+      "Oil-immersed insulation for durability",
+      "Wide ratio selection available",
+      "Low secondary burden requirement",
+    ],
+    scopeOfApplication: [
+      "MV substation metering",
+      "Relay protection systems",
+      "Industrial energy monitoring",
+    ],
     specs: {
       ratio: "100/5 A",
       accuracy: "Class 0.5",
@@ -47,7 +83,19 @@ export const products = [
     name: "Panel Board",
     category: "LV",
     image: productPanelBoard,
+    images: [productPanelBoard],
     description: "Modular LV distribution panels for safe load management.",
+    features: [
+      "Modular design for easy expansion",
+      "IP42 enclosure rating",
+      "Busbar up to 400A capacity",
+      "Lockable door with dedicated breaker slots",
+    ],
+    scopeOfApplication: [
+      "Commercial building distribution",
+      "Industrial plant power management",
+      "Residential multi-unit load centers",
+    ],
     specs: {
       busbar: "Up to 400A",
       enclosure: "IP42",
@@ -58,9 +106,21 @@ export const products = [
     name: "Distribution Transformer",
     category: "MV",
     image: productTransformer,
+    images: [productTransformer],
     description: "Efficient MV/LV power distribution for utility networks.",
+    features: [
+      "ONAN cooling for reliable operation",
+      "Low no-load and load losses",
+      "On-load tap changer available",
+      "Mineral oil insulation system",
+    ],
+    scopeOfApplication: [
+      "Utility distribution networks",
+      "Industrial facility power supply",
+      "Rural electrification projects",
+    ],
     specs: {
-      capacity: "100-1000 kVA",
+      capacity: "100–1000 kVA",
       cooling: "ONAN",
     },
   },
@@ -69,9 +129,21 @@ export const products = [
     name: "Surge Arrester",
     category: "MV",
     image: productSurgeArrester,
+    images: [productSurgeArrester],
     description: "Protects MV equipment from lightning and switching surges.",
+    features: [
+      "Polymer housing for lightweight installation",
+      "Metal oxide varistor (MOV) technology",
+      "High energy absorption capacity",
+      "Low residual voltage for effective clamping",
+    ],
+    scopeOfApplication: [
+      "MV overhead line protection",
+      "Transformer surge protection",
+      "Switchgear and cable termination points",
+    ],
     specs: {
-      systemVoltage: "11-33 kV",
+      systemVoltage: "11–33 kV",
       housing: "Polymer",
     },
   },
@@ -80,9 +152,21 @@ export const products = [
     name: "Capacitor Bank",
     category: "MV",
     image: productCapacitor,
+    images: [productCapacitor],
     description: "Power factor correction for MV networks.",
+    features: [
+      "Automatic switching controller included",
+      "Individual fuse protection per capacitor",
+      "Harmonic filter option available",
+      "Wide temperature range operation",
+    ],
+    scopeOfApplication: [
+      "Industrial plant power factor correction",
+      "Utility feeder reactive compensation",
+      "Substation voltage support",
+    ],
     specs: {
-      kvar: "100-1000 kvar",
+      kvar: "100–1000 kvar",
       control: "Automatic",
     },
   },
@@ -91,7 +175,19 @@ export const products = [
     name: "Grounding System",
     category: "LV",
     image: productGrounding,
+    images: [productGrounding],
     description: "Reliable earthing solution for LV installations.",
+    features: [
+      "Copper-bonded steel rod construction",
+      "Corrosion-resistant coating",
+      "Low soil resistance performance",
+      "Modular rod extension system",
+    ],
+    scopeOfApplication: [
+      "Building structural earthing",
+      "LV substation grounding",
+      "Lightning protection earth electrode",
+    ],
     specs: {
       material: "Copper-bonded",
       resistance: "Under 5 ohms",
@@ -102,7 +198,19 @@ export const products = [
     name: "Grounding System",
     category: "LV",
     image: productGrounding,
+    images: [productGrounding],
     description: "Reliable earthing solution for LV installations.",
+    features: [
+      "Copper-bonded steel rod construction",
+      "Corrosion-resistant coating",
+      "Low soil resistance performance",
+      "Modular rod extension system",
+    ],
+    scopeOfApplication: [
+      "Building structural earthing",
+      "LV substation grounding",
+      "Lightning protection earth electrode",
+    ],
     specs: {
       material: "Copper-bonded",
       resistance: "Under 5 ohms",
@@ -113,7 +221,19 @@ export const products = [
     name: "Grounding System",
     category: "LV",
     image: productGrounding,
+    images: [productGrounding],
     description: "Reliable earthing solution for LV installations.",
+    features: [
+      "Copper-bonded steel rod construction",
+      "Corrosion-resistant coating",
+      "Low soil resistance performance",
+      "Modular rod extension system",
+    ],
+    scopeOfApplication: [
+      "Building structural earthing",
+      "LV substation grounding",
+      "Lightning protection earth electrode",
+    ],
     specs: {
       material: "Copper-bonded",
       resistance: "Under 5 ohms",
@@ -124,9 +244,21 @@ export const products = [
     name: "Capacitor Bank",
     category: "MV",
     image: productCapacitor,
+    images: [productCapacitor],
     description: "Power factor correction for MV networks.",
+    features: [
+      "Automatic switching controller included",
+      "Individual fuse protection per capacitor",
+      "Harmonic filter option available",
+      "Wide temperature range operation",
+    ],
+    scopeOfApplication: [
+      "Industrial plant power factor correction",
+      "Utility feeder reactive compensation",
+      "Substation voltage support",
+    ],
     specs: {
-      kvar: "100-1000 kvar",
+      kvar: "100–1000 kvar",
       control: "Automatic",
     },
   },
@@ -135,9 +267,21 @@ export const products = [
     name: "Capacitor Bank",
     category: "MV",
     image: productCapacitor,
+    images: [productCapacitor],
     description: "Power factor correction for MV networks.",
+    features: [
+      "Automatic switching controller included",
+      "Individual fuse protection per capacitor",
+      "Harmonic filter option available",
+      "Wide temperature range operation",
+    ],
+    scopeOfApplication: [
+      "Industrial plant power factor correction",
+      "Utility feeder reactive compensation",
+      "Substation voltage support",
+    ],
     specs: {
-      kvar: "100-1000 kvar",
+      kvar: "100–1000 kvar",
       control: "Automatic",
     },
   },
@@ -146,9 +290,21 @@ export const products = [
     name: "Fuse Link",
     category: "LV",
     image: productFuse,
+    images: [productFuse],
     description: "Fast-acting fuse links for reliable LV protection.",
+    features: [
+      "Fast-acting response for overload protection",
+      "High breaking capacity",
+      "Wide current range coverage",
+      "Tamper-resistant housing",
+    ],
+    scopeOfApplication: [
+      "Utility revenue metering",
+      "Industrial energy management",
+      "Panel board overcurrent protection",
+    ],
     specs: {
-      rating: "10A-125A",
+      rating: "10A–125A",
       standard: "IEC 60269",
     },
   },
@@ -157,9 +313,21 @@ export const products = [
     name: "Fuse Link",
     category: "LV",
     image: productFuse,
+    images: [productFuse],
     description: "Fast-acting fuse links for reliable LV protection.",
+    features: [
+      "Fast-acting response for overload protection",
+      "High breaking capacity",
+      "Wide current range coverage",
+      "Tamper-resistant housing",
+    ],
+    scopeOfApplication: [
+      "Utility revenue metering",
+      "Industrial energy management",
+      "Panel board overcurrent protection",
+    ],
     specs: {
-      rating: "10A-125A",
+      rating: "10A–125A",
       standard: "IEC 60269",
     },
   },
@@ -168,9 +336,21 @@ export const products = [
     name: "Fuse Link",
     category: "LV",
     image: productFuse,
+    images: [productFuse],
     description: "Fast-acting fuse links for reliable LV protection.",
+    features: [
+      "Fast-acting response for overload protection",
+      "High breaking capacity",
+      "Wide current range coverage",
+      "Tamper-resistant housing",
+    ],
+    scopeOfApplication: [
+      "Utility revenue metering",
+      "Industrial energy management",
+      "Panel board overcurrent protection",
+    ],
     specs: {
-      rating: "10A-125A",
+      rating: "10A–125A",
       standard: "IEC 60269",
     },
   },
