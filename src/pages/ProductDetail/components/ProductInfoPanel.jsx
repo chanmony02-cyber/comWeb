@@ -12,11 +12,11 @@ export function ProductInfoPanel({ name = "", description = "" }) {
         {description} {description} {description}
       </p>
 
-      <div className="flex flex-wrap gap-3 mt-2">
+      <div className="flex flex-wrap gap-6 mt-2">
         <Button
           asChild
           variant="outline"
-          className="border-navy text-navy hover:bg-sky hover:text-white font-display"
+          className="h-14 w-48 border-navy text-lg text-navy hover:border-primary-blue hover:bg-primary-blue hover:text-white font-display"
         >
           <a href="#">PDF Download</a>
         </Button>
@@ -24,7 +24,7 @@ export function ProductInfoPanel({ name = "", description = "" }) {
         <Button
           asChild
           variant="outline"
-          className="border-navy text-navy hover:bg-sky hover:text-white font-display"
+          className="h-14 w-40 border-navy text-lg text-navy hover:border-primary-blue hover:bg-primary-blue hover:text-white font-display"
         >
           <Link to={ROUTES.CONTACT ?? "#"}>Contact Us</Link>
         </Button>
