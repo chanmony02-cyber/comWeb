@@ -5,7 +5,7 @@ import { ROUTES } from "@/config/routes";
 
 export function IndustryCTA({ title, subtitle }) {
   return (
-    <section className="py-16 md:py-20 bg-section-alt">
+    <section className="py-16 md:py-20">
       <div className="container">
         <div className="text-center max-w-xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-navy font-display mb-3">
