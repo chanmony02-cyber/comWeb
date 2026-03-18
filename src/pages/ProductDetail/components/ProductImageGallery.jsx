@@ -14,11 +14,11 @@ export function ProductImageGallery({ images = [], name = "" }) {
   return (
     <div className="flex flex-col gap-4">
       {/* Main image */}
-      <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80">
+      <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80 xl:h-[800px] xl:w-[800px]">
         <img
           src={images[activeIndex]}
           alt={name}
-          className="w-full h-80 object-contain p-4"
+          className="w-full h-full object-contain p-4"
         />
 
         {images.length > 1 && (
@@ -51,7 +51,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
             type="button"
             onClick={() => setActiveIndex(index)}
             aria-label={`View image ${index + 1}`}
-            className={`w-20 h-20 rounded-lg border-2 overflow-hidden flex-shrink-0 bg-white transition-colors ${
+            className={`w-24 h-24 rounded-lg border-2 overflow-hidden flex-shrink-0 bg-white transition-colors ${
               activeIndex === index
                 ? "border-primary-blue"
                 : "border-border hover:border-primary-blue/50"

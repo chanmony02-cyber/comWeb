@@ -13,7 +13,12 @@ export const products = [
     name: "Circuit Breaker",
     category: "LV",
     image: productCircuitBreaker,
-    images: [productCircuitBreaker],
+    images: [
+      productCircuitBreaker,
+      productFuse,
+      productCircuitBreaker,
+      productFuse,
+    ],
     description:
       "Protects low-voltage circuits from overloads and short circuits.",
     features: [
