@@ -52,9 +52,15 @@ export default function ProductDetailPage() {
         </div>
       </section>
 
-      <RelatedProducts currentId={product.id} category={product.category} />
+      <section className="bg-section-alt pt-20 pb-20">
+        <div className="container">
+          <div className="max-w-md mx-auto bg-card border border-border rounded-2xl shadow-sm p-8 ">
+            <GetInTouchForm />
+          </div>
+        </div>
+      </section>
 
-      <GetInTouchForm />
+      <RelatedProducts currentId={product.id} category={product.category} />
     </MainLayout>
   );
 }
