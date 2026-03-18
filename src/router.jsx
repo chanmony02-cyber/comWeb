@@ -7,6 +7,13 @@ const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const ContactPage = lazy(() => import("@/pages/Contact"));
+const DistributionGridPage = lazy(
+  () => import("@/pages/Industries/DistributionGrid"),
+);
+const CityInfrastructurePage = lazy(
+  () => import("@/pages/Industries/CityInfrastructure"),
+);
+const AgriculturePage = lazy(() => import("@/pages/Industries/Agriculture"));
 
 const AppRouter = () => {
   return (
@@ -20,7 +27,16 @@ const AppRouter = () => {
         />
         <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
+        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />{" "}
+        <Route
+          path={ROUTES.DISTRIBUTION_GRID}
+          element={<DistributionGridPage />}
+        />{" "}
+        <Route
+          path={ROUTES.CITY_INFRASTRUCTURE}
+          element={<CityInfrastructurePage />}
+        />
+        <Route path={ROUTES.AGRICULTURE} element={<AgriculturePage />} />
       </Routes>
     </Suspense>
   );

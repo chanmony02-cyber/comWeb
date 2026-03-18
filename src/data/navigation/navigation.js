@@ -29,7 +29,7 @@ export const servicesDropdownItems = [
 ];
 
 export const industriesDropdownItems = [
-  { label: "Distribution Grid", href: "#" },
-  { label: "City Infrastructure", href: "#" },
-  { label: "Agriculture", href: "#" },
+  { label: "Distribution Grid", href: "distribution-grid" },
+  { label: "City Infrastructure", href: "city-infrastructure" },
+  { label: "Agriculture", href: "agriculture" },
 ];
