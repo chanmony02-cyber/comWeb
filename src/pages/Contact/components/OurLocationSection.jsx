@@ -14,7 +14,7 @@ export function OurLocationSection() {
           {location.sectionTitle}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-36">
           {/* Left — address block + business hours */}
           <div className="flex flex-col justify-between">
             <div className="space-y-8">
