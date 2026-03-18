@@ -5,8 +5,8 @@ export const ROUTES = {
   ELECTRICAL_EQUIPMENT: "/electrical-equipment",
   PRODUCT_DETAIL: "/products/:id",
   CONTACT: "/contact",
-  DISTRIBUTION_GRID: "/distribution-grid",
-  CITY_INFRASTRUCTURE: "/city-infrastructure",
-  AGRICULTURE: "/agriculture",
+  DISTRIBUTION_GRID: "/industries/distribution-grid",
+  CITY_INFRASTRUCTURE: "/industries/city-infrastructure",
+  AGRICULTURE: "/industries/agriculture",
   NOT_FOUND: "*",
 };
