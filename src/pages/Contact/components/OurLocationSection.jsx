@@ -7,22 +7,22 @@ export function OurLocationSection() {
   const { location, info } = contactData;
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 md:py-20 bg-background">
       <div className="container">
         {/* Section title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-navy text-center font-display mb-16">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy text-center font-display mb-10 md:mb-16">
           {location.sectionTitle}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-36">
-          {/* Left — address block + business hours */}
-          <div className="flex flex-col justify-between">
-            <div className="space-y-8">
-              {/* TOP GROUP */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-40">
+          {/* Left — address block + contact + business hours */}
+          {/* Mobile: normal flow. Desktop: flex column with business hours pinned to bottom */}
+          <div className="flex flex-col gap-6 lg:gap-0 lg:justify-between">
+            {/* TOP GROUP — address + contact details */}
+            <div className="space-y-6">
               {/* Address */}
               <div>
-                <div className="flex items-center gap-2 mb-3">
-                  {/* Location pin icon */}
+                <div className="flex items-center gap-2 mb-2">
                   <svg
                     className="w-5 h-5 text-primary-blue flex-shrink-0"
                     fill="none"
@@ -41,7 +41,7 @@ export function OurLocationSection() {
                       d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                     />
                   </svg>
-                  <h3 className="text-xl font-bold text-navy font-display">
+                  <h3 className="text-lg font-bold text-navy font-display">
                     {location.addressTitle}
                   </h3>
                 </div>
@@ -49,12 +49,13 @@ export function OurLocationSection() {
                   {siteConfig.address}
                 </p>
               </div>
+
               {/* Contact details */}
-              <div className="space-y-3">
+              <div className="space-y-3 pl-1">
                 {/* Phone */}
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary-blue transition-colors group"
+                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary-blue transition-colors"
                 >
                   <svg
                     className="w-5 h-5 text-primary-blue flex-shrink-0"
@@ -117,9 +118,11 @@ export function OurLocationSection() {
                 </a>
               </div>
             </div>
-            {/* Business Hours — mt-auto now works because left col has height */}
-            <div className="bg-sky-accent/20 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
+
+            {/* BOTTOM — Business Hours */}
+            {/* Mobile: flows naturally after contact. Desktop: pinned to bottom by justify-between */}
+            <div className="bg-sky-accent/20 rounded-xl p-5 md:p-6">
+              <div className="flex items-center gap-2 mb-3">
                 <svg
                   className="w-5 h-5 text-primary-blue flex-shrink-0"
                   fill="none"
@@ -137,11 +140,11 @@ export function OurLocationSection() {
                   {location.businessHoursTitle}
                 </h4>
               </div>
-              <ul className="space-y-1">
+              <ul className="space-y-1.5">
                 {location.businessHours.map((item) => (
                   <li
                     key={item.day}
-                    className="flex items-center gap-2 text-sm text-muted-foreground"
+                    className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground"
                   >
                     <span className="font-medium text-foreground">
                       {item.day}
@@ -153,14 +156,15 @@ export function OurLocationSection() {
             </div>
           </div>
 
-          {/* Right — Map with explicit height on the iframe itself */}
-          <div className="w-full lg:h-[500px] rounded-xl overflow-hidden border border-border shadow-sm">
+          {/* Right — Google Map */}
+          {/* Mobile: fixed height 280px. Desktop: driven by iframe height="500" */}
+          <div className="w-full rounded-xl overflow-hidden border border-border shadow-sm">
             <iframe
               title="Our Location"
               src={location.mapEmbedUrl}
               width="100%"
-              height="100%"
-              style={{ border: 0, display: "block" }}
+              height="500"
+              style={{ border: 0, display: "block", minHeight: "280px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
