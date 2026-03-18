@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/config/routes";
 
 export function ProductInfoPanel({ name = "", description = "" }) {
@@ -12,18 +13,21 @@ export function ProductInfoPanel({ name = "", description = "" }) {
       </p>
 
       <div className="flex flex-wrap gap-3 mt-2">
-        <a
-          href="#"
-          className="inline-flex items-center justify-center px-5 py-2 rounded border border-navy text-navy text-sm font-semibold hover:bg-navy hover:text-white transition-colors font-display"
+        <Button
+          asChild
+          variant="outline"
+          className="border-navy text-navy hover:bg-sky hover:text-white font-display"
         >
-          PDF Download
-        </a>
-        <Link
-          to={ROUTES.CONTACT ?? "#"}
-          className="inline-flex items-center justify-center px-5 py-2 rounded border border-navy text-navy text-sm font-semibold hover:bg-navy hover:text-white transition-colors font-display"
+          <a href="#">PDF Download</a>
+        </Button>
+
+        <Button
+          asChild
+          variant="outline"
+          className="border-navy text-navy hover:bg-sky hover:text-white font-display"
         >
-          Contact Us
-        </Link>
+          <Link to={ROUTES.CONTACT ?? "#"}>Contact Us</Link>
+        </Button>
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ export default function ProductDetailPage() {
       <section className="container py-10">
         <BackButton />
 
-        <h1 className="text-3xl font-bold text-navy text-center mt-6 mb-10 font-display">
+        <h1 className="text-5xl font-bold text-navy text-center mt-6 mb-16 font-display">
           Product Detail
         </h1>
 

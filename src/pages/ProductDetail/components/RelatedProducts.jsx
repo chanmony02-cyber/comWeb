@@ -13,7 +13,7 @@ export function RelatedProducts({ currentId, category }) {
 
   return (
     <section className="container py-14">
-      <h2 className="text-2xl font-bold text-navy text-center mb-10 font-display">
+      <h2 className="text-3xl font-bold text-navy text-center mb-10 font-display">
         Related Products
       </h2>
 
