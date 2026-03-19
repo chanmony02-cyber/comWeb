@@ -2,43 +2,43 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-// Icon map — inline SVGs keyed by string so data stays in .js files
-function ExpertiseIcon({ type }) {
-  const icons = {
-    cost: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-    ),
-    consulting: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-    ),
-    design: (
-      <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
-    ),
-  };
-  return (
-    <svg className="w-8 h-8 text-primary-blue" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-      {icons[type] || icons.design}
+// Icon map — resolves string keys from data layer into SVG elements
+const ICONS = {
+  "cost-optimization": (
+    <svg className="w-8 h-8 text-primary-blue" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
     </svg>
-  );
-}
+  ),
+  consulting: (
+    <svg className="w-8 h-8 text-primary-blue" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+    </svg>
+  ),
+  design: (
+    <svg className="w-8 h-8 text-primary-blue" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+    </svg>
+  ),
+};
 
 export function CoreExpertiseGrid({ title, items }) {
   return (
     <section className="py-16 md:py-20 bg-background">
       <div className="container">
-        <SectionHeader title={title} align="center" titleClassName="text-3xl md:text-4xl" />
+        <SectionHeader title={title} align="center" />
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item) => (
             <div
               key={item.id}
-              className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-3 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+              className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
             >
-              <ExpertiseIcon type={item.icon} />
-              <p className="text-base font-bold text-navy font-display">{item.title}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed font-sans">
-                {item.description}
-              </p>
+              {/* Icon circle */}
+              <div className="w-12 h-12 rounded-full border border-primary-blue/30 bg-sky-accent/10 flex items-center justify-center">
+                {ICONS[item.icon]}
+              </div>
+              <h3 className="text-base font-bold text-navy font-display">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed font-sans">{item.description}</p>
             </div>
           ))}
         </div>

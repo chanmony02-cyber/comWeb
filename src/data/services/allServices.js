@@ -1,11 +1,12 @@
 // src/data/services/allServices.js
 import { ROUTES } from "@/config/routes";
+import heroBG from "@/assets/images/servicesImg/hero-bg.jpg";
 
 export const allServicesData = {
   hero: {
     title: "Expert Services in Consultants, Maintenance, and Inspections",
     subtitle: "We provide top-notch services for all your electrical and electronic needs.",
-    backgroundImage: "/assets/images/services/services-hero.jpg",
+    backgroundImage: heroBG,
   },
   services: {
     title: "Our Services",
@@ -15,28 +16,28 @@ export const allServicesData = {
         id: 1,
         title: "Consultants",
         description: "Quick and reliable repairing services for all your electrical infrastructure needs.",
-        image: "/assets/images/services/service-consultants.jpg",
+        image: heroBG,
         href: ROUTES.CONSULTANTS,
       },
       {
         id: 2,
         title: "Maintenance",
         description: "Expert advice tailored for your electrical and electronic system requirements.",
-        image: "/assets/images/services/service-maintenance.jpg",
+        image: heroBG,
         href: ROUTES.MAINTENANCE,
       },
       {
         id: 3,
         title: "Inspections",
         description: "Professional installation of electronic and electrical systems with precision.",
-        image: "/assets/images/services/service-inspections.jpg",
+        image: heroBG,
         href: ROUTES.INSPECTIONS,
       },
     ],
   },
   whyChoose: {
     title: "Why choose our services?",
-    image: "/assets/images/services/why-choose.jpg",
+    image: heroBG,
     items: [
       {
         id: 1,
