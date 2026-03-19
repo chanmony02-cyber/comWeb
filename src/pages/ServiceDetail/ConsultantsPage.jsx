@@ -54,7 +54,9 @@ export default function ConsultantsPage() {
 
       <section className="py-16 md:py-20 bg-background">
         <div className="container">
-          <h2 className="text-3xl font-bold text-navy font-display text-center mb-10">FAQs</h2>
+          <h2 className="text-3xl font-bold text-navy font-display text-center mb-10">
+            FAQs
+          </h2>
           <FAQAccordion items={faqs} />
         </div>
       </section>

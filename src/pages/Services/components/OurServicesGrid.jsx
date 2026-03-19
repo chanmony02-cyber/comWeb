@@ -5,9 +5,15 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function OurServicesGrid({ title, subtitle, items }) {
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section className="py-16 md:py-28 bg-background">
       <div className="container">
-        <SectionHeader title={title} subtitle={subtitle} align="center" />
+        <SectionHeader
+          title={title}
+          subtitle={subtitle}
+          align="center"
+          titleClassName="text-navy text-3xl md:text-4xl lg:text-5xl"
+          subtitleClassName="text-base md:text-lg mb-5"
+        />
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((service) => (
@@ -21,16 +27,16 @@ export function OurServicesGrid({ title, subtitle, items }) {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 lg:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
               {/* Text */}
-              <div className="p-5 flex flex-col gap-2 flex-1">
-                <p className="text-base font-bold text-primary-blue font-display group-hover:text-navy transition-colors">
+              <div className="p-5 flex flex-col gap-5 flex-1 text-center">
+                <p className="text-2xl font-bold text-primary-blue font-display group-hover:text-navy transition-colors">
                   {service.title}
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                <p className="max-w-lg text-sm text-muted-foreground leading-relaxed font-sans">
                   {service.description}
                 </p>
               </div>
