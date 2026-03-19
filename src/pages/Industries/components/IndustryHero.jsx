@@ -17,7 +17,7 @@ export function IndustryHero({ title, subtitle, backgroundImage }) {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white font-display mb-4">
           {title}
         </h1>
-        <p className="text-sky-accent text-sm md:text-base leading-relaxed max-w-xl mx-auto font-sans">
+        <p className="text-sky-accent text-md md:text-lg leading-relaxed max-w-3xl mx-auto font-sans">
           {subtitle}
         </p>
       </div>

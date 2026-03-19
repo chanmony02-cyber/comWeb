@@ -14,7 +14,7 @@ export function ProblemSection({ title, paragraphs, image }) {
               {paragraphs.map((para, index) => (
                 <p
                   key={index}
-                  className="text-muted-foreground text-md leading-relaxed font-sans"
+                  className="text-muted-foreground text-lg leading-relaxed font-sans"
                 >
                   {para}
                 </p>

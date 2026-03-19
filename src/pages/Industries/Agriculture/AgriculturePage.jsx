@@ -17,6 +17,7 @@ export default function AgriculturePage() {
         title={hero.title}
         subtitle={hero.subtitle}
         backgroundImage={hero.backgroundImage}
+        subtitleClassName="max-w-3xl"
       />
       <ProblemSection
         title={problem.title}
