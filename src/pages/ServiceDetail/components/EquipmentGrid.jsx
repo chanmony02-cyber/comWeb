@@ -2,7 +2,6 @@
 
 import { Link } from "react-router-dom";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { products } from "@/data/products/products";
 import { ROUTES } from "@/config/routes";
 
 function CheckItem({ label }) {
@@ -27,14 +26,6 @@ function CheckItem({ label }) {
   );
 }
 
-// Match equipment item title to a product id for navigation
-function findProductId(title) {
-  const match = products.find((p) =>
-    p.name.toLowerCase().includes(title.toLowerCase().split(" ")[0]),
-  );
-  return match ? match.id : null;
-}
-
 export function EquipmentGrid({ title, subtitle, items }) {
   return (
     <section className="py-16 md:py-20 bg-background">
@@ -49,9 +40,8 @@ export function EquipmentGrid({ title, subtitle, items }) {
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {items.map((item) => {
-            const productId = findProductId(item.title);
-            const linkTo = productId
-              ? ROUTES.PRODUCT_DETAIL.replace(":id", productId)
+            const linkTo = item.productId
+              ? ROUTES.PRODUCT_DETAIL.replace(":id", item.productId)
               : "#";
 
             return (

@@ -75,6 +75,7 @@ export const maintenanceData = {
     items: [
       {
         id: 1,
+        productId: 1, // Circuit Breaker (closest to Switch Gear in products.js)
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
@@ -83,6 +84,7 @@ export const maintenanceData = {
       },
       {
         id: 2,
+        productId: 3, // Current Transformer (closest to Auto Closer)
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
@@ -91,6 +93,7 @@ export const maintenanceData = {
       },
       {
         id: 3,
+        productId: 5, // Distribution Transformer
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",

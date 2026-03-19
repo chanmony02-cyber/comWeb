@@ -1,4 +1,8 @@
 // src/data/services/inspections.js
+import inspectionOverview from "@/assets/images/servicesImg/inspection/inspection-overview.jpg";
+import switchGear from "@/assets/images/products/switch-gear.jpg";
+import transformer from "@/assets/images/products/Transformer.jpg";
+import autoCloser from "@/assets/images/products/automatic-circuit-recloser.png";
 
 export const inspectionsData = {
   hero: {
@@ -12,7 +16,7 @@ export const inspectionsData = {
       "Our inspection division delivers thorough assessments of electrical infrastructure — from switchgear and transformers to overhead lines and underground cables. We use advanced diagnostic tools including thermal imaging and insulation testing to identify issues before they escalate.",
       "Every inspection follows strict regulatory protocols and industry standards, providing detailed reports with actionable recommendations to maintain safety, compliance, and operational reliability.",
     ],
-    image: "/assets/images/services/inspections-overview.jpg",
+    image: inspectionOverview,
     bgSection: false,
   },
   commonIssues: {
@@ -71,26 +75,29 @@ export const inspectionsData = {
     items: [
       {
         id: 1,
+        productId: 1, // Circuit Breaker (closest to Switch Gear)
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
-        image: "/assets/images/services/equipment-switchgear.jpg",
+        image: switchGear,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
         id: 2,
+        productId: 3, // Current Transformer (closest to Auto Closer)
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
-        image: "/assets/images/services/equipment-autocloser.jpg",
+        image: autoCloser,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
         id: 3,
+        productId: 5, // Distribution Transformer
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",
-        image: "/assets/images/services/equipment-transformer.jpg",
+        image: transformer,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
     ],
