@@ -29,12 +29,12 @@ export default function ConsultantsPage() {
         </div>
       </section>
 
-      <div className="container pb-10">
-        <div className="rounded-2xl overflow-hidden shadow-sm">
+      <div className="container pb-10 flex justify-center">
+        <div className="rounded-2xl overflow-hidden shadow-sm w-[95%] lg:w-[90%]">
           <img
             src={hero.heroImage}
             alt={hero.title}
-            className="w-full h-64 md:h-80 lg:h-96 object-cover"
+            className="w-full h-60 md:h-[500px] lg:h-[700px] object-cover"
           />
         </div>
       </div>
