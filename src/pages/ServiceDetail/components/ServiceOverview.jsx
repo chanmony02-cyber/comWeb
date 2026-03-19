@@ -1,0 +1,37 @@
+// src/pages/ServiceDetail/components/ServiceOverview.jsx
+
+export function ServiceOverview({ title, paragraphs, image, bgAlt = false }) {
+  return (
+    <section className={`py-16 md:py-20 ${bgAlt ? "bg-section-alt" : "bg-background"}`}>
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left — text */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy font-display mb-6">
+              {title}
+            </h2>
+            <div className="space-y-4">
+              {paragraphs.map((para, index) => (
+                <p
+                  key={index}
+                  className="text-sm text-muted-foreground leading-relaxed font-sans"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — image */}
+          <div className="rounded-xl overflow-hidden shadow-md">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-64 md:h-80 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

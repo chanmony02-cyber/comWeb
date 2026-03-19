@@ -1,3 +1,4 @@
+// src/data/navigation/navigation.js
 import { ROUTES } from "@/config/routes";
 
 export const navItems = [
@@ -22,14 +23,14 @@ export const companyDropdownItems = [
 ];
 
 export const servicesDropdownItems = [
-  { label: "All Services", href: "#" },
-  { label: "Consultants", href: "#" },
-  { label: "Maintenance", href: "#" },
-  { label: "Inspections", href: "#" },
+  { label: "All Services",  href: ROUTES.SERVICES },
+  { label: "Consultants",   href: ROUTES.CONSULTANTS },
+  { label: "Maintenance",   href: ROUTES.MAINTENANCE },
+  { label: "Inspections",   href: ROUTES.INSPECTIONS },
 ];
 
 export const industriesDropdownItems = [
-  { label: "Distribution Grid", href: ROUTES.DISTRIBUTION_GRID },
+  { label: "Distribution Grid",   href: ROUTES.DISTRIBUTION_GRID },
   { label: "City Infrastructure", href: ROUTES.CITY_INFRASTRUCTURE },
-  { label: "Agriculture", href: ROUTES.AGRICULTURE },
+  { label: "Agriculture",         href: ROUTES.AGRICULTURE },
 ];
