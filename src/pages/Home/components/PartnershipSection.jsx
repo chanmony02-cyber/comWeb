@@ -10,13 +10,13 @@ export default function PartnershipSection() {
             <h2 className="text-foreground font-bold text-4xl md:text-[2.5rem] mb-5 font-display">
               Our Partnership
             </h2>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-[500px] font-sans">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl font-sans">
               We foster long-lasting partnerships with industry leaders. All of
               our relationships reflect an alliance, collaboration, and trust
               that builds success.
             </p>
           </div>
-          {/* Right â€” partner cards */}
+          {/* Right partner cards */}
           <div className="w-full md:w-[830px] flex flex-col gap-5">
             {partners.map((partner) => (
               <div
@@ -36,10 +36,10 @@ export default function PartnershipSection() {
                   />
                 </div>
                 <div>
-                  <p className="text-foreground font-bold text-base mb-1 font-display">
+                  <p className="text-foreground font-bold text-md lg:text-lg mb-1 font-display">
                     {partner.name}
                   </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed font-sans">
+                  <p className="text-muted-foreground text-md leading-relaxed font-sans">
                     {partner.description}
                   </p>
                 </div>
