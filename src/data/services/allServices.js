@@ -1,6 +1,7 @@
 // src/data/services/allServices.js
 import { ROUTES } from "@/config/routes";
 import heroBG from "@/assets/images/servicesImg/hero-bg.jpg";
+import repairing from "@/assets/images/servicesImg/repairing.jpg";
 
 export const allServicesData = {
   hero: {
@@ -37,7 +38,7 @@ export const allServicesData = {
   },
   whyChoose: {
     title: "Why choose our services?",
-    image: heroBG,
+    image: repairing,
     items: [
       {
         id: 1,

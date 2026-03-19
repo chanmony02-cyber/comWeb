@@ -14,13 +14,13 @@ export function FAQAccordion({ items }) {
         return (
           <div
             key={item.id}
-            className="border border-border rounded-xl overflow-hidden"
+            className="xl:w-[900px] border border-border rounded-xl overflow-hidden"
           >
             {/* Question row */}
             <button
               type="button"
               onClick={() => toggle(item.id)}
-              className="w-full flex items-center justify-between px-5 py-4 text-left gap-4 hover:bg-section-alt transition-colors"
+              className="w-full  flex items-center justify-between px-5 py-4 text-left gap-4 hover:bg-section-alt transition-colors"
             >
               <span className="text-sm font-medium text-navy font-sans">
                 {item.question}

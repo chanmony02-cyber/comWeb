@@ -26,21 +26,21 @@ export function WhyChooseUsSection({ image, title, items }) {
             <img
               src={image}
               alt={title}
-              className="w-full h-72 md:h-96 object-cover"
+              className="w-full h-72 md:h-[700px] object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
 
           {/* Right — title + 2x2 grid */}
           <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-navy font-display mb-10">
+            <h2 className="text-3xl md:text-3xl lg:text-5xl font-bold text-navy font-display mb-10 xl:mb-20 text-center">
               {title}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 xl:gap-20">
               {items.map((item) => (
                 <div key={item.id} className="flex flex-col items-center text-center gap-3">
                   <CheckIcon />
-                  <p className="text-base font-bold text-navy font-display">{item.title}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                  <p className="text-lg xl:text-xl font-bold text-navy font-display">{item.title}</p>
+                  <p className="text-sm xl:text-md text-muted-foreground leading-relaxed font-sans">
                     {item.description}
                   </p>
                 </div>
