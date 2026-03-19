@@ -36,7 +36,7 @@ export function EquipmentGrid({ title, subtitle, items }) {
           subtitleClassName="max-w-xl"
         />
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {items.map((item) => (
             <div
               key={item.id}
@@ -55,15 +55,19 @@ export function EquipmentGrid({ title, subtitle, items }) {
 
               {/* Text content */}
               <div className="px-5 pb-6 flex flex-col gap-3">
-                <p className="text-base font-bold text-navy font-display">
+                <p className="text-md lg:text-xl font-bold text-navy font-display">
                   {item.title}
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                <p className="text-md lg:text-lg text-muted-foreground leading-relaxed font-sans">
                   {item.description}
                 </p>
-                <ul className="flex flex-col gap-2 mt-1">
+                <ul className="flex flex-col gap-2 mt-1 ">
                   {item.bullets.map((bullet) => (
-                    <CheckItem key={bullet} label={bullet} />
+                    <CheckItem
+                      key={bullet}
+                      label={bullet}
+                      labelClassName="text-md"
+                    />
                   ))}
                 </ul>
               </div>
