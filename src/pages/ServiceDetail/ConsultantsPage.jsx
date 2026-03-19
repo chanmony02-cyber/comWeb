@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout";
 import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
-import { consultantsData } from "@/data/services/consultantsData";
+import { consultantsData } from "@/data/services/consultants";
 import { ServiceDetailHero } from "./components/ServiceDetailHero";
 import { ServiceOverview } from "./components/ServiceOverview";
 import { CoreExpertiseGrid } from "./components/CoreExpertiseGrid";

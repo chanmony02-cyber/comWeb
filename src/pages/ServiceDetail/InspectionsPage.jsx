@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout";
 import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
-import { inspectionsData } from "@/data/services/inspectionsData";
+import { inspectionsData } from "@/data/services/inspections";
 import { ServiceDetailHero } from "./components/ServiceDetailHero";
 import { ServiceOverview } from "./components/ServiceOverview";
 import { CommonIssuesGrid } from "./components/CommonIssuesGrid";

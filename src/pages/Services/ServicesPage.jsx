@@ -3,13 +3,13 @@
 import MainLayout from "@/layouts/MainLayout";
 import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
-import { allServicesData } from "@/data/services/allServicesData";
+import { allServicesData } from "@/data/services/allServices";
 import { ServicesHero } from "./components/ServicesHero";
 import { OurServicesGrid } from "./components/OurServicesGrid";
 import { WhyChooseUsSection } from "./components/WhyChooseUsSection";
 
 export default function ServicesPage() {
-  const { hero, services, whyChooseUs, faqs } = allServicesData;
+  const { hero, services, whyChoose, faqs } = allServicesData;
 
   return (
     <MainLayout>
@@ -24,9 +24,9 @@ export default function ServicesPage() {
         items={services.items}
       />
       <WhyChooseUsSection
-        image={whyChooseUs.image}
-        title={whyChooseUs.title}
-        items={whyChooseUs.items}
+        image={whyChoose.image}
+        title={whyChoose.title}
+        items={whyChoose.items}
       />
       <section className="py-16 md:py-20 bg-background">
         <div className="container max-w-2xl">
