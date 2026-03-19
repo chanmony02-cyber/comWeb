@@ -29,7 +29,7 @@ export function ProductTabs({
             key={tab.key}
             type="button"
             onClick={() => setActiveTab(tab.key)}
-            className={`px-6 py-3 text-sm font-semibold font-display transition-colors ${
+            className={`px-6 py-3 text-lg font-semibold font-display transition-colors ${
               activeTab === tab.key
                 ? "border-b-2 border-navy text-navy"
                 : "text-muted-foreground hover:text-navy"
@@ -43,7 +43,7 @@ export function ProductTabs({
       {/* Tab content */}
       <div className="p-6">
         {activeTab === "description" && (
-          <div className="flex flex-col gap-5 text-sm font-sans">
+          <div className="flex flex-col gap-5 text-md font-sans">
             {/* Product Overview */}
             <div>
               <h4 className="font-bold text-navy mb-1">Product Overview:</h4>
@@ -79,12 +79,15 @@ export function ProductTabs({
         )}
 
         {activeTab === "specification" && (
-          <div className="text-sm font-sans">
+          <div className="text-md font-sans">
             {Object.keys(specs).length > 0 ? (
               <table className="w-full border-collapse">
                 <tbody>
                   {Object.entries(specs).map(([key, value]) => (
-                    <tr key={key} className="border-b border-border last:border-0">
+                    <tr
+                      key={key}
+                      className="border-b border-border last:border-0"
+                    >
                       <td className="py-3 pr-6 font-semibold text-navy w-40">
                         {formatSpecLabel(key)}
                       </td>
