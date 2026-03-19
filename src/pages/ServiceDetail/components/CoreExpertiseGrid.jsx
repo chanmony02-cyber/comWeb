@@ -74,7 +74,7 @@ export function CoreExpertiseGrid({ title, items }) {
               <h3 className="text-md lg:text-2xl font-bold text-navy font-display">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed font-sans ">
+              <p className="text-md text-muted-foreground leading-relaxed font-sans ">
                 {item.description}
               </p>
             </div>

@@ -99,13 +99,13 @@ export function OurProcessSteps({ title, subtitle, steps }) {
                 key={step.id}
                 className="flex flex-col items-center text-center gap-2"
               >
-                <p className="text-xs font-semibold text-primary-blue uppercase tracking-widest font-sans">
+                <p className="text-md font-semibold text-primary-blue uppercase tracking-widest font-sans">
                   {step.step}
                 </p>
-                <h3 className="text-base font-bold text-navy font-display">
+                <h3 className="text-xl font-bold text-navy font-display">
                   {step.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                <p className="text-md text-muted-foreground leading-relaxed font-sans">
                   {step.description}
                 </p>
               </div>

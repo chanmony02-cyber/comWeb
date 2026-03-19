@@ -38,7 +38,7 @@ export function OurServicesGrid({ title, subtitle, items }) {
                 <p className="text-2xl font-bold text-primary-blue group-hover:text-white transition-colors duration-300 font-display">
                   {service.title}
                 </p>
-                <p className="text-sm text-muted-foreground group-hover:text-white/80 leading-relaxed font-sans transition-colors duration-300">
+                <p className="text-md text-muted-foreground group-hover:text-white/80 leading-relaxed font-sans transition-colors duration-300">
                   {service.description}
                 </p>
               </div>

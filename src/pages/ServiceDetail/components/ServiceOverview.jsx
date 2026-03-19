@@ -16,7 +16,7 @@ export function ServiceOverview({ title, paragraphs, image, bgAlt = false }) {
               {paragraphs.map((para, index) => (
                 <p
                   key={index}
-                  className="text-md text-muted-foreground leading-relaxed font-sans"
+                  className="text-lg text-muted-foreground leading-relaxed font-sans"
                 >
                   {para}
                 </p>

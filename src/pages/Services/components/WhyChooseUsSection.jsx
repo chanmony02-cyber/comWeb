@@ -37,10 +37,15 @@ export function WhyChooseUsSection({ image, title, items }) {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 xl:gap-20">
               {items.map((item) => (
-                <div key={item.id} className="flex flex-col items-center text-center gap-3">
+                <div
+                  key={item.id}
+                  className="flex flex-col items-center text-center gap-3"
+                >
                   <CheckIcon />
-                  <p className="text-lg xl:text-xl font-bold text-navy font-display">{item.title}</p>
-                  <p className="text-sm xl:text-md text-muted-foreground leading-relaxed font-sans">
+                  <p className="text-xl xl:text-xl font-bold text-navy font-display">
+                    {item.title}
+                  </p>
+                  <p className="text-lg xl:text-md text-muted-foreground leading-relaxed font-sans">
                     {item.description}
                   </p>
                 </div>
