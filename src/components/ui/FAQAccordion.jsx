@@ -30,7 +30,7 @@ export function FAQAccordion({
               onClick={() => toggle(item.id)}
               className="w-full flex items-center justify-between px-5 py-4 text-left gap-4 hover:bg-section-alt transition-colors"
             >
-              <span className={`text-sm font-medium text-navy font-sans ${questionClassName}`}>
+              <span className={`lg:p-2 text-sm lg:text-lg font-medium text-navy font-sans ${questionClassName}`}>
                 {item.question}
               </span>
               {/* Chevron */}
@@ -53,7 +53,7 @@ export function FAQAccordion({
                 isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <p className={`px-5 pb-5 text-sm text-muted-foreground leading-relaxed font-sans ${answerClassName}`}>
+              <p className={`px-5 pb-5 text-sm lg:text-lg text-muted-foreground leading-relaxed font-sans ${answerClassName}`}>
                 {item.answer}
               </p>
             </div>
