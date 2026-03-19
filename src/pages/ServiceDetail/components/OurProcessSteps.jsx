@@ -2,7 +2,6 @@
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-// Icon map — resolves string keys from data layer into SVG elements
 const ICONS = {
   search: (
     <svg
@@ -78,22 +77,55 @@ export function OurProcessSteps({ title, subtitle, steps }) {
           subtitleClassName="lg:text-lg text-md"
         />
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* ── Desktop layout (lg+): icons row with connecting line, text row below ── */}
+        <div className="hidden lg:block mt-12">
+          {/* Icons with connecting line */}
+          <div className="relative flex items-center justify-between px-[10%]">
+            {/* Horizontal connecting line */}
+            <div className="absolute left-[10%] right-[10%] top-1/2 -translate-y-1/2 h-[1.5px] bg-primary-blue/30" />
+            {steps.map((step) => (
+              <div key={step.id} className="relative z-10">
+                <div className="w-14 h-14 rounded-full bg-primary-blue flex items-center justify-center shadow-md">
+                  {ICONS[step.icon]}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Text below icons */}
+          <div className="mt-8 grid grid-cols-4 gap-8">
+            {steps.map((step) => (
+              <div
+                key={step.id}
+                className="flex flex-col items-center text-center gap-2"
+              >
+                <p className="text-xs font-semibold text-primary-blue uppercase tracking-widest font-sans">
+                  {step.step}
+                </p>
+                <h3 className="text-base font-bold text-navy font-display">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-sans">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Mobile / Tablet layout (below lg): icon + text stacked per step, no line ── */}
+        <div className="lg:hidden mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
           {steps.map((step) => (
             <div
               key={step.id}
-              className="flex flex-col items-center text-center gap-4"
+              className="flex flex-col items-center text-center gap-3"
             >
-              {/* Step label */}
+              <div className="w-14 h-14 rounded-full bg-primary-blue flex items-center justify-center shadow-md">
+                {ICONS[step.icon]}
+              </div>
               <p className="text-xs font-semibold text-primary-blue uppercase tracking-widest font-sans">
                 {step.step}
               </p>
-
-              {/* Icon circle */}
-              <div className="w-14 h-14 rounded-full bg-primary-blue flex items-center justify-center shadow-sm">
-                {ICONS[step.icon]}
-              </div>
-
               <h3 className="text-base font-bold text-navy font-display">
                 {step.title}
               </h3>
