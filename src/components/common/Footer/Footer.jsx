@@ -8,6 +8,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import { ROUTES } from "@/config/routes";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-12">
           <div>
             <div className="card-logo bg-white p-1 rounded-lg w-fit">
-              <a href="#" className="flex items-center">
+              <a href={ROUTES.HOME} className="flex items-center">
                 <img src={VHTLogo} alt="VHT Logo" className="h-14 w-auto" />
               </a>
             </div>
@@ -59,7 +60,10 @@ const Footer = () => {
               {["Distribution Grid", "City Infrastructure", "Agriculture"].map(
                 (link) => (
                   <li key={link}>
-                    <a href="#" className="hover:text-primary-blue transition-colors">
+                    <a
+                      href="#"
+                      className="hover:text-primary-blue transition-colors"
+                    >
                       {link}
                     </a>
                   </li>
@@ -78,7 +82,10 @@ const Footer = () => {
                 "Inspections",
               ].map((link) => (
                 <li key={link}>
-                  <a href="#" className="hover:text-primary-blue transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-primary-blue transition-colors"
+                  >
                     {link}
                   </a>
                 </li>
@@ -92,7 +99,10 @@ const Footer = () => {
               {["Home", "Services", "Contact Us", "News & Events"].map(
                 (link) => (
                   <li key={link}>
-                    <a href="#" className="hover:text-primary-blue transition-colors">
+                    <a
+                      href="#"
+                      className="hover:text-primary-blue transition-colors"
+                    >
                       {link}
                     </a>
                   </li>

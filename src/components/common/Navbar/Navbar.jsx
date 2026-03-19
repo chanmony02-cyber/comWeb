@@ -18,6 +18,8 @@ import {
   productsDropdownItems,
   servicesDropdownItems,
 } from "@/data/navigation/navigation";
+import { ROUTES } from "@/config/routes";
+import { Route, Routes } from "react-router-dom";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,7 +32,7 @@ const Navbar = () => {
       <TopBar />
       <div className="border-b border-border">
         <div className="container flex items-center justify-between h-[var(--nav-height)]">
-          <a href="#" className="flex items-center">
+          <a href={ROUTES.HOME} className="flex items-center">
             <img src={VHTLogo} alt="VHT Logo" className="h-14 w-auto" />
           </a>
 
@@ -97,7 +99,7 @@ const Navbar = () => {
               <Search className="w-5 h-5 text-foreground" />
             </button>
             <Button className="rounded-full px-6 font-semibold border border-transparent hover:bg-white hover:text-slate-950 hover:border-primary">
-              <a href="/contact-us">Get in Touch</a>
+              <a href={ROUTES.CONTACT}>Get in Touch</a>
             </Button>
           </div>
 
