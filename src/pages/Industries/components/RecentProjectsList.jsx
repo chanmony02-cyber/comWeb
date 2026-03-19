@@ -7,9 +7,15 @@ export function RecentProjectsList({ label, title, items }) {
   return (
     <section className="py-16 md:py-20 bg-background">
       <div className="container">
-        <SectionHeader label={label} title={title} align="center" />
+        <SectionHeader
+          label={label}
+          title={title}
+          align="center"
+          labelClassName="text-lg tracking-widest"
+          titleClassName="text-3xl md:text-4xl text-navy"
+        />
 
-        <div className="mt-12 flex flex-col gap-20">
+        <div className="mt-12 flex flex-col gap-24">
           {items.map((project) => (
             <div
               key={project.id}
