@@ -65,7 +65,7 @@ export function CoreExpertiseGrid({ title, items }) {
           {items.map((item) => (
             <div
               key={item.id}
-              className="bg-card border border-border rounded-2xl xl:p-16 p-8 flex flex-col gap-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 items-center text-center"
+              className="bg-card border border-border rounded-2xl flex flex-col gap-4 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 items-center text-center xl:p-16 p-6"
             >
               {/* Icon circle */}
               <div className="w-12 h-12 rounded-full border border-primary-blue/30 bg-sky-accent/10 flex items-center justify-center">

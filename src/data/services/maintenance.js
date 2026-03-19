@@ -1,4 +1,8 @@
 // src/data/services/maintenance.js
+import maintenanceOverview from "@/assets/images/servicesImg/maintenance/maintenance-overview.jpg";
+import switchGear from "@/assets/images/products/switch-gear.jpg";
+import transformer from "@/assets/images/products/Transformer.jpg";
+import autoCloser from "@/assets/images/products/automatic-circuit-recloser.png";
 
 export const maintenanceData = {
   hero: {
@@ -12,7 +16,7 @@ export const maintenanceData = {
       "Our maintenance division provides end-to-end care for electrical power systems, from routine inspections to complex overhauls. We combine predictive analytics with hands-on expertise to minimize downtime and extend equipment lifespan across distribution grids, substations, and industrial facilities.",
       "Every maintenance program is tailored to your operational demands, regulatory requirements, and budget constraints — ensuring maximum reliability at optimal cost.",
     ],
-    image: "/assets/images/services/maintenance-overview.jpg",
+    image: maintenanceOverview,
     bgSection: false,
   },
   commonIssues: {
@@ -74,7 +78,7 @@ export const maintenanceData = {
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
-        image: "/assets/images/services/equipment-switchgear.jpg",
+        image: switchGear,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -82,7 +86,7 @@ export const maintenanceData = {
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
-        image: "/assets/images/services/equipment-autocloser.jpg",
+        image: autoCloser,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -90,7 +94,7 @@ export const maintenanceData = {
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",
-        image: "/assets/images/services/equipment-transformer.jpg",
+        image: transformer,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
     ],
