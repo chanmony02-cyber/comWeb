@@ -1,11 +1,19 @@
 // src/data/industries/distributionGrid.js
+import di1 from "@/assets/images/industries/distribution-grid/dg-solution-1.jpg";
+import di2 from "@/assets/images/industries/distribution-grid/dg-solution-2.jpg";
+import di3 from "@/assets/images/industries/distribution-grid/dg-solution-3.jpg";
+import ds1 from "@/assets/images/industries/distribution-grid/ci-project-1.jpg";
+import ds2 from "@/assets/images/industries/distribution-grid/ci-project-2.jpg";
+import ds3 from "@/assets/images/industries/distribution-grid/ci-project-3.jpg";
+import dHero from "@/assets/images/industries/distribution-grid/distribution-grid-hero.jpg";
+import dProblem from "@/assets/images/industries/distribution-grid/distribution-grid-problem.jpg";
 
 export const distributionGridData = {
   hero: {
     title: "Distribution Grid",
     subtitle:
       "Building and maintaining efficient power distribution networks that deliver electricity safely to communities.",
-    backgroundImage: "/assets/images/industries/distribution-grid-hero.jpg",
+    backgroundImage: dHero,
   },
   problem: {
     title: "We Understand Your Problem.",
@@ -14,7 +22,7 @@ export const distributionGridData = {
       "From voltage fluctuations to grid instability, we recognize the critical issues that affect power delivery. Our team of experienced engineers brings deep industry knowledge to diagnose and solve even the most complex distribution challenges.",
       "Whether you're upgrading existing systems or building new infrastructure, we partner with you to design solutions that are safe, efficient, and built to last.",
     ],
-    image: "/assets/images/industries/distribution-grid-problem.jpg",
+    image: dProblem,
   },
   solutions: {
     label: "INDUSTRY SOLUTIONS",
@@ -25,17 +33,17 @@ export const distributionGridData = {
       {
         id: 1,
         title: "Substation Design & Construction",
-        image: "/assets/images/industries/solution-substation.jpg",
+        image: di1,
       },
       {
         id: 2,
         title: "Overhead Line Installation",
-        image: "/assets/images/industries/solution-overhead-line.jpg",
+        image: di2,
       },
       {
         id: 3,
         title: "Smart Grid Monitoring",
-        image: "/assets/images/industries/solution-smart-grid.jpg",
+        image: di3,
       },
     ],
   },
@@ -48,7 +56,7 @@ export const distributionGridData = {
         title: "Provincial Grid Expansion",
         description:
           "Designed and constructed a 115kV distribution network spanning over 200km, connecting rural communities to the national power grid with reliable and sustainable infrastructure.",
-        image: "/assets/images/industries/project-provincial-grid.jpg",
+        image: ds1,
         href: "#",
       },
       {
@@ -56,7 +64,7 @@ export const distributionGridData = {
         title: "Underground Cable Network",
         description:
           "Installed an extensive underground cable system for urban areas, minimizing visual impact while providing reliable power distribution to residential and commercial zones.",
-        image: "/assets/images/industries/project-underground-cable.jpg",
+        image: ds2,
         href: "#",
       },
       {
@@ -64,7 +72,7 @@ export const distributionGridData = {
         title: "Rural Electrification Program",
         description:
           "Deployed overhead distribution lines across agricultural regions, bringing consistent electricity access to farming communities and boosting local productivity.",
-        image: "/assets/images/industries/project-rural-electrification.jpg",
+        image: ds3,
         href: "#",
       },
     ],
