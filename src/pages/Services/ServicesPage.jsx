@@ -30,7 +30,7 @@ export default function ServicesPage() {
       />
       <section className="py-16 md:py-20 bg-background">
         <div className="container max-w-2xl">
-          <FAQAccordion items={faqs}/>
+          <FAQAccordion items={faqs} />
         </div>
       </section>
       <section className="py-16 md:py-20 bg-section-alt">
