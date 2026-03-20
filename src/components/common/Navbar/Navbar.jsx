@@ -95,16 +95,17 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden xl:flex items-center gap-4">
-            <button className="p-2 hover:bg-muted rounded-full transition-colors">
+            {/* search icon */}
+            {/* <button className="p-2 hover:bg-muted rounded-full transition-colors">
               <Search className="w-5 h-5 text-foreground" />
-            </button>
+            </button> */}
             <Button className="rounded-full px-6 font-semibold border border-transparent hover:bg-white hover:text-slate-950 hover:border-primary">
               <a href={ROUTES.CONTACT}>Get in Touch</a>
             </Button>
           </div>
 
           <div className="xl:hidden flex items-center gap-2">
-            <LanguageSelector variant="compact" />
+            {/* <LanguageSelector variant="compact" /> */}
             <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? (
                 <X className="w-6 h-6" />
@@ -260,7 +261,7 @@ const Navbar = () => {
             })}
             <div className="mt-4">
               <Button className="w-full rounded-full font-semibold">
-                Get in Touch
+                <a href={ROUTES.CONTACT}>Get in Touch</a>
               </Button>
             </div>
           </div>

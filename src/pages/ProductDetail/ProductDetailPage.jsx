@@ -15,6 +15,12 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
 
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 200, behavior: "smooth" });
+    }
+  };
+
   if (!product) {
     return (
       <MainLayout>
@@ -52,7 +58,11 @@ export default function ProductDetailPage() {
         </div>
       </section>
 
-      <RelatedProducts currentId={product.id} category={product.category} />
+      <RelatedProducts
+        currentId={product.id}
+        category={product.category}
+        scrollToTop={scrollToTop}
+      />
 
       <section className="bg-section-alt pt-20 pb-20">
         <div className="container">

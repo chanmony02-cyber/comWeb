@@ -19,7 +19,7 @@ const TopBar = () => {
           <Phone className="w-3.5 h-3.5" />
         </div>
         <div className="flex items-center gap-4">
-          <LanguageSelector />
+          {/* <LanguageSelector /> */}
           <div className="flex items-center gap-3">
             <a
               href={siteConfig.socials.facebook}
@@ -32,18 +32,6 @@ const TopBar = () => {
               className="hover:text-primary-blue transition-colors"
             >
               <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href={siteConfig.socials.twitter}
-              className="hover:text-primary-blue transition-colors"
-            >
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a
-              href={siteConfig.socials.instagram}
-              className="hover:text-primary-blue transition-colors"
-            >
-              <Instagram className="w-4 h-4" />
             </a>
           </div>
         </div>

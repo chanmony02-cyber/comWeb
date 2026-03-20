@@ -40,18 +40,6 @@ const Footer = () => {
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a
-                href={siteConfig.socials.twitter}
-                className="w-9 h-9 rounded-full bg-topbar-foreground/10 flex items-center justify-center hover:bg-primary-blue hover:text-accent-foreground transition-colors"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.socials.instagram}
-                className="w-9 h-9 rounded-full bg-topbar-foreground/10 flex items-center justify-center hover:bg-primary-blue hover:text-accent-foreground transition-colors"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
             </div>
           </div>
 

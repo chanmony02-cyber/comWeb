@@ -6,7 +6,7 @@ import { ROUTES } from "@/config/routes";
 
 export default function RecentProjectsSection() {
   return (
-    <section className="py-20 bg-navy">
+    <section className="py-20 bg-navy border-b border-gray-500">
       <div className="container">
         <div className="flex items-end justify-between mb-10">
           <div>
@@ -25,7 +25,7 @@ export default function RecentProjectsSection() {
             More &rarr;
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 ">
           {recentProjects.map((project) => (
             <Link
               key={project.id}

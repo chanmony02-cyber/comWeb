@@ -4,7 +4,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { ROUTES } from "@/config/routes";
 import { products } from "@/data/products/products";
 
-export function RelatedProducts({ currentId, category }) {
+export function RelatedProducts({ currentId, category, scrollToTop }) {
   const related = products
     .filter((p) => p.category === category && p.id !== currentId)
     .slice(0, 4);
@@ -23,6 +23,7 @@ export function RelatedProducts({ currentId, category }) {
             key={product.id}
             to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
             className="block"
+            onClick={() => scrollToTop?.()}
           >
             <ProductCard
               id={product.id}
