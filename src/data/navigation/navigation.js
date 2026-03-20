@@ -18,7 +18,7 @@ export const productsDropdownItems = [
 export const companyDropdownItems = [
   { label: "About Us", href: "#" },
   { label: "Contact Us", href: ROUTES.CONTACT },
-  { label: "Career", href: "#" },
+  { label: "Career", href: ROUTES.CAREER },
   { label: "News & Events", href: ROUTES.NEWS },
 ];
 

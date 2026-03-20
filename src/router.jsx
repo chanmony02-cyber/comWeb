@@ -33,6 +33,8 @@ const NewsEventsPage = lazy(() =>
 const NewsDetailPage = lazy(() =>
   import("@/pages/NewsEvents").then((m) => ({ default: m.NewsDetailPage })),
 );
+const CareerPage = lazy(() => import("@/pages/Career"));
+const CareerDetailPage = lazy(() => import("@/pages/CareerDetail"));
 
 const AppRouter = () => {
   return (
@@ -63,6 +65,8 @@ const AppRouter = () => {
         <Route path={ROUTES.INSPECTIONS} element={<InspectionsPage />} />
         <Route path={ROUTES.NEWS} element={<NewsEventsPage />} />
         <Route path={ROUTES.NEWS_DETAIL} element={<NewsDetailPage />} />
+        <Route path={ROUTES.CAREER} element={<CareerPage />} />
+        <Route path={ROUTES.CAREER_DETAIL} element={<CareerDetailPage />} />
         <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Routes>
     </Suspense>

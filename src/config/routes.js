@@ -16,5 +16,7 @@ export const ROUTES = {
   AGRICULTURE: "/industries/agriculture",
   NEWS: "/news",
   NEWS_DETAIL: "/news/:id",
+  CAREER: "/career",
+  CAREER_DETAIL: "/career/:id",
   NOT_FOUND: "*",
 };
