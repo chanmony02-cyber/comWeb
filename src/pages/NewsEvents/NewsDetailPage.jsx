@@ -36,7 +36,6 @@ export default function NewsDetailPage() {
 
           {/* Two-column layout */}
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
-
             {/* ── LEFT — main content ─────────────────────── */}
             <div className="lg:col-span-2">
               {/* Badge */}
@@ -132,7 +131,6 @@ export default function NewsDetailPage() {
                 </p>
               )}
             </div>
-
           </div>
         </div>
       </section>

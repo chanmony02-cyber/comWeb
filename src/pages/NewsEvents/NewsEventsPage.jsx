@@ -21,7 +21,7 @@ export default function NewsEventsPage() {
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const visible = filtered.slice(
     (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE
+    currentPage * PAGE_SIZE,
   );
 
   const handleFilter = (filter) => {
@@ -37,9 +37,9 @@ export default function NewsEventsPage() {
   return (
     <MainLayout>
       {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="bg-navy py-16 md:py-24">
-        <div className="container">
-          <h1 className="text-white font-bold text-4xl md:text-5xl font-display">
+      <section className="bg-navy py-16 md:py-24 ">
+        <div className="container flex justify-center items-center lg:h-40">
+          <h1 className="text-white font-bold text-4xl md:text-6xl font-display ">
             News &amp; Events
           </h1>
         </div>
@@ -48,7 +48,6 @@ export default function NewsEventsPage() {
       {/* ── Filter + Grid ─────────────────────────────────── */}
       <section className="py-14 bg-background">
         <div className="container">
-
           {/* Filter tabs */}
           <div className="flex items-center justify-center gap-3 mb-12">
             {FILTERS.map((filter) => (
@@ -68,7 +67,7 @@ export default function NewsEventsPage() {
           </div>
 
           {/* Cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {visible.map((item) => (
               <div
                 key={item.id}
@@ -79,7 +78,7 @@ export default function NewsEventsPage() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-52 object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-72 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
 
@@ -108,7 +107,7 @@ export default function NewsEventsPage() {
                   {/* Read More */}
                   <Link
                     to={ROUTES.NEWS_DETAIL.replace(":id", item.id)}
-                    className="inline-flex items-center gap-1 px-4 py-2 border border-border rounded-md text-md font-semibold text-foreground hover:border-primary-blue hover:text-primary-blue transition-colors w-fit mt-1 font-sans"
+                    className="inline-flex items-center gap-1 px-4 py-2 border border-border rounded-md text-md font-semibold text-foreground hover:border-primary-blue hover:text-white hover:bg-primary-blue transition-colors w-fit mt-1 font-sans"
                   >
                     Read More →
                   </Link>
@@ -133,24 +132,28 @@ export default function NewsEventsPage() {
                 &lt;
               </button>
 
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <button
-                  key={page}
-                  type="button"
-                  onClick={() => handlePage(page)}
-                  className={`w-10 h-10 rounded border text-md font-semibold transition-colors ${
-                    page === currentPage
-                      ? "bg-navy text-white border-navy"
-                      : "border-border text-foreground hover:border-navy"
-                  }`}
-                >
-                  {page}
-                </button>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    type="button"
+                    onClick={() => handlePage(page)}
+                    className={`w-10 h-10 rounded border text-md font-semibold transition-colors ${
+                      page === currentPage
+                        ? "bg-navy text-white border-navy"
+                        : "border-border text-foreground hover:border-navy"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
 
               <button
                 type="button"
-                onClick={() => handlePage(Math.min(totalPages, currentPage + 1))}
+                onClick={() =>
+                  handlePage(Math.min(totalPages, currentPage + 1))
+                }
                 disabled={currentPage === totalPages}
                 className={`w-10 h-10 rounded border text-md font-semibold transition-colors ${
                   currentPage === totalPages

@@ -131,4 +131,46 @@ export const newsEventsItems = [
     ],
     image: NEWS_IMG,
   },
+  {
+    id: 7,
+    type: "News",
+    date: "July 20, 2026",
+    location: "Kampong Cham",
+    title: "Solar Integration Project Reaches Milestone",
+    summary:
+      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+    body: [
+      "The solar integration project in Kampong Cham has reached a significant milestone, with the first 10MW of solar capacity successfully integrated into the distribution grid.",
+      "The project demonstrates VHT Technology's capability in renewable energy integration, featuring advanced inverter systems and grid stabilization technologies.",
+      "This achievement positions Cambodia's grid for further renewable energy expansion and contributes to national sustainability goals.",
+    ],
+    keyFeatures: [
+      "10MW solar capacity successfully integrated into grid",
+      "Advanced inverter systems and grid stabilization deployed",
+      "Contributes directly to national sustainability goals",
+      "Foundation set for future renewable energy expansion",
+    ],
+    image: NEWS_IMG,
+  },
+  {
+    id: 8,
+    type: "News",
+    date: "July 20, 2026",
+    location: "Kampong Cham",
+    title: "Solar Integration Project Reaches Milestone",
+    summary:
+      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+    body: [
+      "The solar integration project in Kampong Cham has reached a significant milestone, with the first 10MW of solar capacity successfully integrated into the distribution grid.",
+      "The project demonstrates VHT Technology's capability in renewable energy integration, featuring advanced inverter systems and grid stabilization technologies.",
+      "This achievement positions Cambodia's grid for further renewable energy expansion and contributes to national sustainability goals.",
+    ],
+    keyFeatures: [
+      "10MW solar capacity successfully integrated into grid",
+      "Advanced inverter systems and grid stabilization deployed",
+      "Contributes directly to national sustainability goals",
+      "Foundation set for future renewable energy expansion",
+    ],
+    image: NEWS_IMG,
+  },
 ];
