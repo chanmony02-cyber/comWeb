@@ -3,14 +3,13 @@
 import { useParams, Link } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
 import { BackButton } from "@/components/ui/BackButton";
-import { allProjects } from "@/data/projects/allProjects";
+import { allProjects } from "@/data/projects/projects";
 import { ROUTES } from "@/config/routes";
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
   const project = allProjects.find((p) => p.id === Number(id));
 
-  // Related: same category, different id, max 4
   const related = project
     ? allProjects
         .filter((p) => p.category === project.category && p.id !== project.id)
@@ -31,30 +30,24 @@ export default function ProjectDetailPage() {
     <MainLayout>
       <section className="py-10 bg-background">
         <div className="container">
-          {/* Back */}
           <BackButton />
 
-          {/* Two-column layout */}
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
             {/* ── LEFT — main content ─────────────────────── */}
             <div className="lg:col-span-2">
-              {/* Category badge */}
               <span className="inline-flex px-4 py-1.5 rounded-full bg-sky-accent/40 text-primary-blue text-md font-semibold mb-4">
                 {project.category}
               </span>
 
-              {/* Title */}
               <h1 className="text-navy font-bold text-2xl md:text-3xl font-display leading-snug mb-4">
                 Title: {project.title}
               </h1>
 
-              {/* Date + Location row */}
               <div className="flex flex-wrap gap-8 text-muted-foreground text-md mb-4 pb-4 border-b border-border">
                 <span>Date: {project.date}</span>
                 <span>Location: {project.location}</span>
               </div>
 
-              {/* Main image */}
               <div className="rounded-xl overflow-hidden mb-8">
                 <img
                   src={project.image}
@@ -63,7 +56,6 @@ export default function ProjectDetailPage() {
                 />
               </div>
 
-              {/* Body paragraphs */}
               <div className="flex flex-col gap-5 mb-10">
                 {project.body.map((para, i) => (
                   <p
@@ -75,7 +67,6 @@ export default function ProjectDetailPage() {
                 ))}
               </div>
 
-              {/* Key Features */}
               {project.keyFeatures && project.keyFeatures.length > 0 && (
                 <div>
                   <h2 className="text-navy font-bold text-xl md:text-2xl font-display mb-4">
@@ -110,7 +101,6 @@ export default function ProjectDetailPage() {
                       to={ROUTES.PROJECT_DETAIL.replace(":id", rel.id)}
                       className="flex items-center gap-4 bg-card border border-border rounded-xl p-3 hover:border-primary-blue hover:shadow-md transition-all duration-300"
                     >
-                      {/* Thumbnail */}
                       <div className="w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">
                         <img
                           src={rel.image}
@@ -118,7 +108,6 @@ export default function ProjectDetailPage() {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      {/* Text */}
                       <p className="text-navy text-md font-semibold font-display leading-snug line-clamp-2">
                         {rel.title}
                       </p>

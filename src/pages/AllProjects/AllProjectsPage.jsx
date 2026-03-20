@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
-import { allProjects } from "@/data/projects/allProjects";
+import { allProjects } from "@/data/projects/projects";
 import { ROUTES } from "@/config/routes";
 
 const PAGE_SIZE = 6;
