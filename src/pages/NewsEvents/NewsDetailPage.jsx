@@ -59,7 +59,7 @@ export default function NewsDetailPage() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-72 md:h-[420px] object-cover"
+                  className="w-full h-72 md:h-[600px] object-cover"
                 />
               </div>
 
