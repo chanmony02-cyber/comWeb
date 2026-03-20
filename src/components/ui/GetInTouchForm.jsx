@@ -1,6 +1,12 @@
+// src/components/ui/GetInTouchForm.jsx
+
+import { useState } from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { UnderMaintenanceAlert } from "@/components/ui/UnderMaintenanceAlert";
 
 export function GetInTouchForm() {
+  const [showAlert, setShowAlert] = useState(false);
+
   const header = {
     title: "Get in Touch",
     subtitle: "You can reach us anytime.",
@@ -36,15 +42,25 @@ export function GetInTouchForm() {
     submitLabel,
   } = content;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowAlert(true);
+  };
+
   return (
     <>
+      <UnderMaintenanceAlert
+        isOpen={showAlert}
+        onClose={() => setShowAlert(false)}
+      />
+
       <SectionHeader
         title={header.title}
         subtitle={header.subtitle}
         align="left"
         titleClassName="text-3xl md:text-3xl lg:text-4xl"
       />
-      <form className="mt-6 space-y-4">
+      <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="text-md font-semibold text-foreground">

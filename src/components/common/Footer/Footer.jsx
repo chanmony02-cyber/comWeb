@@ -182,7 +182,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-topbar-foreground/10 pt-6 text-center text-xs text-topbar-foreground/50">
+        <div className="border-t border-topbar-foreground/10 pt-6 text-center text-md text-topbar-foreground/50">
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </div>
       </div>

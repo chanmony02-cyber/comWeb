@@ -41,11 +41,11 @@ export function OurLocationSection() {
                       d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
                     />
                   </svg>
-                  <h3 className="text-lg font-bold text-navy font-display">
+                  <h3 className="text-2xl font-bold text-navy font-display">
                     {location.addressTitle}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed pl-7">
+                <p className="text-muted-foreground text-md leading-relaxed pl-7">
                   {siteConfig.address}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export function OurLocationSection() {
                 {/* Phone */}
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary-blue transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground text-md hover:text-primary-blue transition-colors"
                 >
                   <svg
                     className="w-5 h-5 text-primary-blue flex-shrink-0"
@@ -78,7 +78,7 @@ export function OurLocationSection() {
                   href={info.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary-blue transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground text-md hover:text-primary-blue transition-colors"
                 >
                   <svg
                     className="w-5 h-5 text-primary-blue flex-shrink-0"
@@ -99,7 +99,7 @@ export function OurLocationSection() {
                 {/* Email */}
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3 text-muted-foreground text-sm hover:text-primary-blue transition-colors"
+                  className="flex items-center gap-3 text-muted-foreground text-md hover:text-primary-blue transition-colors"
                 >
                   <svg
                     className="w-5 h-5 text-primary-blue flex-shrink-0"
@@ -136,7 +136,7 @@ export function OurLocationSection() {
                     d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
-                <h4 className="text-base font-bold text-navy font-display">
+                <h4 className="text-xl font-bold text-navy font-display">
                   {location.businessHoursTitle}
                 </h4>
               </div>
@@ -144,7 +144,7 @@ export function OurLocationSection() {
                 {location.businessHours.map((item) => (
                   <li
                     key={item.day}
-                    className="flex flex-wrap items-center gap-x-2 text-sm text-muted-foreground"
+                    className="flex flex-wrap items-center gap-x-2 text-md text-muted-foreground"
                   >
                     <span className="font-medium text-foreground">
                       {item.day}
