@@ -35,82 +35,29 @@ export function CareerCTA({ text, buttonLabel, buttonHref }) {
           {/* Handshake icon */}
           <div className="text-primary-blue">
             <svg
-              viewBox="0 0 80 60"
+              viewBox="0 0 24 24"
               className="w-20 h-16"
               fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Left hand */}
-              <path
-                d="M8 30 L16 22 L24 28 L30 24 L36 28"
-                stroke="#2A8CD5"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              <path
-                d="M8 30 L4 36 L16 46 L24 40"
-                stroke="#2A8CD5"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              {/* Right hand */}
-              <path
-                d="M72 30 L64 22 L56 28 L50 24 L44 28"
-                stroke="#2A8CD5"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              <path
-                d="M72 30 L76 36 L64 46 L56 40"
-                stroke="#2A8CD5"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              {/* Clasped hands center */}
-              <path
-                d="M36 28 L40 32 L44 28"
-                stroke="#2A8CD5"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              <path
-                d="M24 40 L32 46 L40 42 L48 46 L56 40"
-                stroke="#2A8CD5"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-              <path
-                d="M30 24 L34 30 L40 32 L46 30 L50 24"
-                stroke="#2A8CD5"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
+              {/* Heroicons: Hand Thumb Up (Tailwind CSS icon set) */}
+              <path d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
             </svg>
           </div>
 
           {/* Text */}
-          <p className="text-md md:text-lg text-foreground leading-relaxed font-sans whitespace-pre-line max-w-lg">
+          <p className="text-md md:text-lg text-foreground leading-relaxed font-sans whitespace-pre-line max-w-2xl">
             {text}
           </p>
 
           {/* Button */}
           <Link
             to={buttonHref}
-            className="inline-flex items-center justify-center px-8 py-2.5 border border-navy rounded-md text-md md:text-lg font-semibold text-navy hover:bg-navy hover:text-white transition-colors font-display"
+            className="inline-flex items-center justify-center px-8 py-2.5 border border-navy rounded-md text-md md:text-lg font-semibold text-navy hover:bg-primary-blue hover:border-primary-blue hover:text-white transition-colors font-display"
           >
             {buttonLabel}
           </Link>
