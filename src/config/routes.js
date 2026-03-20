@@ -4,6 +4,8 @@ export const ROUTES = {
   HOMEPAGE: "/homepage",
   ELECTRICAL_EQUIPMENT: "/electrical-equipment",
   PRODUCT_DETAIL: "/products/:id",
+  ALL_PROJECTS: "/all-projects",
+  PROJECT_DETAIL: "/projects/:id",
   CONTACT: "/contact",
   SERVICES: "/services",
   CONSULTANTS: "/services/consultants",

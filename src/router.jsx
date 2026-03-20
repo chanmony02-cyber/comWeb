@@ -1,3 +1,4 @@
+// src/router.jsx
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "@/config/routes";
@@ -7,6 +8,8 @@ const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const ContactPage = lazy(() => import("@/pages/Contact"));
+const AllProjectsPage = lazy(() => import("@/pages/AllProjects"));
+const ProjectDetailPage = lazy(() => import("@/pages/ProjectDetail"));
 const DistributionGridPage = lazy(
   () => import("@/pages/Industries/DistributionGrid"),
 );
@@ -42,6 +45,8 @@ const AppRouter = () => {
           element={<ElectricalEquipment />}
         />
         <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
+        <Route path={ROUTES.ALL_PROJECTS} element={<AllProjectsPage />} />
+        <Route path={ROUTES.PROJECT_DETAIL} element={<ProjectDetailPage />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route
           path={ROUTES.DISTRIBUTION_GRID}
