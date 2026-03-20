@@ -47,7 +47,7 @@ export const allProjects = [
   },
   {
     id: 2,
-    category: "Distribution Grid",
+    category: "Agriculture",
     date: "June 15, 2026",
     location: "Kampong Speu",
     title: "Underground Cable Network",

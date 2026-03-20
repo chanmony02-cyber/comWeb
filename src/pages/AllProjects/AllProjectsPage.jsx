@@ -7,7 +7,12 @@ import { allProjects } from "@/data/projects/projects";
 import { ROUTES } from "@/config/routes";
 
 const PAGE_SIZE = 6;
-const FILTERS = ["All", "Distribution Grid", "City Infrastructure", "Agriculture"];
+const FILTERS = [
+  "All",
+  "Distribution Grid",
+  "City Infrastructure",
+  "Agriculture",
+];
 
 export default function AllProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -67,19 +72,19 @@ export default function AllProjectsPage() {
           </div>
 
           {/* Cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
             {visible.map((project) => (
               <div
                 key={project.id}
                 className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 {/* Image with padding */}
-                <div className="p-4">
+                <div className="lg:p-6 p-4">
                   <div className="overflow-hidden rounded-xl">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                      className="w-full h-72 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
