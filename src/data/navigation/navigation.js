@@ -19,18 +19,18 @@ export const companyDropdownItems = [
   { label: "About Us", href: "#" },
   { label: "Contact Us", href: ROUTES.CONTACT },
   { label: "Career", href: "#" },
-  { label: "News & Events", href: "#" },
+  { label: "News & Events", href: ROUTES.NEWS },
 ];
 
 export const servicesDropdownItems = [
-  { label: "All Services",  href: ROUTES.SERVICES },
-  { label: "Consultants",   href: ROUTES.CONSULTANTS },
-  { label: "Maintenance",   href: ROUTES.MAINTENANCE },
-  { label: "Inspections",   href: ROUTES.INSPECTIONS },
+  { label: "All Services", href: ROUTES.SERVICES },
+  { label: "Consultants", href: ROUTES.CONSULTANTS },
+  { label: "Maintenance", href: ROUTES.MAINTENANCE },
+  { label: "Inspections", href: ROUTES.INSPECTIONS },
 ];
 
 export const industriesDropdownItems = [
-  { label: "Distribution Grid",   href: ROUTES.DISTRIBUTION_GRID },
+  { label: "Distribution Grid", href: ROUTES.DISTRIBUTION_GRID },
   { label: "City Infrastructure", href: ROUTES.CITY_INFRASTRUCTURE },
-  { label: "Agriculture",         href: ROUTES.AGRICULTURE },
+  { label: "Agriculture", href: ROUTES.AGRICULTURE },
 ];

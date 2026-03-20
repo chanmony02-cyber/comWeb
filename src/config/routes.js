@@ -12,5 +12,7 @@ export const ROUTES = {
   DISTRIBUTION_GRID: "/industries/distribution-grid",
   CITY_INFRASTRUCTURE: "/industries/city-infrastructure",
   AGRICULTURE: "/industries/agriculture",
+  NEWS: "/news",
+  NEWS_DETAIL: "/news/:id",
   NOT_FOUND: "*",
 };

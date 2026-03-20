@@ -14,10 +14,22 @@ const CityInfrastructurePage = lazy(
   () => import("@/pages/Industries/CityInfrastructure"),
 );
 const AgriculturePage = lazy(() => import("@/pages/Industries/Agriculture"));
-const ServicesPage    = lazy(() => import("@/pages/Services"));
-const ConsultantsPage  = lazy(() => import("@/pages/ServiceDetail").then(m => ({ default: m.ConsultantsPage })));
-const MaintenancePage  = lazy(() => import("@/pages/ServiceDetail").then(m => ({ default: m.MaintenancePage })));
-const InspectionsPage  = lazy(() => import("@/pages/ServiceDetail").then(m => ({ default: m.InspectionsPage })));
+const ServicesPage = lazy(() => import("@/pages/Services"));
+const ConsultantsPage = lazy(() =>
+  import("@/pages/ServiceDetail").then((m) => ({ default: m.ConsultantsPage })),
+);
+const MaintenancePage = lazy(() =>
+  import("@/pages/ServiceDetail").then((m) => ({ default: m.MaintenancePage })),
+);
+const InspectionsPage = lazy(() =>
+  import("@/pages/ServiceDetail").then((m) => ({ default: m.InspectionsPage })),
+);
+const NewsEventsPage = lazy(() =>
+  import("@/pages/NewsEvents").then((m) => ({ default: m.NewsEventsPage })),
+);
+const NewsDetailPage = lazy(() =>
+  import("@/pages/NewsEvents").then((m) => ({ default: m.NewsDetailPage })),
+);
 
 const AppRouter = () => {
   return (
@@ -31,11 +43,10 @@ const AppRouter = () => {
         />
         <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />{" "}
         <Route
           path={ROUTES.DISTRIBUTION_GRID}
           element={<DistributionGridPage />}
-        />{" "}
+        />
         <Route
           path={ROUTES.CITY_INFRASTRUCTURE}
           element={<CityInfrastructurePage />}
@@ -45,6 +56,9 @@ const AppRouter = () => {
         <Route path={ROUTES.CONSULTANTS} element={<ConsultantsPage />} />
         <Route path={ROUTES.MAINTENANCE} element={<MaintenancePage />} />
         <Route path={ROUTES.INSPECTIONS} element={<InspectionsPage />} />
+        <Route path={ROUTES.NEWS} element={<NewsEventsPage />} />
+        <Route path={ROUTES.NEWS_DETAIL} element={<NewsDetailPage />} />
+        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
       </Routes>
     </Suspense>
   );
