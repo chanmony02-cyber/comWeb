@@ -18,6 +18,8 @@ export const products = [
       productFuse,
       productCircuitBreaker,
       productSurgeArrester,
+      productFuse,
+      productFuse,
     ],
     description:
       "Protects low-voltage circuits from overloads and short circuits.",

@@ -49,12 +49,12 @@ export default function ElectricalEquipment() {
       <main className="flex-1 bg-background">
         <section className="bg-navy">
           <div className="container">
-            <div className="min-h-[450px] py-16 md:py-20 flex items-center justify-center">
+            <div className="min-h-[200px] sm:h-[300px] py-16 md:py-20 flex items-center justify-center">
               <SectionHeader
                 title={electricalEquipmentContent.heroTitle}
                 align="center"
                 as="h1"
-                titleClassName="text-white text-4xl md:text-5xl lg:text-6xl"
+                titleClassName="text-white text-3xl sm:text-5xl lg:text-6xl"
               />
             </div>
           </div>
@@ -66,9 +66,9 @@ export default function ElectricalEquipment() {
               <SectionHeader
                 title={electricalEquipmentContent.categoryTitle}
                 align="left"
-                titleClassName="text-3xl md:text-3xl lg:text-4xl"
+                titleClassName="text-2xl sm:text-3xl lg:text-4xl"
               />
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {electricalEquipmentCategories.map((category) => (
                   <button
                     key={category.id}

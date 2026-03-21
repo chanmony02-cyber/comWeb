@@ -1,5 +1,5 @@
 export const electricalEquipmentCategories = [
-  { id: 1, label: "All Products", value: "all" },
+  { id: 1, label: "All", value: "all" },
   { id: 2, label: "LV Products", value: "LV" },
   { id: 3, label: "MV Products", value: "MV" },
 ];
