@@ -44,7 +44,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-3">
+      {/* <div className="flex gap-3">
         {images.map((img, index) => (
           <button
             key={index}
@@ -64,7 +64,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
             />
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
