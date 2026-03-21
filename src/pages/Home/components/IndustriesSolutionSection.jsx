@@ -5,10 +5,10 @@ export default function IndustriesSolutionSection() {
     <section className="py-20 bg-background">
       <div className="container">
         <div className="text-center mb-14">
-          <h2 className="text-foreground font-bold text-4xl md:text-[2.6rem] tracking-wide mb-3 font-display">
+          <h2 className="text-foreground font-bold text-3xl lg:text-4xl md:text-[2.6rem] tracking-wide mb-3 font-display">
             INDUSTRIES SOLUTION
           </h2>
-          <p className="text-muted-foreground text-mmd max-w-xl mx-auto font-sans">
+          <p className="text-muted-foreground text-md lg:text-lg max-w-2xl mx-auto font-sans">
             Tailored end-to-end infrastructure solutions for different industry
             needs.
           </p>
@@ -38,14 +38,14 @@ export default function IndustriesSolutionSection() {
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-5 max-w-md font-sans">
+                <p className="text-muted-foreground text-lg leading-relaxed mb-5 max-w-md font-sans">
                   {item.description}
                 </p>
                 <ul className="flex flex-col gap-2">
                   {item.bullets.map((b) => (
                     <li
                       key={b}
-                      className="flex items-center gap-2 text-sm text-muted-foreground font-sans"
+                      className="flex items-center gap-2 text-lg text-muted-foreground font-sans"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-primary-blue flex-shrink-0" />
                       {b}

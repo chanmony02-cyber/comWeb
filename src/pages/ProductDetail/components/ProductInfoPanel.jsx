@@ -16,7 +16,7 @@ export function ProductInfoPanel({ name = "", description = "" }) {
         <Button
           asChild
           variant="outline"
-          className="h-14 w-48 border-primary-blue text-lg text-primary-blue hover:border-primary-blue hover:bg-primary-blue hover:text-white font-display"
+          className="h-14 w-44 border-primary-blue text-lg text-primary-blue hover:border-primary-blue hover:bg-primary-blue hover:text-white font-display"
         >
           <a href="#">PDF Download</a>
         </Button>

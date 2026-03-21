@@ -15,7 +15,7 @@ export default function Home() {
         <FeaturedProductsSection />
         <IndustriesSolutionSection />
         <RecentProjectsSection />
-        {/* <PartnershipSection /> */}
+        <PartnershipSection />
       </main>
     </MainLayout>
   );

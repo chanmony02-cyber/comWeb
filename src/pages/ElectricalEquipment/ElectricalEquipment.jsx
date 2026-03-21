@@ -78,7 +78,7 @@ export default function ElectricalEquipment() {
                       setCurrentPage(1);
                       scrollToTop();
                     }}
-                    className={`px-4 py-1.5 rounded-full text-sm font-semibold border transition-colors ${
+                    className={`px-4 py-1.5 rounded-full text-xs md:text-lg font-semibold border transition-colors ${
                       activeCategory === category.value
                         ? "bg-navy text-white border-navy"
                         : "bg-white text-foreground border-border hover:border-navy"

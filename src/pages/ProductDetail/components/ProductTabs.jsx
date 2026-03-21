@@ -47,7 +47,7 @@ export function ProductTabs({
             {/* Product Overview */}
             <div>
               <h4 className="font-bold text-navy mb-1">Product Overview:</h4>
-              <p className="text-sky-accent leading-relaxed">{description}</p>
+              <p className="text-primary-blue leading-relaxed">{description}</p>
             </div>
 
             {/* Product Features */}

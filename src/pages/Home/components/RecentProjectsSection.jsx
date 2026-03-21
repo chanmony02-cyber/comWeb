@@ -13,7 +13,7 @@ export default function RecentProjectsSection() {
             <h2 className="text-primary-blue font-bold text-4xl md:text-[2.5rem] mb-3 font-display">
               RECENT PROJECTS
             </h2>
-            <p className="text-sky-accent text-md max-w-md leading-relaxed font-sans">
+            <p className="text-sky-accent text-md md:text-md max-w-md leading-relaxed font-sans">
               Discover our latest work and successful implementations across
               various industries.
             </p>
