@@ -63,7 +63,7 @@ export function PositionsSection({ departments, positions }) {
         </h2>
 
         {/* Filter tabs */}
-        <div className="flex items-center justify-center gap-2 flex-wrap mb-10">
+        <div className="flex items-center md:justify-center justify-start gap-2 flex-wrap mb-10">
           {departments.map((dept) => (
             <button
               key={dept.id}
