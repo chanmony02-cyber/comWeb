@@ -7,6 +7,7 @@ import cs2 from "@/assets/images/industries/city-infrastructure/ci-solution-2.jp
 import cs3 from "@/assets/images/industries/city-infrastructure/ci-solution-3.jpg";
 import cHero from "@/assets/images/industries/city-infrastructure/city-infrastructure-hero.jpg";
 import cProblem from "@/assets/images/industries/city-infrastructure/city-infrastructure-problem.jpg";
+import { ROUTES } from "@/config/routes";
 
 export const cityInfrastructureData = {
   hero: {
@@ -52,28 +53,28 @@ export const cityInfrastructureData = {
     title: "Recent Projects in the Industry",
     items: [
       {
-        id: 1,
+        id: 4,
         title: "Metropolitan Interchange Upgrade",
         description:
           "Engineered and constructed a multi-level highway interchange serving over 150,000 vehicles daily, integrating smart traffic signals and energy-efficient LED lighting throughout the corridor.",
         image: ci1,
-        href: "#",
+        href: ROUTES.PROJECT_DETAIL.replace(":id", 4),
       },
       {
-        id: 2,
+        id: 5,
         title: "Urban Water Treatment Facility",
         description:
           "Designed the complete electrical and control systems for a modern water treatment plant, ensuring 24/7 automated operations with redundant power supply and remote monitoring capabilities.",
         image: ci2,
-        href: "#",
+        href: ROUTES.PROJECT_DETAIL.replace(":id", 5),
       },
       {
-        id: 3,
+        id: 6,
         title: "Public Transit Electrification",
         description:
           "Delivered end-to-end electrical infrastructure for a new urban rail line, including traction power substations, platform systems, and integrated safety and communication networks.",
         image: ci3,
-        href: "#",
+        href: ROUTES.PROJECT_DETAIL.replace(":id", 6),
       },
     ],
   },

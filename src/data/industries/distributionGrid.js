@@ -7,6 +7,7 @@ import ds2 from "@/assets/images/industries/distribution-grid/ci-project-2.jpg";
 import ds3 from "@/assets/images/industries/distribution-grid/ci-project-3.jpg";
 import dHero from "@/assets/images/industries/distribution-grid/distribution-grid-hero.jpg";
 import dProblem from "@/assets/images/industries/distribution-grid/distribution-grid-problem.jpg";
+import { ROUTES } from "@/config/routes";
 
 export const distributionGridData = {
   hero: {
@@ -57,7 +58,7 @@ export const distributionGridData = {
         description:
           "Designed and constructed a 115kV distribution network spanning over 200km, connecting rural communities to the national power grid with reliable and sustainable infrastructure.",
         image: ds1,
-        href: "#",
+        href: ROUTES.PROJECT_DETAIL.replace(":id", 1),
       },
       {
         id: 2,
@@ -65,7 +66,7 @@ export const distributionGridData = {
         description:
           "Installed an extensive underground cable system for urban areas, minimizing visual impact while providing reliable power distribution to residential and commercial zones.",
         image: ds2,
-        href: "#",
+        href: ROUTES.PROJECT_DETAIL.replace(":id", 2),
       },
       {
         id: 3,
@@ -73,7 +74,7 @@ export const distributionGridData = {
         description:
           "Deployed overhead distribution lines across agricultural regions, bringing consistent electricity access to farming communities and boosting local productivity.",
         image: ds3,
-        href: "#",
+        href: ROUTES.PROJECT_DETAIL.replace(":id", 3),
       },
     ],
   },
