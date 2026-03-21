@@ -27,7 +27,7 @@
       </HeadingTag>
       {subtitle ? (
         <p
-          className={`text-muted-foreground text-sm md:text-base font-sans ${subtitleClassName}`}
+          className={`text-muted-foreground text-lg md:text-base font-sans ${subtitleClassName}`}
         >
           {subtitle}
         </p>

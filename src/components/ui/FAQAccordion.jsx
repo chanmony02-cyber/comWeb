@@ -33,7 +33,7 @@ export function FAQAccordion({
               className="w-full flex items-center justify-between px-5 py-4 text-left gap-4 hover:bg-section-alt transition-colors"
             >
               <span
-                className={`lg:p-2 text-sm lg:text-lg font-medium text-navy font-sans ${questionClassName}`}
+                className={`lg:p-2 text-md lg:text-lg font-medium text-navy font-sans ${questionClassName}`}
               >
                 {item.question}
               </span>
@@ -62,7 +62,7 @@ export function FAQAccordion({
               }`}
             >
               <p
-                className={`px-5 pb-5 text-sm lg:text-lg text-muted-foreground leading-relaxed font-sans ${answerClassName}`}
+                className={`px-5 pb-5 text-md lg:text-lg text-muted-foreground leading-relaxed font-sans ${answerClassName}`}
               >
                 {item.answer}
               </p>

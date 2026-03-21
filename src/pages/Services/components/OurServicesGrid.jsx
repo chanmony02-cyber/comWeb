@@ -12,7 +12,7 @@ export function OurServicesGrid({ title, subtitle, items }) {
           subtitle={subtitle}
           align="center"
           titleClassName="text-navy text-3xl md:text-4xl lg:text-5xl"
-          subtitleClassName="text-base md:text-lg mb-5"
+          subtitleClassName="text-lg md:text-xl mb-5"
         />
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
