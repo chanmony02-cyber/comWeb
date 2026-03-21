@@ -12,11 +12,11 @@ export const navItems = [
 
 export const productsDropdownItems = [
   { label: "Electrical Equipment", href: ROUTES.ELECTRICAL_EQUIPMENT },
-  { label: "Software application", href: "#" },
+  // { label: "Software application", href: "#" },
 ];
 
 export const companyDropdownItems = [
-  { label: "About Us", href: "#" },
+  // { label: "About Us", href: "#" },
   { label: "Contact Us", href: ROUTES.CONTACT },
   { label: "Career", href: ROUTES.CAREER },
   { label: "News & Events", href: ROUTES.NEWS },
