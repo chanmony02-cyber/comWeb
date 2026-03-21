@@ -55,11 +55,11 @@ export default function PartnershipSection() {
     <section className="py-20 bg-section-alt">
       <div className="container">
         <div className="flex flex-col md:flex-row gap-12 items-center justify-center text-center">
-          <div className="w-full md:w-3/5">
+          <div className="w-full md:w-3/5 h-44">
             <h2 className="text-foreground font-bold text-4xl md:text-[2.5rem] mb-5 font-display">
               Our Partnership
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto font-sans">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-4xl mx-auto font-sans">
               We foster long-lasting partnerships with industry leaders. All of
               our relationships reflect an alliance, collaboration, and trust
               that builds success.
