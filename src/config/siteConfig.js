@@ -2,9 +2,9 @@ export const siteConfig = {
   name: "VHT Company",
   description:
     "Delivering innovative technology solutions that empower businesses to achieve their full potential.",
-  phone: "+(855) XXX XXX XXX",
+  phone: "+(855) 89 228 888 / 93 228 888",
   email: "info@company.com",
-  address: "123 Business Ave, Suite 100, City, Country",
+  address: "peng Houth the Star Polaris, No 109,st P22, Phnom Penh, Cambodia",
   socials: {
     facebook: "https://www.facebook.com/share/1KEgTaN7hm/",
     linkedin:
