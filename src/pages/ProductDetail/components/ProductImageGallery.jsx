@@ -43,28 +43,30 @@ export function ProductImageGallery({ images = [], name = "" }) {
         )}
       </div>
 
-      {/* Thumbnails */}
-      {/* <div className="flex gap-3">
-        {images.map((img, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => setActiveIndex(index)}
-            aria-label={`View image ${index + 1}`}
-            className={`w-24 h-24 rounded-lg border-2 overflow-hidden flex-shrink-0 bg-white transition-colors ${
-              activeIndex === index
-                ? "border-primary-blue"
-                : "border-border hover:border-primary-blue/50"
-            }`}
-          >
-            <img
-              src={img}
-              alt={`${name} thumbnail ${index + 1}`}
-              className="w-full h-full object-contain p-1"
-            />
-          </button>
-        ))}
-      </div> */}
+      {/* Thumbnails — horizontally scrollable */}
+      {images.length > 1 && (
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
+          {images.map((img, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              aria-label={`View image ${index + 1}`}
+              className={`w-24 h-24 rounded-lg border-2 overflow-hidden flex-shrink-0 bg-white transition-colors ${
+                activeIndex === index
+                  ? "border-primary-blue"
+                  : "border-border hover:border-primary-blue/50"
+              }`}
+            >
+              <img
+                src={img}
+                alt={`${name} thumbnail ${index + 1}`}
+                className="w-full h-full object-contain p-1"
+              />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
