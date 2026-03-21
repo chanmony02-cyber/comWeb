@@ -20,14 +20,25 @@ import {
 } from "@/data/navigation/navigation";
 import { ROUTES } from "@/config/routes";
 import { Route, Routes } from "react-router-dom";
+import { UnderMaintenanceAlert } from "@/components/ui/UnderMaintenanceAlert";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navLinkClassName =
     "flex items-center gap-1 text-md font-medium text-foreground hover:text-navy transition-colors";
 
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleSearchClick = () => {
+    setShowAlert(true);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-background shadow-sm">
+      <UnderMaintenanceAlert
+        isOpen={showAlert}
+        onClose={() => setShowAlert(false)}
+      />
       {/* Topbar */}
       <TopBar />
       <div className="border-b border-border">
@@ -96,9 +107,13 @@ const Navbar = () => {
 
           <div className="hidden xl:flex items-center gap-4">
             {/* search icon */}
-            {/* <button className="p-2 hover:bg-muted rounded-full transition-colors">
+            <button
+              className="p-2 hover:bg-muted rounded-full transition-colors"
+              onClick={handleSearchClick}
+              type="button"
+            >
               <Search className="w-5 h-5 text-foreground" />
-            </button> */}
+            </button>
             <Button className="rounded-full px-6 font-semibold border border-transparent hover:bg-white hover:text-slate-950 hover:border-primary">
               <a href={ROUTES.CONTACT}>Get in Touch</a>
             </Button>
