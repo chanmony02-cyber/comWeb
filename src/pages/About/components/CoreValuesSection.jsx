@@ -117,15 +117,15 @@ export function CoreValuesSection({ eyebrow, title, subtitle, items }) {
               key={item.id}
               className="bg-card border border-border rounded-2xl px-7 py-16 flex-col gap-4 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300 flex justify-center items-center"
             >
-              <div className="w-11 h-11 rounded-xl bg-sky-accent/20 flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 rounded-xl bg-sky-accent/20 flex items-center justify-center flex-shrink-0">
                 {ICONS[item.icon] ?? (
-                  <div className="w-5 h-5 rounded-full bg-primary-blue" />
+                  <div className="w-8 h-8 rounded-full bg-primary-blue" />
                 )}
               </div>
-              <h3 className="text-lg font-bold text-navy font-display">
+              <h3 className="text-2xl font-bold text-navy font-display">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed font-sans text-center">
+              <p className="text-muted-foreground text-md leading-relaxed font-sans text-center">
                 {item.description}
               </p>
             </div>
