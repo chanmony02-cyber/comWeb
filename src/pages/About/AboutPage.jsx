@@ -8,10 +8,13 @@ import { PowerSection } from "./components/PowerSection";
 import { MissionVisionSection } from "./components/MissionVisionSection";
 import { CoreValuesSection } from "./components/CoreValuesSection";
 import { ServicesSection } from "./components/ServicesSection";
+import { IndustriesWeServeSection } from "./components/IndustriesWeServeSection";
+import { WhyPartnerSection } from "./components/WhyPartnerSection";
 
 export default function AboutPage() {
   const { hero, story, powerSection, mission, coreValues, services } =
     aboutData;
+  const { industries, whyPartner } = aboutData;
 
   return (
     <MainLayout>
@@ -21,6 +24,8 @@ export default function AboutPage() {
       <MissionVisionSection {...mission} />
       <CoreValuesSection {...coreValues} />
       <ServicesSection {...services} />
+      <IndustriesWeServeSection {...industries} />
+      <WhyPartnerSection {...whyPartner} />
     </MainLayout>
   );
 }
