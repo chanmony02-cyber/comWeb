@@ -106,7 +106,7 @@ export function PowerSection({
             {pillars.map((pillar) => (
               <div
                 key={pillar.id}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center gap-3 text-center hover:bg-white/10 transition-colors"
+                className="h-52 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col justify-center items-center gap-3 text-center hover:bg-white/10 transition-colors"
               >
                 <div className="w-12 h-12 rounded-full bg-primary-blue/20 flex items-center justify-center">
                   {PILLAR_ICONS[pillar.icon]}
