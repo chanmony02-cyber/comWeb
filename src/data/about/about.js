@@ -1,5 +1,8 @@
 // src/data/about/about.js
 import { ROUTES } from "@/config/routes";
+import serviceConsultants from "@/assets/images/servicesImg/service-consultants.jpg";
+import serviceInspections from "@/assets/images/servicesImg/service-inspections.jpg";
+import serviceMaintenance from "@/assets/images/servicesImg/service-maintenance.jpg";
 
 export const aboutData = {
   hero: {
@@ -125,7 +128,8 @@ export const aboutData = {
         icon: "consultants",
         title: "Consultants",
         description:
-          "Professional consulting services to help you plan, design, and optimize your electrical infrastructure projects.",
+          "Quick and reliable repairing services for all your electrical infrastructure needs.",
+        image: serviceConsultants,
         href: ROUTES.CONSULTANTS,
       },
       {
@@ -133,7 +137,8 @@ export const aboutData = {
         icon: "maintenance",
         title: "Maintenance",
         description:
-          "Expert maintenance services for electrical systems, ensuring optimal performance and maximum efficiency for your operations.",
+          "Expert advice tailored for your electrical and electronic system requirements.",
+        image: serviceInspections,
         href: ROUTES.MAINTENANCE,
       },
       {
@@ -141,7 +146,8 @@ export const aboutData = {
         icon: "inspection",
         title: "Inspection",
         description:
-          "Complete inspection services from planning to execution, delivering turnkey solutions for all electrical systems.",
+          "Professional installation of electronic and electrical systems with precision.",
+        image: serviceMaintenance,
         href: ROUTES.INSPECTIONS,
       },
     ],

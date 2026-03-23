@@ -1,6 +1,7 @@
 // src/pages/About/components/ServicesSection.jsx
 
 import { Link } from "react-router-dom";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const ICONS = {
   consultants: (
@@ -52,19 +53,20 @@ const ICONS = {
 
 export function ServicesSection({ eyebrow, title, subtitle, items }) {
   return (
-    <section className="py-16 md:py-24 ">
+    <section className="py-16 md:py-28 bg-background">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="flex flex-col items-center text-center gap-3">
           <span className="text-primary-blue text-sm font-semibold uppercase tracking-widest">
             {eyebrow}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy font-display mt-2 mb-3">
-            {title}
-          </h2>
-          <p className="text-navy/65 text-base md:text-lg max-w-2xl mx-auto font-sans">
-            {subtitle}
-          </p>
+          <SectionHeader
+            title={title}
+            subtitle={subtitle}
+            align="center"
+            titleClassName="text-navy text-3xl md:text-4xl lg:text-5xl"
+            subtitleClassName="text-lg md:text-xl mb-5"
+          />
         </div>
 
         {/* Service cards */}
