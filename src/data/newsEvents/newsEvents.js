@@ -11,7 +11,7 @@ export const newsEventsItems = [
     location: "Phnom Penh",
     title: "200km of 115kV Transmission Lines Installed",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "A 115kV, 200 km distribution network was built to connect rural communities to the national grid, using careful planning and assessments, and was completed on time and within budget.",
     body: [
       "Designed and constructed a 115kV distribution network spanning over 200km, connecting rural communities to the national power grid.",
       "This large-scale project involved the design and construction of a 115kV distribution network that spans over 200 kilometers across rural terrain. The goal was to bring reliable power access to underserved communities that previously relied on inconsistent, off-grid sources.",
@@ -33,7 +33,7 @@ export const newsEventsItems = [
     location: "Siem Reap",
     title: "Connected Over 15,000 Households to the Grid",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "A rural electrification project connected over 15,000 households across multiple provinces to the national grid, using coordinated planning with local authorities and deploying advanced metering for efficient monitoring and billing.",
     body: [
       "A major rural electrification initiative successfully connected over 15,000 households to the national power grid.",
       "The project spanned multiple provinces and required close coordination with local government units and community leaders to identify underserved areas and prioritize connections.",
@@ -54,7 +54,7 @@ export const newsEventsItems = [
     location: "Phnom Penh",
     title: "Annual Electrical Infrastructure Summit 2026",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "VHT Technology hosted the 2026 Annual Electrical Infrastructure Summit, gathering over 300 professionals for two days of presentations, workshops, and discussions on smart grids, renewable energy, and the future of power distribution in Southeast Asia.",
     body: [
       "VHT Technology proudly hosted the Annual Electrical Infrastructure Summit 2026, bringing together industry leaders and engineers from across the region.",
       "The summit featured keynote presentations on smart grid technologies, renewable energy integration, and the future of power distribution in Southeast Asia.",
@@ -75,7 +75,7 @@ export const newsEventsItems = [
     location: "Battambang",
     title: "New Substation Commissioned in Battambang Province",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "A new 115kV/22kV substation in Battambang Province was successfully commissioned, enhancing power reliability for over 50,000 users with advanced protection systems, digital controls, and real-time monitoring.",
     body: [
       "A new 115kV/22kV substation has been successfully commissioned in Battambang Province, significantly improving power reliability for the region.",
       "The substation features state-of-the-art protection systems, digital control equipment, and remote monitoring capabilities that allow real-time oversight from the national control center.",
@@ -96,7 +96,7 @@ export const newsEventsItems = [
     location: "Phnom Penh",
     title: "Smart Grid Technology Workshop",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "VHT Technology held a hands-on Smart Grid workshop in Cambodia, where 120 engineers and technicians learned about advanced metering, grid automation, and demand response, ending with a panel discussion and certification.",
     body: [
       "VHT Technology organized a hands-on Smart Grid Technology Workshop for utility engineers and technicians across Cambodia.",
       "Participants gained practical experience with advanced metering infrastructure, demand response systems, and grid automation technologies through live demonstrations.",
@@ -117,7 +117,7 @@ export const newsEventsItems = [
     location: "Kampong Cham",
     title: "Solar Integration Project Reaches Milestone",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "A solar project in Kampong Cham successfully integrated its first 10MW into the grid, showcasing advanced technology and supporting Cambodia’s renewable energy growth and sustainability goals.",
     body: [
       "The solar integration project in Kampong Cham has reached a significant milestone, with the first 10MW of solar capacity successfully integrated into the distribution grid.",
       "The project demonstrates VHT Technology's capability in renewable energy integration, featuring advanced inverter systems and grid stabilization technologies.",
@@ -138,28 +138,7 @@ export const newsEventsItems = [
     location: "Kampong Cham",
     title: "Solar Integration Project Reaches Milestone",
     summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
-    body: [
-      "The solar integration project in Kampong Cham has reached a significant milestone, with the first 10MW of solar capacity successfully integrated into the distribution grid.",
-      "The project demonstrates VHT Technology's capability in renewable energy integration, featuring advanced inverter systems and grid stabilization technologies.",
-      "This achievement positions Cambodia's grid for further renewable energy expansion and contributes to national sustainability goals.",
-    ],
-    keyFeatures: [
-      "10MW solar capacity successfully integrated into grid",
-      "Advanced inverter systems and grid stabilization deployed",
-      "Contributes directly to national sustainability goals",
-      "Foundation set for future renewable energy expansion",
-    ],
-    image: NEWS_IMG,
-  },
-  {
-    id: 8,
-    type: "News",
-    date: "July 20, 2026",
-    location: "Kampong Cham",
-    title: "Solar Integration Project Reaches Milestone",
-    summary:
-      "Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact Comprehensive switchgear inspection including contact",
+      "The Kampong Cham solar project reached a key milestone with 10MW integrated into the grid, highlighting advanced renewable technology and supporting Cambodia’s future energy expansion and sustainability goals.",
     body: [
       "The solar integration project in Kampong Cham has reached a significant milestone, with the first 10MW of solar capacity successfully integrated into the distribution grid.",
       "The project demonstrates VHT Technology's capability in renewable energy integration, featuring advanced inverter systems and grid stabilization technologies.",
