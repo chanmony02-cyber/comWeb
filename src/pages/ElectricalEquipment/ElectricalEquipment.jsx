@@ -60,7 +60,7 @@ export default function ElectricalEquipment() {
           </div>
         </section>
 
-        <section className="py-16">
+        <section className="py-12">
           <div className="container">
             <div className="flex flex-col gap-6 mb-10">
               <SectionHeader

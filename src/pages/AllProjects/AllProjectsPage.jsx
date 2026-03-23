@@ -10,8 +10,8 @@ const PAGE_SIZE = 6;
 const FILTERS = [
   "All",
   "Distribution Grid",
-  "City Infrastructure",
   "Agriculture",
+  "City Infrastructure",
 ];
 
 export default function AllProjectsPage() {
@@ -51,16 +51,16 @@ export default function AllProjectsPage() {
       </section>
 
       {/* ── Filter + Grid ─────────────────────────────────── */}
-      <section className="py-14 bg-background">
+      <section className="py-12 bg-background">
         <div className="container">
           {/* Filter tabs */}
-          <div className="flex items-center justify-center gap-3 mb-12 flex-wrap">
+          <div className="flex md:items-center md:justify-center items-center justify-start gap-3 mb-12 flex-wrap">
             {FILTERS.map((filter) => (
               <button
                 key={filter}
                 type="button"
                 onClick={() => handleFilter(filter)}
-                className={`px-5 py-2 rounded-full text-md font-semibold border transition-colors ${
+                className={`px-5 py-2 rounded-full text-xs md:text-lg font-semibold border transition-colors ${
                   activeFilter === filter
                     ? "bg-navy text-white border-navy"
                     : "bg-white text-foreground border-border hover:border-navy"
