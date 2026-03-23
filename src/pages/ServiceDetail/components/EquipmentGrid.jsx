@@ -1,26 +1,14 @@
-// src/pages/ServiceDetail/components/EquipmentGrid.jsx
+﻿// src/pages/ServiceDetail/components/EquipmentGrid.jsx
 
 import { Link } from "react-router-dom";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ROUTES } from "@/config/routes";
+import checkCircleIcon from "@/assets/icons/check-circle.svg";
 
 function CheckItem({ label }) {
   return (
     <li className="flex items-center gap-2 text-sm text-muted-foreground font-sans">
-      <svg
-        className="w-4 h-4 text-primary-blue flex-shrink-0"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-      >
-        <circle cx="12" cy="12" r="9" strokeWidth={1.5} />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8.5 12l2.5 2.5 5-5"
-        />
-      </svg>
+      <img src={checkCircleIcon} alt="" className="w-4 h-4 flex-shrink-0" />
       {label}
     </li>
   );

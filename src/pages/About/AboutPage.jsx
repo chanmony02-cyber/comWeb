@@ -11,7 +11,7 @@ import { ServicesSection } from "./components/ServicesSection";
 import { IndustriesWeServeSection } from "./components/IndustriesWeServeSection";
 import { WhyPartnerSection } from "./components/WhyPartnerSection";
 import { TeamSection } from "./components/TeamSection";
-import PartnershipSection from "../Home/components/PartnershipSection";
+// import PartnershipSection from "../Home/components/PartnershipSection";
 import { OurLocationSection } from "../Contact/components/OurLocationSection";
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <IndustriesWeServeSection {...industries} />
       <WhyPartnerSection {...whyPartner} />
       <TeamSection {...team} />
-      <PartnershipSection />
+      {/* <PartnershipSection /> */}
       <OurLocationSection />
     </MainLayout>
   );
