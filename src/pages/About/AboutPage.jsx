@@ -10,11 +10,12 @@ import { CoreValuesSection } from "./components/CoreValuesSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { IndustriesWeServeSection } from "./components/IndustriesWeServeSection";
 import { WhyPartnerSection } from "./components/WhyPartnerSection";
+import { TeamSection } from "./components/TeamSection";
 
 export default function AboutPage() {
   const { hero, story, powerSection, mission, coreValues, services } =
     aboutData;
-  const { industries, whyPartner } = aboutData;
+  const { industries, whyPartner, team } = aboutData;
 
   return (
     <MainLayout>
@@ -26,6 +27,7 @@ export default function AboutPage() {
       <ServicesSection {...services} />
       <IndustriesWeServeSection {...industries} />
       <WhyPartnerSection {...whyPartner} />
+      <TeamSection {...team} />
     </MainLayout>
   );
 }

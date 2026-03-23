@@ -244,8 +244,41 @@ export const aboutData = {
         id: 6,
         icon: "quality",
         title: "Quality Guaranteed",
-        description:
-          "Comprehensive warranties and guarantees on all our work.",
+        description: "Comprehensive warranties and guarantees on all our work.",
+      },
+    ],
+  },
+  team: {
+    eyebrow: "Our Team",
+    title: "Meet Our Leaders",
+    subtitle: "Experienced professionals driving innovation and excellence",
+    members: [
+      {
+        id: 1,
+        name: "David Chen",
+        role: "Chief Executive Officer",
+        image:
+          "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80&fit=crop",
+        linkedin: "https://www.linkedin.com",
+        email: "mailto:hello@vht.com",
+      },
+      {
+        id: 2,
+        name: "Sarah Williams",
+        role: "Chief Executive Officer",
+        image:
+          "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=400&q=80&fit=crop",
+        linkedin: "https://www.linkedin.com",
+        email: "mailto:hello@vht.com",
+      },
+      {
+        id: 3,
+        name: "Michael Park",
+        role: "Chief Technology Officer",
+        image:
+          "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?w=400&q=80&fit=crop",
+        linkedin: "https://www.linkedin.com",
+        email: "mailto:hello@vht.com",
       },
     ],
   },
