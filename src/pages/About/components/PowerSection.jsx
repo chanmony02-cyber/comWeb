@@ -111,7 +111,7 @@ export function PowerSection({
                 <div className="w-12 h-12 rounded-full bg-primary-blue/20 flex items-center justify-center">
                   {PILLAR_ICONS[pillar.icon]}
                 </div>
-                <p className="text-white font-semibold text-md font-display">
+                <p className="text-white font-semibold text-xl font-display">
                   {pillar.label}
                 </p>
               </div>
