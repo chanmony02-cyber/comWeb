@@ -23,13 +23,14 @@ export function ContactHeroSection() {
             <div className="space-y-4">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="block font-semibold text-navy text-base hover:text-primary-blue transition-colors font-sans max-w-xs"
+                className="inline-flex font-semibold text-navy text-base hover:text-primary-blue transition-colors font-sans w-fit"
               >
                 {siteConfig.email}
               </a>
+              <br />
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="block font-semibold text-navy text-base hover:text-primary-blue transition-colors font-sans max-w-xs"
+                className="inline-flex font-semibold text-navy text-base hover:text-primary-blue transition-colors font-sans w-fit"
               >
                 {siteConfig.phone}
               </a>
