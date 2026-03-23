@@ -10,7 +10,7 @@ export function AboutHero({ title, subtitle }) {
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-navy/70" />
+      <div className="absolute inset-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/60 to-navy/80" />
 
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">

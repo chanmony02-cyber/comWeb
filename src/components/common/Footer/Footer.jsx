@@ -45,7 +45,9 @@ const Footer = () => {
 
           {/* Industries */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Industries</h4>
+            <h3 className="text-lg font-semibold text-white mb-4">
+              Industries
+            </h3>
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li>
                 <Link
@@ -76,7 +78,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li>
                 <Link
@@ -115,7 +117,9 @@ const Footer = () => {
 
           {/* Useful Links */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Useful Links</h4>
+            <h3 className="text-lg font-semibold text-white mb-4">
+              Useful Links
+            </h3>
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li>
                 <Link
@@ -154,7 +158,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Contact</h4>
+            <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
