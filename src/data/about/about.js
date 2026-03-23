@@ -29,7 +29,7 @@ export const aboutData = {
 
   powerSection: {
     eyebrow: "Engineering Excellence Since 2015",
-    title: "Powering\nTomorrow's",
+    title: "Powering Tomorrow's",
     highlight: "Infrastructure",
     description:
       "Leading provider of electrical solutions for distribution grids, city infrastructure, and agricultural systems. Building reliable futures.",
