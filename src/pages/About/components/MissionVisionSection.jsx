@@ -30,11 +30,11 @@ export function MissionVisionSection({
         {/* Mission + Vision cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Mission */}
-          <div className="bg-card border border-border rounded-2xl p-8 xl:p-10 flex flex-col gap-5 shadow-sm">
+          <div className=" h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
-            <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
               <svg
-                className="w-6 h-6 text-primary-blue"
+                className="w-8 h-8 md:w-10 md:h-10 text-primary-blue"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.8}
@@ -47,7 +47,7 @@ export function MissionVisionSection({
                 />
               </svg>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-navy font-display">
+            <h3 className="text-xl md:text-3xl font-bold text-navy font-display">
               {missionTitle}
             </h3>
             <p className="text-muted-foreground text-base leading-relaxed font-sans">
@@ -67,11 +67,11 @@ export function MissionVisionSection({
           </div>
 
           {/* Vision */}
-          <div className="bg-navy rounded-2xl p-8 xl:p-10 flex flex-col gap-5 shadow-sm">
+          <div className="h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
-            <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
               <svg
-                className="w-6 h-6 text-sky-accent"
+                className="w-8 h-8 md:w-10 md:h-10 text-primary-blue"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.8}
@@ -89,19 +89,19 @@ export function MissionVisionSection({
                 />
               </svg>
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-white font-display">
+            <h3 className="text-xl md:text-3xl font-bold text-navy font-display">
               {visionTitle}
             </h3>
-            <p className="text-white/75 text-base leading-relaxed font-sans">
+            <p className="text-muted-foreground text-base leading-relaxed font-sans">
               {visionText}
             </p>
             <ul className="flex flex-col gap-2 mt-1">
               {visionBullets.map((bullet, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-2 text-base text-white/75 font-sans"
+                  className="flex items-start gap-2 text-base text-muted-foreground font-sans"
                 >
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-sky-accent flex-shrink-0" />
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary-blue flex-shrink-0" />
                   {bullet}
                 </li>
               ))}
