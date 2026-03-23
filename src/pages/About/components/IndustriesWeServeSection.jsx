@@ -1,55 +1,14 @@
 // src/pages/About/components/IndustriesWeServeSection.jsx
 
 import { Link } from "react-router-dom";
+import distributionIcon from "@/assets/icons/distribution.svg";
+import cityIcon from "@/assets/icons/city.svg";
+import agricultureIcon from "@/assets/icons/agriculture.svg";
 
 const INDUSTRY_ICONS = {
-  distribution: (
-    <svg
-      className="w-5 h-5 text-white"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"
-      />
-    </svg>
-  ),
-  city: (
-    <svg
-      className="w-5 h-5 text-white"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 21h18M5 21V7a2 2 0 0 1 2-2h4v16M13 21V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v16M9 9h1M9 13h1M9 17h1M15 9h1M15 13h1M15 17h1"
-      />
-    </svg>
-  ),
-  agriculture: (
-    <svg
-      className="w-5 h-5 text-white"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <circle cx="7" cy="17" r="2.5" />
-      <circle cx="17" cy="17" r="3.5" />
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3 17h2l2-5h6l2 5h5M9 12V9h4l2 3"
-      />
-    </svg>
-  ),
+  distribution: distributionIcon,
+  city: cityIcon,
+  agriculture: agricultureIcon,
 };
 
 export function IndustriesWeServeSection({ eyebrow, title, subtitle, items }) {
@@ -84,7 +43,11 @@ export function IndustriesWeServeSection({ eyebrow, title, subtitle, items }) {
               <div className="absolute left-5 right-5 bottom-5 text-white">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="w-10 h-10 rounded-xl bg-primary-blue/90 flex items-center justify-center shadow-lg">
-                    {INDUSTRY_ICONS[item.icon]}
+                    <img
+                      src={INDUSTRY_ICONS[item.icon]}
+                      alt=""
+                      className="w-5 h-5"
+                    />
                   </span>
                   <h3 className="text-lg font-semibold font-display">
                     {item.title}

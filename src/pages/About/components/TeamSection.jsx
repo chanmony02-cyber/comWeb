@@ -1,40 +1,7 @@
 // src/pages/About/components/TeamSection.jsx
 
-function LinkedinIcon() {
-  return (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.8}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M6.75 9.75V17.25M6.75 6.75h.008v.008H6.75V6.75Zm4.5 10.5V9.75m0 7.5v-4.125a2.625 2.625 0 0 1 5.25 0V17.25"
-      />
-    </svg>
-  );
-}
-
-function MailIcon() {
-  return (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.8}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3.75 7.5h16.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75A1.5 1.5 0 0 1 2.25 16.5V9a1.5 1.5 0 0 1 1.5-1.5Zm0 0 8.25 5.25L20.25 7.5"
-      />
-    </svg>
-  );
-}
+import { Linkedin } from "lucide-react";
+import mailIcon from "@/assets/icons/mail.svg";
 
 export function TeamSection({ eyebrow, title, subtitle, members }) {
   return (
@@ -79,14 +46,14 @@ export function TeamSection({ eyebrow, title, subtitle, members }) {
                   className="w-10 h-10 rounded-full bg-sky-accent/40 flex items-center justify-center hover:bg-primary-blue/20 transition-colors"
                   aria-label={`${member.name} on LinkedIn`}
                 >
-                  <LinkedinIcon />
+                  <Linkedin className="w-5 h-5 text-primary-blue" />
                 </a>
                 <a
                   href={member.email}
                   className="w-10 h-10 rounded-full bg-sky-accent/40 flex items-center justify-center hover:bg-primary-blue/20 transition-colors"
                   aria-label={`Email ${member.name}`}
                 >
-                  <MailIcon />
+                  <img src={mailIcon} alt="" className="w-5 h-5" />
                 </a>
               </div>
             </div>
