@@ -10,7 +10,8 @@ import { CoreValuesSection } from "./components/CoreValuesSection";
 import { ServicesSection } from "./components/ServicesSection";
 
 export default function AboutPage() {
-  const { hero, story, powerSection, mission, coreValues, services } = aboutData;
+  const { hero, story, powerSection, mission, coreValues, services } =
+    aboutData;
 
   return (
     <MainLayout>
