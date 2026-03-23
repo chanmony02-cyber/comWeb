@@ -3,6 +3,7 @@
 const ICONS = {
   quality: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6 text-primary-blue"
       fill="none"
       viewBox="0 0 24 24"
@@ -10,14 +11,18 @@ const ICONS = {
       stroke="currentColor"
     >
       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 21s-6.716-4.422-8.485-8.104C2.062 10.12 3.5 7.5 6.5 7.5c1.7 0 3.015.89 3.8 2.043C11.085 8.39 12.4 7.5 14.1 7.5c3 0 4.438 2.62 2.985 5.396C15.716 16.578 12 21 12 21Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"
       />
     </svg>
   ),
   safety: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6 text-primary-blue"
       fill="none"
       viewBox="0 0 24 24"
@@ -25,57 +30,60 @@ const ICONS = {
       stroke="currentColor"
     >
       <path
+        fill="none"
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M12 3l7 3v5c0 4.418-3.134 8.418-7 10-3.866-1.582-7-5.582-7-10V6l7-3Z"
+        strokeWidth="2"
+        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
       />
     </svg>
   ),
   accuracy: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6 text-primary-blue"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.8}
       stroke="currentColor"
     >
-      <circle cx="12" cy="12" r="8" />
-      <circle cx="12" cy="12" r="4" />
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3" />
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
     </svg>
   ),
   reliance: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6 text-primary-blue"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.8}
       stroke="currentColor"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M16 11a3 3 0 1 0-6 0m6 0a3 3 0 0 1 3 3v2m-3-5a3 3 0 0 0-3 3v2m0-5a3 3 0 1 1 6 0m-9 0a3 3 0 1 0-6 0m6 0a3 3 0 0 1 3 3v2m-3-5a3 3 0 0 0-3 3v2"
-      />
+      <path d="M18 21a8 8 0 0 0-16 0" />
+      <circle cx="10" cy="8" r="5" />
+      <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
     </svg>
   ),
   innovation: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6 text-primary-blue"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.8}
       stroke="currentColor"
     >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9 18h6m-5 3h4m-2-3v-2a5 5 0 1 1 2-9.584M10 6.5 9 5m6.5 1.5L15 5M6.5 12H5m14 0h-1.5"
-      />
+      <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+      <path d="M9 18h6" />
+      <path d="M10 22h4" />
     </svg>
   ),
   integrity: (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6 text-primary-blue"
       fill="none"
       viewBox="0 0 24 24"
@@ -83,9 +91,12 @@ const ICONS = {
       stroke="currentColor"
     >
       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 21s-6.716-4.422-8.485-8.104C2.062 10.12 3.5 7.5 6.5 7.5c1.7 0 3.015.89 3.8 2.043C11.085 8.39 12.4 7.5 14.1 7.5c3 0 4.438 2.62 2.985 5.396C15.716 16.578 12 21 12 21Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"
       />
     </svg>
   ),
