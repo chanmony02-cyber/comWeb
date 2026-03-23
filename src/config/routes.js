@@ -2,6 +2,7 @@
 export const ROUTES = {
   HOME: "/",
   HOMEPAGE: "/homepage",
+  ABOUT: "/about",
   ELECTRICAL_EQUIPMENT: "/electrical-equipment",
   PRODUCT_DETAIL: "/products/:id",
   ALL_PROJECTS: "/all-projects",

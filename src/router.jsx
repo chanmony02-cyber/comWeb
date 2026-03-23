@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "@/config/routes";
 
 const Home = lazy(() => import("@/pages/Home"));
+const AboutPage = lazy(() => import("@/pages/About"));
 const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
 const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
@@ -42,6 +43,7 @@ const AppRouter = () => {
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.HOMEPAGE} element={<Home />} />
+        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
         <Route
           path={ROUTES.ELECTRICAL_EQUIPMENT}
           element={<ElectricalEquipment />}
