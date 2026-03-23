@@ -20,7 +20,7 @@ const NavDropdown = ({ label, items, triggerClassName = "" }) => {
         <button
           type="button"
           className={cn(
-            "flex items-center gap-1 text-md font-medium text-foreground hover:text-navy transition-colors",
+            "flex items-center gap-1 text-md font-medium text-foreground hover:text-navy transition-colors focus:outline-none",
             triggerClassName,
           )}
         >
