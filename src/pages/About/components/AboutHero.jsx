@@ -1,26 +1,23 @@
 // src/pages/About/components/AboutHero.jsx
 
+import heroImage from "@/assets/images/industries/distribution-grid/distribution-grid-hero.jpg";
+
 export function AboutHero({ title, subtitle }) {
   return (
-    <section className="relative h-56 md:h-72 lg:h-80 flex items-center justify-center overflow-hidden">
-      {/* Dark navy gradient background — matches the mockup's electrical tower backdrop */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy/90 to-primary-blue/40" />
-
-      {/* Subtle grid overlay for depth */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(159,204,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(159,204,255,0.3) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
+    <section className="relative h-64 md:h-80 lg:h-96 flex items-center justify-center overflow-hidden">
+      <img
+        src={heroImage}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
       />
+      <div className="absolute inset-0 bg-navy/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/60 to-navy/80" />
 
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
         <h1 className="text-white font-bold text-3xl md:text-4xl lg:text-5xl font-display mb-4 leading-tight">
           {title}
         </h1>
-        <p className="text-white/80 text-md md:text-lg leading-relaxed max-w-2xl mx-auto font-sans">
+        <p className="text-white/85 text-md md:text-lg leading-relaxed max-w-2xl mx-auto font-sans">
           {subtitle}
         </p>
       </div>
