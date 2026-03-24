@@ -223,7 +223,7 @@ export default function SoftwareApplicationPage() {
           <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="container relative py-16 md:py-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-12 items-center">
             <div>
-              <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-wide">
+              <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm text-primary-blue font-semibold uppercase tracking-wide">
                 {hero.badge}
               </span>
               <h1 className="mt-4 text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-tight">
@@ -241,14 +241,18 @@ export default function SoftwareApplicationPage() {
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="rounded-full">
+                <Button
+                  asChild
+                  size="lg"
+                  className="text-md rounded-full hover:bg-primary-blue hover:border hover:border-white"
+                >
                   <Link to={ROUTES.CONTACT}>Request a demo</Link>
                 </Button>
                 <Button
                   asChild
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-white/50 text-white hover:bg-white hover:text-navy"
+                  className="text-md rounded-full border-white/50 text-navy hover:bg-primary-blue hover:text-white"
                 >
                   <a href="#app-highlights">See UI highlights</a>
                 </Button>
@@ -380,7 +384,7 @@ export default function SoftwareApplicationPage() {
                   <p className="text-md font-semibold text-navy">
                     Privacy-first workflow
                   </p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     See the right data, not all data.
                   </p>
                 </div>
@@ -394,13 +398,13 @@ export default function SoftwareApplicationPage() {
                     <p className="text-md font-semibold text-navy">
                       {step.title}
                     </p>
-                    <p className="text-xs text-muted-foreground mt-1">
+                    <p className="text-sm text-muted-foreground mt-1">
                       {step.description}
                     </p>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-2xl bg-white border border-border px-4 py-3 text-xs text-muted-foreground">
+              <div className="mt-6 rounded-2xl bg-white border border-border px-4 py-3 text-sm text-muted-foreground">
                 Sensitive fields such as tenant IDs, device IDs, and IP
                 addresses remain hidden unless explicitly authorized.
               </div>
