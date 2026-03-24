@@ -10,7 +10,7 @@ export default function RecentProjectsSection() {
       <div className="container">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <h2 className="text-primary-blue font-bold text-4xl md:text-[2.5rem] mb-3 font-display">
+            <h2 className="text-primary-blue font-bold text-4xl md:text-[2.5rem] mb-3 font-display whitespace-nowrap">
               RECENT PROJECTS
             </h2>
             <p className="text-sky-accent text-md md:text-md max-w-md leading-relaxed font-sans">
