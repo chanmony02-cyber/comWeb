@@ -20,12 +20,12 @@ export default function RecentProjectsSection() {
           </div>
           <Link
             to={ROUTES.ALL_PROJECTS}
-            className="text-sky-accent hover:text-primary-foreground text-md font-medium transition-colors flex items-center gap-1 font-display"
+            className="text-sky-accent hover:text-primary-foreground text-md font-medium transition-colors flex items-center gap-1 font-display whitespace-nowrap shrink-0"
           >
             More &rarr;
           </Link>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
           {recentProjects.map((project) => (
             <Link
               key={project.id}
