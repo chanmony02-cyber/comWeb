@@ -1,4 +1,4 @@
-// src/pages/SoftwareApplication/SoftwareApplicationPage.jsx
+﻿// src/pages/SoftwareApplication/SoftwareApplicationPage.jsx
 
 import { Link } from "react-router-dom";
 import {
@@ -15,6 +15,7 @@ import MainLayout from "@/layouts/MainLayout";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
+import VHTLogo from "@/assets/images/VHT_Logo.png";
 import { ROUTES } from "@/config/routes";
 import { softwareApplicationData } from "@/data/softwareApplication/softwareApplication";
 import { cn } from "@/lib/utils";
@@ -38,8 +39,12 @@ const ScreenPreview = ({ type, className = "" }) => {
         )}
       >
         <div className="flex items-center justify-center">
-          <div className="h-14 w-14 rounded-full bg-sky-accent/70 flex items-center justify-center">
-            <div className="h-7 w-7 rounded-lg bg-primary-blue/80" />
+          <div className="h-14 w-14 rounded-full bg-sky-accent/70 flex items-center justify-center shadow-inner">
+            <img
+              src={VHTLogo}
+              alt="VHT logo"
+              className="h-8 w-8 object-contain"
+            />
           </div>
         </div>
         <div className="mt-4 space-y-3">
@@ -164,7 +169,7 @@ const ScreenPreview = ({ type, className = "" }) => {
                   </span>
                 </div>
                 <div className="mt-1 text-muted-foreground">
-                  ID: •••• ••••
+                  ID: â€¢â€¢â€¢â€¢ â€¢â€¢â€¢â€¢
                 </div>
               </div>
             ))}
@@ -208,8 +213,7 @@ const ScreenPreview = ({ type, className = "" }) => {
 };
 
 export default function SoftwareApplicationPage() {
-  const { hero, screens, capabilities, privacy, cta } =
-    softwareApplicationData;
+  const { hero, screens, capabilities, privacy, cta } = softwareApplicationData;
 
   return (
     <MainLayout>
@@ -228,7 +232,7 @@ export default function SoftwareApplicationPage() {
               <p className="mt-4 text-base md:text-lg text-white/90 max-w-2xl">
                 {hero.subtitle}
               </p>
-              <div className="mt-6 grid gap-3 text-sm text-white/90">
+              <div className="mt-6 grid gap-3 text-md text-white/90">
                 {hero.highlights.map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-white" />
@@ -280,20 +284,20 @@ export default function SoftwareApplicationPage() {
               {screens.items.map((screen) => (
                 <div
                   key={screen.id}
-                  className="bg-card border border-border rounded-3xl p-6 shadow-sm flex flex-col gap-4"
+                  className="group bg-card border border-border rounded-3xl p-6 shadow-sm flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary-blue/30"
                 >
-                  <div className="rounded-2xl bg-section-alt/70 p-4 border border-white">
+                  <div className="rounded-2xl bg-section-alt/70 p-4 border border-white transition-transform duration-300 group-hover:scale-[1.02]">
                     <ScreenPreview type={screen.id} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-navy font-display">
+                    <h3 className="text-lg font-semibold text-navy font-display transition-colors duration-300 group-hover:text-primary-blue">
                       {screen.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-2">
+                    <p className="text-md text-muted-foreground mt-2">
                       {screen.description}
                     </p>
                   </div>
-                  <div className="grid gap-2 text-sm text-muted-foreground">
+                  <div className="grid gap-2 text-md text-muted-foreground">
                     {screen.points.map((point) => (
                       <div key={point} className="flex items-start gap-2">
                         <span className="mt-1 h-2 w-2 rounded-full bg-primary-blue" />
@@ -304,9 +308,9 @@ export default function SoftwareApplicationPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 rounded-2xl bg-section-alt border border-border px-6 py-4 text-sm text-muted-foreground">
-              All identifiers shown are placeholders. Sensitive data is masked in
-              production views by design.
+            <div className="mt-8 rounded-2xl bg-section-alt border border-border px-6 py-4 text-md text-muted-foreground">
+              All identifiers shown are placeholders. Sensitive data is masked
+              in production views by design.
             </div>
           </div>
         </section>
@@ -334,7 +338,7 @@ export default function SoftwareApplicationPage() {
                     <h3 className="mt-4 text-lg font-semibold text-navy font-display">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
+                    <p className="mt-2 text-md text-muted-foreground">
                       {item.description}
                     </p>
                   </div>
@@ -354,7 +358,7 @@ export default function SoftwareApplicationPage() {
                 align="left"
                 titleClassName="text-3xl md:text-4xl"
               />
-              <div className="mt-6 grid gap-3 text-sm text-muted-foreground">
+              <div className="mt-6 grid gap-3 text-md text-muted-foreground">
                 {privacy.points.map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary-blue" />
@@ -362,7 +366,7 @@ export default function SoftwareApplicationPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="mt-8 flex items-center gap-3 text-md text-muted-foreground">
                 <ShieldCheck className="w-5 h-5 text-primary-blue" />
                 <span>Masking is enabled by default for every account.</span>
               </div>
@@ -373,7 +377,7 @@ export default function SoftwareApplicationPage() {
                   <ShieldCheck className="w-5 h-5 text-primary-blue" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-navy">
+                  <p className="text-md font-semibold text-navy">
                     Privacy-first workflow
                   </p>
                   <p className="text-xs text-muted-foreground">
@@ -387,7 +391,7 @@ export default function SoftwareApplicationPage() {
                     key={step.id}
                     className="rounded-2xl bg-section-alt border border-white px-4 py-3"
                   >
-                    <p className="text-sm font-semibold text-navy">
+                    <p className="text-md font-semibold text-navy">
                       {step.title}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
