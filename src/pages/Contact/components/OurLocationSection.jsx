@@ -1,7 +1,12 @@
-// src/pages/Contact/components/OurLocationSection.jsx
+﻿// src/pages/Contact/components/OurLocationSection.jsx
 
 import { siteConfig } from "@/config/siteConfig";
 import { contactData } from "@/data/contact/contact";
+import locationPinIcon from "@/assets/icons/location-pin.svg";
+import phoneIcon from "@/assets/icons/phone.svg";
+import globeIcon from "@/assets/icons/globe.svg";
+import emailIcon from "@/assets/icons/email.svg";
+import clockIcon from "@/assets/icons/clock.svg";
 
 export function OurLocationSection() {
   const { location, info } = contactData;
@@ -15,31 +20,18 @@ export function OurLocationSection() {
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-40">
-          {/* Left — address block + contact + business hours */}
+          {/* Left â€” address block + contact + business hours */}
           <div className="flex flex-col gap-6 lg:gap-0 lg:justify-between">
-            {/* TOP GROUP — address + contact details */}
+            {/* TOP GROUP â€” address + contact details */}
             <div className="space-y-6">
               {/* Address */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <svg
-                    className="w-5 h-5 text-primary-blue flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                    />
-                  </svg>
+                  <img
+                    src={locationPinIcon}
+                    alt=""
+                    className="w-5 h-5 flex-shrink-0"
+                  />
                   <h3 className="text-2xl font-bold text-navy font-display">
                     {location.addressTitle}
                   </h3>
@@ -53,19 +45,7 @@ export function OurLocationSection() {
               <div className="space-y-3 pl-1">
                 {/* Phone */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-                  <svg
-                    className="w-5 h-5 text-primary-blue flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.8}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 6.338c0-.966.784-1.75 1.75-1.75h1.4c.398 0 .743.27.842.656l.96 3.605a.875.875 0 0 1-.406 1.002l-1.076.644a11.25 11.25 0 0 0 5.25 5.25l.644-1.076a.875.875 0 0 1 1.002-.406l3.605.96c.386.1.656.444.656.842v1.4c0 .967-.784 1.75-1.75 1.75h-.438C7.474 19.5 2.25 14.276 2.25 7.838v-.438a1.5 1.5 0 0 1 0-.062Z"
-                    />
-                  </svg>
+                  <img src={phoneIcon} alt="" className="w-5 h-5 flex-shrink-0" />
                   <a
                     href={`tel:${siteConfig.phone}`}
                     className="hover:text-primary-blue transition-colors w-fit"
@@ -76,23 +56,7 @@ export function OurLocationSection() {
 
                 {/* Website */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 text-primary-blue flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.8}
-                    stroke="currentColor"
-                  >
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"
-                    />
-                  </svg>
+                  <img src={globeIcon} alt="" className="w-5 h-5 flex-shrink-0" />
                   <a
                     href={info.websiteUrl}
                     target="_blank"
@@ -105,19 +69,7 @@ export function OurLocationSection() {
 
                 {/* Email */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-                  <svg
-                    className="w-5 h-5 text-primary-blue flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.8}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                    />
-                  </svg>
+                  <img src={emailIcon} alt="" className="w-5 h-5 flex-shrink-0" />
                   <a
                     href={`mailto:${siteConfig.email}`}
                     className="hover:text-primary-blue transition-colors w-fit"
@@ -128,22 +80,10 @@ export function OurLocationSection() {
               </div>
             </div>
 
-            {/* BOTTOM — Business Hours */}
+            {/* BOTTOM â€” Business Hours */}
             <div className="bg-sky-accent/20 rounded-xl p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
-                <svg
-                  className="w-5 h-5 text-primary-blue flex-shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.8}
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                  />
-                </svg>
+                <img src={clockIcon} alt="" className="w-5 h-5 flex-shrink-0" />
                 <h4 className="text-xl font-bold text-navy font-display">
                   {location.businessHoursTitle}
                 </h4>
@@ -164,7 +104,7 @@ export function OurLocationSection() {
             </div>
           </div>
 
-          {/* Right — Google Map */}
+          {/* Right â€” Google Map */}
           <div className="w-full rounded-xl overflow-hidden border border-border shadow-sm">
             <iframe
               title="Our Location"
