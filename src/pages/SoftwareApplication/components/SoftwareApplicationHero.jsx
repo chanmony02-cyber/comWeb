@@ -11,7 +11,7 @@ export function SoftwareApplicationHero({ hero }) {
       <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
       <div className="container relative py-16 md:py-24 grid grid-cols-1 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-12 items-center">
         <div>
-          <span className="inline-flex items-center rounded-full bg-white/15 px-4 py-1 text-sm text-primary-blue font-semibold uppercase tracking-wide">
+          <span className="inline-flex items-center rounded-full bg-white px-4 py-1 text-sm text-primary-blue font-semibold uppercase tracking-wide">
             {hero.badge}
           </span>
           <h1 className="mt-4 text-3xl md:text-5xl lg:text-6xl font-bold font-display leading-tight">
