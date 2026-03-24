@@ -12,7 +12,7 @@ export const navItems = [
 
 export const productsDropdownItems = [
   { label: "Electrical Equipment", href: ROUTES.ELECTRICAL_EQUIPMENT },
-  // { label: "Software application", href: "#" },
+  { label: "Software application", href: ROUTES.SOFTWARE_APPLICATION },
 ];
 
 export const companyDropdownItems = [
