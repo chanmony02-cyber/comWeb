@@ -1,113 +1,21 @@
-// src/pages/About/components/WhyPartnerSection.jsx
+﻿// src/pages/About/components/WhyPartnerSection.jsx
+
+import partnerCertifiedIcon from "@/assets/icons/partner-certified.svg";
+import partnerOnTimeIcon from "@/assets/icons/partner-ontime.svg";
+import partnerSupportIcon from "@/assets/icons/partner-support.svg";
+import partnerTechnologyIcon from "@/assets/icons/partner-technology.svg";
+import partnerCustomIcon from "@/assets/icons/partner-custom.svg";
+import partnerQualityIcon from "@/assets/icons/partner-quality.svg";
+import partnerHeadsetIcon from "@/assets/icons/partner-headset.svg";
 
 const PARTNER_ICONS = {
-  certified: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
-      />
-    </svg>
-  ),
-  onTime: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <circle cx="12" cy="12" r="8" />
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 8v4l3 2"
-      />
-    </svg>
-  ),
-  support: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 12a8 8 0 0 1 16 0m-14 0v3a2 2 0 0 0 2 2h1m10-5v3a2 2 0 0 1-2 2h-1"
-      />
-    </svg>
-  ),
-  technology: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="m13 2-2 6h4l-2 6m7-3a8 8 0 1 1-14.9 3.5"
-      />
-    </svg>
-  ),
-  custom: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 3v3m0 12v3m9-9h-3M6 12H3m14.95-6.95-2.12 2.12M9.17 14.83l-2.12 2.12m0-9.78 2.12 2.12m7.66 7.66 2.12 2.12"
-      />
-      <circle cx="12" cy="12" r="3" />
-    </svg>
-  ),
-  quality: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 3l7 3v5c0 4.418-3.134 8.418-7 10-3.866-1.582-7-5.582-7-10V6l7-3Z"
-      />
-    </svg>
-  ),
-  headset: (
-    <svg
-      className="w-5 h-5 text-primary-blue"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M4 12a8 8 0 0 1 16 0m-14 0v4a2 2 0 0 0 2 2h1m10-6v4a2 2 0 0 1-2 2h-1"
-      />
-    </svg>
-  ),
+  certified: partnerCertifiedIcon,
+  onTime: partnerOnTimeIcon,
+  support: partnerSupportIcon,
+  technology: partnerTechnologyIcon,
+  custom: partnerCustomIcon,
+  quality: partnerQualityIcon,
+  headset: partnerHeadsetIcon,
 };
 
 export function WhyPartnerSection({
@@ -141,7 +49,11 @@ export function WhyPartnerSection({
               {items.map((item) => (
                 <div key={item.id} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
-                    {PARTNER_ICONS[item.icon] ?? PARTNER_ICONS.quality}
+                    <img
+                      src={PARTNER_ICONS[item.icon] ?? PARTNER_ICONS.quality}
+                      alt=""
+                      className="w-5 h-5"
+                    />
                   </div>
                   <div>
                     <h3 className="text-md font-semibold text-navy font-display mb-1">
@@ -167,7 +79,7 @@ export function WhyPartnerSection({
             <div className="absolute -bottom-6 left-6 bg-card border border-border rounded-2xl shadow-lg p-5 max-w-[260px]">
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-primary-blue/10 flex items-center justify-center">
-                  {PARTNER_ICONS.headset}
+                  <img src={PARTNER_ICONS.headset} alt="" className="w-5 h-5" />
                 </span>
                 <div>
                   <p className="text-md font-semibold text-navy font-display">
