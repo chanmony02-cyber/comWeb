@@ -1,4 +1,4 @@
-// src/data/softwareApplication/softwareApplication.js
+﻿// src/data/softwareApplication/softwareApplication.js
 
 export const softwareApplicationData = {
   hero: {
@@ -52,6 +52,39 @@ export const softwareApplicationData = {
         description:
           "Profile, dark mode, and help access in one place.",
         points: ["Role profile", "Dark mode toggle", "Help & logout"],
+      },
+    ],
+  },
+  mobileExperience: {
+    label: "Mobile experience",
+    title: "See the app on a phone, in motion",
+    subtitle:
+      "The phone view cycles through core app states so operators can picture the real workflow on a handheld device.",
+    highlights: [
+      "Auto-rotating app screens",
+      "Animated phone shell with floating motion",
+      "Masked data and compact operator views",
+    ],
+    slides: [
+      {
+        id: "login",
+        title: "Tenant login",
+        description: "Choose a workspace and sign in quickly.",
+      },
+      {
+        id: "dashboard",
+        title: "Operations dashboard",
+        description: "Read device health at a glance.",
+      },
+      {
+        id: "application",
+        title: "Application list",
+        description: "Search and scan live app totals.",
+      },
+      {
+        id: "gateway",
+        title: "Gateway status",
+        description: "Monitor last-seen state and masked IDs.",
       },
     ],
   },
