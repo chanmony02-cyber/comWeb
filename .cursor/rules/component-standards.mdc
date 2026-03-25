@@ -135,3 +135,9 @@ import SectionHeader from '../../../components/ui/SectionHeader';
 | React function type | `React.FC` | Plain function |
 | Shared component export | `export default SectionHeader` | `export function SectionHeader` |
 | Page component export | `export function HomePage` | `export default function HomePage` |
+
+## Page Composition Rule
+
+- Every page should import its sections from `./components/`.
+- The page file should act as an orchestrator, not a place to build section markup inline.
+- If a page contains section-level JSX, extract it into `src/pages/[PageName]/components/` before shipping.

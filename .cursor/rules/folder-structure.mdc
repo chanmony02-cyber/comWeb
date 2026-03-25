@@ -186,3 +186,10 @@ src/
 - Hook files → `camelCase.js` prefixed with `use` (e.g. `useScrollPosition.js`)
 - Utility files → `camelCase.js` (e.g. `formatDate.js`)
 - Every page folder → must have `index.js` that re-exports the page default
+
+## Page Section Rule
+
+- Every page folder should split section-level UI into a local `components/` folder.
+- Keep the page file focused on composition, data plumbing, and layout only.
+- If a page has multiple substantial sections, each section should live in its own component file under `src/pages/[PageName]/components/`.
+- Do not keep reusable or section-sized JSX inline in the page file when it can be extracted cleanly.
