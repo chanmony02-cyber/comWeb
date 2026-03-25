@@ -31,6 +31,11 @@ Is it used on 2+ UNRELATED pages?
 
 ```
 src/
+├── assets/
+│    ├── images/
+│    ├── icons/
+│    ├── fonts/
+│    └── media/
 ├── components/
 │   ├── common/                    # App-wide shell — Navbar, Footer, TopBar, Button
 │   │   ├── Navbar/
