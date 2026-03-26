@@ -58,7 +58,7 @@ export const agricultureData = {
         description:
           "Deployed a complete rural power distribution network across 500 hectares of rice farmland, providing stable electricity to irrigation pumps and processing facilities year-round.",
         image: as1,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 7),
+        href: ROUTES.PROJECT_DETAIL(7),
       },
       {
         id: 8,
@@ -66,7 +66,7 @@ export const agricultureData = {
         description:
           "Installed a solar-powered smart irrigation system with automated scheduling and remote monitoring, reducing water consumption by 40% while maintaining optimal crop yields.",
         image: as2,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 8),
+        href: ROUTES.PROJECT_DETAIL(8),
       },
       {
         id: 9,
@@ -74,7 +74,7 @@ export const agricultureData = {
         description:
           "Engineered the full electrical and control infrastructure for a large-scale greenhouse complex, including climate control, grow lighting, and integrated SCADA monitoring systems.",
         image: as3,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 9),
+        href: ROUTES.PROJECT_DETAIL(9),
       },
     ],
   },
@@ -84,3 +84,4 @@ export const agricultureData = {
       "Discover the advantages of partnering with us to modernize your infrastructure.",
   },
 };
+

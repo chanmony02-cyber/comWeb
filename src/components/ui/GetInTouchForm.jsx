@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/ui/GetInTouchForm.jsx
 
 import { useState } from "react";
@@ -135,3 +137,4 @@ export function GetInTouchForm() {
     </>
   );
 }
+

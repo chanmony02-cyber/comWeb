@@ -1,12 +1,13 @@
 ---
-description: Project overview, stack, and core principles for the Smart Infrastructure website
+description: Project overview, stack, and core principles for the VHT website
 globs: ["**/*"]
 alwaysApply: true
 ---
 
-# Project: Smart Infrastructure Website
+# Project: VHT Website
 
 ## Stack
+
 - **Framework**: Next.js 15 (App Router)
 - **UI Library**: React 19
 - **Styling**: Tailwind CSS v4
@@ -16,6 +17,7 @@ alwaysApply: true
 - **Utilities**: clsx + tailwind-merge (via `@/lib/utils/cn.js`)
 
 ## Core Principles
+
 1. **Server Components by default** — only add `"use client"` when strictly necessary
 2. **Feature-based structure** — page-private code lives in `src/features/`, shared code in `src/components/`
 3. **Centralized data** — ALL static arrays live in `src/lib/data/`, never inside components
@@ -25,12 +27,13 @@ alwaysApply: true
 7. **JSX only** — all React components use `.jsx`, all logic files use `.js`
 
 ## File Extension Rules
-| File type | Extension |
-|---|---|
-| React components | `.jsx` |
-| Logic, utils, data, config, hooks | `.js` |
-| Styles | `.css` |
-| Next.js config | `.js` |
-| Path alias config | `jsconfig.json` |
+
+| File type                         | Extension       |
+| --------------------------------- | --------------- |
+| React components                  | `.jsx`          |
+| Logic, utils, data, config, hooks | `.js`           |
+| Styles                            | `.css`          |
+| Next.js config                    | `.js`           |
+| Path alias config                 | `jsconfig.json` |
 
 Never create `.ts` or `.tsx` files.

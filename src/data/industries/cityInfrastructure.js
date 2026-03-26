@@ -58,7 +58,7 @@ export const cityInfrastructureData = {
         description:
           "Engineered and constructed a multi-level highway interchange serving over 150,000 vehicles daily, integrating smart traffic signals and energy-efficient LED lighting throughout the corridor.",
         image: ci1,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 4),
+        href: ROUTES.PROJECT_DETAIL(4),
       },
       {
         id: 5,
@@ -66,7 +66,7 @@ export const cityInfrastructureData = {
         description:
           "Designed the complete electrical and control systems for a modern water treatment plant, ensuring 24/7 automated operations with redundant power supply and remote monitoring capabilities.",
         image: ci2,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 5),
+        href: ROUTES.PROJECT_DETAIL(5),
       },
       {
         id: 6,
@@ -74,7 +74,7 @@ export const cityInfrastructureData = {
         description:
           "Delivered end-to-end electrical infrastructure for a new urban rail line, including traction power substations, platform systems, and integrated safety and communication networks.",
         image: ci3,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 6),
+        href: ROUTES.PROJECT_DETAIL(6),
       },
     ],
   },
@@ -84,3 +84,4 @@ export const cityInfrastructureData = {
       "Discover the advantages of partnering with us to modernize your infrastructure.",
   },
 };
+

@@ -1,4 +1,6 @@
-﻿export function SectionHeader({
+"use client";
+
+export function SectionHeader({
   label,
   title,
   subtitle,
@@ -35,3 +37,4 @@
     </div>
   );
 }
+

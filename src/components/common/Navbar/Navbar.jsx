@@ -1,5 +1,9 @@
-﻿import { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { Search, ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -7,7 +11,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import { NavDropdown } from "@/components/common/Navbar/NavDropdown";
 import { TopBar } from "@/components/common/Navbar/TopBar";
 import VHTLogo from "@/assets/images/VHT_Logo.png";
@@ -38,12 +41,11 @@ export function Navbar() {
         isOpen={showAlert}
         onClose={() => setShowAlert(false)}
       />
-      {/* Topbar */}
       <TopBar />
       <div className="border-b border-border">
         <div className="container flex items-center justify-between h-[var(--nav-height)]">
-          <Link to={ROUTES.HOME} className="flex items-center">
-            <img src={VHTLogo} alt="VHT Logo" className="h-14 w-auto" />
+          <Link href={ROUTES.HOME} className="flex items-center">
+            <Image src={VHTLogo} alt="VHT Logo" className="h-14 w-auto" />
           </Link>
 
           <nav className="hidden xl:flex text-lg items-center gap-8">
@@ -93,7 +95,7 @@ export function Navbar() {
                 return (
                   <Link
                     key={item.label}
-                    to={item.href}
+                    href={item.href}
                     className={navLinkClassName}
                   >
                     {item.label}
@@ -120,7 +122,6 @@ export function Navbar() {
           </nav>
 
           <div className="hidden xl:flex items-center gap-4">
-            {/* search icon */}
             <button
               className="p-2 hover:bg-muted rounded-full transition-colors"
               onClick={handleSearchClick}
@@ -132,12 +133,11 @@ export function Navbar() {
               asChild
               className="rounded-full px-6 font-semibold border border-transparent hover:bg-white hover:text-slate-950 hover:border-primary"
             >
-              <Link to={ROUTES.CONTACT}>Get in Touch</Link>
+              <Link href={ROUTES.CONTACT}>Get in Touch</Link>
             </Button>
           </div>
 
           <div className="xl:hidden flex items-center gap-2">
-            {/* <LanguageSelector variant="compact" /> */}
             <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? (
                 <X className="w-6 h-6" />
@@ -282,7 +282,7 @@ export function Navbar() {
                 return (
                   <Link
                     key={item.label}
-                    to={item.href}
+                    href={item.href}
                     className="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-border/50"
                     onClick={() => setMobileOpen(false)}
                   >
@@ -309,7 +309,7 @@ export function Navbar() {
             })}
             <div className="mt-4">
               <Button asChild className="w-full rounded-full font-semibold">
-                <Link to={ROUTES.CONTACT} onClick={() => setMobileOpen(false)}>
+                <Link href={ROUTES.CONTACT} onClick={() => setMobileOpen(false)}>
                   Get in Touch
                 </Link>
               </Button>

@@ -35,6 +35,7 @@ import Image from 'next/image'
 ```
 
 Rules:
+
 - Add `priority` prop on hero/above-the-fold images to preload them
 - Use `fill` + `className="object-cover"` for full-bleed images
 - Always provide a descriptive `alt` string — never empty except for decorative images
@@ -49,14 +50,15 @@ Dynamic pages (`[slug]`) must be pre-rendered at build time using `generateStati
 ```jsx
 // ✅ Pre-renders all product pages at build time
 export async function generateStaticParams() {
-  const products = await getProducts()
-  return products.map((p) => ({ slug: p.slug }))
+  const products = await getProducts();
+  return products.map((p) => ({ slug: p.slug }));
 }
 ```
 
 If a page could have thousands of items, use `dynamicParams = false` to 404 unknown slugs:
+
 ```js
-export const dynamicParams = false
+export const dynamicParams = false;
 ```
 
 ---
@@ -67,20 +69,20 @@ Load fonts with `next/font` in the root layout. Never use a `<link>` tag in `<he
 
 ```jsx
 // app/layout.jsx
-import { Inter, Sora } from 'next/font/google'
+import { Inter, Sora } from "next/font/google";
 
 const sora = Sora({
-  subsets: ['latin'],
-  variable: '--font-sora',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={sora.variable}>
       <body>{children}</body>
     </html>
-  )
+  );
 }
 ```
 
@@ -93,22 +95,22 @@ Every `page.jsx` must export metadata for SEO:
 ```jsx
 // Static metadata
 export const metadata = {
-  title: 'Products | Smart Infrastructure',
-  description: 'Browse our full range of smart infrastructure products.',
+  title: "Products | VHT",
+  description: "Browse our full range of VHT products.",
   openGraph: {
-    title: 'Products | Smart Infrastructure',
-    description: 'Browse our full range of smart infrastructure products.',
-    images: ['/images/og/products.jpg'],
+    title: "Products | VHT",
+    description: "Browse our full range of VHT products.",
+    images: ["/images/og/products.jpg"],
   },
-}
+};
 
 // Dynamic metadata
 export async function generateMetadata({ params }) {
-  const product = await getProductBySlug(params.slug)
+  const product = await getProductBySlug(params.slug);
   return {
-    title: `${product.name} | Smart Infrastructure`,
+    title: `${product.name} | VHT`,
     description: product.summary,
-  }
+  };
 }
 ```
 
@@ -119,15 +121,17 @@ export async function generateMetadata({ params }) {
 For large below-the-fold sections with heavy JS (e.g., interactive maps, charts), use `next/dynamic`:
 
 ```jsx
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
 const HeavyInteractiveChart = dynamic(
-  () => import('@/features/solutions/HeavyChart'),
+  () => import("@/features/solutions/HeavyChart"),
   {
-    loading: () => <div className="h-64 animate-pulse bg-slate-800 rounded-lg" />,
-    ssr: false,   // only if component uses browser APIs
-  }
-)
+    loading: () => (
+      <div className="h-64 animate-pulse bg-slate-800 rounded-lg" />
+    ),
+    ssr: false, // only if component uses browser APIs
+  },
+);
 ```
 
 ---
@@ -136,12 +140,12 @@ const HeavyInteractiveChart = dynamic(
 
 Aim for these Lighthouse scores before any production deploy:
 
-| Metric | Target |
-|---|---|
-| Performance | ≥ 90 |
-| Accessibility | ≥ 90 |
-| Best Practices | ≥ 90 |
-| SEO | 100 |
-| LCP | < 2.5s |
-| CLS | < 0.1 |
-| FID/INP | < 200ms |
+| Metric         | Target  |
+| -------------- | ------- |
+| Performance    | ≥ 90    |
+| Accessibility  | ≥ 90    |
+| Best Practices | ≥ 90    |
+| SEO            | 100     |
+| LCP            | < 2.5s  |
+| CLS            | < 0.1   |
+| FID/INP        | < 200ms |

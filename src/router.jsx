@@ -3,42 +3,42 @@ import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "@/config/routes";
 
-const Home = lazy(() => import("@/pages/Home"));
-const AboutPage = lazy(() => import("@/pages/About"));
-const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
+const Home = lazy(() => import("@/features/Home"));
+const AboutPage = lazy(() => import("@/features/About"));
+const ElectricalEquipment = lazy(() => import("@/features/ElectricalEquipment"));
 const SoftwareApplicationPage = lazy(
-  () => import("@/pages/SoftwareApplication"),
+  () => import("@/features/SoftwareApplication"),
 );
-const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
-const NotFound = lazy(() => import("@/pages/NotFound"));
-const ContactPage = lazy(() => import("@/pages/Contact"));
-const AllProjectsPage = lazy(() => import("@/pages/AllProjects"));
-const ProjectDetailPage = lazy(() => import("@/pages/ProjectDetail"));
+const ProductDetail = lazy(() => import("@/features/ProductDetail"));
+const NotFound = lazy(() => import("@/features/NotFound"));
+const ContactPage = lazy(() => import("@/features/Contact"));
+const AllProjectsPage = lazy(() => import("@/features/AllProjects"));
+const ProjectDetailPage = lazy(() => import("@/features/ProjectDetail"));
 const DistributionGridPage = lazy(
-  () => import("@/pages/Industries/DistributionGrid"),
+  () => import("@/features/Industries/DistributionGrid"),
 );
 const CityInfrastructurePage = lazy(
-  () => import("@/pages/Industries/CityInfrastructure"),
+  () => import("@/features/Industries/CityInfrastructure"),
 );
-const AgriculturePage = lazy(() => import("@/pages/Industries/Agriculture"));
-const ServicesPage = lazy(() => import("@/pages/Services"));
+const AgriculturePage = lazy(() => import("@/features/Industries/Agriculture"));
+const ServicesPage = lazy(() => import("@/features/Services"));
 const ConsultantsPage = lazy(() =>
-  import("@/pages/ServiceDetail").then((m) => ({ default: m.ConsultantsPage })),
+  import("@/features/ServiceDetail").then((m) => ({ default: m.ConsultantsPage })),
 );
 const MaintenancePage = lazy(() =>
-  import("@/pages/ServiceDetail").then((m) => ({ default: m.MaintenancePage })),
+  import("@/features/ServiceDetail").then((m) => ({ default: m.MaintenancePage })),
 );
 const InspectionsPage = lazy(() =>
-  import("@/pages/ServiceDetail").then((m) => ({ default: m.InspectionsPage })),
+  import("@/features/ServiceDetail").then((m) => ({ default: m.InspectionsPage })),
 );
 const NewsEventsPage = lazy(() =>
-  import("@/pages/NewsEvents").then((m) => ({ default: m.NewsEventsPage })),
+  import("@/features/NewsEvents").then((m) => ({ default: m.NewsEventsPage })),
 );
 const NewsDetailPage = lazy(() =>
-  import("@/pages/NewsEvents").then((m) => ({ default: m.NewsDetailPage })),
+  import("@/features/NewsEvents").then((m) => ({ default: m.NewsDetailPage })),
 );
-const CareerPage = lazy(() => import("@/pages/Career"));
-const CareerDetailPage = lazy(() => import("@/pages/CareerDetail"));
+const CareerPage = lazy(() => import("@/features/Career"));
+const CareerDetailPage = lazy(() => import("@/features/CareerDetail"));
 
 const AppRouter = () => {
   return (
@@ -83,3 +83,4 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
+

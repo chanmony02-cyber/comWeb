@@ -58,7 +58,7 @@ export const distributionGridData = {
         description:
           "Designed and constructed a 115kV distribution network spanning over 200km, connecting rural communities to the national power grid with reliable and sustainable infrastructure.",
         image: ds1,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 1),
+        href: ROUTES.PROJECT_DETAIL(1),
       },
       {
         id: 2,
@@ -66,7 +66,7 @@ export const distributionGridData = {
         description:
           "Installed an extensive underground cable system for urban areas, minimizing visual impact while providing reliable power distribution to residential and commercial zones.",
         image: ds2,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 2),
+        href: ROUTES.PROJECT_DETAIL(2),
       },
       {
         id: 3,
@@ -74,7 +74,7 @@ export const distributionGridData = {
         description:
           "Deployed overhead distribution lines across agricultural regions, bringing consistent electricity access to farming communities and boosting local productivity.",
         image: ds3,
-        href: ROUTES.PROJECT_DETAIL.replace(":id", 3),
+        href: ROUTES.PROJECT_DETAIL(3),
       },
     ],
   },
@@ -84,3 +84,4 @@ export const distributionGridData = {
       "Discover the advantages of partnering with us to modernize your infrastructure.",
   },
 };
+

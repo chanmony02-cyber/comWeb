@@ -1,26 +1,18 @@
-import { NavLink as RouterNavLink } from "react-router-dom";
 import { forwardRef } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const NavLink = forwardRef(
-  ({ className, activeClassName, pendingClassName, to, ...props }, ref) => {
+  ({ className, activeClassName, pendingClassName, to, href, ...props }, ref) => {
     return (
-      <RouterNavLink
+      <Link
         ref={ref}
-        to={to}
-        className={({ isActive, isPending }) =>
-          cn(
-            className,
-            isActive && activeClassName,
-            isPending && pendingClassName,
-          )
-        }
+        href={href ?? to}
+        className={cn(className, activeClassName, pendingClassName)}
         {...props}
       />
     );
   },
 );
-// we want to rename when export if we don't use with "export default"
-// NavLink.displayName = "NavLink";
 
 export { NavLink };

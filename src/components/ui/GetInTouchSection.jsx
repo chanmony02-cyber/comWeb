@@ -1,3 +1,5 @@
+"use client";
+
 import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
 
 export function GetInTouchSection({
@@ -15,3 +17,4 @@ export function GetInTouchSection({
     </section>
   );
 }
+

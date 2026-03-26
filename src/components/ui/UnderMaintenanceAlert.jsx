@@ -1,3 +1,5 @@
+"use client";
+
 // src/components/ui/UnderMaintenanceAlert.jsx
 
 import { useEffect } from "react";
@@ -147,3 +149,4 @@ export function UnderMaintenanceAlert({
     </div>
   );
 }
+

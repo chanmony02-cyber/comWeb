@@ -50,24 +50,24 @@ Every `page.jsx` must export `generateMetadata` and a default async component:
 ```jsx
 // app/(marketing)/products/page.jsx
 
-import { getProducts } from '@/lib/api/products'
-import ProductsHero from '@/features/products/ProductsHero'
-import ProductGrid from '@/features/products/ProductGrid'
+import { getProducts } from "@/lib/api/products";
+import ProductsHero from "@/features/products/ProductsHero";
+import ProductGrid from "@/features/products/ProductGrid";
 
 export const metadata = {
-  title: 'Products | Smart Infrastructure',
-  description: 'Browse our full range of smart infrastructure products.',
-}
+  title: "Products | VHT",
+  description: "Browse our full range of VHT products.",
+};
 
 export default async function ProductsPage() {
-  const products = await getProducts()
+  const products = await getProducts();
 
   return (
     <main>
       <ProductsHero />
       <ProductGrid products={products} />
     </main>
-  )
+  );
 }
 ```
 
@@ -80,32 +80,28 @@ Always use `generateStaticParams` on dynamic `[slug]` pages to pre-render at bui
 ```jsx
 // app/(marketing)/products/[slug]/page.jsx
 
-import { getProducts, getProductBySlug } from '@/lib/api/products'
-import { notFound } from 'next/navigation'
+import { getProducts, getProductBySlug } from "@/lib/api/products";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const products = await getProducts()
-  return products.map((p) => ({ slug: p.slug }))
+  const products = await getProducts();
+  return products.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
-  const product = await getProductBySlug(params.slug)
-  if (!product) return {}
+  const product = await getProductBySlug(params.slug);
+  if (!product) return {};
   return {
-    title: `${product.name} | Smart Infrastructure`,
+    title: `${product.name} | VHT`,
     description: product.summary,
-  }
+  };
 }
 
 export default async function ProductDetailPage({ params }) {
-  const product = await getProductBySlug(params.slug)
-  if (!product) notFound()
+  const product = await getProductBySlug(params.slug);
+  if (!product) notFound();
 
-  return (
-    <main>
-      {/* import from @/features/product-detail/ */}
-    </main>
-  )
+  return <main>{/* import from @/features/product-detail/ */}</main>;
 }
 ```
 
@@ -116,9 +112,9 @@ export default async function ProductDetailPage({ params }) {
 ```jsx
 // app/(marketing)/layout.jsx
 
-import TopBar from '@/components/layout/TopBar/TopBar'
-import Navbar from '@/components/layout/Navbar/Navbar'
-import Footer from '@/components/layout/Footer/Footer'
+import TopBar from "@/components/layout/TopBar/TopBar";
+import Navbar from "@/components/layout/Navbar/Navbar";
+import Footer from "@/components/layout/Footer/Footer";
 
 export default function MarketingLayout({ children }) {
   return (
@@ -128,7 +124,7 @@ export default function MarketingLayout({ children }) {
       {children}
       <Footer />
     </>
-  )
+  );
 }
 ```
 
@@ -141,21 +137,22 @@ Never hardcode path strings. Always use `ROUTES` from `@/config/routes`:
 ```js
 // src/config/routes.js
 export const ROUTES = {
-  HOME:                  '/',
-  ABOUT:                 '/about',
-  PRODUCTS:              '/products',
-  PRODUCT_DETAIL:        (slug) => `/products/${slug}`,
-  SERVICES:              '/services',
-  SERVICES_CONSULTANTS:  '/services/consultants',
-  SERVICES_MAINTENANCE:  '/services/maintenance',
-  SERVICES_INSPECTIONS:  '/services/inspections',
-  INDUSTRIES_DIST_GRID:  '/industries/distribution-grid',
-  SOLUTIONS_SOFTWARE:    '/solutions/software-application',
-  CONTACT:               '/contact',
-}
+  HOME: "/",
+  ABOUT: "/about",
+  PRODUCTS: "/products",
+  PRODUCT_DETAIL: (slug) => `/products/${slug}`,
+  SERVICES: "/services",
+  SERVICES_CONSULTANTS: "/services/consultants",
+  SERVICES_MAINTENANCE: "/services/maintenance",
+  SERVICES_INSPECTIONS: "/services/inspections",
+  INDUSTRIES_DIST_GRID: "/industries/distribution-grid",
+  SOLUTIONS_SOFTWARE: "/solutions/software-application",
+  CONTACT: "/contact",
+};
 ```
 
 Usage:
+
 ```jsx
 import Link from 'next/link'
 import { ROUTES } from '@/config/routes'
@@ -169,6 +166,7 @@ import { ROUTES } from '@/config/routes'
 ## `app/` Is Routing Only
 
 The `app/` directory contains ONLY:
+
 - `page.jsx` files — compose feature components, fetch data, export metadata
 - `layout.jsx` files — shell wrappers
 - `loading.jsx`, `error.jsx`, `not-found.jsx` — special Next.js files

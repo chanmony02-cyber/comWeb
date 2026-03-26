@@ -1,3 +1,5 @@
+"use client";
+
 const formatSpecLabel = (label) =>
   label
     .replace(/([A-Z])/g, " $1")
@@ -43,3 +45,4 @@ export function ProductCard({ image, name, category, description, specs }) {
     </article>
   );
 }
+

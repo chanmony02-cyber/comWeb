@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/homepage/page": "/homepage",
+  "/all-projects/page": "/all-projects",
+  "/contact/page": "/contact",
+  "/industries/distribution-grid/page": "/industries/distribution-grid",
+  "/about/page": "/about",
+  "/career/[id]/page": "/career/[id]",
+  "/career/page": "/career",
+  "/electrical-equipment/page": "/electrical-equipment",
+  "/page": "/",
+  "/industries/city-infrastructure/page": "/industries/city-infrastructure",
+  "/services/inspections/page": "/services/inspections",
+  "/industries/agriculture/page": "/industries/agriculture",
+  "/services/page": "/services",
+  "/news/page": "/news",
+  "/news/[id]/page": "/news/[id]",
+  "/services/maintenance/page": "/services/maintenance",
+  "/projects/[id]/page": "/projects/[id]",
+  "/services/consultants/page": "/services/consultants",
+  "/products/[id]/page": "/products/[id]",
+  "/software-application/page": "/software-application"
+}
