@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 
-const NavDropdown = ({ label, items, triggerClassName = "" }) => {
+export function NavDropdown({ label, items, triggerClassName = "" }) {
   const [open, setOpen] = useState(false);
 
   const itemClassName =
@@ -49,6 +49,4 @@ const NavDropdown = ({ label, items, triggerClassName = "" }) => {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-};
-
-export default NavDropdown;
+}

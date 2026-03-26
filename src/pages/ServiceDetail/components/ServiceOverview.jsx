@@ -1,9 +1,17 @@
 // src/pages/ServiceDetail/components/ServiceOverview.jsx
 
-export function ServiceOverview({ title, paragraphs, image, bgAlt = false }) {
+export function ServiceOverview({
+  title,
+  paragraphs,
+  image,
+  bgSection = false,
+  bgAlt,
+}) {
+  const isAlt = bgAlt ?? bgSection;
+
   return (
     <section
-      className={`py-16 md:py-20 ${bgAlt ? "bg-section-alt" : "bg-background"}`}
+      className={`py-16 md:py-20 ${isAlt ? "bg-section-alt" : "bg-background"}`}
     >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">

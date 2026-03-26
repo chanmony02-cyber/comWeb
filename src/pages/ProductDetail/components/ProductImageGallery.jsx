@@ -13,7 +13,6 @@ export function ProductImageGallery({ images = [], name = "" }) {
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Main image */}
       <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80 xl:h-[750px] xl:w-[750px]">
         <img
           src={images[activeIndex]}
@@ -29,7 +28,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
               aria-label="Previous image"
               className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-border bg-white flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors shadow-sm"
             >
-              ‹
+              {"<-"}
             </button>
             <button
               type="button"
@@ -37,13 +36,12 @@ export function ProductImageGallery({ images = [], name = "" }) {
               aria-label="Next image"
               className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-border bg-white flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors shadow-sm"
             >
-              ›
+              {"->"}
             </button>
           </>
         )}
       </div>
 
-      {/* Thumbnails — horizontally scrollable */}
       {images.length > 1 && (
         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-border scrollbar-track-transparent">
           {images.map((img, index) => (

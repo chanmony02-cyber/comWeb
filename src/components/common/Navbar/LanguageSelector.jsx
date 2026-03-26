@@ -2,7 +2,7 @@
 import { ChevronDown } from "lucide-react";
 import { languages } from "@/data/languages/languages";
 
-const LanguageSelector = ({ variant = "default" }) => {
+export function LanguageSelector({ variant = "default" }) {
   const [selected, setSelected] = useState(languages[0]);
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -24,10 +24,10 @@ const LanguageSelector = ({ variant = "default" }) => {
         onClick={() => setOpen(!open)}
         className={
           isCompact
-            ? "flex items-center justify-center h-10 w-10 border border-border rounded-[10px] hover:bg-muted transition-colors"
+            ? "flex items-center justify-center h-10 w-10 border border-border rounded-lg hover:bg-muted transition-colors"
             : isMobile
-              ? "flex items-center gap-2 py-2 px-4 text-sm font-medium text-foreground border border-border rounded-[10px] h-10"
-              : "flex items-center gap-2 border border-border rounded-[10px] px-4 h-10 text-xs font-medium hover:bg-muted transition-colors shadow-sm"
+              ? "flex items-center gap-2 py-2 px-4 text-sm font-medium text-foreground border border-border rounded-lg h-10"
+              : "flex items-center gap-2 border border-border rounded-lg px-4 h-10 text-xs font-medium hover:bg-muted transition-colors shadow-sm"
         }
       >
         {selected.flag}
@@ -41,7 +41,7 @@ const LanguageSelector = ({ variant = "default" }) => {
 
       {open && (
         <div
-          className={`absolute z-50 mt-1 bg-popover border border-border rounded-md shadow-md overflow-hidden ${isMobile ? "left-0 right-0" : "right-0 min-w-[140px]"}`}
+          className={`absolute z-50 mt-1 bg-popover border border-border rounded-md shadow-md overflow-hidden ${isMobile ? "left-0 right-0" : "right-0 min-w-36"}`}
         >
           {languages.map((lang) => (
             <button
@@ -60,6 +60,4 @@ const LanguageSelector = ({ variant = "default" }) => {
       )}
     </div>
   );
-};
-
-export default LanguageSelector;
+}

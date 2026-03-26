@@ -1,17 +1,12 @@
-import LanguageSelector from "./LanguageSelector";
 import {
   Phone,
   Facebook,
   Linkedin,
-  Twitter,
-  Instagram,
-  ChevronDown,
 } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 
-const TopBar = () => {
+export function TopBar() {
   return (
-    // UPDATED: show top bar from tablet (md) upwards
     <div className="hidden xl:block bg-background text-foreground pt-4">
       <div className="container flex items-center justify-between h-[var(--topbar-height)] text-sm">
         <div className="flex items-center gap-2">
@@ -19,7 +14,6 @@ const TopBar = () => {
           <Phone className="w-3.5 h-3.5" />
         </div>
         <div className="flex items-center gap-4">
-          {/* <LanguageSelector /> */}
           <div className="flex items-center gap-3">
             <a
               href={siteConfig.socials.facebook}
@@ -38,6 +32,4 @@ const TopBar = () => {
       </div>
     </div>
   );
-};
-
-export default TopBar;
+}

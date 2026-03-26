@@ -7,9 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import LanguageSelector from "@/components/common/Navbar/LanguageSelector";
-import NavDropdown from "@/components/common/Navbar/NavDropdown";
-import TopBar from "@/components/common/Navbar/TopBar";
+import { NavDropdown } from "@/components/common/Navbar/NavDropdown";
+import { TopBar } from "@/components/common/Navbar/TopBar";
 import VHTLogo from "@/assets/images/VHT_Logo.png";
 import {
   companyDropdownItems,
@@ -19,10 +18,9 @@ import {
   servicesDropdownItems,
 } from "@/data/navigation/navigation";
 import { ROUTES } from "@/config/routes";
-import { Route, Routes } from "react-router-dom";
 import { UnderMaintenanceAlert } from "@/components/ui/UnderMaintenanceAlert";
 
-const Navbar = () => {
+export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navLinkClassName =
     "flex items-center gap-1 text-md font-medium text-foreground hover:text-navy transition-colors";
@@ -284,6 +282,4 @@ const Navbar = () => {
       </div>
     </header>
   );
-};
-
-export default Navbar;
+}

@@ -1,8 +1,8 @@
 // src/pages/Services/ServicesPage.jsx
 
 import MainLayout from "@/layouts/MainLayout";
-import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
-import { FAQAccordion } from "@/components/ui/FAQAccordion";
+import { FaqSection } from "@/components/ui/FaqSection";
+import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { allServicesData } from "@/data/services/allServices";
 import { ServicesHero } from "./components/ServicesHero";
 import { OurServicesGrid } from "./components/OurServicesGrid";
@@ -28,19 +28,8 @@ export default function ServicesPage() {
         title={whyChoose.title}
         items={whyChoose.items}
       />
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-navy font-display text-center mb-10">FAQs</h2>
-          <FAQAccordion items={faqs} />
-        </div>
-      </section>
-      <section className="py-16 md:py-20 bg-section-alt">
-        <div className="container">
-          <div className="max-w-md mx-auto bg-card border border-border rounded-2xl shadow-sm p-8">
-            <GetInTouchForm />
-          </div>
-        </div>
-      </section>
+      <FaqSection items={faqs} />
+      <GetInTouchSection />
     </MainLayout>
   );
 }

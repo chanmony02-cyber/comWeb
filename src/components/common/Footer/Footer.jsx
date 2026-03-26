@@ -3,8 +3,6 @@ import VHTLogo from "@/assets/images/VHT_Logo.png";
 import {
   Facebook,
   Linkedin,
-  Twitter,
-  Instagram,
   Mail,
   Phone,
   MapPin,
@@ -12,12 +10,11 @@ import {
 import { ROUTES } from "@/config/routes";
 import { siteConfig } from "@/config/siteConfig";
 
-const Footer = () => {
+export function Footer() {
   return (
     <footer className="bg-topbar text-topbar-foreground pt-16 pb-8">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-12">
-          {/* Logo + description + socials */}
           <div>
             <div className="card-logo bg-white p-1 rounded-lg w-fit">
               <Link to={ROUTES.HOME} className="flex items-center">
@@ -43,7 +40,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Industries */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">
               Industries
@@ -76,7 +72,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
             <ul className="space-y-5 text-md text-topbar-foreground/70">
@@ -115,7 +110,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Useful Links */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">
               Useful Links
@@ -156,7 +150,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-5 text-md text-topbar-foreground/70">
@@ -187,11 +180,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-topbar-foreground/10 pt-6 text-center text-md text-topbar-foreground/50">
-          © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          (c) {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,16 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-
 import MainLayout from "@/layouts/MainLayout";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { GetInTouchForm } from "@/components/ui/GetInTouchForm";
-import { ProductCard } from "@/components/ui/ProductCard";
+import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import {
   electricalEquipmentCategories,
   electricalEquipmentContent,
 } from "@/data/electricalEquipment/electricalEquipment";
 import { products } from "@/data/products/products";
-import { ROUTES } from "@/config/routes";
+import { ElectricalEquipmentHeroSection } from "./components/ElectricalEquipmentHeroSection";
+import { ElectricalEquipmentCatalogSection } from "./components/ElectricalEquipmentCatalogSection";
 
 export default function ElectricalEquipment() {
   const allCategoryValue = electricalEquipmentCategories[0]?.value ?? "all";
@@ -28,139 +25,34 @@ export default function ElectricalEquipment() {
     (currentPage - 1) * pageSize,
     currentPage * pageSize,
   );
-  const pageNumbers = Array.from(
-    { length: totalPages },
-    (_, index) => index + 1,
-  );
-
-  const scrollToTop = () => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({ top: 300, behavior: "smooth" });
-    }
-  };
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    scrollToTop();
+    window.scrollTo({ top: 300, behavior: "smooth" });
   };
 
   return (
     <MainLayout>
       <main className="flex-1 bg-background">
-        <section className="bg-navy">
-          <div className="container">
-            <div className="min-h-[200px] sm:h-[300px] py-16 md:py-20 flex items-center justify-center">
-              <SectionHeader
-                title={electricalEquipmentContent.heroTitle}
-                align="center"
-                as="h1"
-                titleClassName="text-white text-3xl sm:text-5xl lg:text-6xl"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12">
-          <div className="container">
-            <div className="flex flex-col gap-6 mb-10">
-              <SectionHeader
-                title={electricalEquipmentContent.categoryTitle}
-                align="left"
-                titleClassName="text-2xl sm:text-3xl lg:text-4xl"
-              />
-              <div className="flex flex-wrap gap-2">
-                {electricalEquipmentCategories.map((category) => (
-                  <button
-                    key={category.id}
-                    type="button"
-                    onClick={() => {
-                      setActiveCategory(category.value);
-                      setCurrentPage(1);
-                      scrollToTop();
-                    }}
-                    className={`px-4 py-1.5 rounded-full text-xs md:text-lg font-semibold border transition-colors ${
-                      activeCategory === category.value
-                        ? "bg-navy text-white border-navy"
-                        : "bg-white text-foreground border-border hover:border-navy"
-                    }`}
-                  >
-                    {category.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
-              {visibleProducts.map((product) => (
-                <Link
-                  key={product.id}
-                  to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
-                  className="block w-full"
-                >
-                  <ProductCard
-                    id={product.id}
-                    image={product.image}
-                    name={product.name}
-                    category={product.category}
-                  />
-                </Link>
-              ))}
-            </div>
-
-            {totalPages > 1 ? (
-              <div className="mt-12 flex items-center justify-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-                  disabled={currentPage === 1}
-                  className={`w-10 h-10 rounded border text-foreground transition-colors ${
-                    currentPage === 1
-                      ? "border-border/60 text-foreground/40"
-                      : "border-border hover:border-navy"
-                  }`}
-                >
-                  {electricalEquipmentContent.pagination.previousLabel}
-                </button>
-                {pageNumbers.map((page) => (
-                  <button
-                    key={page}
-                    type="button"
-                    onClick={() => handlePageChange(page)}
-                    className={`w-10 h-10 rounded border text-sm font-semibold transition-colors ${
-                      page === currentPage
-                        ? "bg-navy text-white border-navy"
-                        : "border-border text-foreground hover:border-navy"
-                    }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-                <button
-                  type="button"
-                  onClick={() =>
-                    handlePageChange(Math.min(totalPages, currentPage + 1))
-                  }
-                  disabled={currentPage === totalPages}
-                  className={`w-10 h-10 rounded border text-foreground transition-colors ${
-                    currentPage === totalPages
-                      ? "border-border/60 text-foreground/40"
-                      : "border-border hover:border-navy"
-                  }`}
-                >
-                  {electricalEquipmentContent.pagination.nextLabel}
-                </button>
-              </div>
-            ) : null}
-          </div>
-        </section>
-
-        <section className="bg-section-alt pt-20 pb-20">
-          <div className="container">
-            <div className="max-w-md mx-auto bg-card border border-border rounded-2xl shadow-sm p-8 ">
-              <GetInTouchForm />
-            </div>
-          </div>
-        </section>
+        <ElectricalEquipmentHeroSection
+          title={electricalEquipmentContent.heroTitle}
+        />
+        <ElectricalEquipmentCatalogSection
+          title={electricalEquipmentContent.categoryTitle}
+          categories={electricalEquipmentCategories}
+          activeCategory={activeCategory}
+          onCategoryChange={(categoryValue) => {
+            setActiveCategory(categoryValue);
+            setCurrentPage(1);
+            window.scrollTo({ top: 300, behavior: "smooth" });
+          }}
+          visibleProducts={visibleProducts}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          pagination={electricalEquipmentContent.pagination}
+        />
+        <GetInTouchSection />
       </main>
     </MainLayout>
   );

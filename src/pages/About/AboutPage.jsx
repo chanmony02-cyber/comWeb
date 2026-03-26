@@ -12,7 +12,7 @@ import { IndustriesWeServeSection } from "./components/IndustriesWeServeSection"
 import { WhyPartnerSection } from "./components/WhyPartnerSection";
 import { TeamSection } from "./components/TeamSection";
 // import PartnershipSection from "../Home/components/PartnershipSection";
-import { OurLocationSection } from "../Contact/components/OurLocationSection";
+import { OurLocationSection } from "@/pages/Contact/components/OurLocationSection";
 
 export default function AboutPage() {
   const { hero, story, powerSection, mission, coreValues, services } =
