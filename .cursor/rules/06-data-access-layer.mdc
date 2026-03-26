@@ -1,0 +1,197 @@
+---
+description: Data access layer rules — how components must access data now and when real API/backend is ready
+globs: ["src/**/*.jsx", "src/**/*.js", "src/lib/**/*.js"]
+alwaysApply: true
+---
+
+# Data Access Layer & API-Readiness Contract
+
+## The Core Rule
+
+**Components and features NEVER import directly from `src/lib/data/`.**
+
+All data access — static or live — must go through `src/lib/api/`.
+This is a hard contract that makes the backend migration zero-touch on components.
+
+```
+                        TODAY                          FUTURE
+                        -----                          ------
+
+  Page / Feature
+  Component
+       │
+       │ imports                                          │ imports
+       ▼                                                  ▼
+  src/lib/api/          ◄──── only this layer       src/lib/api/
+  products.js                 changes when           products.js
+       │                      backend is ready            │
+       │ reads from                                        │ fetches from
+       ▼                                                  ▼
+  src/lib/data/          ◄── currently               Real Backend API
+  products.js                static arrays           (REST / GraphQL / DB)
+```
+
+---
+
+## What This Means in Practice
+
+### ✅ CORRECT — Component imports from `lib/api/`
+
+```jsx
+// app/(marketing)/products/page.jsx
+import { getProducts } from '@/lib/api/products'   // ✅ through the API layer
+
+export default async function ProductsPage() {
+  const products = await getProducts()
+  return <ProductGrid products={products} />
+}
+```
+
+### ❌ WRONG — Component imports directly from `lib/data/`
+
+```jsx
+// app/(marketing)/products/page.jsx
+import { products } from '@/lib/data/products'   // ❌ bypasses the API layer
+
+export default async function ProductsPage() {
+  return <ProductGrid products={products} />
+}
+```
+
+If every component imports `lib/data/` directly, you'll have to hunt down and update
+dozens of files when the backend is ready. If only `lib/api/` imports `lib/data/`,
+you change one file and every component works instantly.
+
+---
+
+## How `lib/api/` Files Are Structured Now (Static Phase)
+
+Each fetcher wraps static data in an async function — the same signature the real API will use.
+
+```js
+// src/lib/api/products.js
+import 'server-only'
+
+import { products } from '@/lib/data/products'   // ← only place lib/data is imported
+
+export async function getProducts() {
+  return products
+}
+
+export async function getProductBySlug(slug) {
+  return products.find((p) => p.slug === slug) ?? null
+}
+
+export async function getProductsByCategory(category) {
+  return products.filter((p) => p.category === category)
+}
+```
+
+```js
+// src/lib/api/services.js
+import 'server-only'
+
+import { services } from '@/lib/data/services'
+
+export async function getServices() {
+  return services
+}
+
+export async function getServiceBySlug(slug) {
+  return services.find((s) => s.slug === slug) ?? null
+}
+```
+
+---
+
+## How `lib/api/` Files Will Look After Backend Is Ready
+
+Only the function body changes. The function name, signature, and return shape stay identical — so every component and page that calls them requires zero changes.
+
+```js
+// src/lib/api/products.js  ← AFTER backend is ready
+import 'server-only'
+
+const API_BASE = process.env.API_BASE_URL
+
+export async function getProducts() {
+  const res = await fetch(`${API_BASE}/products`, { next: { revalidate: 3600 } })
+  if (!res.ok) throw new Error('Failed to fetch products')
+  return res.json()
+}
+
+export async function getProductBySlug(slug) {
+  const res = await fetch(`${API_BASE}/products/${slug}`, { next: { revalidate: 3600 } })
+  if (!res.ok) return null
+  return res.json()
+}
+```
+
+The page that calls `getProducts()` never needs to know the difference.
+
+---
+
+## Form Submissions — Always Go Through `/api/` Route Handlers
+
+Even now, form submissions must POST to `app/api/` route handlers — never call a service function directly from a Client Component.
+
+```jsx
+// ✅ CORRECT — Client Component posts to route handler
+// src/features/contact/ContactForm.jsx
+"use client"
+
+async function onSubmit(data) {
+  const res = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+}
+```
+
+```js
+// ✅ CORRECT — Route handler calls lib/api/ service
+// app/api/contact/route.js
+import { sendContactEmail } from '@/lib/api/contact'
+
+export async function POST(req) {
+  // validate → call lib/api/ → respond
+}
+```
+
+```jsx
+// ❌ WRONG — Client Component importing server logic directly
+import { sendContactEmail } from '@/lib/api/contact'   // ❌ server-only will break build
+
+async function onSubmit(data) {
+  await sendContactEmail(data)   // ❌ never call server functions from client
+}
+```
+
+When the backend is ready, only the `lib/api/contact.js` body changes (from nodemailer to an HTTP call). The form component and route handler stay the same.
+
+---
+
+## Required `lib/api/` Files for This Project
+
+Each of these must exist and be the only access point for their domain:
+
+| File | Functions to expose |
+|---|---|
+| `src/lib/api/products.js` | `getProducts()`, `getProductBySlug(slug)`, `getProductsByCategory(category)` |
+| `src/lib/api/services.js` | `getServices()`, `getServiceBySlug(slug)` |
+| `src/lib/api/industries.js` | `getIndustries()`, `getIndustryBySlug(slug)` |
+| `src/lib/api/projects.js` | `getProjects()`, `getRecentProjects(limit)` |
+| `src/lib/api/partners.js` | `getPartners()` |
+| `src/lib/api/faqs.js` | `getFaqs()`, `getFaqsByCategory(category)` |
+| `src/lib/api/navigation.js` | `getNavigation()` |
+| `src/lib/api/contact.js` | `sendContactEmail(data)` |
+
+Every file starts with `import 'server-only'` on line 1.
+
+---
+
+## Summary: The Two Rules
+
+1. **Read data** → always through `src/lib/api/`, never from `src/lib/data/` directly in components
+2. **Write data / submit forms** → always through `app/api/route.js` handlers, never by calling server functions from client components

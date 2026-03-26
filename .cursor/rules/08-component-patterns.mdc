@@ -1,0 +1,193 @@
+---
+description: How to write React components — structure, props, exports, and patterns
+globs: ["src/components/**/*.jsx", "src/features/**/*.jsx"]
+alwaysApply: false
+---
+
+# Component Authoring Patterns
+
+## Standard Component Template
+
+```jsx
+// src/components/ui/ProductCard/ProductCard.jsx
+
+import Image from 'next/image'
+import Link from 'next/link'
+import { cn } from '@/lib/utils/cn'
+import { ROUTES } from '@/config/routes'
+
+export default function ProductCard({ name, slug, image, category, summary, className }) {
+  return (
+    <article className={cn('bg-[var(--color-bg-card)] rounded-xl overflow-hidden group', className)}>
+      <div className="relative h-48 overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-6">
+        <span className="text-xs text-sky-400 uppercase tracking-wider">{category}</span>
+        <h3 className="mt-2 text-lg font-semibold text-slate-100">{name}</h3>
+        <p className="mt-2 text-sm text-slate-400 line-clamp-2">{summary}</p>
+        <Link
+          href={ROUTES.PRODUCT_DETAIL(slug)}
+          className="mt-4 inline-block text-sky-400 text-sm hover:text-sky-300 transition-colors"
+        >
+          View Details →
+        </Link>
+      </div>
+    </article>
+  )
+}
+```
+
+---
+
+## Rules
+
+### 1. Default exports for components
+```js
+// ✅ Default export for the main component
+export default function ProductCard({ ... }) { ... }
+
+// ✅ Named exports only for sub-components or utilities within the same file
+export function ProductCardSkeleton() { ... }
+```
+
+### 2. Destructure props in the function signature
+```jsx
+// ✅
+export default function Button({ children, variant = 'primary', disabled = false, className, onClick }) {
+
+// ❌
+export default function Button(props) {
+  const { children, variant } = props
+```
+
+### 3. Always accept and forward `className`
+Every reusable component in `components/ui/` must accept a `className` prop and apply it last via `cn()`.
+
+### 4. Feature components receive data as props — never fetch internally
+```jsx
+// ✅ Feature component — receives data from page
+export default function ProductGrid({ products }) {
+  return (
+    <section>
+      {products.map((p) => <ProductCard key={p.id} {...p} />)}
+    </section>
+  )
+}
+
+// ❌ Feature component fetching its own data
+export default function ProductGrid() {
+  const [products, setProducts] = useState([])
+  useEffect(() => { fetch('/api/products')... }, [])
+}
+```
+
+### 5. Page components are async Server Components
+```jsx
+// app/(marketing)/products/page.jsx
+export default async function ProductsPage() {
+  const products = await getProducts()   // async server fetch
+  return <ProductGrid products={products} />
+}
+```
+
+### 6. One component per file
+Never define two exported components in the same file unless they are tightly coupled sub-components (e.g., `Tab` and `TabPanel`).
+
+### 7. Keys on lists
+Always use a stable, unique `id` or `slug` as the key — never use array index.
+```jsx
+// ✅
+{products.map((p) => <ProductCard key={p.id} {...p} />)}
+{products.map((p) => <ProductCard key={p.slug} {...p} />)}
+
+// ❌
+{products.map((p, i) => <ProductCard key={i} {...p} />)}
+```
+
+---
+
+## Section Component Template
+
+Section components are full-width page sections. They own their own padding and background.
+
+```jsx
+// src/features/home/WhatWeDoSection.jsx
+
+import SectionHeader from '@/components/ui/SectionHeader'
+import ServiceCard from '@/components/ui/ServiceCard'
+import { services } from '@/lib/data/services'
+
+export default function WhatWeDoSection() {
+  return (
+    <section className="py-16 md:py-24 bg-[var(--color-bg-secondary)]">
+      <div className="container mx-auto px-4 md:px-8">
+        <SectionHeader
+          label="What We Do"
+          title="End-to-End Smart Infrastructure Solutions"
+          description="From design to deployment, we deliver intelligent systems."
+        />
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <ServiceCard key={service.id} {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+```
+
+---
+
+## Forms — react-hook-form + Zod
+
+```jsx
+// src/features/contact/ContactForm.jsx
+"use client"
+
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { contactSchema } from '@/lib/validations/contact.schema'
+import { Button } from '@/components/ui/Button'
+
+export default function ContactForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm({ resolver: zodResolver(contactSchema) })
+
+  async function onSubmit(data) {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+    if (res.ok) reset()
+  }
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <div>
+        <input
+          {...register('name')}
+          placeholder="Your name"
+          className="w-full px-4 py-3 bg-[var(--color-bg-card)] border border-[var(--color-border)] rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-400"
+        />
+        {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>}
+      </div>
+      {/* ...other fields */}
+      <Button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Sending...' : 'Send Message'}
+      </Button>
+    </form>
+  )
+}
+```

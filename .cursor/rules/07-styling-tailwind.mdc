@@ -1,0 +1,265 @@
+---
+description: Tailwind CSS v4 styling conventions, design tokens, brand colors, and typography
+globs: ["src/**/*.jsx", "src/styles/**/*.css"]
+alwaysApply: true
+---
+
+# Styling Conventions — Tailwind CSS v4
+
+## Brand Color Palette (Design Tokens)
+
+This project uses an exact 3-color brand palette. These are the ONLY colors used for backgrounds, text, borders, and accents. Never substitute, approximate, or extend with other colors.
+
+```css
+/* src/styles/globals.css */
+@import "tailwindcss";
+
+:root {
+  /* ─── Brand Colors (Exact — never change these values) ─── */
+  --color-navy:        #001439;   /* Deep navy — primary background, hero, section bg */
+  --color-blue:        #2A8CD5;   /* Brand blue — buttons, links, active states, icons */
+  --color-sky:         #9FCCFF;   /* Light sky blue — headings, highlights, hover, accents */
+
+  /* ─── Derived Tokens (built from brand colors) ─── */
+  --color-bg-primary:  #001439;   /* = --color-navy */
+  --color-bg-secondary:#001d52;   /* navy lightened slightly for section alternation */
+  --color-bg-card:     #002060;   /* card / surface — navy family */
+  --color-bg-overlay:  rgba(0, 20, 57, 0.85);  /* navy with opacity — for overlays */
+
+  --color-accent:      #2A8CD5;   /* = --color-blue — primary interactive color */
+  --color-accent-hover:#1e6fab;   /* blue darkened for hover states */
+
+  --color-highlight:   #9FCCFF;   /* = --color-sky — headings, labels, badges */
+  --color-highlight-muted: rgba(159, 204, 255, 0.15); /* sky with opacity — bg tints */
+
+  --color-text-primary:   #ffffff;   /* White — body text on dark backgrounds */
+  --color-text-secondary: #9FCCFF;   /* Sky blue — subheadings, captions, labels */
+  --color-text-muted:     rgba(159, 204, 255, 0.6);  /* Dimmed sky — placeholders, hints */
+
+  --color-border:      rgba(42, 140, 213, 0.25);   /* Blue with low opacity — subtle borders */
+  --color-border-strong: #2A8CD5;                  /* Full blue — focused borders, dividers */
+}
+```
+
+---
+
+## Typography — Fonts
+
+### Font Assignments
+
+| Font | Usage | Applied to |
+|---|---|---|
+| **Segoe UI** | Headers, titles, navigation, labels | `h1` `h2` `h3` `h4` `h5` `h6`, nav items, section titles, card titles, button text |
+| **Inter** | Body text, descriptions, paragraphs | `p`, descriptions, captions, form inputs, list items, any generated or long-form text |
+
+### Font Setup in `globals.css`
+
+Segoe UI is a system font (available on Windows/macOS). Inter is loaded via `next/font`.
+
+```css
+/* src/styles/globals.css */
+
+/* Font family stacks */
+:root {
+  --font-header: 'Segoe UI', 'Segoe UI Web (West European)', system-ui, -apple-system, sans-serif;
+  --font-body:   'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Apply globally */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  color: var(--color-sky);
+}
+```
+
+### Inter via `next/font` in Root Layout
+
+```jsx
+// src/app/layout.jsx
+import { Inter } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={inter.variable}>
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+### Tailwind Font Utility Classes
+
+```jsx
+// ✅ Headers — Segoe UI
+<h1 className="font-['Segoe_UI'] text-4xl font-bold text-[#9FCCFF]">
+<h2 className="font-['Segoe_UI'] text-3xl font-semibold text-[#9FCCFF]">
+
+// ✅ Body / descriptions — Inter
+<p className="font-['Inter'] text-base text-white">
+<p className="font-['Inter'] text-sm text-[#9FCCFF]">
+
+// ✅ Using CSS variables (preferred)
+<h2 className="text-3xl font-semibold" style={{ fontFamily: 'var(--font-header)', color: 'var(--color-highlight)' }}>
+<p className="text-base" style={{ fontFamily: 'var(--font-body)' }}>
+```
+
+---
+
+## Color Usage Guide
+
+| Element | Token to use | Hex |
+|---|---|---|
+| Page background | `--color-bg-primary` | `#001439` |
+| Section alternate bg | `--color-bg-secondary` | `#001d52` |
+| Card background | `--color-bg-card` | `#002060` |
+| Primary button bg | `--color-accent` | `#2A8CD5` |
+| Primary button hover | `--color-accent-hover` | `#1e6fab` |
+| Links | `--color-accent` | `#2A8CD5` |
+| Section headings | `--color-highlight` | `#9FCCFF` |
+| Body text | `--color-text-primary` | `#ffffff` |
+| Captions / labels | `--color-text-secondary` | `#9FCCFF` |
+| Borders | `--color-border` | `rgba(42,140,213,0.25)` |
+| Focused borders | `--color-border-strong` | `#2A8CD5` |
+| Overlays / modals | `--color-bg-overlay` | `rgba(0,20,57,0.85)` |
+| Subtle tint backgrounds | `--color-highlight-muted` | `rgba(159,204,255,0.15)` |
+
+---
+
+## Tailwind Usage with Brand Colors
+
+Use `var()` inside Tailwind's square-bracket notation for design token colors:
+
+```jsx
+// ✅ Backgrounds
+<section className="bg-[#001439]">                        // navy bg
+<div className="bg-[#002060]">                            // card bg
+<div className="bg-[rgba(159,204,255,0.15)]">             // sky tint bg
+
+// ✅ Text
+<h2 className="text-[#9FCCFF]">                           // sky — headers
+<p className="text-white">                                // white — body
+<span className="text-[#2A8CD5]">                         // blue — labels/links
+
+// ✅ Borders
+<div className="border border-[#2A8CD5]">                 // blue border
+<div className="border border-[rgba(42,140,213,0.25)]">   // subtle border
+
+// ✅ Buttons
+<button className="bg-[#2A8CD5] hover:bg-[#1e6fab] text-white">
+<button className="border border-[#2A8CD5] text-[#9FCCFF] hover:bg-[rgba(42,140,213,0.1)]">
+```
+
+---
+
+## The `cn()` Utility — Always Use for Conditional Classes
+
+Never concatenate class strings manually. Use `cn()` from `@/lib/utils/cn`:
+
+```js
+// src/lib/utils/cn.js
+import { clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
+}
+```
+
+```jsx
+// ✅ CORRECT
+import { cn } from '@/lib/utils/cn'
+
+<button
+  className={cn(
+    'px-4 py-2 rounded-lg font-medium transition-colors',
+    variant === 'primary' && 'bg-[#2A8CD5] text-white hover:bg-[#1e6fab]',
+    variant === 'outline' && 'border border-[#2A8CD5] text-[#9FCCFF] hover:bg-[rgba(42,140,213,0.1)]',
+    disabled && 'opacity-50 cursor-not-allowed',
+    className
+  )}
+>
+
+// ❌ WRONG — manual string concatenation
+<button className={`px-4 py-2 ${variant === 'primary' ? 'bg-blue-700' : 'border'}`}>
+```
+
+---
+
+## Component Styling Rules
+
+### Accept a `className` prop on every reusable component
+```jsx
+export default function Button({ children, variant = 'primary', className, ...props }) {
+  return (
+    <button
+      className={cn('base-classes', variantClasses[variant], className)}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
+```
+
+### Use `next/image` — never `<img>`
+```jsx
+import Image from 'next/image'
+
+// ✅
+<Image src="/images/products/transformer.jpg" alt="Smart Transformer X200" width={600} height={400} className="rounded-lg object-cover" />
+
+// ❌
+<img src="/images/products/transformer.jpg" alt="..." />
+```
+
+---
+
+## Spacing & Layout Conventions
+
+| Purpose | Classes |
+|---|---|
+| Page section padding | `py-16 md:py-24` |
+| Content container | `container mx-auto px-4 md:px-8` |
+| Card padding | `p-6` |
+| Section header spacing | `mb-12` |
+| Grid gaps | `gap-6` or `gap-8` |
+| Responsive grid | `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3` |
+
+---
+
+## Responsive Breakpoints
+
+Always write **mobile-first**.
+
+| Prefix | Min-width |
+|---|---|
+| _(none)_ | 0px — mobile |
+| `sm:` | 640px |
+| `md:` | 768px |
+| `lg:` | 1024px |
+| `xl:` | 1280px |
+| `2xl:` | 1536px |
+
+---
+
+## What NOT to Do
+
+- ❌ Never use colors outside the 3-brand palette (`#001439`, `#2A8CD5`, `#9FCCFF`) and their derived tokens
+- ❌ Never use Tailwind's built-in color classes like `bg-blue-700`, `text-sky-400`, `bg-gray-900` — always use brand hex values
+- ❌ Never use inline `style={{ color: '...' }}` for arbitrary colors — use the token variables
+- ❌ Never create a separate CSS module file — Tailwind utility classes only
+- ❌ Never use `@apply` except in `globals.css` for base resets
+- ❌ Never use Inter for headings — Segoe UI only for headers
+- ❌ Never use Segoe UI for body/description text — Inter only for paragraphs and descriptions

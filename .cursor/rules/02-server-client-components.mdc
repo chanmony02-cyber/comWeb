@@ -1,0 +1,127 @@
+---
+description: Rules for Server Components vs Client Components in Next.js App Router
+globs: ["src/**/*.jsx", "src/app/**/*.jsx"]
+alwaysApply: true
+---
+
+# Server vs Client Components
+
+## Default Rule
+**All components are Server Components by default.**
+Never add `"use client"` unless the component genuinely requires it.
+
+---
+
+## When to Add `"use client"`
+
+Add `"use client"` ONLY when the component directly uses:
+
+| Trigger | Examples |
+|---|---|
+| React state | `useState`, `useReducer` |
+| React effects | `useEffect`, `useLayoutEffect` |
+| React refs | `useRef`, `useImperativeHandle` |
+| Event handlers | `onClick`, `onChange`, `onSubmit` |
+| Browser APIs | `window`, `document`, `localStorage`, `navigator` |
+| Custom hooks from `src/hooks/` | `useScrollPosition`, `useMediaQuery`, `useForm` |
+| Animation libraries | Framer Motion, etc. |
+| Context consumers | `useContext` |
+
+---
+
+## The Leaf Rule — Push `"use client"` as deep as possible
+
+Break large components into smaller ones so that only the interactive leaf needs `"use client"`.
+
+```jsx
+// ✅ CORRECT — Server wraps a tiny Client leaf
+// Navbar.jsx — NO "use client"
+import NavMobile from './NavMobile'   // "use client"
+import NavLink from './NavLink'       // "use client"
+
+export default function Navbar() {
+  return (
+    <nav>
+      <NavLink href="/about">About</NavLink>
+      <NavMobile />
+    </nav>
+  )
+}
+
+// ❌ WRONG — entire Navbar is client just because of mobile menu state
+"use client"
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+  // ...
+}
+```
+
+---
+
+## Server Component Patterns
+
+### Data fetching — do it directly in the Server Component
+```jsx
+// app/(marketing)/products/page.jsx — Server Component
+import { getProducts } from '@/lib/api/products'
+import ProductGrid from '@/features/products/ProductGrid'
+
+export default async function ProductsPage() {
+  const products = await getProducts()   // ✅ fetch server-side
+  return <ProductGrid products={products} />
+}
+```
+
+### Never fetch data in a Client Component
+```jsx
+// ❌ WRONG — fetching in a Client Component
+"use client"
+export default function ProductGrid() {
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    fetch('/api/products').then(...)   // ❌ unnecessary client fetch
+  }, [])
+}
+```
+
+---
+
+## Client Component Patterns
+
+### Always declare `"use client"` as the very first line
+```jsx
+// ✅ Correct
+"use client"
+
+import { useState } from 'react'
+
+export default function FAQAccordion({ items }) {
+  const [openIndex, setOpenIndex] = useState(null)
+  // ...
+}
+```
+
+### Client Components can only receive serializable props from Server Components
+```jsx
+// ✅ Serializable — strings, numbers, plain objects, arrays
+<ProductCard name="Transformer" price={1200} tags={["new"]} />
+
+// ❌ Not serializable — functions, class instances, Dates as objects
+<ProductCard onFavorite={() => {}} />   // ❌ pass handler differently
+```
+
+---
+
+## Known Client Components in This Project
+These files must always have `"use client"` at the top:
+
+- `components/layout/Navbar/NavMobile.jsx`
+- `components/layout/Navbar/NavLink.jsx`
+- `components/ui/FAQAccordion/FAQAccordion.jsx`
+- `components/ui/BackButton/BackButton.jsx`
+- `components/ui/GetInTouchForm/GetInTouchForm.jsx`
+- `features/products/ProductCategoryTabs.jsx`
+- `features/product-detail/ProductImageGallery.jsx`
+- `features/product-detail/ProductTabs.jsx`
+- `features/contact/ContactForm.jsx`
+- `app/error.jsx`

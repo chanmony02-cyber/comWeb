@@ -1,0 +1,84 @@
+---
+description: Where every file belongs — folder structure and placement rules
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+# Folder Structure & File Placement
+
+## The Map
+
+```
+src/
+├── app/              ← Routing ONLY. No logic, no data, minimal JSX
+├── components/       ← Shared UI used across 2+ UNRELATED pages
+│   ├── layout/       ← Navbar, Footer, TopBar (shell components)
+│   ├── ui/           ← Primitive reusables: Button, Card, Accordion...
+│   └── sections/     ← Full sections reused verbatim on 2+ pages
+├── features/         ← Page-private components (used by ONE page only)
+│   ├── home/
+│   ├── about/
+│   ├── products/
+│   ├── product-detail/
+│   ├── services/
+│   ├── service-detail/
+│   ├── industries/distribution-grid/
+│   ├── solutions/software-application/
+│   └── contact/
+├── lib/              ← Pure JS logic — NO React, NO JSX
+│   ├── data/         ← Static data arrays (products, services, faqs...)
+│   ├── api/          ← Async server fetchers (server-only)
+│   ├── utils/        ← Pure functions (cn, formatDate, validators...)
+│   └── validations/  ← Zod schemas
+├── hooks/            ← Custom React hooks (client-side only)
+├── config/           ← App constants (routes.js, site.js) — no secrets
+└── styles/           ← globals.css only
+```
+
+## Decision Rules
+
+### Where does a new component go?
+
+Ask: "Is this used on more than one unrelated page?"
+- **YES** → `src/components/ui/ComponentName/ComponentName.jsx`
+- **NO** → `src/features/[page-name]/ComponentName.jsx`
+
+Ask: "Is this a Navbar / Footer / TopBar shell?"
+- **YES** → `src/components/layout/ComponentName/`
+
+Ask: "Is it a full section used verbatim on 2+ pages?"
+- **YES** → `src/components/sections/SectionName/`
+
+### Where does new data go?
+- Static arrays, objects, constants → `src/lib/data/filename.js`
+- NEVER define data arrays inside a component file
+
+### Where does a new utility function go?
+- `src/lib/utils/` — pure JS, no React imports allowed in this folder
+
+### Where does a new async fetcher go?
+- `src/lib/api/filename.js` — must start with `import 'server-only'`
+
+### Where does a new custom hook go?
+- `src/hooks/useHookName.js`
+
+## Naming Conventions
+| Item | Convention | Example |
+|---|---|---|
+| Component files | PascalCase | `ProductCard.jsx` |
+| Component folders | PascalCase | `ProductCard/` |
+| Data files | camelCase | `products.js` |
+| Util files | camelCase | `formatDate.js` |
+| Hook files | camelCase prefixed with `use` | `useScrollPosition.js` |
+| API route files | always `route.js` | `app/api/contact/route.js` |
+| Page files | always `page.jsx` | `app/(marketing)/about/page.jsx` |
+| Barrel files | always `index.js` | `components/ui/Button/index.js` |
+
+## Barrel Export Pattern
+Every folder under `components/ui/` and `components/sections/` must have an `index.js`:
+
+```js
+// src/components/ui/Button/index.js
+export { default } from './Button'
+export { Button } from './Button'
+```

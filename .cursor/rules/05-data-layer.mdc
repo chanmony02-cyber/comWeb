@@ -1,0 +1,151 @@
+---
+description: Data layer rules — static data arrays, server-only API fetchers, and Zod validation
+globs: ["src/lib/**/*.js", "src/app/api/**/*.js"]
+alwaysApply: false
+---
+
+# Data Layer Conventions
+
+## Three Layers
+
+```
+src/lib/
+├── data/         ← Static JS arrays/objects — imported directly by Server Components
+├── api/          ← Async fetchers — server-only, may call DB or external APIs
+└── validations/  ← Zod schemas — shared by forms (client) and route handlers (server)
+```
+
+---
+
+## `lib/data/` — Static Data
+
+Plain JS files. No React. No JSX. No async. Export named arrays or objects.
+
+```js
+// src/lib/data/products.js
+
+export const products = [
+  {
+    id: 1,
+    slug: 'smart-transformer-x200',
+    name: 'Smart Transformer X200',
+    category: 'transformers',
+    summary: 'AI-powered transformer monitoring system.',
+    images: ['/images/products/transformer-x200-1.jpg'],
+    // ...
+  },
+]
+```
+
+Rules:
+- No inline JSX or SVG — icons belong in `public/icons/` or imported in the component
+- No `import React` — these are pure data files
+- No async functions — if you need to fetch, use `lib/api/` instead
+- Export named constants, not default exports
+
+---
+
+## `lib/api/` — Server-Only Fetchers
+
+Every file MUST start with `import 'server-only'`. This causes a build error if any Client Component accidentally imports it — protecting secrets and server logic.
+
+```js
+// src/lib/api/products.js
+import 'server-only'
+
+import { products as staticProducts } from '@/lib/data/products'
+
+export async function getProducts() {
+  // Currently returns static data — swap for DB/API call later without touching components
+  return staticProducts
+}
+
+export async function getProductBySlug(slug) {
+  const product = staticProducts.find((p) => p.slug === slug)
+  return product ?? null
+}
+```
+
+Rules:
+- ALWAYS `import 'server-only'` on line 1
+- NEVER import in a `"use client"` component
+- May access `process.env.SECRET_*` variables
+- Functions must be async (even if currently returning static data — prepares for API swap)
+- Return `null` instead of throwing when an item is not found; let the page call `notFound()`
+
+---
+
+## `lib/validations/` — Zod Schemas
+
+Schemas are shared between the frontend form and the API route handler.
+
+```js
+// src/lib/validations/contact.schema.js
+import { z } from 'zod'
+
+export const contactSchema = z.object({
+  name:    z.string().min(2, 'Name must be at least 2 characters'),
+  email:   z.string().email('Invalid email address'),
+  phone:   z.string().optional(),
+  subject: z.string().min(5, 'Subject must be at least 5 characters'),
+  message: z.string().min(20, 'Message must be at least 20 characters'),
+})
+```
+
+Usage in API route handler (server):
+```js
+// app/api/contact/route.js
+import { contactSchema } from '@/lib/validations/contact.schema'
+
+const parsed = contactSchema.safeParse(body)
+if (!parsed.success) {
+  return NextResponse.json({ error: parsed.error.flatten() }, { status: 422 })
+}
+```
+
+Usage in form (client):
+```js
+// features/contact/ContactForm.jsx
+import { zodResolver } from '@hookform/resolvers/zod'
+import { contactSchema } from '@/lib/validations/contact.schema'
+
+const { register, handleSubmit } = useForm({ resolver: zodResolver(contactSchema) })
+```
+
+---
+
+## API Route Handlers
+
+```js
+// app/api/contact/route.js
+import { NextResponse } from 'next/server'
+import { contactSchema } from '@/lib/validations/contact.schema'
+import { sendContactEmail } from '@/lib/api/contact'
+
+export async function POST(req) {
+  try {
+    const body = await req.json()
+    const parsed = contactSchema.safeParse(body)
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: parsed.error.flatten() },
+        { status: 422 }
+      )
+    }
+
+    await sendContactEmail(parsed.data)
+    return NextResponse.json({ success: true }, { status: 200 })
+
+  } catch (err) {
+    console.error('[POST /api/contact]', err)
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+  }
+}
+```
+
+Rules:
+- Always validate with Zod before processing
+- Always wrap in try/catch
+- Never expose error stack traces in the response body
+- Only export HTTP method functions (`GET`, `POST`, `PUT`, `DELETE`, `PATCH`)

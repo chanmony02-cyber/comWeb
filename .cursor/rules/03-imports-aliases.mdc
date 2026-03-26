@@ -1,0 +1,92 @@
+---
+description: Import rules — always use @/ path aliases, never relative paths
+globs: ["src/**/*.jsx", "src/**/*.js"]
+alwaysApply: true
+---
+
+# Imports & Path Aliases
+
+## Rule: Always Use `@/` Aliases
+
+Never use relative `../` imports. Always use the `@/` alias which maps to `src/`.
+
+```js
+// ✅ CORRECT
+import { Button } from '@/components/ui/Button'
+import { getProducts } from '@/lib/api/products'
+import { ROUTES } from '@/config/routes'
+import { cn } from '@/lib/utils/cn'
+import { products } from '@/lib/data/products'
+import { useScrollPosition } from '@/hooks/useScrollPosition'
+
+// ❌ WRONG — fragile, breaks on folder moves
+import { Button } from '../../../components/ui/Button'
+import { getProducts } from '../../lib/api/products'
+```
+
+---
+
+## Alias Map (`jsconfig.json`)
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*":            ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/features/*":   ["./src/features/*"],
+      "@/lib/*":        ["./src/lib/*"],
+      "@/hooks/*":      ["./src/hooks/*"],
+      "@/config/*":     ["./src/config/*"]
+    }
+  }
+}
+```
+
+---
+
+## Import Order Convention
+
+Maintain this order in every file (separated by blank lines):
+
+```js
+// 1. Next.js built-ins
+import Image from 'next/image'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+
+// 2. React
+import { useState, useEffect } from 'react'
+
+// 3. Third-party packages
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+
+// 4. Internal — components
+import { Button } from '@/components/ui/Button'
+import SectionHeader from '@/components/ui/SectionHeader'
+
+// 5. Internal — features
+import ProductGrid from '@/features/products/ProductGrid'
+
+// 6. Internal — lib / data / hooks / config
+import { getProducts } from '@/lib/api/products'
+import { products } from '@/lib/data/products'
+import { ROUTES } from '@/config/routes'
+import { cn } from '@/lib/utils/cn'
+```
+
+---
+
+## Next.js Specific Imports
+
+Always prefer Next.js built-ins over plain HTML/React equivalents:
+
+| Instead of | Use |
+|---|---|
+| `<img src="..." />` | `<Image src="..." />` from `next/image` |
+| `<a href="...">` | `<Link href="...">` from `next/link` |
+| `useNavigate()` from react-router | `useRouter()` from `next/navigation` |
+| `useParams()` from react-router | `params` prop on `page.jsx` |
+| `<Redirect to="..." />` | `redirect()` from `next/navigation` |
