@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -41,9 +42,9 @@ export function NavDropdown({ label, items, triggerClassName = "" }) {
       >
         {items.map((item) => (
           <DropdownMenuItem key={item.label} asChild className={itemClassName}>
-            <a href={item.href} className="w-full">
+            <Link to={item.href} className="w-full">
               {item.label}
-            </a>
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

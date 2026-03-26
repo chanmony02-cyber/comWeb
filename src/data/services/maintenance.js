@@ -9,6 +9,7 @@ export const maintenanceData = {
     title: "Expert in Maintenance",
     subtitle:
       "Keeping your electrical infrastructure running at peak performance with preventive and corrective maintenance solutions.",
+    heroImage: maintenanceOverview,
   },
   overview: {
     title: "Overview",
