@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ROUTES } from "@/config/routes";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function ProjectsListingSection({
   filters,
@@ -40,8 +41,8 @@ export function ProjectsListingSection({
             >
               <div className="lg:p-6 p-4">
                 <div className="overflow-hidden rounded-xl">
-                  <img
-                    src={project.image}
+                    <img
+                      src={resolveMediaSrc(project.image)}
                     alt={project.title}
                     className="w-full h-72 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                   />

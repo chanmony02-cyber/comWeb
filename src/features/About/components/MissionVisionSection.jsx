@@ -2,6 +2,7 @@
 
 import missionBoltIcon from "@/assets/icons/mission-bolt.svg";
 import visionEyeIcon from "@/assets/icons/vision-eye.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function MissionVisionSection({
   eyebrow,
@@ -36,7 +37,11 @@ export function MissionVisionSection({
           <div className=" h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
-              <img src={missionBoltIcon} alt="" className="w-8 h-8 md:w-10 md:h-10" />
+              <img
+                src={resolveMediaSrc(missionBoltIcon)}
+                alt=""
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-navy font-display">
               {missionTitle}
@@ -61,7 +66,11 @@ export function MissionVisionSection({
           <div className="h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
-              <img src={visionEyeIcon} alt="" className="w-8 h-8 md:w-10 md:h-10" />
+              <img
+                src={resolveMediaSrc(visionEyeIcon)}
+                alt=""
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-navy font-display">
               {visionTitle}

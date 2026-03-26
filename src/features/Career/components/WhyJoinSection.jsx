@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import growthBudgetIcon from "@/assets/icons/growth-budget.svg";
 import healthIcon from "@/assets/icons/health.svg";
 import knowledgeIcon from "@/assets/icons/knowledge.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 const ICONS = {
   "growth-budget": growthBudgetIcon,
@@ -31,7 +32,11 @@ export function WhyJoinSection({ benefits }) {
             >
               {/* Icon circle */}
               <div className="w-14 h-14 rounded-full bg-sky-accent/30 flex items-center justify-center">
-                <img src={ICONS[benefit.icon]} alt="" className="w-7 h-7" />
+                <img
+                  src={resolveMediaSrc(ICONS[benefit.icon])}
+                  alt=""
+                  className="w-7 h-7"
+                />
               </div>
 
               <h3 className="text-lg md:text-xl font-bold text-navy font-display">

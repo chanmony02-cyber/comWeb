@@ -5,6 +5,7 @@ import qualityIcon from "@/assets/icons/quality.svg";
 import safetyIcon from "@/assets/icons/safety.svg";
 import accuracyIcon from "@/assets/icons/accuracy.svg";
 import relianceIcon from "@/assets/icons/reliance.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 // Icon map for the four pillars
 const PILLAR_ICONS = {
@@ -58,7 +59,7 @@ export function PowerSection({
               >
                 <div className="w-12 h-12 rounded-full bg-primary-blue/20 flex items-center justify-center">
                   <img
-                    src={PILLAR_ICONS[pillar.icon]}
+                    src={resolveMediaSrc(PILLAR_ICONS[pillar.icon])}
                     alt=""
                     className="w-7 h-7"
                   />

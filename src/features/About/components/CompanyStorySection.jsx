@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import checkmarkIcon from "@/assets/icons/checkmark.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 function CheckIcon() {
   return (
     <img
-      src={checkmarkIcon}
+      src={resolveMediaSrc(checkmarkIcon)}
       alt=""
       className="w-4 h-4 flex-shrink-0 mt-0.5"
     />
@@ -41,7 +42,7 @@ export function CompanyStorySection({
             <div className="grid grid-cols-2 gap-3 pt-6 pl-6">
               <div className="rounded-xl overflow-hidden shadow-md col-span-1 row-span-2">
                 <img
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=500&q=80&fit=crop"
+                  src={resolveMediaSrc("https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=500&q=80&fit=crop")}
                   alt="Electrical work"
                   className="w-full h-full object-cover"
                   style={{ minHeight: "280px" }}
@@ -49,14 +50,14 @@ export function CompanyStorySection({
               </div>
               <div className="rounded-xl overflow-hidden shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&fit=crop"
+                  src={resolveMediaSrc("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&fit=crop")}
                   alt="Infrastructure project"
                   className="w-full md:h-60 h-40 object-cover"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-md">
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop"
+                  src={resolveMediaSrc("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop")}
                   alt="Engineering team"
                   className="w-full md:h-60 h-40 object-cover"
                 />

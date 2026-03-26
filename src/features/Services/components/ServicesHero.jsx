@@ -1,10 +1,12 @@
 // src/pages/Services/components/ServicesHero.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 export function ServicesHero({ title, subtitle, backgroundImage }) {
   return (
     <section className="relative h-64 md:h-80 lg:h-96 flex items-center overflow-hidden">
       <img
-        src={backgroundImage}
+        src={resolveMediaSrc(backgroundImage)}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
       />

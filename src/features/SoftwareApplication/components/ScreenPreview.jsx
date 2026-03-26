@@ -1,5 +1,6 @@
-﻿import VHTLogo from "@/assets/images/VHT_Logo.png";
+import VHTLogo from "@/assets/images/VHT_Logo.png";
 import { cn } from "@/lib/utils";
+import { resolveMediaSrc } from "@/lib/media";
 
 const PANEL_CLASS =
   "rounded-[24px] bg-white/90 border border-white/80 p-4 text-navy shadow-sm";
@@ -11,7 +12,7 @@ export default function ScreenPreview({ type, className = "" }) {
         <div className="flex items-center justify-center">
           <div className="h-14 w-14 rounded-full bg-sky-accent/70 flex items-center justify-center shadow-inner">
             <img
-              src={VHTLogo}
+              src={resolveMediaSrc(VHTLogo)}
               alt="VHT logo"
               className="h-8 w-8 object-contain"
             />
@@ -159,3 +160,5 @@ export default function ScreenPreview({ type, className = "" }) {
     </div>
   );
 }
+
+

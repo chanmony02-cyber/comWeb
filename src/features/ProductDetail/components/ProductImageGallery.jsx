@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function ProductImageGallery({ images = [], name = "" }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,7 +18,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
     <div className="flex flex-col gap-4">
       <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80 xl:h-[750px] xl:w-[750px]">
         <img
-          src={images[activeIndex]}
+          src={resolveMediaSrc(images[activeIndex])}
           alt={name}
           className="w-full h-full object-cover"
         />
@@ -59,7 +60,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
               }`}
             >
               <img
-                src={img}
+                src={resolveMediaSrc(img)}
                 alt={`${name} thumbnail ${index + 1}`}
                 className="w-full h-full object-contain p-1"
               />

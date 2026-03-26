@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function OurServicesGrid({ title, subtitle, items }) {
   return (
@@ -26,7 +27,7 @@ export function OurServicesGrid({ title, subtitle, items }) {
               <div className="p-10">
                 <div className="overflow-hidden rounded-xl">
                   <img
-                    src={service.image}
+                    src={resolveMediaSrc(service.image)}
                     alt={service.title}
                     className="w-full h-48 lg:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
                   />

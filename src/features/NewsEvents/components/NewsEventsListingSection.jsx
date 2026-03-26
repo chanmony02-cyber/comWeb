@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ROUTES } from "@/config/routes";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function NewsEventsListingSection({
   filters,
@@ -40,7 +41,7 @@ export function NewsEventsListingSection({
             >
               <div className="overflow-hidden">
                 <img
-                  src={item.image}
+                  src={resolveMediaSrc(item.image)}
                   alt={item.title}
                   className="w-full h-72 lg:h-96 object-cover hover:scale-105 transition-transform duration-500"
                 />

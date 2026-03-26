@@ -1,6 +1,7 @@
 // src/pages/Industries/components/OurSolutionsGrid.jsx
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function OurSolutionsGrid({ label, title, subtitle, items }) {
   return (
@@ -25,7 +26,7 @@ export function OurSolutionsGrid({ label, title, subtitle, items }) {
               {/* Image — top portion of the card */}
               <div className="overflow-hidden">
                 <img
-                  src={solution.image}
+                  src={resolveMediaSrc(solution.image)}
                   alt={solution.title}
                   className="w-full h-64 md:h-72 xl:h-[700px] object-cover hover:scale-105 transition-transform duration-500"
                 />

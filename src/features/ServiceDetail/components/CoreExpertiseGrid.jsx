@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import costOptimizationIcon from "@/assets/icons/clock.svg";
 import consultingIcon from "@/assets/icons/consulting.svg";
 import designIcon from "@/assets/icons/design.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 // Icon map â€” resolves string keys from data layer into SVG elements
 const ICONS = {
@@ -30,7 +31,11 @@ export function CoreExpertiseGrid({ title, items }) {
             >
               {/* Icon circle */}
               <div className="w-12 h-12 rounded-full border border-primary-blue/30 bg-sky-accent/10 flex items-center justify-center">
-                <img src={ICONS[item.icon]} alt="" className="w-8 h-8" />
+                <img
+                  src={resolveMediaSrc(ICONS[item.icon])}
+                  alt=""
+                  className="w-8 h-8"
+                />
               </div>
               <h3 className="text-md lg:text-2xl font-bold text-navy font-display">
                 {item.title}

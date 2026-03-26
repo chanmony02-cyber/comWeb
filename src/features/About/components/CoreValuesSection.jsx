@@ -6,6 +6,7 @@ import coreAccuracyIcon from "@/assets/icons/core-accuracy.svg";
 import coreRelianceIcon from "@/assets/icons/core-reliance.svg";
 import coreInnovationIcon from "@/assets/icons/core-innovation.svg";
 import coreIntegrityIcon from "@/assets/icons/core-integrity.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 const ICONS = {
   quality: coreQualityIcon,
@@ -42,7 +43,11 @@ export function CoreValuesSection({ eyebrow, title, subtitle, items }) {
             >
               <div className="w-14 h-14 rounded-xl bg-sky-accent/20 flex items-center justify-center flex-shrink-0">
                 {ICONS[item.icon] ? (
-                  <img src={ICONS[item.icon]} alt="" className="w-6 h-6" />
+                  <img
+                    src={resolveMediaSrc(ICONS[item.icon])}
+                    alt=""
+                    className="w-6 h-6"
+                  />
                 ) : (
                   <div className="w-8 h-8 rounded-full bg-primary-blue" />
                 )}

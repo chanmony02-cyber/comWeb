@@ -2,6 +2,7 @@ import Link from "next/link";
 import MainLayout from "@/layouts/MainLayout";
 import { BackButton } from "@/components/ui/BackButton";
 import { ROUTES } from "@/config/routes";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function ProjectDetailContentSection({ project, related }) {
   return (
@@ -25,8 +26,8 @@ export function ProjectDetailContentSection({ project, related }) {
             </div>
 
             <div className="rounded-xl overflow-hidden mb-8">
-              <img
-                src={project.image}
+                <img
+                  src={resolveMediaSrc(project.image)}
                 alt={project.title}
                 className="w-full h-72 md:h-[550px] object-cover"
               />
@@ -77,8 +78,8 @@ export function ProjectDetailContentSection({ project, related }) {
                     className="flex items-center gap-4 bg-card border border-border rounded-xl p-3 hover:border-primary-blue hover:shadow-md transition-all duration-300"
                   >
                     <div className="w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                      <img
-                        src={rel.image}
+                        <img
+                        src={resolveMediaSrc(rel.image)}
                         alt={rel.title}
                         className="w-full h-full object-cover"
                       />

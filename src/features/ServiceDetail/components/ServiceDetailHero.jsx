@@ -1,12 +1,14 @@
 // src/pages/ServiceDetail/components/ServiceDetailHero.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 export function ServiceDetailHero({ title, subtitle, heroImage }) {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         {heroImage ? (
           <img
-            src={heroImage}
+            src={resolveMediaSrc(heroImage)}
             alt={title}
             className="w-full h-full object-cover"
           />

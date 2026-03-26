@@ -2,6 +2,7 @@
 
 import { Linkedin } from "lucide-react";
 import mailIcon from "@/assets/icons/mail.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function TeamSection({ eyebrow, title, subtitle, members }) {
   return (
@@ -27,7 +28,7 @@ export function TeamSection({ eyebrow, title, subtitle, members }) {
             >
               <div className="w-52 h-52 rounded-full border-4 border-sky-accent/60 p-1 shadow-sm transition-all duration-300 hover:scale-[1.03] hover:shadow-lg hover:border-primary-blue/60">
                 <img
-                  src={member.image}
+                  src={resolveMediaSrc(member.image)}
                   alt={member.name}
                   className="w-full h-full rounded-full object-cover transition-transform duration-300 hover:scale-[1.02]"
                 />
@@ -53,7 +54,7 @@ export function TeamSection({ eyebrow, title, subtitle, members }) {
                   className="w-10 h-10 rounded-full bg-sky-accent/40 flex items-center justify-center hover:bg-primary-blue/20 transition-colors"
                   aria-label={`Email ${member.name}`}
                 >
-                  <img src={mailIcon} alt="" className="w-5 h-5" />
+                  <img src={resolveMediaSrc(mailIcon)} alt="" className="w-5 h-5" />
                 </a>
               </div>
             </div>

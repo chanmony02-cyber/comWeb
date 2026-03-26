@@ -1,10 +1,12 @@
 // src/pages/Career/components/CareerHero.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 export function CareerHero({ title, subtitle, backgroundImage }) {
   return (
     <section className="relative h-56 md:h-72 lg:h-80 flex items-center justify-center overflow-hidden">
       <img
-        src={backgroundImage}
+        src={resolveMediaSrc(backgroundImage)}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
       />

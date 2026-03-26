@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function RecentProjectsList({ label, title, items }) {
   return (
@@ -38,7 +39,7 @@ export function RecentProjectsList({ label, title, items }) {
               {/* Left — image */}
               <div className="sm:col-span-2 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={resolveMediaSrc(project.image)}
                   alt={project.title}
                   className="w-full h-56 sm:h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BackButton } from "@/components/ui/BackButton";
 import { ROUTES } from "@/config/routes";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function NewsDetailContentSection({ item, related }) {
   return (
@@ -24,8 +25,8 @@ export function NewsDetailContentSection({ item, related }) {
             </div>
 
             <div className="rounded-xl overflow-hidden mb-8">
-              <img
-                src={item.image}
+                <img
+                  src={resolveMediaSrc(item.image)}
                 alt={item.title}
                 className="w-full h-72 md:h-[600px] object-cover"
               />
@@ -77,7 +78,7 @@ export function NewsDetailContentSection({ item, related }) {
                   >
                     <div className="w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">
                       <img
-                        src={rel.image}
+                        src={resolveMediaSrc(rel.image)}
                         alt={rel.title}
                         className="w-full h-full object-cover"
                       />

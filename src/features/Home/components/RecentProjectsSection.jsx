@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { recentProjects } from "@/data/projects/projects";
 import { ROUTES } from "@/config/routes";
+import { resolveMediaSrc} from "@/lib/media";
 
 export default function RecentProjectsSection() {
   return (
@@ -33,7 +34,7 @@ export default function RecentProjectsSection() {
               className="group relative rounded-xl overflow-hidden aspect-video"
             >
               <img
-                src={project.image}
+                src={resolveMediaSrc(project.image)}
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

@@ -1,11 +1,13 @@
 // src/pages/Industries/components/IndustryHero.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 export function IndustryHero({ title, subtitle, backgroundImage }) {
   return (
     <section className="relative h-64 md:h-80 lg:h-96 flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <img
-        src={backgroundImage}
+        src={resolveMediaSrc(backgroundImage)}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
       />

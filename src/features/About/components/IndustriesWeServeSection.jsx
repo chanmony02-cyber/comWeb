@@ -4,6 +4,7 @@ import Link from "next/link";
 import distributionIcon from "@/assets/icons/distribution.svg";
 import cityIcon from "@/assets/icons/city.svg";
 import agricultureIcon from "@/assets/icons/agriculture.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 const INDUSTRY_ICONS = {
   distribution: distributionIcon,
@@ -34,8 +35,8 @@ export function IndustriesWeServeSection({ eyebrow, title, subtitle, items }) {
               href={item.href}
               className="group relative rounded-2xl overflow-hidden shadow-md border border-white/60"
             >
-              <img
-                src={item.image}
+                <img
+                  src={resolveMediaSrc(item.image)}
                 alt={item.title}
                 className="w-full h-64 md:h-72 object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -44,7 +45,7 @@ export function IndustriesWeServeSection({ eyebrow, title, subtitle, items }) {
                 <div className="flex items-center gap-3 mb-2">
                   <span className="w-10 h-10 rounded-xl bg-primary-blue/90 flex items-center justify-center shadow-lg">
                     <img
-                      src={INDUSTRY_ICONS[item.icon]}
+                      src={resolveMediaSrc(INDUSTRY_ICONS[item.icon])}
                       alt=""
                       className="w-5 h-5"
                     />

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { products } from "@/data/products/products";
 import { ROUTES } from "@/config/routes";
+import { resolveMediaSrc } from "@/lib/media";
 
 // Pick whichever 3 product IDs you want to feature on the homepage
 const FEATURED_IDS = [1, 5, 7];
@@ -36,7 +37,7 @@ export default function FeaturedProductsSection() {
             >
               <div className="overflow-hidden h-[360px] sm:h-[560px]">
                 <img
-                  src={product.image}
+                  src={resolveMediaSrc(product.image)}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

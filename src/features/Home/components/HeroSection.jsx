@@ -4,6 +4,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { heroSlides } from "@/data/heroSlides/heroSlides";
+import { resolveMediaSrc } from "@/lib/media";
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
@@ -62,7 +63,7 @@ export default function HeroSection() {
             }`}
           >
             <img
-              src={slide.image}
+              src={resolveMediaSrc(slide.image)}
               alt={slide.title.replace("\n", " ")}
               className="absolute inset-0 w-full h-full object-cover"
             />
@@ -134,7 +135,7 @@ export default function HeroSection() {
             }`}
           >
             <img
-              src={slide.image}
+              src={resolveMediaSrc(slide.image)}
               alt={slide.title.replace("\n", " ")}
               className="absolute inset-0 w-full h-full object-cover"
             />

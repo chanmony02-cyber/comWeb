@@ -1,5 +1,7 @@
 // src/pages/Industries/components/ProblemSection.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 export function ProblemSection({ title, paragraphs, image }) {
   return (
     <section className="py-16 md:py-20 bg-background">
@@ -24,8 +26,8 @@ export function ProblemSection({ title, paragraphs, image }) {
 
           {/* Right — image */}
           <div className="rounded-xl overflow-hidden shadow-lg">
-            <img
-              src={image}
+              <img
+              src={resolveMediaSrc(image)}
               alt={title}
               className="w-full h-72 md:h-80 xl:h-[600px] object-cover"
             />

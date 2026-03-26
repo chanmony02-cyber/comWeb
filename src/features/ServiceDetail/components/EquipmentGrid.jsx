@@ -4,11 +4,16 @@ import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ROUTES } from "@/config/routes";
 import checkCircleIcon from "@/assets/icons/check-circle.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 function CheckItem({ label }) {
   return (
     <li className="flex items-center gap-2 text-sm text-muted-foreground font-sans">
-      <img src={checkCircleIcon} alt="" className="w-4 h-4 flex-shrink-0" />
+      <img
+        src={resolveMediaSrc(checkCircleIcon)}
+        alt=""
+        className="w-4 h-4 flex-shrink-0"
+      />
       {label}
     </li>
   );
@@ -43,7 +48,7 @@ export function EquipmentGrid({ title, subtitle, items }) {
                 <div className="xl:p-10 p-6">
                   <div className="overflow-hidden rounded-xl">
                     <img
-                      src={item.image}
+                      src={resolveMediaSrc(item.image)}
                       alt={item.title}
                       className="w-full h-52 xl:h-[350px] object-cover group-hover:scale-105 transition-transform duration-500"
                     />

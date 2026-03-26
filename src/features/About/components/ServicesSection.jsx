@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import serviceConsultingIcon from "@/assets/icons/service-consulting-navy.svg";
 import serviceMaintenanceIcon from "@/assets/icons/service-maintenance-navy.svg";
 import serviceInspectionsIcon from "@/assets/icons/service-inspections-navy.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 const ICONS = {
   consultants: serviceConsultingIcon,
@@ -42,7 +43,7 @@ export function ServicesSection({ eyebrow, title, subtitle, items }) {
               <div className="p-10">
                 <div className="overflow-hidden rounded-xl">
                   <img
-                    src={service.image}
+                    src={resolveMediaSrc(service.image)}
                     alt={service.title}
                     className="w-full h-48 lg:h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
                   />

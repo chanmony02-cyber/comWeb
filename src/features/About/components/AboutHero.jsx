@@ -1,12 +1,13 @@
 // src/pages/About/components/AboutHero.jsx
 
 import heroImage from "@/assets/images/industries/distribution-grid/distribution-grid-hero.jpg";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function AboutHero({ title, subtitle }) {
   return (
     <section className="relative h-64 md:h-80 lg:h-96 flex items-center justify-center overflow-hidden">
       <img
-        src={heroImage}
+        src={resolveMediaSrc(heroImage)}
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />

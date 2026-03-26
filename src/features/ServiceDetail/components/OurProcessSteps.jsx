@@ -5,6 +5,7 @@ import searchIcon from "@/assets/icons/search-white.svg";
 import clockIcon from "@/assets/icons/clock-white.svg";
 import pencilIcon from "@/assets/icons/pencil-white.svg";
 import sendIcon from "@/assets/icons/send-white.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 const ICONS = {
   search: searchIcon,
@@ -34,7 +35,11 @@ export function OurProcessSteps({ title, subtitle, steps }) {
             {steps.map((step) => (
               <div key={step.id} className="relative z-10">
                 <div className="w-14 h-14 rounded-full bg-primary-blue flex items-center justify-center shadow-md">
-                  <img src={ICONS[step.icon]} alt="" className="w-7 h-7" />
+                    <img
+                      src={resolveMediaSrc(ICONS[step.icon])}
+                      alt=""
+                      className="w-7 h-7"
+                    />
                 </div>
               </div>
             ))}
@@ -69,7 +74,11 @@ export function OurProcessSteps({ title, subtitle, steps }) {
               className="flex flex-col items-center text-center gap-3"
             >
               <div className="w-14 h-14 rounded-full bg-primary-blue flex items-center justify-center shadow-md">
-                <img src={ICONS[step.icon]} alt="" className="w-7 h-7" />
+                <img
+                  src={resolveMediaSrc(ICONS[step.icon])}
+                  alt=""
+                  className="w-7 h-7"
+                />
               </div>
               <p className="text-xs font-semibold text-primary-blue uppercase tracking-widest font-sans">
                 {step.step}

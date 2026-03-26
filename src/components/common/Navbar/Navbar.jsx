@@ -19,20 +19,64 @@ import {
   industriesDropdownItems,
   navItems,
   productsDropdownItems,
+  solutionsDropdownItems,
   servicesDropdownItems,
 } from "@/data/navigation/navigation";
 import { ROUTES } from "@/config/routes";
 import { UnderMaintenanceAlert } from "@/components/ui/UnderMaintenanceAlert";
+import { resolveHref } from "@/lib/resolveHref";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navLinkClassName =
     "flex items-center gap-1 text-md font-medium text-foreground hover:text-navy transition-colors";
-
   const [showAlert, setShowAlert] = useState(false);
+
+  const dropdownGroups = {
+    Products: productsDropdownItems,
+    Solutions: solutionsDropdownItems,
+    Services: servicesDropdownItems,
+    Industries: industriesDropdownItems,
+    Company: companyDropdownItems,
+  };
 
   const handleSearchClick = () => {
     setShowAlert(true);
+  };
+
+  const renderMobileDropdown = (item) => {
+    const dropdownItems = dropdownGroups[item.label];
+
+    if (!dropdownItems) {
+      return null;
+    }
+
+    return (
+      <Accordion key={item.label} type="single" collapsible className="w-full">
+        <AccordionItem
+          value={item.label.toLowerCase().replace(/\s+/g, "-")}
+          className="border-border/50"
+        >
+          <AccordionTrigger className="py-3 text-sm font-medium text-foreground no-underline hover:no-underline">
+            {item.label}
+          </AccordionTrigger>
+          <AccordionContent className="pb-2 pt-0">
+            <div className="flex flex-col gap-1">
+              {dropdownItems.map((dropdownItem) => (
+                <Link
+                  key={dropdownItem.label}
+                  href={dropdownItem.href}
+                  className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {dropdownItem.label}
+                </Link>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
   };
 
   return (
@@ -50,52 +94,26 @@ export function Navbar() {
 
           <nav className="hidden xl:flex text-lg items-center gap-8">
             {navItems.map((item) => {
-              if (item.label === "Products") {
+              const dropdownItems = dropdownGroups[item.label];
+
+              if (dropdownItems) {
                 return (
                   <NavDropdown
                     key={item.label}
                     label={item.label}
-                    items={productsDropdownItems}
-                    triggerClassName={navLinkClassName}
-                  />
-                );
-              }
-              if (item.label === "Company") {
-                return (
-                  <NavDropdown
-                    key={item.label}
-                    label={item.label}
-                    items={companyDropdownItems}
-                    triggerClassName={navLinkClassName}
-                  />
-                );
-              }
-              if (item.label === "Services") {
-                return (
-                  <NavDropdown
-                    key={item.label}
-                    label={item.label}
-                    items={servicesDropdownItems}
-                    triggerClassName={navLinkClassName}
-                  />
-                );
-              }
-              if (item.label === "Industries") {
-                return (
-                  <NavDropdown
-                    key={item.label}
-                    label={item.label}
-                    items={industriesDropdownItems}
+                    items={dropdownItems}
                     triggerClassName={navLinkClassName}
                   />
                 );
               }
 
               if (item.href && item.href !== "#") {
+                const href = resolveHref(item.href);
+
                 return (
                   <Link
                     key={item.label}
-                    href={item.href}
+                    href={href}
                     className={navLinkClassName}
                   >
                     {item.label}
@@ -109,7 +127,7 @@ export function Navbar() {
               return (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={resolveHref(item.href)}
                   className={navLinkClassName}
                 >
                   {item.label}
@@ -151,138 +169,17 @@ export function Navbar() {
         {mobileOpen && (
           <div className="xl:hidden border-t border-border bg-background px-4 pb-4">
             {navItems.map((item) => {
-              if (item.label === "Products") {
-                return (
-                  <Accordion
-                    key={item.label}
-                    type="single"
-                    collapsible
-                    className="w-full"
-                  >
-                    <AccordionItem
-                      value="products"
-                      className="border-border/50"
-                    >
-                      <AccordionTrigger className="py-3 text-sm font-medium text-foreground no-underline hover:no-underline">
-                        {item.label}
-                      </AccordionTrigger>
-                      <AccordionContent className="pb-2 pt-0">
-                        <div className="flex flex-col gap-1">
-                          {productsDropdownItems.map((dropdownItem) => (
-                            <a
-                              key={dropdownItem.label}
-                              href={dropdownItem.href}
-                              className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
-                            >
-                              {dropdownItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                );
-              }
-
-              if (item.label === "Company") {
-                return (
-                  <Accordion
-                    key={item.label}
-                    type="single"
-                    collapsible
-                    className="w-full"
-                  >
-                    <AccordionItem value="company" className="border-border/50">
-                      <AccordionTrigger className="py-3 text-sm font-medium text-foreground no-underline hover:no-underline">
-                        {item.label}
-                      </AccordionTrigger>
-                      <AccordionContent className="pb-2 pt-0">
-                        <div className="flex flex-col gap-1">
-                          {companyDropdownItems.map((dropdownItem) => (
-                            <a
-                              key={dropdownItem.label}
-                              href={dropdownItem.href}
-                              className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
-                            >
-                              {dropdownItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                );
-              }
-              if (item.label === "Services") {
-                return (
-                  <Accordion
-                    key={item.label}
-                    type="single"
-                    collapsible
-                    className="w-full"
-                  >
-                    <AccordionItem
-                      value="services"
-                      className="border-border/50"
-                    >
-                      <AccordionTrigger className="py-3 text-sm font-medium text-foreground no-underline hover:no-underline">
-                        {item.label}
-                      </AccordionTrigger>
-                      <AccordionContent className="pb-2 pt-0">
-                        <div className="flex flex-col gap-1">
-                          {servicesDropdownItems.map((dropdownItem) => (
-                            <a
-                              key={dropdownItem.label}
-                              href={dropdownItem.href}
-                              className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
-                            >
-                              {dropdownItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                );
-              }
-              if (item.label === "Industries") {
-                return (
-                  <Accordion
-                    key={item.label}
-                    type="single"
-                    collapsible
-                    className="w-full"
-                  >
-                    <AccordionItem
-                      value="industries"
-                      className="border-border/50"
-                    >
-                      <AccordionTrigger className="py-3 text-sm font-medium text-foreground no-underline hover:no-underline">
-                        {item.label}
-                      </AccordionTrigger>
-                      <AccordionContent className="pb-2 pt-0">
-                        <div className="flex flex-col gap-1">
-                          {industriesDropdownItems.map((dropdownItem) => (
-                            <a
-                              key={dropdownItem.label}
-                              href={dropdownItem.href}
-                              className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
-                            >
-                              {dropdownItem.label}
-                            </a>
-                          ))}
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                );
+              if (dropdownGroups[item.label]) {
+                return renderMobileDropdown(item);
               }
 
               if (item.href && item.href !== "#") {
+                const href = resolveHref(item.href);
+
                 return (
                   <Link
                     key={item.label}
-                    href={item.href}
+                    href={href}
                     className="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-border/50"
                     onClick={() => setMobileOpen(false)}
                   >
@@ -297,7 +194,7 @@ export function Navbar() {
               return (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={resolveHref(item.href)}
                   className="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-border/50"
                 >
                   {item.label}

@@ -1,5 +1,7 @@
 // src/pages/Services/components/WhyChooseUsSection.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 // Checkmark icon — inline SVG, no external dependency needed
 function CheckIcon() {
   return (
@@ -23,8 +25,8 @@ export function WhyChooseUsSection({ image, title, items }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left — image */}
           <div className="rounded-2xl overflow-hidden shadow-md">
-            <img
-              src={image}
+          <img
+            src={resolveMediaSrc(image)}
               alt={title}
               className="w-full h-72 md:h-[700px] object-cover hover:scale-105 transition-transform duration-500"
             />

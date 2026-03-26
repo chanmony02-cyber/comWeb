@@ -1,4 +1,5 @@
-﻿import { industrySolutions } from "@/data/industries/industries";
+import { industrySolutions } from "@/data/industries/industries";
+import { resolveMediaSrc } from "@/lib/media";
 
 export default function IndustriesSolutionSection() {
   return (
@@ -13,7 +14,6 @@ export default function IndustriesSolutionSection() {
             needs.
           </p>
         </div>
-        {/* UPDATED: spacing tuned for better tablet (iPad) layout */}
         <div className="flex flex-col gap-16 md:gap-24">
           {industrySolutions.map((item) => (
             <div
@@ -22,15 +22,13 @@ export default function IndustriesSolutionSection() {
                 item.imageRight ? "md:flex-row-reverse" : "md:flex-row"
               } gap-8 md:gap-16 xl:gap-24 items-center`}
             >
-              {/* Image */}
               <div className="w-full h-[560px] md:w-1/2 rounded-xl overflow-hidden shadow-lg">
                 <img
-                  src={item.image}
+                  src={resolveMediaSrc(item.image)}
                   alt={item.title}
                   className="w-full h-[600px] object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              {/* Text */}
               <div className="w-full md:w-1/2">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="w-2.5 h-2.5 rounded-full bg-primary-blue flex-shrink-0" />

@@ -1,5 +1,7 @@
 "use client";
 
+import { resolveMediaSrc } from "@/lib/media";
+
 const formatSpecLabel = (label) =>
   label
     .replace(/([A-Z])/g, " $1")
@@ -19,7 +21,7 @@ export function ProductCard({ image, name, category, description, specs }) {
           </span>
         ) : null}
         <img
-          src={image}
+          src={resolveMediaSrc(image)}
           alt={name}
           className="z-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />

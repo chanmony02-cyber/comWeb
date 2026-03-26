@@ -11,6 +11,7 @@ import searchIcon from "@/assets/icons/search.svg";
 import clipboardIcon from "@/assets/icons/clipboard.svg";
 import shieldCheckIcon from "@/assets/icons/shield-check.svg";
 import cogIcon from "@/assets/icons/cog.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 // Icon map â€” resolves string keys from data layer into SVG elements
 // Covers all icons used by both Maintenance and Inspections data files
@@ -45,7 +46,11 @@ export function CommonIssuesGrid({ title, subtitle, items }) {
               className="bg-card rounded-2xl flex flex-col gap-3 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 items-center text-center xl:p-16 p-6"
             >
               <div className="w-10 h-10 rounded-full bg-sky-accent/20 flex items-center justify-center">
-                <img src={ICONS[item.icon]} alt="" className="w-6 h-6" />
+                <img
+                  src={resolveMediaSrc(ICONS[item.icon])}
+                  alt=""
+                  className="w-6 h-6"
+                />
               </div>
               <h3 className="text-md lg:text-2xl font-bold text-navy font-display">
                 {item.title}

@@ -1,5 +1,7 @@
 // src/pages/ServiceDetail/components/ServiceOverview.jsx
 
+import { resolveMediaSrc } from "@/lib/media";
+
 export function ServiceOverview({
   title,
   paragraphs,
@@ -34,8 +36,8 @@ export function ServiceOverview({
 
           {/* Right — image */}
           <div className="rounded-xl overflow-hidden shadow-md">
-            <img
-              src={image}
+              <img
+                src={resolveMediaSrc(image)}
               alt={title}
               className="w-full h-64 md:h-80 lg:h-[550px] object-cover"
             />

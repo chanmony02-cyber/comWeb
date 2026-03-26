@@ -7,6 +7,7 @@ import partnerTechnologyIcon from "@/assets/icons/partner-technology.svg";
 import partnerCustomIcon from "@/assets/icons/partner-custom.svg";
 import partnerQualityIcon from "@/assets/icons/partner-quality.svg";
 import partnerHeadsetIcon from "@/assets/icons/partner-headset.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 const PARTNER_ICONS = {
   certified: partnerCertifiedIcon,
@@ -50,7 +51,7 @@ export function WhyPartnerSection({
                 <div key={item.id} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary-blue/10 flex items-center justify-center flex-shrink-0">
                     <img
-                      src={PARTNER_ICONS[item.icon] ?? PARTNER_ICONS.quality}
+                      src={resolveMediaSrc(PARTNER_ICONS[item.icon] ?? PARTNER_ICONS.quality)}
                       alt=""
                       className="w-5 h-5"
                     />
@@ -71,7 +72,7 @@ export function WhyPartnerSection({
           <div className="relative pb-10">
             <div className="rounded-2xl overflow-hidden shadow-md">
               <img
-                src={image}
+                src={resolveMediaSrc(image)}
                 alt={title}
                 className="w-full h-80 md:h-[460px] object-cover"
               />
@@ -79,7 +80,11 @@ export function WhyPartnerSection({
             <div className="absolute -bottom-6 left-6 bg-card border border-border rounded-2xl shadow-lg p-5 max-w-[260px]">
               <div className="flex items-center gap-3">
                 <span className="w-10 h-10 rounded-xl bg-primary-blue/10 flex items-center justify-center">
-                  <img src={PARTNER_ICONS.headset} alt="" className="w-5 h-5" />
+                  <img
+                    src={resolveMediaSrc(PARTNER_ICONS.headset)}
+                    alt=""
+                    className="w-5 h-5"
+                  />
                 </span>
                 <div>
                   <p className="text-md font-semibold text-navy font-display">

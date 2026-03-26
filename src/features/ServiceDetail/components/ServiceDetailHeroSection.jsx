@@ -1,5 +1,6 @@
 import { BackButton } from "@/components/ui/BackButton";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function ServiceDetailHeroSection({
   title,
@@ -29,7 +30,7 @@ export function ServiceDetailHeroSection({
         <div className="w-full max-w-6xl rounded-2xl overflow-hidden shadow-sm">
           {heroImage ? (
             <img
-              src={heroImage}
+              src={resolveMediaSrc(heroImage)}
               alt={imageAlt || title}
               className="w-full h-60 md:h-[500px] lg:h-[700px] object-cover"
             />

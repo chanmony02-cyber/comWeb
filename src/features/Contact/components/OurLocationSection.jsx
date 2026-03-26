@@ -7,6 +7,7 @@ import phoneIcon from "@/assets/icons/phone.svg";
 import globeIcon from "@/assets/icons/globe.svg";
 import emailIcon from "@/assets/icons/email.svg";
 import clockIcon from "@/assets/icons/clock.svg";
+import { resolveMediaSrc } from "@/lib/media";
 
 export function OurLocationSection() {
   const { location, info } = contactData;
@@ -28,7 +29,7 @@ export function OurLocationSection() {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <img
-                    src={locationPinIcon}
+                    src={resolveMediaSrc(locationPinIcon)}
                     alt=""
                     className="w-5 h-5 flex-shrink-0"
                   />
@@ -45,7 +46,7 @@ export function OurLocationSection() {
               <div className="space-y-3 pl-1">
                 {/* Phone */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-                  <img src={phoneIcon} alt="" className="w-5 h-5 flex-shrink-0" />
+                  <img src={resolveMediaSrc(phoneIcon)} alt="" className="w-5 h-5 flex-shrink-0" />
                   <a
                     href={`tel:${siteConfig.phone}`}
                     className="hover:text-primary-blue transition-colors w-fit"
@@ -56,7 +57,7 @@ export function OurLocationSection() {
 
                 {/* Website */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-                  <img src={globeIcon} alt="" className="w-5 h-5 flex-shrink-0" />
+                  <img src={resolveMediaSrc(globeIcon)} alt="" className="w-5 h-5 flex-shrink-0" />
                   <a
                     href={info.websiteUrl}
                     target="_blank"
@@ -69,7 +70,7 @@ export function OurLocationSection() {
 
                 {/* Email */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-                  <img src={emailIcon} alt="" className="w-5 h-5 flex-shrink-0" />
+                  <img src={resolveMediaSrc(emailIcon)} alt="" className="w-5 h-5 flex-shrink-0" />
                   <a
                     href={`mailto:${siteConfig.email}`}
                     className="hover:text-primary-blue transition-colors w-fit"
@@ -83,7 +84,7 @@ export function OurLocationSection() {
             {/* BOTTOM â€” Business Hours */}
             <div className="bg-sky-accent/20 rounded-xl p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
-                <img src={clockIcon} alt="" className="w-5 h-5 flex-shrink-0" />
+                <img src={resolveMediaSrc(clockIcon)} alt="" className="w-5 h-5 flex-shrink-0" />
                 <h4 className="text-xl font-bold text-navy font-display">
                   {location.businessHoursTitle}
                 </h4>
