@@ -1,6 +1,7 @@
 {
   "/page": "app/page.js",
-  "/all-projects/page": "app/all-projects/page.js",
-  "/projects/[id]/page": "app/projects/[id]/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/industries/city-infrastructure/page": "app/industries/city-infrastructure/page.js",
+  "/products/[id]/page": "app/products/[id]/page.js",
+  "/services/maintenance/page": "app/services/maintenance/page.js"
 }
