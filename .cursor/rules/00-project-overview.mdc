@@ -1,0 +1,36 @@
+---
+description: Project overview, stack, and core principles for the Smart Infrastructure website
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Project: Smart Infrastructure Website
+
+## Stack
+- **Framework**: Next.js 15 (App Router)
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS v4
+- **Language**: JavaScript + JSX (NO TypeScript — no .ts or .tsx files ever)
+- **Validation**: Zod
+- **Forms**: react-hook-form + @hookform/resolvers
+- **Utilities**: clsx + tailwind-merge (via `@/lib/utils/cn.js`)
+
+## Core Principles
+1. **Server Components by default** — only add `"use client"` when strictly necessary
+2. **Feature-based structure** — page-private code lives in `src/features/`, shared code in `src/components/`
+3. **Centralized data** — ALL static arrays live in `src/lib/data/`, never inside components
+4. **`@/` path aliases always** — never use relative `../` imports
+5. **`server-only` guard** on every file in `src/lib/api/`
+6. **No secrets in client** — never use `process.env.SECRET_*` outside `src/lib/api/` or `app/api/`
+7. **JSX only** — all React components use `.jsx`, all logic files use `.js`
+
+## File Extension Rules
+| File type | Extension |
+|---|---|
+| React components | `.jsx` |
+| Logic, utils, data, config, hooks | `.js` |
+| Styles | `.css` |
+| Next.js config | `.js` |
+| Path alias config | `jsconfig.json` |
+
+Never create `.ts` or `.tsx` files.

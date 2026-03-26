@@ -14,7 +14,7 @@ export const cityInfrastructureData = {
     title: "City Infrastructure",
     subtitle:
       "Powering urban development with reliable electrical systems for transportation, water, and public utilities.",
-    backgroundImage: cHero,
+    backgroundImage: cHero.src,
   },
   problem: {
     title: "We Understand Your Problem.",
@@ -23,7 +23,7 @@ export const cityInfrastructureData = {
       "Cities face challenges including aging utility networks, traffic congestion, and the need for sustainable energy solutions. These complexities require engineering expertise that bridges multiple disciplines.",
       "Our team specializes in designing and deploying integrated electrical solutions that keep cities running efficiently — from smart lighting and traffic systems to power distribution for critical public facilities.",
     ],
-    image: cProblem,
+    image: cProblem.src,
   },
   solutions: {
     label: "INDUSTRY SOLUTIONS",
@@ -34,17 +34,17 @@ export const cityInfrastructureData = {
       {
         id: 1,
         title: "Smart Street Lighting Systems",
-        image: cs1,
+        image: cs1.src,
       },
       {
         id: 2,
         title: "Underground Utility Networks",
-        image: cs2,
+        image: cs2.src,
       },
       {
         id: 3,
         title: "Traffic Management Solutions",
-        image: cs3,
+        image: cs3.src,
       },
     ],
   },
@@ -57,7 +57,11 @@ export const cityInfrastructureData = {
         title: "Metropolitan Interchange Upgrade",
         description:
           "Engineered and constructed a multi-level highway interchange serving over 150,000 vehicles daily, integrating smart traffic signals and energy-efficient LED lighting throughout the corridor.",
+<<<<<<< Updated upstream
         image: ci1,
+=======
+        image: ci1.src,
+>>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 4),
       },
       {
@@ -65,7 +69,11 @@ export const cityInfrastructureData = {
         title: "Urban Water Treatment Facility",
         description:
           "Designed the complete electrical and control systems for a modern water treatment plant, ensuring 24/7 automated operations with redundant power supply and remote monitoring capabilities.",
+<<<<<<< Updated upstream
         image: ci2,
+=======
+        image: ci2.src,
+>>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 5),
       },
       {
@@ -73,7 +81,11 @@ export const cityInfrastructureData = {
         title: "Public Transit Electrification",
         description:
           "Delivered end-to-end electrical infrastructure for a new urban rail line, including traction power substations, platform systems, and integrated safety and communication networks.",
+<<<<<<< Updated upstream
         image: ci3,
+=======
+        image: ci3.src,
+>>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 6),
       },
     ],

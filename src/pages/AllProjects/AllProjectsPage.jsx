@@ -1,3 +1,10 @@
+<<<<<<<< Updated upstream:src/pages/AllProjects/AllProjectsPage.jsx
+========
+ "use client";
+
+ "use client";
+
+>>>>>>>> Stashed changes:src/legacy-pages/AllProjects/AllProjectsPage.jsx
 import { useState } from "react";
 import MainLayout from "@/layouts/MainLayout";
 import { allProjects } from "@/data/projects/projects";

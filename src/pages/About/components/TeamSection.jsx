@@ -53,7 +53,11 @@ export function TeamSection({ eyebrow, title, subtitle, members }) {
                   className="w-10 h-10 rounded-full bg-sky-accent/40 flex items-center justify-center hover:bg-primary-blue/20 transition-colors"
                   aria-label={`Email ${member.name}`}
                 >
+<<<<<<<< Updated upstream:src/pages/About/components/TeamSection.jsx
                   <img src={mailIcon} alt="" className="w-5 h-5" />
+========
+                  <img src={mailIcon.src} alt="" className="w-5 h-5" />
+>>>>>>>> Stashed changes:src/legacy-pages/About/components/TeamSection.jsx
                 </a>
               </div>
             </div>

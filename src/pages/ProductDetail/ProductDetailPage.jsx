@@ -1,4 +1,8 @@
+<<<<<<<< Updated upstream:src/pages/ProductDetail/ProductDetailPage.jsx
 import { useParams } from "react-router-dom";
+========
+import { notFound } from "next/navigation";
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/ProductDetailPage.jsx
 import MainLayout from "@/layouts/MainLayout";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { RelatedProducts } from "./components/RelatedProducts";
@@ -16,23 +20,21 @@ export default function ProductDetailPage() {
   };
 
   if (!product) {
-    return (
-      <MainLayout>
-        <div className="container py-20 text-center">
-          <p className="text-muted-foreground text-lg">Product not found.</p>
-        </div>
-      </MainLayout>
-    );
+    notFound();
   }
 
   return (
     <MainLayout>
       <ProductDetailContentSection product={product} />
+<<<<<<<< Updated upstream:src/pages/ProductDetail/ProductDetailPage.jsx
       <RelatedProducts
         currentId={product.id}
         category={product.category}
         scrollToTop={scrollToTop}
       />
+========
+      <RelatedProducts currentId={product.id} category={product.category} />
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/ProductDetailPage.jsx
       <GetInTouchSection />
     </MainLayout>
   );

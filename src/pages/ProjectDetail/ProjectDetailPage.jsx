@@ -1,4 +1,8 @@
+<<<<<<<< Updated upstream:src/pages/ProjectDetail/ProjectDetailPage.jsx
 import { useParams } from "react-router-dom";
+========
+import { notFound } from "next/navigation";
+>>>>>>>> Stashed changes:src/legacy-pages/ProjectDetail/ProjectDetailPage.jsx
 import MainLayout from "@/layouts/MainLayout";
 import { allProjects } from "@/data/projects/projects";
 import { ProjectDetailContentSection } from "./components/ProjectDetailContentSection";
@@ -14,13 +18,7 @@ export default function ProjectDetailPage() {
     : [];
 
   if (!project) {
-    return (
-      <MainLayout>
-        <div className="container py-20 text-center">
-          <p className="text-muted-foreground text-md">Project not found.</p>
-        </div>
-      </MainLayout>
-    );
+    notFound();
   }
 
   return (

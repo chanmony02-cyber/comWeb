@@ -3,7 +3,7 @@ import meterImg from "@/assets/images/products/meter/meter.jpg";
 export const featuredProducts = [
   {
     id: 1,
-    image: meterImg,
+    image: meterImg.src,
     title: "Smart Electricity Meter",
     description:
       "Advanced digital metering solution for accurate energy consumption monitoring and remote data collection.",
@@ -28,4 +28,3 @@ export const featuredProducts = [
     href: "/product-detail/3",
   },
 ];
-

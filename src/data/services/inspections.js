@@ -16,7 +16,7 @@ export const inspectionsData = {
       "Our inspection division delivers thorough assessments of electrical infrastructure — from switchgear and transformers to overhead lines and underground cables. We use advanced diagnostic tools including thermal imaging and insulation testing to identify issues before they escalate.",
       "Every inspection follows strict regulatory protocols and industry standards, providing detailed reports with actionable recommendations to maintain safety, compliance, and operational reliability.",
     ],
-    image: inspectionOverview,
+    image: inspectionOverview.src,
     bgSection: false,
   },
   commonIssues: {
@@ -79,7 +79,7 @@ export const inspectionsData = {
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
-        image: switchGear,
+        image: switchGear.src,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -88,7 +88,7 @@ export const inspectionsData = {
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
-        image: autoCloser,
+        image: autoCloser.src,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -97,7 +97,7 @@ export const inspectionsData = {
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",
-        image: transformer,
+        image: transformer.src,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
     ],

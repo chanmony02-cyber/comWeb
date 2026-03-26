@@ -6,7 +6,11 @@ import checkmarkIcon from "@/assets/icons/checkmark.svg";
 function CheckIcon() {
   return (
     <img
+<<<<<<<< Updated upstream:src/pages/About/components/CompanyStorySection.jsx
       src={checkmarkIcon}
+========
+      src={checkmarkIcon.src}
+>>>>>>>> Stashed changes:src/legacy-pages/About/components/CompanyStorySection.jsx
       alt=""
       className="w-4 h-4 flex-shrink-0 mt-0.5"
     />

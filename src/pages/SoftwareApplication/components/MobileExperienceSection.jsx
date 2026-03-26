@@ -1,4 +1,12 @@
+<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
 ﻿import { useEffect, useState } from "react";
+========
+"use client";
+
+ "use client";
+
+import { useEffect, useState } from "react";
+>>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/MobileExperienceSection.jsx
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -118,7 +126,11 @@ function PhoneLoginScreen() {
       <div className="mt-5 flex flex-1 flex-col items-center justify-center text-center">
         <div className="flex h-16 w-16 items-center justify-center rounded-[22px] bg-sky-accent/20 shadow-sm">
           <img
+<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
             src={VHTLogo}
+========
+            src={VHTLogo.src}
+>>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/MobileExperienceSection.jsx
             alt="VHT logo"
             className="h-10 w-10 object-contain"
             loading="lazy"
@@ -495,3 +507,8 @@ export function MobileExperienceSection({ mobileExperience }) {
     </section>
   );
 }
+<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
+========
+
+
+>>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/MobileExperienceSection.jsx

@@ -1,4 +1,6 @@
-﻿import { useState, useRef, useEffect } from "react";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { languages } from "@/data/languages/languages";
 
@@ -21,6 +23,7 @@ export function LanguageSelector({ variant = "default" }) {
   return (
     <div className="relative" ref={ref}>
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className={
           isCompact
@@ -46,6 +49,7 @@ export function LanguageSelector({ variant = "default" }) {
           {languages.map((lang) => (
             <button
               key={lang.code}
+              type="button"
               onClick={() => {
                 setSelected(lang);
                 setOpen(false);

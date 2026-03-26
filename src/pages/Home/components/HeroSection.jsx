@@ -1,5 +1,7 @@
 ﻿////////////////////// new verison code
 
+ "use client";
+
 import { useState, useEffect, useCallback, useRef } from "react";
 import { heroSlides } from "@/data/heroSlides/heroSlides";
 
@@ -240,3 +242,8 @@ export default function HeroSection() {
     </section>
   );
 }
+<<<<<<<< Updated upstream:src/pages/Home/components/HeroSection.jsx
+========
+
+
+>>>>>>>> Stashed changes:src/legacy-pages/Home/components/HeroSection.jsx

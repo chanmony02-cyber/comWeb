@@ -1,4 +1,8 @@
+<<<<<<<< Updated upstream:src/pages/NewsEvents/components/NewsEventsListingSection.jsx
 import { Link } from "react-router-dom";
+========
+import Link from "next/link";
+>>>>>>>> Stashed changes:src/legacy-pages/NewsEvents/components/NewsEventsListingSection.jsx
 import { ROUTES } from "@/config/routes";
 
 export function NewsEventsListingSection({
@@ -58,7 +62,11 @@ export function NewsEventsListingSection({
                   {item.summary}
                 </p>
                 <Link
+<<<<<<<< Updated upstream:src/pages/NewsEvents/components/NewsEventsListingSection.jsx
                   to={ROUTES.NEWS_DETAIL.replace(":id", item.id)}
+========
+                  href={ROUTES.NEWS_DETAIL.replace(":id", item.id)}
+>>>>>>>> Stashed changes:src/legacy-pages/NewsEvents/components/NewsEventsListingSection.jsx
                   className="inline-flex items-center gap-1 px-4 py-2 border border-border rounded-md text-md font-semibold text-foreground hover:border-primary-blue hover:text-white hover:bg-primary-blue transition-colors w-fit mt-1 font-sans"
                 >
                   Read More {"->"}

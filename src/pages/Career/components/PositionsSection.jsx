@@ -1,5 +1,9 @@
 // src/pages/Career/components/PositionsSection.jsx
 
+ "use client";
+
+ "use client";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/config/routes";
@@ -85,7 +89,11 @@ export function PositionsSection({ departments, positions }) {
           {filtered.map((position) => (
             <Link
               key={position.id}
+<<<<<<<< Updated upstream:src/pages/Career/components/PositionsSection.jsx
               to={ROUTES.CAREER_DETAIL.replace(":id", position.id)}
+========
+              href={ROUTES.CAREER_DETAIL.replace(":id", position.id)}
+>>>>>>>> Stashed changes:src/legacy-pages/Career/components/PositionsSection.jsx
               className="group bg-card border border-border rounded-2xl px-6 py-5 flex items-center justify-between gap-4 shadow-sm hover:border-primary-blue hover:shadow-md transition-all duration-300"
             >
               {/* Left — title + meta */}

@@ -1,3 +1,10 @@
+<<<<<<<< Updated upstream:src/pages/ProductDetail/components/ProductTabs.jsx
+========
+"use client";
+
+ "use client";
+
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/ProductTabs.jsx
 import { useState } from "react";
 
 const TABS = [
@@ -107,3 +114,8 @@ export function ProductTabs({
     </div>
   );
 }
+<<<<<<<< Updated upstream:src/pages/ProductDetail/components/ProductTabs.jsx
+========
+
+
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/ProductTabs.jsx

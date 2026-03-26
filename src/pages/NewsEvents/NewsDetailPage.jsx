@@ -1,4 +1,8 @@
+<<<<<<<< Updated upstream:src/pages/NewsEvents/NewsDetailPage.jsx
 import { useParams } from "react-router-dom";
+========
+import { notFound } from "next/navigation";
+>>>>>>>> Stashed changes:src/legacy-pages/NewsEvents/NewsDetailPage.jsx
 import MainLayout from "@/layouts/MainLayout";
 import { newsEventsItems } from "@/data/newsEvents/newsEvents";
 import { NewsDetailContentSection } from "./components/NewsDetailContentSection";
@@ -14,13 +18,7 @@ export default function NewsDetailPage() {
     : [];
 
   if (!item) {
-    return (
-      <MainLayout>
-        <div className="container py-20 text-center">
-          <p className="text-muted-foreground text-md">Article not found.</p>
-        </div>
-      </MainLayout>
-    );
+    notFound();
   }
 
   return (

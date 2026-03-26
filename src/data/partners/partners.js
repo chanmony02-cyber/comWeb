@@ -9,7 +9,7 @@ export const partners = [
     description:
       "A community of thriving business in our region and represent our network.",
     color: "#001439",
-    image: ictImg,
+    image: ictImg.src,
     initials: "P1",
   },
   {
@@ -17,7 +17,7 @@ export const partners = [
     name: "RUPP",
     description: "A global network of thriving businesses for excellent expertise.",
     color: "#001439",
-    image: ruppImg,
+    image: ruppImg.src,
     initials: "P2",
   },
   {
@@ -25,8 +25,7 @@ export const partners = [
     name: "NPIC",
     description: "A community of thriving businesses and expands your network.",
     color: "#001439",
-    image: npicImg,
+    image: npicImg.src,
     initials: "P3",
   },
 ];
-

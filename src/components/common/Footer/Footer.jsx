@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import VHTLogo from "@/assets/images/VHT_Logo.png";
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import {
   Facebook,
   Linkedin,
@@ -17,8 +19,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-12">
           <div>
             <div className="card-logo bg-white p-1 rounded-lg w-fit">
-              <Link to={ROUTES.HOME} className="flex items-center">
-                <img src={VHTLogo} alt="VHT Logo" className="h-14 w-auto" />
+              <Link href={ROUTES.HOME} className="flex items-center">
+                <Image
+                  src="/placeholder.svg"
+                  alt="VHT Logo"
+                  width={56}
+                  height={56}
+                  className="h-14 w-auto"
+                  priority
+                />
               </Link>
             </div>
             <p className="mt-4 text-md text-topbar-foreground/70 leading-relaxed">
@@ -47,7 +56,7 @@ export function Footer() {
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li>
                 <Link
-                  to={ROUTES.DISTRIBUTION_GRID}
+                  href={ROUTES.DISTRIBUTION_GRID}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Distribution Grid
@@ -55,7 +64,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.CITY_INFRASTRUCTURE}
+                  href={ROUTES.CITY_INFRASTRUCTURE}
                   className="hover:text-primary-blue transition-colors"
                 >
                   City Infrastructure
@@ -63,7 +72,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.AGRICULTURE}
+                  href={ROUTES.AGRICULTURE}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Agriculture
@@ -77,7 +86,7 @@ export function Footer() {
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li>
                 <Link
-                  to={ROUTES.SERVICES}
+                  href={ROUTES.SERVICES}
                   className="hover:text-primary-blue transition-colors"
                 >
                   All Services
@@ -85,7 +94,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.CONSULTANTS}
+                  href={ROUTES.CONSULTANTS}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Consultants
@@ -93,7 +102,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.MAINTENANCE}
+                  href={ROUTES.MAINTENANCE}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Maintenance
@@ -101,7 +110,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.INSPECTIONS}
+                  href={ROUTES.INSPECTIONS}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Inspections
@@ -117,7 +126,7 @@ export function Footer() {
             <ul className="space-y-5 text-md text-topbar-foreground/70">
               <li>
                 <Link
-                  to={ROUTES.HOME}
+                  href={ROUTES.HOME}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Home
@@ -125,7 +134,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.ELECTRICAL_EQUIPMENT}
+                  href={ROUTES.ELECTRICAL_EQUIPMENT}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Products
@@ -133,7 +142,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.SERVICES}
+                  href={ROUTES.SERVICES}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Services
@@ -141,7 +150,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.CONTACT}
+                  href={ROUTES.CONTACT}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Contact Us

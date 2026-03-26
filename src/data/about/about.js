@@ -133,7 +133,7 @@ export const aboutData = {
         title: "Consultants",
         description:
           "Quick and reliable repairing services for all your electrical infrastructure needs.",
-        image: serviceConsultants,
+        image: serviceConsultants.src,
         href: ROUTES.CONSULTANTS,
       },
       {
@@ -142,7 +142,7 @@ export const aboutData = {
         title: "Maintenance",
         description:
           "Expert advice tailored for your electrical and electronic system requirements.",
-        image: serviceInspections,
+        image: serviceInspections.src,
         href: ROUTES.MAINTENANCE,
       },
       {
@@ -151,7 +151,7 @@ export const aboutData = {
         title: "Inspection",
         description:
           "Professional installation of electronic and electrical systems with precision.",
-        image: serviceMaintenance,
+        image: serviceMaintenance.src,
         href: ROUTES.INSPECTIONS,
       },
     ],
@@ -168,7 +168,7 @@ export const aboutData = {
         title: "Distribution Grid",
         description:
           "Building and maintaining efficient power distribution networks that deliver electricity safely to communities.",
-        image: distributionGridHero,
+        image: distributionGridHero.src,
         href: ROUTES.DISTRIBUTION_GRID,
       },
       {
@@ -177,7 +177,7 @@ export const aboutData = {
         title: "City Infrastructure",
         description:
           "Powering urban development with reliable electrical systems for buildings, street lighting, and public facilities.",
-        image: cityInfrastructureHero,
+        image: cityInfrastructureHero.src,
         href: ROUTES.CITY_INFRASTRUCTURE,
       },
       {
@@ -186,18 +186,18 @@ export const aboutData = {
         title: "Agriculture",
         description:
           "Modernizing agricultural operations with smart electrical solutions for irrigation, automation, and processing.",
-        image: agricultureHero,
+        image: agricultureHero.src,
         href: ROUTES.AGRICULTURE,
       },
     ],
   },
-  whyPartner: {
+    whyPartner: {
     eyebrow: "Why Partner With Us",
     title: "What Makes Us",
     highlight: "Different",
     subtitle:
       "We combine technical expertise with a customer-first approach to deliver electrical solutions that truly make a difference. Here's why clients choose us as their trusted partner.",
-    image: repairing,
+    image: repairing.src,
     helpCard: {
       title: "Need Help?",
       subtitle: "24/7 Available",

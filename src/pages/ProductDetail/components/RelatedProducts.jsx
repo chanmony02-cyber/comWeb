@@ -1,4 +1,10 @@
+<<<<<<<< Updated upstream:src/pages/ProductDetail/components/RelatedProducts.jsx
 import { Link } from "react-router-dom";
+========
+ "use client";
+
+import Link from "next/link";
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/RelatedProducts.jsx
 
 import { ProductCard } from "@/components/ui/ProductCard";
 import { ROUTES } from "@/config/routes";
@@ -21,7 +27,11 @@ export function RelatedProducts({ currentId, category, scrollToTop }) {
         {related.map((product) => (
           <Link
             key={product.id}
+<<<<<<<< Updated upstream:src/pages/ProductDetail/components/RelatedProducts.jsx
             to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+========
+            href={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/RelatedProducts.jsx
             className="block"
             onClick={() => scrollToTop?.()}
           >

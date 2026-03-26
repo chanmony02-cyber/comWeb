@@ -11,7 +11,7 @@ export const allServicesData = {
     title: "Expert Services in Consultants, Maintenance, and Inspections",
     subtitle:
       "We provide top-notch services for all your electrical and electronic needs.",
-    backgroundImage: heroBG,
+    backgroundImage: heroBG.src,
   },
   services: {
     title: "Our Services",
@@ -22,7 +22,7 @@ export const allServicesData = {
         title: "Consultants",
         description:
           "Quick and reliable repairing services for all your electrical infrastructure needs.",
-        image: serviceConsultants,
+        image: serviceConsultants.src,
         href: ROUTES.CONSULTANTS,
       },
       {
@@ -30,7 +30,7 @@ export const allServicesData = {
         title: "Maintenance",
         description:
           "Expert advice tailored for your electrical and electronic system requirements.",
-        image: serviceInspections,
+        image: serviceInspections.src,
         href: ROUTES.MAINTENANCE,
       },
       {
@@ -38,14 +38,14 @@ export const allServicesData = {
         title: "Inspections",
         description:
           "Professional installation of electronic and electrical systems with precision.",
-        image: serviceMaintenance,
+        image: serviceMaintenance.src,
         href: ROUTES.INSPECTIONS,
       },
     ],
   },
   whyChoose: {
     title: "Why choose our services?",
-    image: repairing,
+    image: repairing.src,
     items: [
       {
         id: 1,

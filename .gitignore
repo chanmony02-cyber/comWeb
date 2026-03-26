@@ -25,5 +25,5 @@ dist-ssr
 *.sw?
 
 # Just Temp
-/src/assets/images
+.next
 # 

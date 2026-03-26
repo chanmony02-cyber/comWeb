@@ -31,7 +31,11 @@ export default function FeaturedProductsSection() {
           {featuredProducts.map((product) => (
             <Link
               key={product.id}
+<<<<<<<< Updated upstream:src/pages/Home/components/FeaturedProductsSection.jsx
               to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+========
+              href={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+>>>>>>>> Stashed changes:src/legacy-pages/Home/components/FeaturedProductsSection.jsx
               className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="overflow-hidden h-[360px] sm:h-[560px]">

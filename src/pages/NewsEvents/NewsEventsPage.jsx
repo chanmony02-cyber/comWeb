@@ -1,3 +1,10 @@
+<<<<<<<< Updated upstream:src/pages/NewsEvents/NewsEventsPage.jsx
+========
+ "use client";
+
+ "use client";
+
+>>>>>>>> Stashed changes:src/legacy-pages/NewsEvents/NewsEventsPage.jsx
 import { useState } from "react";
 import MainLayout from "@/layouts/MainLayout";
 import { newsEventsItems } from "@/data/newsEvents/newsEvents";

@@ -1,0 +1,149 @@
+---
+description: Security rules — environment variables, server-only, CSP headers, and safe patterns
+globs: ["**/*.js", "**/*.jsx", "next.config.js", ".env*"]
+alwaysApply: true
+---
+
+# Security Rules
+
+## Environment Variables
+
+### Two categories — never mix them
+
+| Type | Prefix | Visible in browser? | Where to use |
+|---|---|---|---|
+| Secret | _(no prefix)_ | ❌ NO | `src/lib/api/` only |
+| Public | `NEXT_PUBLIC_` | ✅ YES | Anywhere |
+
+```bash
+# .env.local — NEVER commit this file
+SMTP_HOST=smtp.sendgrid.net
+SMTP_PORT=587
+CONTACT_EMAIL_API_KEY=sk-live-xxxxx
+DB_CONNECTION_STRING=postgresql://...
+
+# Safe to use in components
+NEXT_PUBLIC_SITE_URL=https://smartinfra.com
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+```js
+// ✅ Secret env var — only in lib/api/ or app/api/
+// src/lib/api/contact.js
+import 'server-only'
+const apiKey = process.env.CONTACT_EMAIL_API_KEY  // ✅ server-only file
+
+// ❌ NEVER in a component or "use client" file
+"use client"
+const apiKey = process.env.CONTACT_EMAIL_API_KEY  // ❌ undefined in browser, but exposes intent
+```
+
+---
+
+## `server-only` Package
+
+Every file in `src/lib/api/` MUST have this as the first line:
+
+```js
+import 'server-only'
+```
+
+This causes an intentional **build error** if a Client Component tries to import the file. It is a hard guardrail — never remove it.
+
+---
+
+## `.env.example` — Always Keep Updated
+
+`.env.example` is committed to git. It documents required variables with empty values:
+
+```bash
+# .env.example — commit this
+CONTACT_EMAIL_API_KEY=
+SMTP_HOST=
+SMTP_PORT=
+DB_CONNECTION_STRING=
+
+NEXT_PUBLIC_SITE_URL=
+NEXT_PUBLIC_GA_ID=
+```
+
+`.env.local` is NEVER committed. Verify `.gitignore` contains:
+```
+.env.local
+.env*.local
+```
+
+---
+
+## Security Headers (`next.config.js`)
+
+The following headers must be present in `next.config.js` and never removed:
+
+```js
+const securityHeaders = [
+  { key: 'X-DNS-Prefetch-Control',  value: 'on' },
+  { key: 'X-Frame-Options',         value: 'SAMEORIGIN' },      // Prevent clickjacking
+  { key: 'X-Content-Type-Options',  value: 'nosniff' },         // Prevent MIME sniffing
+  { key: 'Referrer-Policy',         value: 'strict-origin-when-cross-origin' },
+  { key: 'Permissions-Policy',      value: 'camera=(), microphone=(), geolocation=()' },
+  {
+    key: 'Content-Security-Policy',
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob:",
+      "font-src 'self'",
+      "connect-src 'self'",
+    ].join('; '),
+  },
+]
+```
+
+---
+
+## API Route Handler Security
+
+Every route handler must:
+1. Validate input with Zod before any processing
+2. Wrap logic in try/catch
+3. Never expose internal error details to the client
+
+```js
+// app/api/contact/route.js
+export async function POST(req) {
+  try {
+    const body = await req.json()
+    const parsed = contactSchema.safeParse(body)
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: parsed.error.flatten() },   // ✅ Zod validation error only
+        { status: 422 }
+      )
+    }
+
+    await sendContactEmail(parsed.data)
+    return NextResponse.json({ success: true })
+
+  } catch (err) {
+    console.error('[POST /api/contact]', err)   // log internally
+    return NextResponse.json(
+      { error: 'Internal server error' },        // ✅ generic message to client
+      { status: 500 }
+    )
+  }
+}
+```
+
+---
+
+## What Never To Do
+
+- ❌ Never commit `.env.local` or any file containing real secrets
+- ❌ Never use `process.env.SECRET_*` in a `"use client"` file
+- ❌ Never remove the security headers from `next.config.js`
+- ❌ Never remove `import 'server-only'` from `lib/api/` files
+- ❌ Never return stack traces or internal error messages in API responses
+- ❌ Never use `eval()`, `dangerouslySetInnerHTML` with unsanitized user content
+- ❌ Never trust user input — always validate with Zod in route handlers

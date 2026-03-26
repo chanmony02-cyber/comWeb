@@ -29,7 +29,11 @@ export default function RecentProjectsSection() {
           {recentProjects.map((project) => (
             <Link
               key={project.id}
+<<<<<<<< Updated upstream:src/pages/Home/components/RecentProjectsSection.jsx
               to={ROUTES.PROJECT_DETAIL.replace(":id", project.id)}
+========
+              href={ROUTES.PROJECT_DETAIL.replace(":id", project.id)}
+>>>>>>>> Stashed changes:src/legacy-pages/Home/components/RecentProjectsSection.jsx
               className="group relative rounded-xl overflow-hidden aspect-video"
             >
               <img

@@ -1,0 +1,72 @@
+---
+description: Anti-patterns — common mistakes to never do in this project
+globs: ["src/**/*.jsx", "src/**/*.js"]
+alwaysApply: true
+---
+
+# Anti-Patterns — Never Do These
+
+## File & Language
+- ❌ Never create `.ts` or `.tsx` files — this project is JavaScript + JSX only
+- ❌ Never create `tsconfig.json` — use `jsconfig.json`
+- ❌ Never use TypeScript syntax (`interface`, `type`, `: string`, `as`, generics)
+
+---
+
+## Imports
+- ❌ Never use relative `../` imports — always use `@/` aliases
+- ❌ Never import `react-router-dom` — use `next/link` and `next/navigation`
+- ❌ Never import `Link` from react-router — import from `next/link`
+- ❌ Never use `useNavigate` — use `useRouter` from `next/navigation`
+- ❌ Never use `useParams` from react-router — use `params` prop on page component
+
+---
+
+## Components
+- ❌ Never define data arrays inside a component file — put them in `src/lib/data/`
+- ❌ Never put reusable components inside `src/app/` — use `src/components/` or `src/features/`
+- ❌ Never use `<img>` — always use `next/image`
+- ❌ Never use `<a href>` for internal links — always use `next/link`
+- ❌ Never use array index as React `key` — use `id` or `slug`
+- ❌ Never fetch data inside a Client Component with `useEffect` + `fetch` — fetch in Server Component and pass as props
+- ❌ Never add `"use client"` to a file that doesn't need it
+
+---
+
+## Data & API
+- ❌ Never remove `import 'server-only'` from any file in `src/lib/api/`
+- ❌ Never use `process.env.SECRET_*` in a `"use client"` file or component
+- ❌ Never commit `.env.local` — it must stay in `.gitignore`
+- ❌ Never put icons or JSX inside `src/lib/data/` files — data files are pure JS
+
+---
+
+## Styling
+- ❌ Never use inline `style={{ color: '#1d4ed8' }}` — use Tailwind classes
+- ❌ Never create CSS module files (`.module.css`) — use Tailwind only
+- ❌ Never use `@apply` in CSS except in `globals.css` for base resets
+- ❌ Never hardcode hex colors in `className` — use CSS custom properties via `var()`
+
+---
+
+## Security
+- ❌ Never expose secret keys in `NEXT_PUBLIC_*` variables
+- ❌ Never remove security headers from `next.config.js`
+- ❌ Never return stack traces or full error objects in API route responses
+- ❌ Never use unsanitized user content in `dangerouslySetInnerHTML`
+- ❌ Never skip Zod validation in route handlers
+
+---
+
+## Architecture
+- ❌ Never import a `features/` component from a different feature folder
+  ```js
+  // ❌ features/home/ importing from features/products/
+  import ProductGrid from '@/features/products/ProductGrid'  // inside features/home/
+  ```
+  If a component is needed in two feature folders — **move it to `components/ui/`**
+
+- ❌ Never put business logic inside `page.jsx` — pages only compose feature components and fetch data
+
+- ❌ Never create a new top-level folder under `src/` without a clear reason — the current structure covers all needs:
+  `app/`, `components/`, `features/`, `lib/`, `hooks/`, `config/`, `styles/`

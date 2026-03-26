@@ -16,7 +16,7 @@ export const maintenanceData = {
       "Our maintenance division provides end-to-end care for electrical power systems, from routine inspections to complex overhauls. We combine predictive analytics with hands-on expertise to minimize downtime and extend equipment lifespan across distribution grids, substations, and industrial facilities.",
       "Every maintenance program is tailored to your operational demands, regulatory requirements, and budget constraints — ensuring maximum reliability at optimal cost.",
     ],
-    image: maintenanceOverview,
+    image: maintenanceOverview.src,
     bgSection: false,
   },
   commonIssues: {
@@ -79,7 +79,7 @@ export const maintenanceData = {
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
-        image: switchGear,
+        image: switchGear.src,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -88,7 +88,7 @@ export const maintenanceData = {
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
-        image: autoCloser,
+        image: autoCloser.src,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -97,7 +97,7 @@ export const maintenanceData = {
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",
-        image: transformer,
+        image: transformer.src,
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
     ],

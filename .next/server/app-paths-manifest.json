@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/all-projects/page": "app/all-projects/page.js",
+  "/career/page": "app/career/page.js",
+  "/homepage/page": "app/homepage/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/about/page": "app/about/page.js",
+  "/industries/agriculture/page": "app/industries/agriculture/page.js",
+  "/career/[id]/page": "app/career/[id]/page.js",
+  "/electrical-equipment/page": "app/electrical-equipment/page.js",
+  "/industries/distribution-grid/page": "app/industries/distribution-grid/page.js",
+  "/industries/city-infrastructure/page": "app/industries/city-infrastructure/page.js",
+  "/page": "app/page.js",
+  "/services/consultants/page": "app/services/consultants/page.js",
+  "/news/page": "app/news/page.js",
+  "/products/[id]/page": "app/products/[id]/page.js",
+  "/news/[id]/page": "app/news/[id]/page.js",
+  "/services/inspections/page": "app/services/inspections/page.js",
+  "/services/page": "app/services/page.js",
+  "/projects/[id]/page": "app/projects/[id]/page.js",
+  "/services/maintenance/page": "app/services/maintenance/page.js",
+  "/software-application/page": "app/software-application/page.js"
+}

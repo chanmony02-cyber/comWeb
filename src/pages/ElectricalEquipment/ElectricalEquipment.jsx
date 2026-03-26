@@ -1,3 +1,10 @@
+<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/ElectricalEquipment.jsx
+========
+ "use client";
+
+ "use client";
+
+>>>>>>>> Stashed changes:src/legacy-pages/ElectricalEquipment/ElectricalEquipment.jsx
 import { useState } from "react";
 import MainLayout from "@/layouts/MainLayout";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";

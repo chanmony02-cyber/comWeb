@@ -1,3 +1,10 @@
+<<<<<<<< Updated upstream:src/pages/ProductDetail/components/ProductImageGallery.jsx
+========
+"use client";
+
+ "use client";
+
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/ProductImageGallery.jsx
 import { useState } from "react";
 
 export function ProductImageGallery({ images = [], name = "" }) {
@@ -68,3 +75,8 @@ export function ProductImageGallery({ images = [], name = "" }) {
     </div>
   );
 }
+<<<<<<<< Updated upstream:src/pages/ProductDetail/components/ProductImageGallery.jsx
+========
+
+
+>>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/ProductImageGallery.jsx

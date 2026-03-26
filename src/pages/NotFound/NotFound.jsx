@@ -1,14 +1,23 @@
+<<<<<<<< Updated upstream:src/pages/NotFound/NotFound.jsx
 ﻿import { useEffect } from "react";
 
 import { Link, useLocation } from "react-router-dom";
+========
+import { useEffect } from "react";
+import Link from "next/link";
+>>>>>>>> Stashed changes:src/legacy-pages/NotFound/NotFound.jsx
 
 import MainLayout from "@/layouts/MainLayout";
 import { notFoundContent } from "@/data/notFound/notFound";
 import { ROUTES } from "@/config/routes";
 
+<<<<<<<< Updated upstream:src/pages/NotFound/NotFound.jsx
 export default function NotFound() {
   const location = useLocation();
 
+========
+export default function NotFound({ pathname = "" }) {
+>>>>>>>> Stashed changes:src/legacy-pages/NotFound/NotFound.jsx
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
@@ -27,7 +36,11 @@ export default function NotFound() {
             {notFoundContent.message}
           </p>
           <Link
+<<<<<<<< Updated upstream:src/pages/NotFound/NotFound.jsx
             to={ROUTES.HOME}
+========
+            href={ROUTES.HOME}
+>>>>>>>> Stashed changes:src/legacy-pages/NotFound/NotFound.jsx
             className="text-navy underline hover:text-navy/90"
           >
             {notFoundContent.cta}
