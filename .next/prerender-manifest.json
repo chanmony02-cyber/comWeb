@@ -1,30 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/homepage": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/homepage",
-      "dataRoute": "/homepage.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/_not-found": {
       "initialStatus": 404,
       "experimentalBypassFor": [
@@ -74,7 +50,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news": {
+    "/career": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -87,8 +63,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news",
-      "dataRoute": "/news.rsc",
+      "srcRoute": "/career",
+      "dataRoute": "/career.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -98,7 +74,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/contact": {
+    "/industries/distribution-grid": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -111,8 +87,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
+      "srcRoute": "/industries/distribution-grid",
+      "dataRoute": "/industries/distribution-grid.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -122,7 +98,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/1": {
+    "/all-projects": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -135,8 +111,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/1.rsc",
+      "srcRoute": "/all-projects",
+      "dataRoute": "/all-projects.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -146,7 +122,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/2": {
+    "/services/consultants": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -159,8 +135,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/2.rsc",
+      "srcRoute": "/services/consultants",
+      "dataRoute": "/services/consultants.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -170,7 +146,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/3": {
+    "/about": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -183,8 +159,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/3.rsc",
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -194,7 +170,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/4": {
+    "/homepage": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -207,8 +183,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/4.rsc",
+      "srcRoute": "/homepage",
+      "dataRoute": "/homepage.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -218,7 +194,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/5": {
+    "/services/maintenance": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -231,8 +207,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/5.rsc",
+      "srcRoute": "/services/maintenance",
+      "dataRoute": "/services/maintenance.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -242,7 +218,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/6": {
+    "/services": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -255,8 +231,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/6.rsc",
+      "srcRoute": "/services",
+      "dataRoute": "/services.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -266,7 +242,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/news/7": {
+    "/services/inspections": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -279,8 +255,248 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/news/[id]",
-      "dataRoute": "/news/7.rsc",
+      "srcRoute": "/services/inspections",
+      "dataRoute": "/services/inspections.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/1": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/1.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/2": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/2.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/3": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/3.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/4": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/4.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/5": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/5.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/6": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/6.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/7": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/7.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/8": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/8.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/projects/9": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/projects/[id]",
+      "dataRoute": "/projects/9.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/software-application": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/software-application",
+      "dataRoute": "/software-application.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -650,7 +866,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/1": {
+    "/news/1": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -663,8 +879,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/1.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/1.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -674,7 +890,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/2": {
+    "/news/2": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -687,8 +903,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/2.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/2.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -698,7 +914,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/3": {
+    "/news/3": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -711,8 +927,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/3.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/3.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -722,7 +938,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/4": {
+    "/news/4": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -735,8 +951,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/4.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/4.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -746,7 +962,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/5": {
+    "/news/5": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -759,8 +975,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/5.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/5.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -770,7 +986,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/6": {
+    "/news/6": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -783,8 +999,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/6.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/6.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -794,7 +1010,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/7": {
+    "/news/7": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -807,8 +1023,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/7.rsc",
+      "srcRoute": "/news/[id]",
+      "dataRoute": "/news/7.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -818,7 +1034,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/8": {
+    "/contact": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -831,8 +1047,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/8.rsc",
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -842,7 +1058,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/9": {
+    "/industries/agriculture": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -855,8 +1071,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/projects/[id]",
-      "dataRoute": "/projects/9.rsc",
+      "srcRoute": "/industries/agriculture",
+      "dataRoute": "/industries/agriculture.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -866,7 +1082,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/services/maintenance": {
+    "/news": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -879,80 +1095,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/services/maintenance",
-      "dataRoute": "/services/maintenance.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/services": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/services",
-      "dataRoute": "/services.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/services/inspections": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/services/inspections",
-      "dataRoute": "/services/inspections.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/services/consultants": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/services/consultants",
-      "dataRoute": "/services/consultants.rsc",
+      "srcRoute": "/news",
+      "dataRoute": "/news.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1034,102 +1178,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/software-application": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/software-application",
-      "dataRoute": "/software-application.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/industries/distribution-grid": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/industries/distribution-grid",
-      "dataRoute": "/industries/distribution-grid.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/industries/agriculture": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/industries/agriculture",
-      "dataRoute": "/industries/agriculture.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/career": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/career",
-      "dataRoute": "/career.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/industries/city-infrastructure": {
       "experimentalBypassFor": [
         {
@@ -1177,58 +1225,10 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
-    },
-    "/about": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/all-projects": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/all-projects",
-      "dataRoute": "/all-projects.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
     }
   },
   "dynamicRoutes": {
-    "/news/[id]": {
+    "/projects/[id]": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1240,10 +1240,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/news/([^/]+?)(?:/)?$",
-      "dataRoute": "/news/[id].rsc",
+      "routeRegex": "^/projects/([^/]+?)(?:/)?$",
+      "dataRoute": "/projects/[id].rsc",
       "fallback": null,
-      "dataRouteRegex": "^/news/([^/]+?)\\.rsc$",
+      "dataRouteRegex": "^/projects/([^/]+?)\\.rsc$",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -1278,7 +1278,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/projects/[id]": {
+    "/news/[id]": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -1290,10 +1290,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "routeRegex": "^/projects/([^/]+?)(?:/)?$",
-      "dataRoute": "/projects/[id].rsc",
+      "routeRegex": "^/news/([^/]+?)(?:/)?$",
+      "dataRoute": "/news/[id].rsc",
       "fallback": null,
-      "dataRouteRegex": "^/projects/([^/]+?)\\.rsc$",
+      "dataRouteRegex": "^/news/([^/]+?)\\.rsc$",
       "allowHeader": [
         "host",
         "x-matched-path",
