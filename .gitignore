@@ -22,8 +22,12 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
+<<<<<<< Updated upstream
 *.sw?
 
 # Just Temp
 /src/assets/images
 # 
+=======
+*.sw?
+>>>>>>> Stashed changes

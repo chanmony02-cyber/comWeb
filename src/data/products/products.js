@@ -56,7 +56,11 @@ export const products = [
     name: "Fuse Link",
     category: "LV",
     image: productFuse,
+<<<<<<< Updated upstream
     images: [productFuse],
+=======
+    images: [productFuse, productSurgeArrester, productFuse],
+>>>>>>> Stashed changes
     description: "Fast-acting fuse links for reliable LV protection.",
     features: [
       "Fast-acting response for overload protection",
@@ -79,7 +83,11 @@ export const products = [
     name: "Current Transformer",
     category: "MV",
     image: productCurrentTransformer,
+<<<<<<< Updated upstream
     images: [productCurrentTransformer],
+=======
+    images: [productCurrentTransformer, productSurgeArrester, productFuse],
+>>>>>>> Stashed changes
     description: "Accurate measurement and protection for MV systems.",
     features: [
       "High accuracy class measurement",
@@ -102,7 +110,11 @@ export const products = [
     name: "Panel Board",
     category: "LV",
     image: productPanelBoard,
+<<<<<<< Updated upstream
     images: [productPanelBoard],
+=======
+    images: [productPanelBoard, productSurgeArrester, productFuse],
+>>>>>>> Stashed changes
     description: "Modular LV distribution panels for safe load management.",
     features: [
       "Modular design for easy expansion",
@@ -125,7 +137,11 @@ export const products = [
     name: "Distribution Transformer",
     category: "MV",
     image: productTransformer,
+<<<<<<< Updated upstream
     images: [productTransformer],
+=======
+    images: [productTransformer, productSurgeArrester, productFuse],
+>>>>>>> Stashed changes
     description: "Efficient MV/LV power distribution for utility networks.",
     features: [
       "ONAN cooling for reliable operation",

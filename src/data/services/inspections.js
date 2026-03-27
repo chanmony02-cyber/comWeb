@@ -9,6 +9,7 @@ export const inspectionsData = {
     title: "Comprehensive Inspection Service",
     subtitle:
       "Expert electrical inspection services ensuring safety, compliance, and reliability across your entire infrastructure.",
+    heroImage: inspectionOverview,
   },
   overview: {
     title: "Overview",
