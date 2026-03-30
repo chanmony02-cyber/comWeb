@@ -1,6 +1,7 @@
 // src/router.jsx
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import MainLayout from "@/layouts/MainLayout";
 import { ROUTES } from "@/config/routes";
 
 const Home = lazy(() => import("@/pages/Home"));
@@ -40,43 +41,72 @@ const NewsDetailPage = lazy(() =>
 const CareerPage = lazy(() => import("@/pages/Career"));
 const CareerDetailPage = lazy(() => import("@/pages/CareerDetail"));
 
+const withMainLayout = (page) => <MainLayout>{page}</MainLayout>;
+
 const AppRouter = () => {
   return (
     <Suspense fallback={null}>
       <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.HOMEPAGE} element={<Home />} />
-        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
+        <Route path={ROUTES.HOME} element={withMainLayout(<Home />)} />
+        <Route path={ROUTES.HOMEPAGE} element={withMainLayout(<Home />)} />
+        <Route path={ROUTES.ABOUT} element={withMainLayout(<AboutPage />)} />
         <Route
           path={ROUTES.ELECTRICAL_EQUIPMENT}
-          element={<ElectricalEquipment />}
+          element={withMainLayout(<ElectricalEquipment />)}
         />
         <Route
           path={ROUTES.SOFTWARE_APPLICATION}
-          element={<SoftwareApplicationPage />}
+          element={withMainLayout(<SoftwareApplicationPage />)}
         />
-        <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
-        <Route path={ROUTES.ALL_PROJECTS} element={<AllProjectsPage />} />
-        <Route path={ROUTES.PROJECT_DETAIL} element={<ProjectDetailPage />} />
-        <Route path={ROUTES.CONTACT} element={<ContactPage />} />
+        <Route
+          path={ROUTES.PRODUCT_DETAIL}
+          element={withMainLayout(<ProductDetail />)}
+        />
+        <Route
+          path={ROUTES.ALL_PROJECTS}
+          element={withMainLayout(<AllProjectsPage />)}
+        />
+        <Route
+          path={ROUTES.PROJECT_DETAIL}
+          element={withMainLayout(<ProjectDetailPage />)}
+        />
+        <Route path={ROUTES.CONTACT} element={withMainLayout(<ContactPage />)} />
         <Route
           path={ROUTES.DISTRIBUTION_GRID}
-          element={<DistributionGridPage />}
+          element={withMainLayout(<DistributionGridPage />)}
         />
         <Route
           path={ROUTES.CITY_INFRASTRUCTURE}
-          element={<CityInfrastructurePage />}
+          element={withMainLayout(<CityInfrastructurePage />)}
         />
-        <Route path={ROUTES.AGRICULTURE} element={<AgriculturePage />} />
-        <Route path={ROUTES.SERVICES} element={<ServicesPage />} />
-        <Route path={ROUTES.CONSULTANTS} element={<ConsultantsPage />} />
-        <Route path={ROUTES.MAINTENANCE} element={<MaintenancePage />} />
-        <Route path={ROUTES.INSPECTIONS} element={<InspectionsPage />} />
-        <Route path={ROUTES.NEWS} element={<NewsEventsPage />} />
-        <Route path={ROUTES.NEWS_DETAIL} element={<NewsDetailPage />} />
-        <Route path={ROUTES.CAREER} element={<CareerPage />} />
-        <Route path={ROUTES.CAREER_DETAIL} element={<CareerDetailPage />} />
-        <Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
+        <Route
+          path={ROUTES.AGRICULTURE}
+          element={withMainLayout(<AgriculturePage />)}
+        />
+        <Route path={ROUTES.SERVICES} element={withMainLayout(<ServicesPage />)} />
+        <Route
+          path={ROUTES.CONSULTANTS}
+          element={withMainLayout(<ConsultantsPage />)}
+        />
+        <Route
+          path={ROUTES.MAINTENANCE}
+          element={withMainLayout(<MaintenancePage />)}
+        />
+        <Route
+          path={ROUTES.INSPECTIONS}
+          element={withMainLayout(<InspectionsPage />)}
+        />
+        <Route path={ROUTES.NEWS} element={withMainLayout(<NewsEventsPage />)} />
+        <Route
+          path={ROUTES.NEWS_DETAIL}
+          element={withMainLayout(<NewsDetailPage />)}
+        />
+        <Route path={ROUTES.CAREER} element={withMainLayout(<CareerPage />)} />
+        <Route
+          path={ROUTES.CAREER_DETAIL}
+          element={withMainLayout(<CareerDetailPage />)}
+        />
+        <Route path={ROUTES.NOT_FOUND} element={withMainLayout(<NotFound />)} />
       </Routes>
     </Suspense>
   );

@@ -8,9 +8,9 @@ export default function RecentProjectsSection() {
   return (
     <section className="py-20 bg-navy border-b border-gray-500">
       <div className="container">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <h2 className="text-primary-blue font-bold text-4xl md:text-[2.5rem] mb-3 font-display whitespace-nowrap">
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-primary-blue font-bold text-3xl sm:text-4xl md:text-[2.5rem] mb-3 font-display lg:whitespace-nowrap">
               RECENT PROJECTS
             </h2>
             <p className="text-sky-accent text-md md:text-md max-w-md leading-relaxed font-sans">
@@ -20,7 +20,7 @@ export default function RecentProjectsSection() {
           </div>
           <Link
             to={ROUTES.ALL_PROJECTS}
-            className="text-sky-accent hover:text-primary-foreground text-md font-medium transition-colors flex items-center gap-1 font-display whitespace-nowrap shrink-0"
+            className="text-sky-accent hover:text-primary-foreground text-md font-medium transition-colors flex items-center gap-1 font-display shrink-0 lg:whitespace-nowrap self-end lg:self-auto"
           >
             More &rarr;
           </Link>

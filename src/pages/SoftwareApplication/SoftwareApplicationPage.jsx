@@ -1,6 +1,5 @@
-﻿// src/pages/SoftwareApplication/SoftwareApplicationPage.jsx
+// src/pages/SoftwareApplication/SoftwareApplicationPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { softwareApplicationData } from "@/data/softwareApplication/softwareApplication";
 import { SoftwareApplicationHero } from "./components/SoftwareApplicationHero";
 import { AppHighlightsSection } from "./components/AppHighlightsSection";
@@ -14,16 +13,13 @@ export default function SoftwareApplicationPage() {
     softwareApplicationData;
 
   return (
-    <MainLayout>
-      <main className="flex-1 bg-background">
-        <SoftwareApplicationHero hero={hero} />
-        <AppHighlightsSection screens={screens} />
-        <MobileExperienceSection mobileExperience={mobileExperience} />
-        <CapabilitiesSection capabilities={capabilities} />
-        <PrivacySection privacy={privacy} />
-        <CallToActionSection cta={cta} />
-      </main>
-    </MainLayout>
+    <main className="flex-1 bg-background">
+      <SoftwareApplicationHero hero={hero} />
+      <AppHighlightsSection screens={screens} />
+      <MobileExperienceSection mobileExperience={mobileExperience} />
+      <CapabilitiesSection capabilities={capabilities} />
+      <PrivacySection privacy={privacy} />
+      <CallToActionSection cta={cta} />
+    </main>
   );
 }
-

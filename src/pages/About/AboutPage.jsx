@@ -1,6 +1,5 @@
 // src/pages/About/AboutPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { aboutData } from "@/data/about/about";
 import { AboutHero } from "./components/AboutHero";
 import { CompanyStorySection } from "./components/CompanyStorySection";
@@ -20,7 +19,7 @@ export default function AboutPage() {
   const { industries, whyPartner, team } = aboutData;
 
   return (
-    <MainLayout>
+    <>
       <AboutHero title={hero.title} subtitle={hero.subtitle} />
       <CompanyStorySection {...story} />
       <PowerSection {...powerSection} />
@@ -32,6 +31,6 @@ export default function AboutPage() {
       <TeamSection {...team} />
       {/* <PartnershipSection /> */}
       <OurLocationSection />
-    </MainLayout>
+    </>
   );
 }

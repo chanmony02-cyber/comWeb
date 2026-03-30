@@ -1,6 +1,3 @@
-// src/pages/Industries/DistributionGrid/DistributionGridPage.jsx
-
-import MainLayout from "@/layouts/MainLayout";
 import { distributionGridData } from "@/data/industries/distributionGrid";
 import { IndustryHero } from "../components/IndustryHero";
 import { ProblemSection } from "../components/ProblemSection";
@@ -12,7 +9,7 @@ export default function DistributionGridPage() {
   const { hero, problem, solutions, projects, cta } = distributionGridData;
 
   return (
-    <MainLayout>
+    <>
       <IndustryHero
         title={hero.title}
         subtitle={hero.subtitle}
@@ -35,6 +32,6 @@ export default function DistributionGridPage() {
         items={projects.items}
       />
       <IndustryCTA title={cta.title} subtitle={cta.subtitle} />
-    </MainLayout>
+    </>
   );
 }

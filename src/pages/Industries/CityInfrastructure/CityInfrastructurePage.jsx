@@ -1,6 +1,3 @@
-// src/pages/Industries/CityInfrastructure/CityInfrastructurePage.jsx
-
-import MainLayout from "@/layouts/MainLayout";
 import { cityInfrastructureData } from "@/data/industries/cityInfrastructure";
 import { IndustryHero } from "../components/IndustryHero";
 import { ProblemSection } from "../components/ProblemSection";
@@ -12,7 +9,7 @@ export default function CityInfrastructurePage() {
   const { hero, problem, solutions, projects, cta } = cityInfrastructureData;
 
   return (
-    <MainLayout>
+    <>
       <IndustryHero
         title={hero.title}
         subtitle={hero.subtitle}
@@ -35,6 +32,6 @@ export default function CityInfrastructurePage() {
         items={projects.items}
       />
       <IndustryCTA title={cta.title} subtitle={cta.subtitle} />
-    </MainLayout>
+    </>
   );
 }

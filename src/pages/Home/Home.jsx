@@ -1,4 +1,3 @@
-﻿import MainLayout from "@/layouts/MainLayout";
 import HeroSection from "./components/HeroSection";
 import WhatWeDoSection from "./components/WhatWeDoSection";
 import FeaturedProductsSection from "./components/FeaturedProductsSection";
@@ -8,15 +7,13 @@ import PartnershipSection from "./components/PartnershipSection";
 
 export default function Home() {
   return (
-    <MainLayout>
-      <main className="flex-1">
-        <HeroSection />
-        <WhatWeDoSection />
-        <FeaturedProductsSection />
-        <IndustriesSolutionSection />
-        <RecentProjectsSection />
-        <PartnershipSection />
-      </main>
-    </MainLayout>
+    <main className="flex-1">
+      <HeroSection />
+      <WhatWeDoSection />
+      <FeaturedProductsSection />
+      <IndustriesSolutionSection />
+      <RecentProjectsSection />
+      <PartnershipSection />
+    </main>
   );
 }

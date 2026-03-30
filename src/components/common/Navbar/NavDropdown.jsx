@@ -1,9 +1,5 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-<<<<<<< Updated upstream
-=======
-import { Link } from "react-router-dom";
->>>>>>> Stashed changes
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -45,11 +41,7 @@ export function NavDropdown({ label, items, triggerClassName = "" }) {
       >
         {items.map((item) => (
           <DropdownMenuItem key={item.label} asChild className={itemClassName}>
-<<<<<<< Updated upstream
             <a href={item.href} className="w-full">
-=======
-            <Link to={item.href} className="w-full">
->>>>>>> Stashed changes
               {item.label}
             </a>
           </DropdownMenuItem>

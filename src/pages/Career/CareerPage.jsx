@@ -1,6 +1,5 @@
 // src/pages/Career/CareerPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import {
   careerHero,
   careerBenefits,
@@ -15,7 +14,7 @@ import { CareerCTA } from "./components/CareerCTA";
 
 export default function CareerPage() {
   return (
-    <MainLayout>
+    <>
       <CareerHero
         title={careerHero.title}
         subtitle={careerHero.subtitle}
@@ -31,6 +30,6 @@ export default function CareerPage() {
         buttonLabel={careerCTA.buttonLabel}
         buttonHref={careerCTA.buttonHref}
       />
-    </MainLayout>
+    </>
   );
 }

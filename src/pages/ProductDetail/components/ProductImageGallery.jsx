@@ -13,7 +13,7 @@ export function ProductImageGallery({ images = [], name = "" }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80 xl:h-[750px] xl:w-[750px]">
+      <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80 3xl:h-[750px] 3xl:w-[750px]">
         <img
           src={images[activeIndex]}
           alt={name}

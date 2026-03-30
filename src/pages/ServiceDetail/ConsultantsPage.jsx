@@ -1,19 +1,18 @@
 // src/pages/ServiceDetail/ConsultantsPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { consultantsData } from "@/data/services/consultants";
 import { ServiceDetailHeroSection } from "./components/ServiceDetailHeroSection";
 import { ServiceOverview } from "./components/ServiceOverview";
-import { CoreExpertiseGrid } from "./components/CoreExpertiseGrid";
-import { OurProcessSteps } from "./components/OurProcessSteps";
+import { CommonIssuesGrid } from "./components/CommonIssuesGrid";
+import { EquipmentGrid } from "./components/EquipmentGrid";
 
 export default function ConsultantsPage() {
-  const { hero, overview, expertise, process, faqs } = consultantsData;
+  const { hero, overview, commonIssues, equipment, faqs } = consultantsData;
 
   return (
-    <MainLayout>
+    <>
       <ServiceDetailHeroSection
         title={hero.title}
         subtitle={hero.subtitle}
@@ -25,14 +24,18 @@ export default function ConsultantsPage() {
         image={overview.image}
         bgSection={overview.bgSection}
       />
-      <CoreExpertiseGrid title={expertise.title} items={expertise.items} />
-      <OurProcessSteps
-        title={process.title}
-        subtitle={process.subtitle}
-        steps={process.steps}
+      <CommonIssuesGrid
+        title={commonIssues.title}
+        subtitle={commonIssues.subtitle}
+        items={commonIssues.items}
+      />
+      <EquipmentGrid
+        title={equipment.title}
+        subtitle={equipment.subtitle}
+        items={equipment.items}
       />
       <FaqSection items={faqs} />
       <GetInTouchSection />
-    </MainLayout>
+    </>
   );
 }

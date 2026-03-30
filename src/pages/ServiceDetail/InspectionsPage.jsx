@@ -1,6 +1,5 @@
 // src/pages/ServiceDetail/InspectionsPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { inspectionsData } from "@/data/services/inspections";
@@ -13,7 +12,7 @@ export default function InspectionsPage() {
   const { hero, overview, commonIssues, equipment, faqs } = inspectionsData;
 
   return (
-    <MainLayout>
+    <>
       <ServiceDetailHeroSection
         title={hero.title}
         subtitle={hero.subtitle}
@@ -37,6 +36,6 @@ export default function InspectionsPage() {
       />
       <FaqSection items={faqs} />
       <GetInTouchSection />
-    </MainLayout>
+    </>
   );
 }

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import MainLayout from "@/layouts/MainLayout";
 import { allProjects } from "@/data/projects/projects";
 import { AllProjectsHeroSection } from "./components/AllProjectsHeroSection";
 import { ProjectsListingSection } from "./components/ProjectsListingSection";
@@ -38,7 +37,7 @@ export default function AllProjectsPage() {
   };
 
   return (
-    <MainLayout>
+    <>
       <AllProjectsHeroSection title="All Projects" />
       <ProjectsListingSection
         filters={FILTERS}
@@ -49,6 +48,6 @@ export default function AllProjectsPage() {
         totalPages={totalPages}
         onPage={handlePage}
       />
-    </MainLayout>
+    </>
   );
 }
