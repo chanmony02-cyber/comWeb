@@ -1,12 +1,6 @@
 import { Link } from "react-router-dom";
 import VHTLogo from "@/assets/images/VHT_Logo.png";
-import {
-  Facebook,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { ROUTES } from "@/config/routes";
 import { siteConfig } from "@/config/siteConfig";
 
@@ -180,7 +174,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-topbar-foreground/10 pt-6 text-center text-md text-topbar-foreground/50">
-          (c) {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+          reserved.
         </div>
       </div>
     </footer>
