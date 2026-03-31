@@ -169,13 +169,14 @@ export function Navbar() {
                       <AccordionContent className="pb-2 pt-0">
                         <div className="flex flex-col gap-1">
                           {productsDropdownItems.map((dropdownItem) => (
-                            <a
+                            <Link
                               key={dropdownItem.label}
-                              href={dropdownItem.href}
+                              to={dropdownItem.href}
+                              onClick={() => setMobileOpen(false)}
                               className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
                             >
                               {dropdownItem.label}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </AccordionContent>
@@ -199,13 +200,14 @@ export function Navbar() {
                       <AccordionContent className="pb-2 pt-0">
                         <div className="flex flex-col gap-1">
                           {companyDropdownItems.map((dropdownItem) => (
-                            <a
+                            <Link
                               key={dropdownItem.label}
-                              href={dropdownItem.href}
+                              to={dropdownItem.href}
+                              onClick={() => setMobileOpen(false)}
                               className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
                             >
                               {dropdownItem.label}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </AccordionContent>
@@ -231,13 +233,14 @@ export function Navbar() {
                       <AccordionContent className="pb-2 pt-0">
                         <div className="flex flex-col gap-1">
                           {servicesDropdownItems.map((dropdownItem) => (
-                            <a
+                            <Link
                               key={dropdownItem.label}
-                              href={dropdownItem.href}
+                              to={dropdownItem.href}
+                              onClick={() => setMobileOpen(false)}
                               className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
                             >
                               {dropdownItem.label}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </AccordionContent>
@@ -263,13 +266,14 @@ export function Navbar() {
                       <AccordionContent className="pb-2 pt-0">
                         <div className="flex flex-col gap-1">
                           {industriesDropdownItems.map((dropdownItem) => (
-                            <a
+                            <Link
                               key={dropdownItem.label}
-                              href={dropdownItem.href}
+                              to={dropdownItem.href}
+                              onClick={() => setMobileOpen(false)}
                               className="rounded-lg px-4 py-2 text-sm font-medium text-foreground hover:bg-muted/60 hover:text-navy transition-colors"
                             >
                               {dropdownItem.label}
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </AccordionContent>
