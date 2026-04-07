@@ -6,7 +6,7 @@ import { ROUTES } from "@/config/routes";
 
 const Home = lazy(() => import("@/pages/Home"));
 const AboutPage = lazy(() => import("@/pages/About"));
-const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
+const OurProductsPage = lazy(() => import("@/pages/OurProducts"));
 const SoftwareApplicationPage = lazy(
   () => import("@/pages/SoftwareApplication"),
 );
@@ -50,10 +50,7 @@ const AppRouter = () => {
         <Route path={ROUTES.HOME} element={withMainLayout(<Home />)} />
         <Route path={ROUTES.HOMEPAGE} element={withMainLayout(<Home />)} />
         <Route path={ROUTES.ABOUT} element={withMainLayout(<AboutPage />)} />
-        <Route
-          path={ROUTES.OUR_PRODUCTS}
-          element={withMainLayout(<ElectricalEquipment />)}
-        />
+        <Route path={ROUTES.OUR_PRODUCTS} element={withMainLayout(<OurProductsPage />)} />
         <Route
           path={ROUTES.SOFTWARE_APPLICATION}
           element={withMainLayout(<SoftwareApplicationPage />)}
