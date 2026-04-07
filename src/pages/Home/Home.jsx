@@ -9,9 +9,10 @@ export default function Home() {
   return (
     <main className="flex-1">
       <HeroSection />
-      <WhatWeDoSection />
-      <FeaturedProductsSection />
       <IndustriesSolutionSection />
+      <FeaturedProductsSection />
+      <WhatWeDoSection />
+      {/* put new and event in this section in recent project section*/}
       <RecentProjectsSection />
       <PartnershipSection />
     </main>

@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-topbar text-topbar-foreground pt-16 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-16 mb-12">
           <div>
             <div className="card-logo bg-white p-1 rounded-lg w-fit">
               <Link to={ROUTES.HOME} className="flex items-center">

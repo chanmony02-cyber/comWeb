@@ -1,11 +1,11 @@
-export const electricalEquipmentCategories = [
+export const ourProductsCategories = [
   { id: 1, label: "All", value: "all" },
   { id: 2, label: "LV Products", value: "LV" },
   { id: 3, label: "MV Products", value: "MV" },
 ];
 
-export const electricalEquipmentContent = {
-  heroTitle: "Electrical Equipments",
+export const ourProductsContent = {
+  heroTitle: "Our Products",
   categoryTitle: "By Category",
   productDetail: {
     label: "Product Detail",

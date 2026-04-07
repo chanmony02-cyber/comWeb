@@ -1,7 +1,18 @@
 ﻿////////////////////// new verison code
 
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:src/pages/Home/components/HeroSection.jsx
+========
+ "use client";
+
+>>>>>>>> Stashed changes:src/pages-disabled/Home/components/HeroSection.jsx
 import { useState, useEffect, useCallback, useRef } from "react";
 import { heroSlides } from "@/data/heroSlides/heroSlides";
+=======
+import { useState, useEffect, useCallback, useRef } from "react";
+import { heroSlides } from "@/data/heroSlides/heroSlides";
+import { BubbleConnectionSlide } from "./BubbleConnectionSlide";
+>>>>>>> Stashed changes
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
@@ -46,8 +57,14 @@ export default function HeroSection() {
   return (
     <section
       className="relative w-full h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden bg-navy select-none"
+<<<<<<< Updated upstream
       // onMouseEnter={() => setPaused(true)}
       // onMouseLeave={() => setPaused(false)}
+=======
+      // To turn off autoplay when mouse is over the slider
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+>>>>>>> Stashed changes
       aria-label="Hero Slider"
     >
       {/* Desktop: opacity-based slides */}
@@ -59,6 +76,7 @@ export default function HeroSection() {
               i === current ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
+<<<<<<< Updated upstream
             <img
               src={slide.image}
               alt={slide.title.replace("\n", " ")}
@@ -114,6 +132,70 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
+=======
+            {slide.variant === "bubble-network" ? (
+              <BubbleConnectionSlide slide={slide} />
+            ) : (
+              <>
+                <img
+                  src={slide.image}
+                  alt={slide.title.replace("\n", " ")}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+                />
+
+                <div className="relative z-10 h-full flex items-center">
+                  <div className="w-full max-w-7xl mx-[130px] px-8 md:px-16">
+                    {/* Text is here */}
+                    <div className="max-w-[800px]">
+                      <p
+                        className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-3 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                      >
+                        {slide.eyebrow}
+                      </p>
+                      <h1
+                        className={`text-primary-foreground font-bold leading-[1.05] mb-5 text-4xl md:text-5xl lg:text-[3.25rem] font-display transition-all duration-700 delay-150 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        {slide.title}
+                      </h1>
+                      <p
+                        className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[470px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                      >
+                        {slide.description}
+                      </p>
+                      <div
+                        className={`flex flex-wrap gap-3 transition-all duration-700 delay-300 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                      >
+                        {slide.buttons.map((btn) =>
+                          btn.variant === "primary" ? (
+                            <a
+                              key={btn.label}
+                              href={btn.href}
+                              className="inline-flex items-center justify-center px-7 py-[11px] rounded bg-primary-blue text-accent-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-blue/90 transition-colors duration-200"
+                            >
+                              {btn.label}
+                            </a>
+                          ) : (
+                            <a
+                              key={btn.label}
+                              href={btn.href}
+                              className="inline-flex items-center justify-center px-7 py-[11px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-foreground/15 hover:border-primary-foreground transition-all duration-200"
+                            >
+                              {btn.label}
+                            </a>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+>>>>>>> Stashed changes
           </div>
         ))}
       </div>
@@ -131,6 +213,7 @@ export default function HeroSection() {
               i === current ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
+<<<<<<< Updated upstream
             <img
               src={slide.image}
               alt={slide.title.replace("\n", " ")}
@@ -178,6 +261,61 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
+=======
+            {slide.variant === "bubble-network" ? (
+              <BubbleConnectionSlide slide={slide} />
+            ) : (
+              <>
+                <img
+                  src={slide.image}
+                  alt={slide.title.replace("\n", " ")}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+                />
+                <div className="relative z-10 h-full flex items-center">
+                  <div className="w-full max-w-7xl mx-auto px-6">
+                    <div className="max-w-[580px]">
+                      <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
+                        {slide.eyebrow}
+                      </p>
+                      <h1
+                        className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        {slide.title}
+                      </h1>
+                      <p className="text-primary-foreground/85 text-sm leading-relaxed mb-6 max-w-[470px] font-sans">
+                        {slide.description}
+                      </p>
+                      <div className="flex flex-wrap gap-3">
+                        {slide.buttons.map((btn) =>
+                          btn.variant === "primary" ? (
+                            <a
+                              key={btn.label}
+                              href={btn.href}
+                              className="inline-flex items-center justify-center px-6 py-[10px] rounded bg-primary-blue text-accent-foreground font-semibold text-sm font-display"
+                            >
+                              {btn.label}
+                            </a>
+                          ) : (
+                            <a
+                              key={btn.label}
+                              href={btn.href}
+                              className="inline-flex items-center justify-center px-6 py-[10px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-sm font-display"
+                            >
+                              {btn.label}
+                            </a>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+>>>>>>> Stashed changes
           </div>
         ))}
       </div>
@@ -240,3 +378,11 @@ export default function HeroSection() {
     </section>
   );
 }
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:src/pages/Home/components/HeroSection.jsx
+========
+
+
+>>>>>>>> Stashed changes:src/legacy-pages/Home/components/HeroSection.jsx
+=======
+>>>>>>> Stashed changes

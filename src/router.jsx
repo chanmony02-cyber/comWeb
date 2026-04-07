@@ -6,7 +6,11 @@ import { ROUTES } from "@/config/routes";
 
 const Home = lazy(() => import("@/pages/Home"));
 const AboutPage = lazy(() => import("@/pages/About"));
+<<<<<<< Updated upstream
 const ElectricalEquipment = lazy(() => import("@/pages/ElectricalEquipment"));
+=======
+const OurProductsPage = lazy(() => import("@/pages/OurProducts"));
+>>>>>>> Stashed changes
 const SoftwareApplicationPage = lazy(
   () => import("@/pages/SoftwareApplication"),
 );
@@ -51,8 +55,13 @@ const AppRouter = () => {
         <Route path={ROUTES.HOMEPAGE} element={withMainLayout(<Home />)} />
         <Route path={ROUTES.ABOUT} element={withMainLayout(<AboutPage />)} />
         <Route
+<<<<<<< Updated upstream
           path={ROUTES.ELECTRICAL_EQUIPMENT}
           element={withMainLayout(<ElectricalEquipment />)}
+=======
+          path={ROUTES.OUR_PRODUCTS}
+          element={withMainLayout(<OurProductsPage />)}
+>>>>>>> Stashed changes
         />
         <Route
           path={ROUTES.SOFTWARE_APPLICATION}
