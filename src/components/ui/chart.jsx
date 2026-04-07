@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import * as RechartsPrimitive from "recharts";
 
@@ -177,3 +179,4 @@ function getPayloadConfigFromPayload(config, payload, key) {
 }
 
 export { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent, ChartStyle };
+"use client";

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const securityHeaders = [
   { key: "X-DNS-Prefetch-Control", value: "on" },
   { key: "X-Frame-Options", value: "SAMEORIGIN" },
@@ -22,6 +23,19 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+=======
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  experimental: {
+    cpus: 1,
+    workerThreads: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+>>>>>>> Stashed changes
   images: {
     remotePatterns: [
       {
@@ -30,6 +44,7 @@ const nextConfig = {
       },
     ],
   },
+<<<<<<< Updated upstream
   async headers() {
     return [
       {
@@ -41,3 +56,9 @@ const nextConfig = {
 };
 
 export default nextConfig;
+=======
+};
+
+module.exports = nextConfig;
+
+>>>>>>> Stashed changes

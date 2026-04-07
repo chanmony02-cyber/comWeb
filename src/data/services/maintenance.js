@@ -1,14 +1,19 @@
-// src/data/services/maintenance.js
-import maintenanceOverview from "@/assets/images/servicesImg/maintenance/maintenance-overview.jpg";
-import switchGear from "@/assets/images/products/switch-gear.jpg";
-import transformer from "@/assets/images/products/Transformer.jpg";
-import autoCloser from "@/assets/images/products/automatic-circuit-recloser.png";
+﻿// src/data/services/maintenance.js
+import { assetSrc } from "@/lib/assetSrc";
+const maintenanceOverview = "/images/servicesImg/maintenance/maintenance-overview.webp";
+const switchGear = "/images/products/switch-gear.webp";
+const transformer = "/images/products/Transformer.webp";
+const autoCloser = "/images/products/automatic-circuit-recloser.webp";
 
 export const maintenanceData = {
   hero: {
     title: "Expert in Maintenance",
     subtitle:
       "Keeping your electrical infrastructure running at peak performance with preventive and corrective maintenance solutions.",
+<<<<<<< Updated upstream
+=======
+    heroImage: assetSrc(maintenanceOverview),
+>>>>>>> Stashed changes
   },
   overview: {
     title: "Overview",
@@ -16,7 +21,11 @@ export const maintenanceData = {
       "Our maintenance division provides end-to-end care for electrical power systems, from routine inspections to complex overhauls. We combine predictive analytics with hands-on expertise to minimize downtime and extend equipment lifespan across distribution grids, substations, and industrial facilities.",
       "Every maintenance program is tailored to your operational demands, regulatory requirements, and budget constraints — ensuring maximum reliability at optimal cost.",
     ],
+<<<<<<< Updated upstream
     image: maintenanceOverview.src,
+=======
+    image: assetSrc(maintenanceOverview),
+>>>>>>> Stashed changes
     bgSection: false,
   },
   commonIssues: {
@@ -79,7 +88,11 @@ export const maintenanceData = {
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
+<<<<<<< Updated upstream
         image: switchGear.src,
+=======
+        image: assetSrc(switchGear),
+>>>>>>> Stashed changes
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -88,7 +101,11 @@ export const maintenanceData = {
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
+<<<<<<< Updated upstream
         image: autoCloser.src,
+=======
+        image: assetSrc(autoCloser),
+>>>>>>> Stashed changes
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -97,7 +114,11 @@ export const maintenanceData = {
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",
+<<<<<<< Updated upstream
         image: transformer.src,
+=======
+        image: assetSrc(transformer),
+>>>>>>> Stashed changes
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
     ],
@@ -123,3 +144,5 @@ export const maintenanceData = {
     },
   ],
 };
+
+

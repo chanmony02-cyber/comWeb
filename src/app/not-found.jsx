@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import Link from "next/link";
 import MainLayout from "@/layouts/MainLayout";
 import { ROUTES } from "@/config/routes";
@@ -25,3 +26,17 @@ export default function NotFound() {
     </MainLayout>
   );
 }
+=======
+export const metadata = {
+  title: "Not Found",
+};
+
+export default function NotFound() {
+  return (
+    <div className="container py-20 text-center">
+      <p className="text-muted-foreground text-lg">Page not found.</p>
+    </div>
+  );
+}
+
+>>>>>>> Stashed changes

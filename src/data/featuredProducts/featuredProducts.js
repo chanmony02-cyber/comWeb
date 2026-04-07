@@ -1,13 +1,18 @@
-import meterImg from "@/assets/images/products/meter/meter.jpg";
+﻿import { assetSrc } from "@/lib/assetSrc";
+const meterImg = "/images/products/meter/meter.webp";
 
 export const featuredProducts = [
   {
     id: 1,
+<<<<<<< Updated upstream
     image: meterImg.src,
+=======
+    image: assetSrc(meterImg),
+>>>>>>> Stashed changes
     title: "Smart Electricity Meter",
     description:
       "Advanced digital metering solution for accurate energy consumption monitoring and remote data collection.",
-    href: "/product-detail/1",
+    href: "/products/1",
   },
   {
     id: 2,
@@ -16,7 +21,7 @@ export const featuredProducts = [
     title: "Control Panel Systems",
     description:
       "Industrial-grade control panels engineered to improve safety and optimize system performance.",
-    href: "/product-detail/2",
+    href: "/products/2",
   },
   {
     id: 3,
@@ -25,6 +30,6 @@ export const featuredProducts = [
     title: "Distribution Transformer",
     description:
       "High-efficiency distribution transformers designed for reliable power delivery to utility networks.",
-    href: "/product-detail/3",
+    href: "/products/3",
   },
 ];

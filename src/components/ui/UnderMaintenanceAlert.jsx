@@ -1,4 +1,11 @@
 "use client";
+<<<<<<< Updated upstream
+=======
+
+"use client";
+
+// src/components/ui/UnderMaintenanceAlert.jsx
+>>>>>>> Stashed changes
 
 import { useEffect } from "react";
 

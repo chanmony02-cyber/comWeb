@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { siteConfig } from "@/config/siteConfig";
 import HomePage from "@/pages/Home";
 
@@ -9,3 +10,15 @@ export const metadata = {
 export default function Page() {
   return <HomePage />;
 }
+=======
+import Home from "@/screens/Home";
+
+export const metadata = {
+  title: "Home",
+};
+
+export default function HomePage() {
+  return <Home />;
+}
+
+>>>>>>> Stashed changes

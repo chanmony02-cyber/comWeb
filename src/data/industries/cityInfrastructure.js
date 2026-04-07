@@ -1,12 +1,13 @@
-// src/data/industries/cityInfrastructure.js
-import ci1 from "@/assets/images/industries/city-infrastructure/ci-project-1.jpg";
-import ci2 from "@/assets/images/industries/city-infrastructure/ci-project-2.jpg";
-import ci3 from "@/assets/images/industries/city-infrastructure/ci-project-3.jpg";
-import cs1 from "@/assets/images/industries/city-infrastructure/ci-solution-1.jpg";
-import cs2 from "@/assets/images/industries/city-infrastructure/ci-solution-2.jpg";
-import cs3 from "@/assets/images/industries/city-infrastructure/ci-solution-3.jpg";
-import cHero from "@/assets/images/industries/city-infrastructure/city-infrastructure-hero.jpg";
-import cProblem from "@/assets/images/industries/city-infrastructure/city-infrastructure-problem.jpg";
+﻿// src/data/industries/cityInfrastructure.js
+import { assetSrc } from "@/lib/assetSrc";
+const ci1 = "/images/industries/city-infrastructure/ci-project-1.webp";
+const ci2 = "/images/industries/city-infrastructure/ci-project-2.webp";
+const ci3 = "/images/industries/city-infrastructure/ci-project-3.webp";
+const cs1 = "/images/industries/city-infrastructure/ci-solution-1.webp";
+const cs2 = "/images/industries/city-infrastructure/ci-solution-2.webp";
+const cs3 = "/images/industries/city-infrastructure/ci-solution-3.webp";
+const cHero = "/images/industries/city-infrastructure/city-infrastructure-hero.webp";
+const cProblem = "/images/industries/city-infrastructure/city-infrastructure-problem.webp";
 import { ROUTES } from "@/config/routes";
 
 export const cityInfrastructureData = {
@@ -14,7 +15,11 @@ export const cityInfrastructureData = {
     title: "City Infrastructure",
     subtitle:
       "Powering urban development with reliable electrical systems for transportation, water, and public utilities.",
+<<<<<<< Updated upstream
     backgroundImage: cHero.src,
+=======
+    backgroundImage: assetSrc(cHero),
+>>>>>>> Stashed changes
   },
   problem: {
     title: "We Understand Your Problem.",
@@ -23,7 +28,11 @@ export const cityInfrastructureData = {
       "Cities face challenges including aging utility networks, traffic congestion, and the need for sustainable energy solutions. These complexities require engineering expertise that bridges multiple disciplines.",
       "Our team specializes in designing and deploying integrated electrical solutions that keep cities running efficiently — from smart lighting and traffic systems to power distribution for critical public facilities.",
     ],
+<<<<<<< Updated upstream
     image: cProblem.src,
+=======
+    image: assetSrc(cProblem),
+>>>>>>> Stashed changes
   },
   solutions: {
     label: "INDUSTRY SOLUTIONS",
@@ -34,17 +43,29 @@ export const cityInfrastructureData = {
       {
         id: 1,
         title: "Smart Street Lighting Systems",
+<<<<<<< Updated upstream
         image: cs1.src,
+=======
+        image: assetSrc(cs1),
+>>>>>>> Stashed changes
       },
       {
         id: 2,
         title: "Underground Utility Networks",
+<<<<<<< Updated upstream
         image: cs2.src,
+=======
+        image: assetSrc(cs2),
+>>>>>>> Stashed changes
       },
       {
         id: 3,
         title: "Traffic Management Solutions",
+<<<<<<< Updated upstream
         image: cs3.src,
+=======
+        image: assetSrc(cs3),
+>>>>>>> Stashed changes
       },
     ],
   },
@@ -58,9 +79,13 @@ export const cityInfrastructureData = {
         description:
           "Engineered and constructed a multi-level highway interchange serving over 150,000 vehicles daily, integrating smart traffic signals and energy-efficient LED lighting throughout the corridor.",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         image: ci1,
 =======
         image: ci1.src,
+>>>>>>> Stashed changes
+=======
+        image: assetSrc(ci1),
 >>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 4),
       },
@@ -70,9 +95,13 @@ export const cityInfrastructureData = {
         description:
           "Designed the complete electrical and control systems for a modern water treatment plant, ensuring 24/7 automated operations with redundant power supply and remote monitoring capabilities.",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         image: ci2,
 =======
         image: ci2.src,
+>>>>>>> Stashed changes
+=======
+        image: assetSrc(ci2),
 >>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 5),
       },
@@ -82,9 +111,13 @@ export const cityInfrastructureData = {
         description:
           "Delivered end-to-end electrical infrastructure for a new urban rail line, including traction power substations, platform systems, and integrated safety and communication networks.",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         image: ci3,
 =======
         image: ci3.src,
+>>>>>>> Stashed changes
+=======
+        image: assetSrc(ci3),
 >>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 6),
       },
@@ -96,3 +129,5 @@ export const cityInfrastructureData = {
       "Discover the advantages of partnering with us to modernize your infrastructure.",
   },
 };
+
+

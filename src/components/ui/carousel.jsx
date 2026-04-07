@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -99,3 +101,4 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
 CarouselNext.displayName = "CarouselNext";
 
 export { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+"use client";

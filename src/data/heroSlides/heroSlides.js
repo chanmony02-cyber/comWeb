@@ -1,5 +1,7 @@
-// src/data/heroSlides/heroSlides.js
+﻿// src/data/heroSlides/heroSlides.js
 import { ROUTES } from "@/config/routes";
+import { assetSrc } from "@/lib/assetSrc";
+const gridImage = "/images/herosection/Grid.webp";
 
 export const heroSlides = [
   {
@@ -9,7 +11,11 @@ export const heroSlides = [
     description:
       "Transforming urban landscapes with intelligent electrical systems, smart metering, and sustainable energy infrastructure for modern cities.",
     buttons: [
-      { label: "Learn More", href: ROUTES.CITY_INFRASTRUCTURE, variant: "primary" },
+      {
+        label: "Learn More",
+        href: ROUTES.CITY_INFRASTRUCTURE,
+        variant: "primary",
+      },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
     image:
@@ -26,8 +32,7 @@ export const heroSlides = [
       { label: "About Us", href: ROUTES.HOME, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop",
+    image: assetSrc(gridImage),
     overlay: "from-primary/85 via-primary/60 to-accent/25",
   },
   {
@@ -37,10 +42,15 @@ export const heroSlides = [
     description:
       "Building resilient power distribution networks that ensure uninterrupted electricity supply to communities and industries across the nation.",
     buttons: [
-      { label: "Explore Solutions", href: ROUTES.DISTRIBUTION_GRID, variant: "primary" },
+      {
+        label: "Explore Solutions",
+        href: ROUTES.DISTRIBUTION_GRID,
+        variant: "primary",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&fit=crop",
     overlay: "from-primary/80 via-primary/58 to-accent/35",
   },
 ];
+

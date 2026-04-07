@@ -1,4 +1,11 @@
 "use client";
+<<<<<<< Updated upstream
+=======
+
+"use client";
+
+// src/components/ui/GetInTouchForm.jsx
+>>>>>>> Stashed changes
 
 import { useState } from "react";
 import { SectionHeader } from "@/components/ui/SectionHeader";

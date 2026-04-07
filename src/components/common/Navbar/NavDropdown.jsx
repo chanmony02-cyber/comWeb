@@ -44,7 +44,11 @@ export function NavDropdown({ label, items, triggerClassName = "" }) {
       >
         {items.map((item) => (
           <DropdownMenuItem key={item.label} asChild className={itemClassName}>
+<<<<<<< Updated upstream
             <Link href={item.href} className="w-full">
+=======
+            <Link href={item.href} className="w-full" onClick={() => setOpen(false)}>
+>>>>>>> Stashed changes
               {item.label}
             </Link>
           </DropdownMenuItem>

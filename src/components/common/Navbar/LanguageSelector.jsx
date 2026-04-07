@@ -1,10 +1,15 @@
 "use client";
 
+<<<<<<< Updated upstream
 import { useState, useRef, useEffect } from "react";
+=======
+import { useEffect, useRef, useState } from "react";
+>>>>>>> Stashed changes
 import { ChevronDown } from "lucide-react";
-import { languages } from "@/data/languages/languages";
+import { getLanguages } from "@/services/languages";
 
 export function LanguageSelector({ variant = "default" }) {
+  const languages = getLanguages();
   const [selected, setSelected] = useState(languages[0]);
   const [open, setOpen] = useState(false);
   const ref = useRef(null);

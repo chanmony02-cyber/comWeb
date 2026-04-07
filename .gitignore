@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.next
+out
+.turbo
 dist
 dist-ssr
 *.local
@@ -23,7 +26,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< Updated upstream
 
 # Just Temp
 .next
 # 
+=======
+>>>>>>> Stashed changes

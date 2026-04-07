@@ -1,4 +1,11 @@
 "use client";
+<<<<<<< Updated upstream
+=======
+
+"use client";
+
+// src/components/ui/FAQAccordion.jsx
+>>>>>>> Stashed changes
 
 import { useState } from "react";
 
