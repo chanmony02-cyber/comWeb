@@ -1,19 +1,6 @@
-<<<<<<< Updated upstream:src/pages/AllProjects/AllProjectsPage.jsx
-<<<<<<<< Updated upstream:src/pages/AllProjects/AllProjectsPage.jsx
-========
- "use client";
-
- "use client";
-
->>>>>>>> Stashed changes:src/legacy-pages/AllProjects/AllProjectsPage.jsx
-import { useState } from "react";
-import MainLayout from "@/layouts/MainLayout";
-import { allProjects } from "@/data/projects/projects";
-=======
 "use client";
 
 import { useState } from "react";
->>>>>>> Stashed changes:src/screens/AllProjects/AllProjectsPage.jsx
 import { AllProjectsHeroSection } from "./components/AllProjectsHeroSection";
 import { ProjectsListingSection } from "./components/ProjectsListingSection";
 import { getProjectsByCategory } from "@/services/projects";
@@ -49,7 +36,7 @@ export default function AllProjectsPage() {
   };
 
   return (
-    <MainLayout>
+    <>
       <AllProjectsHeroSection title="All Projects" />
       <ProjectsListingSection
         filters={FILTERS}
@@ -60,6 +47,6 @@ export default function AllProjectsPage() {
         totalPages={totalPages}
         onPage={handlePage}
       />
-    </MainLayout>
+    </>
   );
 }

@@ -1,11 +1,8 @@
 "use client";
-<<<<<<< Updated upstream
-=======
 
 "use client";
 
 // src/components/ui/FAQAccordion.jsx
->>>>>>> Stashed changes
 
 import { useState } from "react";
 
@@ -33,6 +30,7 @@ export function FAQAccordion({
             key={item.id}
             className={`border border-border rounded-xl overflow-hidden ${itemClassName}`}
           >
+            {/* Question row */}
             <button
               type="button"
               onClick={() => toggle(item.id)}
@@ -43,6 +41,7 @@ export function FAQAccordion({
               >
                 {item.question}
               </span>
+              {/* Chevron */}
               <svg
                 className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
@@ -60,6 +59,7 @@ export function FAQAccordion({
               </svg>
             </button>
 
+            {/* Answer */}
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out ${
                 isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

@@ -74,15 +74,7 @@ export function NewsDetailContentSection({ item, related }) {
                 {related.map((rel) => (
                   <Link
                     key={rel.id}
-<<<<<<< Updated upstream:src/pages/NewsEvents/components/NewsDetailContentSection.jsx
-<<<<<<<< Updated upstream:src/pages/NewsEvents/components/NewsDetailContentSection.jsx
-                    to={ROUTES.NEWS_DETAIL.replace(":id", rel.id)}
-========
-                    href={ROUTES.NEWS_DETAIL.replace(":id", rel.id)}
->>>>>>>> Stashed changes:src/legacy-pages/NewsEvents/components/NewsDetailContentSection.jsx
-=======
                     href={`/news/${rel.id}`}
->>>>>>> Stashed changes:src/screens/NewsEvents/components/NewsDetailContentSection.jsx
                     className="flex items-center gap-4 bg-card border border-border rounded-xl p-3 hover:border-primary-blue hover:shadow-md transition-all duration-300"
                   >
                     <div className="relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">

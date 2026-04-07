@@ -10,11 +10,7 @@ export const partners = [
     description:
       "A community of thriving business in our region and represent our network.",
     color: "#001439",
-<<<<<<< Updated upstream
-    image: ictImg.src,
-=======
     image: assetSrc(ictImg),
->>>>>>> Stashed changes
     initials: "P1",
   },
   {
@@ -22,11 +18,7 @@ export const partners = [
     name: "RUPP",
     description: "A global network of thriving businesses for excellent expertise.",
     color: "#001439",
-<<<<<<< Updated upstream
-    image: ruppImg.src,
-=======
     image: assetSrc(ruppImg),
->>>>>>> Stashed changes
     initials: "P2",
   },
   {
@@ -34,11 +26,8 @@ export const partners = [
     name: "NPIC",
     description: "A community of thriving businesses and expands your network.",
     color: "#001439",
-<<<<<<< Updated upstream
-    image: npicImg.src,
-=======
     image: assetSrc(npicImg),
->>>>>>> Stashed changes
     initials: "P3",
   },
 ];
+

@@ -1,15 +1,7 @@
-<<<<<<<< Updated upstream:src/pages/Services/components/OurServicesGrid.jsx
 // src/pages/Services/components/OurServicesGrid.jsx
 
-<<<<<<< Updated upstream:src/pages/Services/components/OurServicesGrid.jsx
-import { Link } from "react-router-dom";
-========
-import Link from "next/link";
->>>>>>>> Stashed changes:src/legacy-pages/Services/components/OurServicesGrid.jsx
-=======
 import Link from "next/link";
 import Image from "next/image";
->>>>>>> Stashed changes:src/screens/Services/components/OurServicesGrid.jsx
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function OurServicesGrid({ title, subtitle, items }) {
@@ -31,6 +23,7 @@ export function OurServicesGrid({ title, subtitle, items }) {
               href={service.href}
               className="group bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md hover:bg-primary-blue transition-all duration-300 flex flex-col"
             >
+              {/* Image with padding */}
               <div className="p-10">
                 <div className="relative overflow-hidden rounded-xl h-48 lg:h-[300px]">
                   <Image
@@ -43,6 +36,7 @@ export function OurServicesGrid({ title, subtitle, items }) {
                 </div>
               </div>
 
+              {/* Text */}
               <div className="px-5 pb-6 flex flex-col gap-3 flex-1 text-center">
                 <p className="text-2xl font-bold text-primary-blue group-hover:text-white transition-colors duration-300 font-display">
                   {service.title}

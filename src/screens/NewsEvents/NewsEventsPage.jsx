@@ -1,19 +1,6 @@
-<<<<<<< Updated upstream:src/pages/NewsEvents/NewsEventsPage.jsx
-<<<<<<<< Updated upstream:src/pages/NewsEvents/NewsEventsPage.jsx
-========
- "use client";
-
- "use client";
-
->>>>>>>> Stashed changes:src/legacy-pages/NewsEvents/NewsEventsPage.jsx
-import { useState } from "react";
-import MainLayout from "@/layouts/MainLayout";
-import { newsEventsItems } from "@/data/newsEvents/newsEvents";
-=======
 "use client";
 
 import { useState } from "react";
->>>>>>> Stashed changes:src/screens/NewsEvents/NewsEventsPage.jsx
 import { NewsEventsHeroSection } from "./components/NewsEventsHeroSection";
 import { NewsEventsListingSection } from "./components/NewsEventsListingSection";
 import { getNewsEventsByType } from "@/services/news";
@@ -44,7 +31,7 @@ export default function NewsEventsPage() {
   };
 
   return (
-    <MainLayout>
+    <>
       <NewsEventsHeroSection title="News & Events" />
       <NewsEventsListingSection
         filters={FILTERS}
@@ -55,6 +42,6 @@ export default function NewsEventsPage() {
         totalPages={totalPages}
         onPage={handlePage}
       />
-    </MainLayout>
+    </>
   );
 }

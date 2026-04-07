@@ -1,10 +1,6 @@
 "use client";
 
-<<<<<<< Updated upstream
-import { useState, useRef, useEffect } from "react";
-=======
 import { useEffect, useRef, useState } from "react";
->>>>>>> Stashed changes
 import { ChevronDown } from "lucide-react";
 import { getLanguages } from "@/services/languages";
 

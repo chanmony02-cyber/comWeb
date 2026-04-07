@@ -1,16 +1,5 @@
 // src/pages/Career/CareerPage.jsx
 
-<<<<<<< Updated upstream:src/pages/Career/CareerPage.jsx
-import MainLayout from "@/layouts/MainLayout";
-import {
-  careerHero,
-  careerBenefits,
-  careerDepartments,
-  careerPositions,
-  careerCTA,
-} from "@/data/career/career";
-=======
->>>>>>> Stashed changes:src/screens/Career/CareerPage.jsx
 import { CareerHero } from "./components/CareerHero";
 import { WhyJoinSection } from "./components/WhyJoinSection";
 import { PositionsSection } from "./components/PositionsSection";
@@ -31,7 +20,7 @@ export default function CareerPage() {
   const careerCTA = getCareerCTA();
 
   return (
-    <MainLayout>
+    <>
       <CareerHero
         title={careerHero.title}
         subtitle={careerHero.subtitle}
@@ -47,6 +36,6 @@ export default function CareerPage() {
         buttonLabel={careerCTA.buttonLabel}
         buttonHref={careerCTA.buttonHref}
       />
-    </MainLayout>
+    </>
   );
 }

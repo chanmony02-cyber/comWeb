@@ -153,11 +153,7 @@ export const aboutData = {
         title: "Consultants",
         description:
           "Quick and reliable repairing services for all your electrical infrastructure needs.",
-<<<<<<< Updated upstream
-        image: serviceConsultants.src,
-=======
         image: assetSrc(serviceConsultants),
->>>>>>> Stashed changes
         href: ROUTES.CONSULTANTS,
       },
       {
@@ -166,11 +162,7 @@ export const aboutData = {
         title: "Maintenance",
         description:
           "Expert advice tailored for your electrical and electronic system requirements.",
-<<<<<<< Updated upstream
-        image: serviceInspections.src,
-=======
         image: assetSrc(serviceInspections),
->>>>>>> Stashed changes
         href: ROUTES.MAINTENANCE,
       },
       {
@@ -179,11 +171,7 @@ export const aboutData = {
         title: "Inspection",
         description:
           "Professional installation of electronic and electrical systems with precision.",
-<<<<<<< Updated upstream
-        image: serviceMaintenance.src,
-=======
         image: assetSrc(serviceMaintenance),
->>>>>>> Stashed changes
         href: ROUTES.INSPECTIONS,
       },
     ],
@@ -200,11 +188,7 @@ export const aboutData = {
         title: "Distribution Grid",
         description:
           "Building and maintaining efficient power distribution networks that deliver electricity safely to communities.",
-<<<<<<< Updated upstream
-        image: distributionGridHero.src,
-=======
         image: assetSrc(distributionGridHero),
->>>>>>> Stashed changes
         href: ROUTES.DISTRIBUTION_GRID,
       },
       {
@@ -213,11 +197,7 @@ export const aboutData = {
         title: "City Infrastructure",
         description:
           "Powering urban development with reliable electrical systems for buildings, street lighting, and public facilities.",
-<<<<<<< Updated upstream
-        image: cityInfrastructureHero.src,
-=======
         image: assetSrc(cityInfrastructureHero),
->>>>>>> Stashed changes
         href: ROUTES.CITY_INFRASTRUCTURE,
       },
       {
@@ -226,26 +206,18 @@ export const aboutData = {
         title: "Agriculture",
         description:
           "Modernizing agricultural operations with smart electrical solutions for irrigation, automation, and processing.",
-<<<<<<< Updated upstream
-        image: agricultureHero.src,
-=======
         image: assetSrc(agricultureHero),
->>>>>>> Stashed changes
         href: ROUTES.AGRICULTURE,
       },
     ],
   },
-    whyPartner: {
+  whyPartner: {
     eyebrow: "Why Partner With Us",
     title: "What Makes Us",
     highlight: "Different",
     subtitle:
       "We combine technical expertise with a customer-first approach to deliver electrical solutions that truly make a difference. Here's why clients choose us as their trusted partner.",
-<<<<<<< Updated upstream
-    image: repairing.src,
-=======
     image: assetSrc(repairing),
->>>>>>> Stashed changes
     helpCard: {
       title: "Need Help?",
       subtitle: "24/7 Available",

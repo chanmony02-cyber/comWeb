@@ -38,13 +38,6 @@ export function MissionVisionSection({
           <div className=" h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
-<<<<<<< Updated upstream:src/pages/About/components/MissionVisionSection.jsx
-<<<<<<<< Updated upstream:src/pages/About/components/MissionVisionSection.jsx
-              <img src={missionBoltIcon} alt="" className="w-8 h-8 md:w-10 md:h-10" />
-========
-              <img src={missionBoltIcon.src} alt="" className="w-8 h-8 md:w-10 md:h-10" />
->>>>>>>> Stashed changes:src/legacy-pages/About/components/MissionVisionSection.jsx
-=======
               <Image
                 src={assetSrc(missionBoltIcon)}
                 alt=""
@@ -52,7 +45,6 @@ export function MissionVisionSection({
                 height={40}
                 className="w-8 h-8 md:w-10 md:h-10"
               />
->>>>>>> Stashed changes:src/screens/About/components/MissionVisionSection.jsx
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-navy font-display">
               {missionTitle}
@@ -77,13 +69,6 @@ export function MissionVisionSection({
           <div className="h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
-<<<<<<< Updated upstream:src/pages/About/components/MissionVisionSection.jsx
-<<<<<<<< Updated upstream:src/pages/About/components/MissionVisionSection.jsx
-              <img src={visionEyeIcon} alt="" className="w-8 h-8 md:w-10 md:h-10" />
-========
-              <img src={visionEyeIcon.src} alt="" className="w-8 h-8 md:w-10 md:h-10" />
->>>>>>>> Stashed changes:src/legacy-pages/About/components/MissionVisionSection.jsx
-=======
               <Image
                 src={assetSrc(visionEyeIcon)}
                 alt=""
@@ -91,7 +76,6 @@ export function MissionVisionSection({
                 height={40}
                 className="w-8 h-8 md:w-10 md:h-10"
               />
->>>>>>> Stashed changes:src/screens/About/components/MissionVisionSection.jsx
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-navy font-display">
               {visionTitle}

@@ -13,16 +13,6 @@ export const products = [
     id: 1,
     name: "Circuit Breaker",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productCircuitBreaker.src,
-    images: [
-      productCircuitBreaker.src,
-      productFuse.src,
-      productCircuitBreaker.src,
-      productSurgeArrester.src,
-      productFuse.src,
-      productFuse.src,
-=======
     image: assetSrc(productCircuitBreaker),
     images: [
       assetSrc(productCircuitBreaker),
@@ -31,7 +21,6 @@ export const products = [
       assetSrc(productSurgeArrester),
       assetSrc(productFuse),
       assetSrc(productFuse),
->>>>>>> Stashed changes
     ],
     description:
       "Protects low-voltage circuits from overloads and short circuits.",
@@ -67,13 +56,8 @@ export const products = [
     id: 2,
     name: "Fuse Link",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productFuse.src,
-    images: [productFuse.src],
-=======
     image: assetSrc(productFuse),
     images: [assetSrc(productFuse), assetSrc(productSurgeArrester), assetSrc(productFuse)],
->>>>>>> Stashed changes
     description: "Fast-acting fuse links for reliable LV protection.",
     features: [
       "Fast-acting response for overload protection",
@@ -95,17 +79,12 @@ export const products = [
     id: 3,
     name: "Current Transformer",
     category: "MV",
-<<<<<<< Updated upstream
-    image: productCurrentTransformer.src,
-    images: [productCurrentTransformer.src],
-=======
     image: assetSrc(productCurrentTransformer),
     images: [
       assetSrc(productCurrentTransformer),
       assetSrc(productSurgeArrester),
       assetSrc(productFuse),
     ],
->>>>>>> Stashed changes
     description: "Accurate measurement and protection for MV systems.",
     features: [
       "High accuracy class measurement",
@@ -127,13 +106,8 @@ export const products = [
     id: 4,
     name: "Panel Board",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productPanelBoard.src,
-    images: [productPanelBoard.src],
-=======
     image: assetSrc(productPanelBoard),
     images: [assetSrc(productPanelBoard), assetSrc(productSurgeArrester), assetSrc(productFuse)],
->>>>>>> Stashed changes
     description: "Modular LV distribution panels for safe load management.",
     features: [
       "Modular design for easy expansion",
@@ -155,13 +129,8 @@ export const products = [
     id: 5,
     name: "Distribution Transformer",
     category: "MV",
-<<<<<<< Updated upstream
-    image: productTransformer.src,
-    images: [productTransformer.src],
-=======
     image: assetSrc(productTransformer),
     images: [assetSrc(productTransformer), assetSrc(productSurgeArrester), assetSrc(productFuse)],
->>>>>>> Stashed changes
     description: "Efficient MV/LV power distribution for utility networks.",
     features: [
       "ONAN cooling for reliable operation",
@@ -183,13 +152,8 @@ export const products = [
     id: 6,
     name: "Surge Arrester",
     category: "MV",
-<<<<<<< Updated upstream
-    image: productSurgeArrester.src,
-    images: [productSurgeArrester.src],
-=======
     image: assetSrc(productSurgeArrester),
     images: [assetSrc(productSurgeArrester)],
->>>>>>> Stashed changes
     description: "Protects MV equipment from lightning and switching surges.",
     features: [
       "Polymer housing for lightweight installation",
@@ -211,13 +175,8 @@ export const products = [
     id: 7,
     name: "Capacitor Bank",
     category: "MV",
-<<<<<<< Updated upstream
-    image: productCapacitor.src,
-    images: [productCapacitor.src],
-=======
     image: assetSrc(productCapacitor),
     images: [assetSrc(productCapacitor)],
->>>>>>> Stashed changes
     description: "Power factor correction for MV networks.",
     features: [
       "Automatic switching controller included",
@@ -239,13 +198,8 @@ export const products = [
     id: 8,
     name: "Grounding System",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productGrounding.src,
-    images: [productGrounding.src],
-=======
     image: assetSrc(productGrounding),
     images: [assetSrc(productGrounding)],
->>>>>>> Stashed changes
     description: "Reliable earthing solution for LV installations.",
     features: [
       "Copper-bonded steel rod construction",
@@ -267,13 +221,8 @@ export const products = [
     id: 9,
     name: "Grounding System",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productGrounding.src,
-    images: [productGrounding.src],
-=======
     image: assetSrc(productGrounding),
     images: [assetSrc(productGrounding)],
->>>>>>> Stashed changes
     description: "Reliable earthing solution for LV installations.",
     features: [
       "Copper-bonded steel rod construction",
@@ -295,13 +244,8 @@ export const products = [
     id: 10,
     name: "Grounding System",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productGrounding.src,
-    images: [productGrounding.src],
-=======
     image: assetSrc(productGrounding),
     images: [assetSrc(productGrounding)],
->>>>>>> Stashed changes
     description: "Reliable earthing solution for LV installations.",
     features: [
       "Copper-bonded steel rod construction",
@@ -323,13 +267,8 @@ export const products = [
     id: 11,
     name: "Capacitor Bank",
     category: "MV",
-<<<<<<< Updated upstream
-    image: productCapacitor.src,
-    images: [productCapacitor.src],
-=======
     image: assetSrc(productCapacitor),
     images: [assetSrc(productCapacitor)],
->>>>>>> Stashed changes
     description: "Power factor correction for MV networks.",
     features: [
       "Automatic switching controller included",
@@ -351,13 +290,8 @@ export const products = [
     id: 12,
     name: "Capacitor Bank",
     category: "MV",
-<<<<<<< Updated upstream
-    image: productCapacitor.src,
-    images: [productCapacitor.src],
-=======
     image: assetSrc(productCapacitor),
     images: [assetSrc(productCapacitor)],
->>>>>>> Stashed changes
     description: "Power factor correction for MV networks.",
     features: [
       "Automatic switching controller included",
@@ -379,13 +313,8 @@ export const products = [
     id: 13,
     name: "Fuse Link",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productFuse.src,
-    images: [productFuse.src],
-=======
     image: assetSrc(productFuse),
     images: [assetSrc(productFuse)],
->>>>>>> Stashed changes
     description: "Fast-acting fuse links for reliable LV protection.",
     features: [
       "Fast-acting response for overload protection",
@@ -407,13 +336,8 @@ export const products = [
     id: 14,
     name: "Fuse Link",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productFuse.src,
-    images: [productFuse.src],
-=======
     image: assetSrc(productFuse),
     images: [assetSrc(productFuse)],
->>>>>>> Stashed changes
     description: "Fast-acting fuse links for reliable LV protection.",
     features: [
       "Fast-acting response for overload protection",
@@ -435,13 +359,8 @@ export const products = [
     id: 15,
     name: "Fuse Link",
     category: "LV",
-<<<<<<< Updated upstream
-    image: productFuse.src,
-    images: [productFuse.src],
-=======
     image: assetSrc(productFuse),
     images: [assetSrc(productFuse)],
->>>>>>> Stashed changes
     description: "Fast-acting fuse links for reliable LV protection.",
     features: [
       "Fast-acting response for overload protection",

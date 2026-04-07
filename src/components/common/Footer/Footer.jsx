@@ -1,20 +1,6 @@
-<<<<<<< Updated upstream
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
-import {
-  Facebook,
-  Linkedin,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
-=======
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
->>>>>>> Stashed changes
 import { ROUTES } from "@/config/routes";
 import { siteConfig } from "@/config/siteConfig";
 import { assetSrc } from "@/lib/assetSrc";
@@ -29,17 +15,10 @@ export function Footer() {
             <div className="card-logo bg-white p-1 rounded-lg w-fit">
               <Link href={ROUTES.HOME} className="flex items-center">
                 <Image
-<<<<<<< Updated upstream
-                  src="/placeholder.svg"
-                  alt="VHT Logo"
-                  width={56}
-                  height={56}
-=======
                   src={assetSrc(VHTLogo)}
                   alt="VHT Logo"
                   width={940}
                   height={940}
->>>>>>> Stashed changes
                   className="h-14 w-auto"
                   priority
                 />
@@ -204,7 +183,8 @@ export function Footer() {
         </div>
 
         <div className="border-t border-topbar-foreground/10 pt-6 text-center text-md text-topbar-foreground/50">
-          (c) {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+          reserved.
         </div>
       </div>
     </footer>

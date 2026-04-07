@@ -1,22 +1,3 @@
-<<<<<<< Updated upstream
-import { Inter } from "next/font/google";
-import "@/styles/index.css";
-import { Providers } from "@/components/providers";
-import { siteConfig } from "@/config/siteConfig";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-export const metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-=======
 import "@/styles/index.css";
 import MainLayout from "@/layouts/MainLayout";
 
@@ -26,16 +7,11 @@ export const metadata = {
     template: "%s | VHT",
   },
   description: "VHT Company",
->>>>>>> Stashed changes
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-<<<<<<< Updated upstream
-      <body className={inter.className}>
-        <Providers>{children}</Providers>
-=======
       <body>
         <a
           href="#main"
@@ -48,7 +24,6 @@ export default function RootLayout({ children }) {
             {children}
           </main>
         </MainLayout>
->>>>>>> Stashed changes
       </body>
     </html>
   );

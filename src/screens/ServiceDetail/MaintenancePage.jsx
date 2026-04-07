@@ -1,6 +1,5 @@
 // src/pages/ServiceDetail/MaintenancePage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { ServiceDetailHeroSection } from "./components/ServiceDetailHeroSection";
@@ -14,7 +13,7 @@ export default function MaintenancePage() {
   const { hero, overview, commonIssues, equipment, faqs } = maintenanceData;
 
   return (
-    <MainLayout>
+    <>
       <ServiceDetailHeroSection
         title={hero.title}
         subtitle={hero.subtitle}
@@ -38,6 +37,6 @@ export default function MaintenancePage() {
       />
       <FaqSection items={faqs} />
       <GetInTouchSection />
-    </MainLayout>
+    </>
   );
 }

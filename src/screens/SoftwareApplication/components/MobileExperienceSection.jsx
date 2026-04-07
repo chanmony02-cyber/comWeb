@@ -1,16 +1,4 @@
-<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
-<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
-﻿import { useEffect, useState } from "react";
-========
-"use client";
-
- "use client";
-
-import { useEffect, useState } from "react";
->>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/MobileExperienceSection.jsx
-=======
 ﻿"use client";
->>>>>>> Stashed changes:src/screens/SoftwareApplication/components/MobileExperienceSection.jsx
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -118,17 +106,8 @@ function PhoneLoginScreen() {
       </div>
       <div className="mt-5 flex flex-1 flex-col items-center justify-center text-center">
         <div className="flex h-16 w-16 items-center justify-center rounded-[22px] bg-sky-accent/20 shadow-sm">
-<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
-          <img
-<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
-            src={VHTLogo}
-========
-            src={VHTLogo.src}
->>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/MobileExperienceSection.jsx
-=======
                     <Image
             src={VHTLogo?.src || VHTLogo}
->>>>>>> Stashed changes:src/screens/SoftwareApplication/components/MobileExperienceSection.jsx
             alt="VHT logo"
             width={940}
             height={940}
@@ -502,8 +481,3 @@ export function MobileExperienceSection({ mobileExperience }) {
     </section>
   );
 }
-<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/MobileExperienceSection.jsx
-========
-
-
->>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/MobileExperienceSection.jsx

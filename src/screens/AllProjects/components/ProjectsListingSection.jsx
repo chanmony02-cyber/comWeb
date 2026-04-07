@@ -1,14 +1,5 @@
-<<<<<<< Updated upstream:src/pages/AllProjects/components/ProjectsListingSection.jsx
-<<<<<<<< Updated upstream:src/pages/AllProjects/components/ProjectsListingSection.jsx
-import { Link } from "react-router-dom";
-========
-import Link from "next/link";
->>>>>>>> Stashed changes:src/legacy-pages/AllProjects/components/ProjectsListingSection.jsx
-import { ROUTES } from "@/config/routes";
-=======
 import Link from "next/link";
 import Image from "next/image";
->>>>>>> Stashed changes:src/screens/AllProjects/components/ProjectsListingSection.jsx
 
 export function ProjectsListingSection({
   filters,
@@ -71,15 +62,7 @@ export function ProjectsListingSection({
                   {project.summary}
                 </p>
                 <Link
-<<<<<<< Updated upstream:src/pages/AllProjects/components/ProjectsListingSection.jsx
-<<<<<<<< Updated upstream:src/pages/AllProjects/components/ProjectsListingSection.jsx
-                  to={ROUTES.PROJECT_DETAIL.replace(":id", project.id)}
-========
-              href={ROUTES.PROJECT_DETAIL.replace(":id", project.id)}
->>>>>>>> Stashed changes:src/legacy-pages/AllProjects/components/ProjectsListingSection.jsx
-=======
                   href={`/projects/${project.id}`}
->>>>>>> Stashed changes:src/screens/AllProjects/components/ProjectsListingSection.jsx
                   className="inline-flex items-center gap-1 px-4 py-2 border border-border rounded-md text-md font-semibold text-foreground hover:border-primary-blue hover:text-white hover:bg-primary-blue transition-colors w-fit mt-1 font-sans"
                 >
                   Read More {"->"}

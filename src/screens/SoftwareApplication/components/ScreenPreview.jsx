@@ -11,17 +11,8 @@ export default function ScreenPreview({ type, className = "" }) {
       <div className={cn(PANEL_CLASS, className)}>
         <div className="flex items-center justify-center">
           <div className="h-14 w-14 rounded-full bg-sky-accent/70 flex items-center justify-center shadow-inner">
-<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/ScreenPreview.jsx
-            <img
-<<<<<<<< Updated upstream:src/pages/SoftwareApplication/components/ScreenPreview.jsx
-              src={VHTLogo}
-========
-              src={VHTLogo.src}
->>>>>>>> Stashed changes:src/legacy-pages/SoftwareApplication/components/ScreenPreview.jsx
-=======
                         <Image
               src={VHTLogo?.src || VHTLogo}
->>>>>>> Stashed changes:src/screens/SoftwareApplication/components/ScreenPreview.jsx
               alt="VHT logo"
               width={940}
               height={940}

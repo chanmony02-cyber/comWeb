@@ -1,4 +1,5 @@
 import { BackButton } from "@/components/ui/BackButton";
+import { ProductImageGallery } from "./ProductImageGallery";
 
 export function ProductDetailContentSection({ product }) {
   return (
@@ -9,20 +10,11 @@ export function ProductDetailContentSection({ product }) {
         Product Detail
       </h1>
 
-<<<<<<< Updated upstream:src/pages/ProductDetail/components/ProductDetailContentSection.jsx
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        <div className="relative rounded-xl border border-border bg-white overflow-hidden flex items-center justify-center min-h-80 xl:h-[750px] xl:w-[750px]">
-          <img
-            src={product.images[0]}
-            alt={product.name}
-            className="w-full h-full object-cover"
-=======
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,640px)_minmax(0,1fr)] gap-12 items-start">
         <div className="w-full max-w-[640px]">
           <ProductImageGallery
             images={product.images?.length ? product.images : [product.image]}
             name={product.name}
->>>>>>> Stashed changes:src/screens/ProductDetail/components/ProductDetailContentSection.jsx
           />
         </div>
 

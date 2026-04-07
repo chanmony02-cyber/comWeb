@@ -40,15 +40,11 @@ export function NavDropdown({ label, items, triggerClassName = "" }) {
       <DropdownMenuContent
         align="start"
         sideOffset={10}
-        className="z-50 min-w-56 rounded-xl border border-border/60 bg-popover p-2 shadow-lg"
+        className="w-full rounded-xl border-border/60 p-2 shadow-lg"
       >
         {items.map((item) => (
           <DropdownMenuItem key={item.label} asChild className={itemClassName}>
-<<<<<<< Updated upstream
-            <Link href={item.href} className="w-full">
-=======
             <Link href={item.href} className="w-full" onClick={() => setOpen(false)}>
->>>>>>> Stashed changes
               {item.label}
             </Link>
           </DropdownMenuItem>

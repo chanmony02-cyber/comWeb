@@ -1,14 +1,8 @@
 ﻿"use client";
 
-<<<<<<< Updated upstream:src/pages/Home/components/HeroSection.jsx
- "use client";
-
-import { useState, useEffect, useCallback, useRef } from "react";
-=======
 import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
->>>>>>> Stashed changes:src/screens/Home/components/HeroSection.jsx
 import { heroSlides } from "@/data/heroSlides/heroSlides";
 
 export default function HeroSection() {
@@ -304,8 +298,3 @@ export default function HeroSection() {
     </section>
   );
 }
-<<<<<<<< Updated upstream:src/pages/Home/components/HeroSection.jsx
-========
-
-
->>>>>>>> Stashed changes:src/legacy-pages/Home/components/HeroSection.jsx

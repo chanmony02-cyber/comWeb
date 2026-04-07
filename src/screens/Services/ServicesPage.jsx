@@ -1,6 +1,5 @@
 // src/pages/Services/ServicesPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { ServicesHero } from "./components/ServicesHero";
@@ -13,7 +12,7 @@ export default function ServicesPage() {
   const { hero, services, whyChoose, faqs } = allServicesData;
 
   return (
-    <MainLayout>
+    <>
       <ServicesHero
         title={hero.title}
         subtitle={hero.subtitle}
@@ -31,6 +30,6 @@ export default function ServicesPage() {
       />
       <FaqSection items={faqs} />
       <GetInTouchSection />
-    </MainLayout>
+    </>
   );
 }

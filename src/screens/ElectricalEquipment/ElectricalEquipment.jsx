@@ -1,18 +1,6 @@
-<<<<<<< Updated upstream:src/pages/ElectricalEquipment/ElectricalEquipment.jsx
-<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/ElectricalEquipment.jsx
-========
- "use client";
-
- "use client";
-
->>>>>>>> Stashed changes:src/legacy-pages/ElectricalEquipment/ElectricalEquipment.jsx
-import { useState } from "react";
-import MainLayout from "@/layouts/MainLayout";
-=======
 "use client";
 
 import { useState } from "react";
->>>>>>> Stashed changes:src/screens/ElectricalEquipment/ElectricalEquipment.jsx
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { ElectricalEquipmentHeroSection } from "./components/ElectricalEquipmentHeroSection";
 import { ElectricalEquipmentCatalogSection } from "./components/ElectricalEquipmentCatalogSection";
@@ -44,28 +32,26 @@ export default function ElectricalEquipment() {
   };
 
   return (
-    <MainLayout>
-      <main className="flex-1 bg-background">
-        <ElectricalEquipmentHeroSection
-          title={electricalEquipmentContent.heroTitle}
-        />
-        <ElectricalEquipmentCatalogSection
-          title={electricalEquipmentContent.categoryTitle}
-          categories={electricalEquipmentCategories}
-          activeCategory={activeCategory}
-          onCategoryChange={(categoryValue) => {
-            setActiveCategory(categoryValue);
-            setCurrentPage(1);
-            window.scrollTo({ top: 300, behavior: "smooth" });
-          }}
-          visibleProducts={visibleProducts}
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-          pagination={electricalEquipmentContent.pagination}
-        />
-        <GetInTouchSection />
-      </main>
-    </MainLayout>
+    <main className="flex-1 bg-background">
+      <ElectricalEquipmentHeroSection
+        title={electricalEquipmentContent.heroTitle}
+      />
+      <ElectricalEquipmentCatalogSection
+        title={electricalEquipmentContent.categoryTitle}
+        categories={electricalEquipmentCategories}
+        activeCategory={activeCategory}
+        onCategoryChange={(categoryValue) => {
+          setActiveCategory(categoryValue);
+          setCurrentPage(1);
+          window.scrollTo({ top: 300, behavior: "smooth" });
+        }}
+        visibleProducts={visibleProducts}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+        pagination={electricalEquipmentContent.pagination}
+      />
+      <GetInTouchSection />
+    </main>
   );
 }

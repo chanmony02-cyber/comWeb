@@ -4,11 +4,7 @@ const meterImg = "/images/products/meter/meter.webp";
 export const featuredProducts = [
   {
     id: 1,
-<<<<<<< Updated upstream
-    image: meterImg.src,
-=======
     image: assetSrc(meterImg),
->>>>>>> Stashed changes
     title: "Smart Electricity Meter",
     description:
       "Advanced digital metering solution for accurate energy consumption monitoring and remote data collection.",
@@ -33,3 +29,4 @@ export const featuredProducts = [
     href: "/products/3",
   },
 ];
+

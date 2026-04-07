@@ -10,9 +10,9 @@ export default function RecentProjectsSection() {
   return (
     <section className="py-20 bg-navy border-b border-gray-500">
       <div className="container">
-        <div className="flex items-end justify-between mb-10">
-          <div>
-            <h2 className="text-primary-blue font-bold text-4xl md:text-[2.5rem] mb-3 font-display whitespace-nowrap">
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <h2 className="text-primary-blue font-bold text-3xl sm:text-4xl md:text-[2.5rem] mb-3 font-display lg:whitespace-nowrap">
               RECENT PROJECTS
             </h2>
             <p className="text-sky-accent text-md md:text-md max-w-md leading-relaxed font-sans">
@@ -21,13 +21,8 @@ export default function RecentProjectsSection() {
             </p>
           </div>
           <Link
-<<<<<<< Updated upstream:src/pages/Home/components/RecentProjectsSection.jsx
-            to={ROUTES.ALL_PROJECTS}
-            className="text-sky-accent hover:text-primary-foreground text-md font-medium transition-colors flex items-center gap-1 font-display whitespace-nowrap shrink-0"
-=======
             href="/all-projects"
             className="text-sky-accent hover:text-primary-foreground text-md font-medium transition-colors flex items-center gap-1 font-display shrink-0 lg:whitespace-nowrap self-end lg:self-auto"
->>>>>>> Stashed changes:src/screens/Home/components/RecentProjectsSection.jsx
           >
             More &rarr;
           </Link>
@@ -36,15 +31,7 @@ export default function RecentProjectsSection() {
           {recentProjects.map((project) => (
             <Link
               key={project.id}
-<<<<<<< Updated upstream:src/pages/Home/components/RecentProjectsSection.jsx
-<<<<<<<< Updated upstream:src/pages/Home/components/RecentProjectsSection.jsx
-              to={ROUTES.PROJECT_DETAIL.replace(":id", project.id)}
-========
-              href={ROUTES.PROJECT_DETAIL.replace(":id", project.id)}
->>>>>>>> Stashed changes:src/legacy-pages/Home/components/RecentProjectsSection.jsx
-=======
               href={`/projects/${project.id}`}
->>>>>>> Stashed changes:src/screens/Home/components/RecentProjectsSection.jsx
               className="group relative rounded-xl overflow-hidden aspect-video"
             >
               <Image

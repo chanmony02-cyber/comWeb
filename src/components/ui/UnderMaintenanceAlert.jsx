@@ -1,14 +1,23 @@
 "use client";
-<<<<<<< Updated upstream
-=======
 
 "use client";
 
 // src/components/ui/UnderMaintenanceAlert.jsx
->>>>>>> Stashed changes
 
 import { useEffect } from "react";
 
+/**
+ * UnderMaintenanceAlert
+ *
+ * A centered modal-style alert shown when a feature is not yet available.
+ *
+ * Props:
+ *  - isOpen      {boolean}  — controls visibility
+ *  - onClose     {function} — called when the user dismisses the alert
+ *  - title       {string}   — optional custom title
+ *  - message     {string}   — optional custom message
+ *  - autoDismiss {number}   — ms before auto-close (0 = never, default 4000)
+ */
 export function UnderMaintenanceAlert({
   isOpen,
   onClose,
@@ -16,6 +25,7 @@ export function UnderMaintenanceAlert({
   message = "This feature is currently under maintenance. Please try again later.",
   autoDismiss = 4000,
 }) {
+  // Auto-dismiss timer
   useEffect(() => {
     if (!isOpen || autoDismiss === 0) return;
     const timer = setTimeout(() => {
@@ -24,6 +34,7 @@ export function UnderMaintenanceAlert({
     return () => clearTimeout(timer);
   }, [isOpen, autoDismiss, onClose]);
 
+  // Close on Escape key
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e) => {
@@ -36,17 +47,20 @@ export function UnderMaintenanceAlert({
   if (!isOpen) return null;
 
   return (
+    /* Backdrop — sits above everything, centered */
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center"
       role="dialog"
       aria-modal="true"
       aria-live="assertive"
     >
+      {/* Dark backdrop — click to dismiss */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       />
 
+      {/* Alert card */}
       <div
         className="
           relative z-10
@@ -58,6 +72,7 @@ export function UnderMaintenanceAlert({
           animate-fade-in-up
         "
       >
+        {/* Icon */}
         <div className="w-16 h-16 rounded-full bg-sky-accent/30 flex items-center justify-center">
           <svg
             className="w-8 h-8 text-primary-blue"
@@ -74,6 +89,7 @@ export function UnderMaintenanceAlert({
           </svg>
         </div>
 
+        {/* Text */}
         <div className="flex flex-col gap-2">
           <p className="text-xl font-bold text-navy font-display">{title}</p>
           <p className="text-sm text-muted-foreground leading-relaxed font-sans">
@@ -81,6 +97,7 @@ export function UnderMaintenanceAlert({
           </p>
         </div>
 
+        {/* Auto-dismiss progress bar */}
         {autoDismiss > 0 && (
           <div className="w-full h-1 rounded-full bg-border overflow-hidden">
             <div
@@ -92,6 +109,7 @@ export function UnderMaintenanceAlert({
           </div>
         )}
 
+        {/* Dismiss button */}
         <button
           type="button"
           onClick={onClose}
@@ -100,6 +118,7 @@ export function UnderMaintenanceAlert({
           OK, Got it
         </button>
 
+        {/* Close X — top right corner */}
         <button
           type="button"
           onClick={onClose}
@@ -122,10 +141,11 @@ export function UnderMaintenanceAlert({
         </button>
       </div>
 
+      {/* Keyframe for progress bar shrink */}
       <style>{`
         @keyframes shrink {
           from { width: 100%; }
-          to { width: 0%; }
+          to   { width: 0%; }
         }
       `}</style>
     </div>

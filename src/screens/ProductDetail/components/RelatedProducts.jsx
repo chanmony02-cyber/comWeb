@@ -1,16 +1,6 @@
-<<<<<<< Updated upstream:src/pages/ProductDetail/components/RelatedProducts.jsx
-<<<<<<<< Updated upstream:src/pages/ProductDetail/components/RelatedProducts.jsx
-import { Link } from "react-router-dom";
-========
- "use client";
-
-import Link from "next/link";
->>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/RelatedProducts.jsx
-=======
 "use client";
 
 import Link from "next/link";
->>>>>>> Stashed changes:src/screens/ProductDetail/components/RelatedProducts.jsx
 
 import { ProductCard } from "@/components/ui/ProductCard";
 
@@ -27,15 +17,7 @@ export function RelatedProducts({ relatedProducts = [] }) {
         {relatedProducts.map((product) => (
           <Link
             key={product.id}
-<<<<<<< Updated upstream:src/pages/ProductDetail/components/RelatedProducts.jsx
-<<<<<<<< Updated upstream:src/pages/ProductDetail/components/RelatedProducts.jsx
-            to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
-========
-            href={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
->>>>>>>> Stashed changes:src/legacy-pages/ProductDetail/components/RelatedProducts.jsx
-=======
             href={`/products/${product.id}`}
->>>>>>> Stashed changes:src/screens/ProductDetail/components/RelatedProducts.jsx
             className="block"
             onClick={() => {
               window.scrollTo({ top: 200, behavior: "smooth" });

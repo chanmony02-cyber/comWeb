@@ -1,7 +1,5 @@
 "use client";
 
- "use client";
-
 import { useEffect, useRef } from "react";
 
 // Canvas uses hex directly because Tailwind cannot style the canvas API.
@@ -258,8 +256,3 @@ export function NetworkBackground({ className = "" }) {
     />
   );
 }
-<<<<<<<< Updated upstream:src/pages/Contact/components/NetworkBackground.jsx
-========
-
-
->>>>>>>> Stashed changes:src/legacy-pages/Contact/components/NetworkBackground.jsx

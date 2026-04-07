@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream:src/pages/About/AboutPage.jsx
-// src/pages/About/AboutPage.jsx
-
-import MainLayout from "@/layouts/MainLayout";
-import { aboutData } from "@/data/about/about";
-=======
->>>>>>> Stashed changes:src/screens/About/AboutPage.jsx
 import { AboutHero } from "./components/AboutHero";
 import { CompanyStorySection } from "./components/CompanyStorySection";
 import { PowerSection } from "./components/PowerSection";
@@ -25,13 +18,8 @@ export default function AboutPage() {
   const { industries, whyPartner, team } = aboutData;
 
   return (
-<<<<<<< Updated upstream:src/pages/About/AboutPage.jsx
-    <MainLayout>
-      <AboutHero title={hero.title} subtitle={hero.subtitle} />
-=======
     <>
       <AboutHero {...hero} />
->>>>>>> Stashed changes:src/screens/About/AboutPage.jsx
       <CompanyStorySection {...story} />
       <PowerSection {...powerSection} />
       <MissionVisionSection {...mission} />
@@ -42,6 +30,6 @@ export default function AboutPage() {
       <TeamSection {...team} />
       {/* <PartnershipSection /> */}
       <OurLocationSection />
-    </MainLayout>
+    </>
   );
 }

@@ -1,23 +1,4 @@
 import { notFound } from "next/navigation";
-<<<<<<< Updated upstream
-import MainLayout from "@/layouts/MainLayout";
-import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
-import { products } from "@/data/products/products";
-import { RelatedProducts } from "@/pages/ProductDetail/components/RelatedProducts";
-import { ProductDetailContentSection } from "@/pages/ProductDetail/components/ProductDetailContentSection";
-
-export async function generateStaticParams() {
-  return products.map((product) => ({ id: String(product.id) }));
-}
-
-export async function generateMetadata({ params }) {
-  const product = products.find((item) => item.id === Number(params.id));
-
-  if (!product) {
-    return {};
-  }
-
-=======
 
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { ProductDetailContentSection } from "@/screens/ProductDetail/components/ProductDetailContentSection";
@@ -37,30 +18,12 @@ export async function generateMetadata({ params }) {
   const { id } = await params;
   const product = getProductById(id);
   if (!product) return { title: "Product" };
->>>>>>> Stashed changes
   return {
     title: product.name,
     description: product.description,
   };
 }
 
-<<<<<<< Updated upstream
-export default function Page({ params }) {
-  const product = products.find((item) => item.id === Number(params.id));
-
-  if (!product) {
-    notFound();
-  }
-
-  return (
-    <MainLayout>
-      <ProductDetailContentSection product={product} />
-      <RelatedProducts currentId={product.id} category={product.category} />
-      <GetInTouchSection />
-    </MainLayout>
-  );
-}
-=======
 export default async function ProductDetailPage({ params }) {
   const { id } = await params;
   const product = getProductById(id);
@@ -85,4 +48,3 @@ export default async function ProductDetailPage({ params }) {
   );
 }
 
->>>>>>> Stashed changes

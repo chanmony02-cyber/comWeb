@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream:src/pages/ProjectDetail/components/ProjectDetailContentSection.jsx
-import { Link } from "react-router-dom";
-import MainLayout from "@/layouts/MainLayout";
-=======
 import Link from "next/link";
 import Image from "next/image";
->>>>>>> Stashed changes:src/screens/ProjectDetail/components/ProjectDetailContentSection.jsx
 import { BackButton } from "@/components/ui/BackButton";
 
 export function ProjectDetailContentSection({ project, related }) {
@@ -79,15 +74,7 @@ export function ProjectDetailContentSection({ project, related }) {
                 {related.map((rel) => (
                   <Link
                     key={rel.id}
-<<<<<<< Updated upstream:src/pages/ProjectDetail/components/ProjectDetailContentSection.jsx
-<<<<<<<< Updated upstream:src/pages/ProjectDetail/components/ProjectDetailContentSection.jsx
-                    to={ROUTES.PROJECT_DETAIL.replace(":id", rel.id)}
-========
-                    href={ROUTES.PROJECT_DETAIL.replace(":id", rel.id)}
->>>>>>>> Stashed changes:src/legacy-pages/ProjectDetail/components/ProjectDetailContentSection.jsx
-=======
                     href={`/projects/${rel.id}`}
->>>>>>> Stashed changes:src/screens/ProjectDetail/components/ProjectDetailContentSection.jsx
                     className="flex items-center gap-4 bg-card border border-border rounded-xl p-3 hover:border-primary-blue hover:shadow-md transition-all duration-300"
                   >
                     <div className="relative w-20 h-16 rounded-lg overflow-hidden flex-shrink-0">

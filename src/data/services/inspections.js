@@ -10,10 +10,7 @@ export const inspectionsData = {
     title: "Comprehensive Inspection Service",
     subtitle:
       "Expert electrical inspection services ensuring safety, compliance, and reliability across your entire infrastructure.",
-<<<<<<< Updated upstream
-=======
     heroImage: assetSrc(inspectionOverview),
->>>>>>> Stashed changes
   },
   overview: {
     title: "Overview",
@@ -21,11 +18,7 @@ export const inspectionsData = {
       "Our inspection division delivers thorough assessments of electrical infrastructure — from switchgear and transformers to overhead lines and underground cables. We use advanced diagnostic tools including thermal imaging and insulation testing to identify issues before they escalate.",
       "Every inspection follows strict regulatory protocols and industry standards, providing detailed reports with actionable recommendations to maintain safety, compliance, and operational reliability.",
     ],
-<<<<<<< Updated upstream
-    image: inspectionOverview.src,
-=======
     image: assetSrc(inspectionOverview),
->>>>>>> Stashed changes
     bgSection: false,
   },
   commonIssues: {
@@ -88,11 +81,7 @@ export const inspectionsData = {
         title: "Switch Gear",
         description:
           "Complete switchgear maintenance including testing, calibration, and component replacement.",
-<<<<<<< Updated upstream
-        image: switchGear.src,
-=======
         image: assetSrc(switchGear),
->>>>>>> Stashed changes
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -101,11 +90,7 @@ export const inspectionsData = {
         title: "Auto Closer",
         description:
           "Auto-recloser servicing for distribution network reliability and fault protection.",
-<<<<<<< Updated upstream
-        image: autoCloser.src,
-=======
         image: assetSrc(autoCloser),
->>>>>>> Stashed changes
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
       {
@@ -114,11 +99,7 @@ export const inspectionsData = {
         title: "Transformer",
         description:
           "Transformer maintenance including oil testing, winding analysis, and thermal imaging.",
-<<<<<<< Updated upstream
-        image: transformer.src,
-=======
         image: assetSrc(transformer),
->>>>>>> Stashed changes
         bullets: ["NREN", "BR/OAA", "WNAL", "BR/O"],
       },
     ],

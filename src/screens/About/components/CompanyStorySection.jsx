@@ -7,17 +7,8 @@ import { assetSrc } from "@/lib/assetSrc";
 
 function CheckIcon() {
   return (
-<<<<<<< Updated upstream:src/pages/About/components/CompanyStorySection.jsx
-    <img
-<<<<<<<< Updated upstream:src/pages/About/components/CompanyStorySection.jsx
-      src={checkmarkIcon}
-========
-      src={checkmarkIcon.src}
->>>>>>>> Stashed changes:src/legacy-pages/About/components/CompanyStorySection.jsx
-=======
     <Image
       src={assetSrc(checkmarkIcon)}
->>>>>>> Stashed changes:src/screens/About/components/CompanyStorySection.jsx
       alt=""
       width={16}
       height={16}

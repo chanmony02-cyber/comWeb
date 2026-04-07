@@ -15,11 +15,7 @@ export const agricultureData = {
     title: "Agriculture",
     subtitle:
       "Empowering farming communities with smart energy and automation solutions that boost productivity and sustainability.",
-<<<<<<< Updated upstream
-    backgroundImage: aHero.src,
-=======
     backgroundImage: assetSrc(aHero),
->>>>>>> Stashed changes
   },
   problem: {
     title: "We Understand Your Problem.",
@@ -28,11 +24,7 @@ export const agricultureData = {
       "From remote field electrification to automated greenhouse control, agricultural operations require specialized electrical and automation expertise that understands both the technical and environmental demands of farming.",
       "We work alongside agricultural stakeholders to deliver energy-efficient, weather-resilient solutions — helping farms operate smarter, reduce costs, and increase yields across every season.",
     ],
-<<<<<<< Updated upstream
-    image: aProblem.src,
-=======
     image: assetSrc(aProblem),
->>>>>>> Stashed changes
   },
   solutions: {
     label: "INDUSTRY SOLUTIONS",
@@ -43,29 +35,17 @@ export const agricultureData = {
       {
         id: 1,
         title: "Solar-Powered Irrigation Systems",
-<<<<<<< Updated upstream
-        image: ai1.src,
-=======
         image: assetSrc(ai1),
->>>>>>> Stashed changes
       },
       {
         id: 2,
         title: "Rural Electrification Networks",
-<<<<<<< Updated upstream
-        image: ai2.src,
-=======
         image: assetSrc(ai2),
->>>>>>> Stashed changes
       },
       {
         id: 3,
         title: "Precision Agriculture Monitoring",
-<<<<<<< Updated upstream
-        image: ai3.src,
-=======
         image: assetSrc(ai3),
->>>>>>> Stashed changes
       },
     ],
   },
@@ -78,15 +58,7 @@ export const agricultureData = {
         title: "Rice Farm Electrification",
         description:
           "Deployed a complete rural power distribution network across 500 hectares of rice farmland, providing stable electricity to irrigation pumps and processing facilities year-round.",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        image: as1,
-=======
-        image: as1.src,
->>>>>>> Stashed changes
-=======
         image: assetSrc(as1),
->>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 7),
       },
       {
@@ -94,15 +66,7 @@ export const agricultureData = {
         title: "Irrigation Control System",
         description:
           "Installed a solar-powered smart irrigation system with automated scheduling and remote monitoring, reducing water consumption by 40% while maintaining optimal crop yields.",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        image: as2,
-=======
-        image: as2.src,
->>>>>>> Stashed changes
-=======
         image: assetSrc(as2),
->>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 8),
       },
       {
@@ -110,15 +74,7 @@ export const agricultureData = {
         title: "Greenhouse Automation Project",
         description:
           "Engineered the full electrical and control infrastructure for a large-scale greenhouse complex, including climate control, grow lighting, and integrated SCADA monitoring systems.",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        image: as3,
-=======
-        image: as3.src,
->>>>>>> Stashed changes
-=======
         image: assetSrc(as3),
->>>>>>> Stashed changes
         href: ROUTES.PROJECT_DETAIL.replace(":id", 9),
       },
     ],

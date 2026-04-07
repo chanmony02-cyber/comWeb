@@ -2,12 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-<<<<<<< Updated upstream
-      "@/pages/*": ["./src/legacy-pages/*"],
-      "@/*": ["./src/*"]
-=======
       "@/*": ["src/*"]
->>>>>>> Stashed changes
     }
   }
 }

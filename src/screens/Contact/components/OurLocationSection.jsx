@@ -30,17 +30,8 @@ export function OurLocationSection() {
               {/* Address */}
               <div>
                 <div className="flex items-center gap-2 mb-2">
-<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-                  <img
-<<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-                    src={locationPinIcon}
-========
-                    src={locationPinIcon.src}
->>>>>>>> Stashed changes:src/legacy-pages/Contact/components/OurLocationSection.jsx
-=======
                   <Image
                     src={assetSrc(locationPinIcon)}
->>>>>>> Stashed changes:src/screens/Contact/components/OurLocationSection.jsx
                     alt=""
                     width={20}
                     height={20}
@@ -59,13 +50,6 @@ export function OurLocationSection() {
               <div className="space-y-3 pl-1">
                 {/* Phone */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-<<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-                  <img src={phoneIcon} alt="" className="w-5 h-5 flex-shrink-0" />
-========
-                  <img src={phoneIcon.src} alt="" className="w-5 h-5 flex-shrink-0" />
->>>>>>>> Stashed changes:src/legacy-pages/Contact/components/OurLocationSection.jsx
-=======
                   <Image
                     src={assetSrc(phoneIcon)}
                     alt=""
@@ -73,7 +57,6 @@ export function OurLocationSection() {
                     height={20}
                     className="w-5 h-5 flex-shrink-0"
                   />
->>>>>>> Stashed changes:src/screens/Contact/components/OurLocationSection.jsx
                   <a
                     href={`tel:${siteConfig.phone}`}
                     className="hover:text-primary-blue transition-colors w-fit"
@@ -84,13 +67,6 @@ export function OurLocationSection() {
 
                 {/* Website */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-<<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-                  <img src={globeIcon} alt="" className="w-5 h-5 flex-shrink-0" />
-========
-                  <img src={globeIcon.src} alt="" className="w-5 h-5 flex-shrink-0" />
->>>>>>>> Stashed changes:src/legacy-pages/Contact/components/OurLocationSection.jsx
-=======
                   <Image
                     src={assetSrc(globeIcon)}
                     alt=""
@@ -98,7 +74,6 @@ export function OurLocationSection() {
                     height={20}
                     className="w-5 h-5 flex-shrink-0"
                   />
->>>>>>> Stashed changes:src/screens/Contact/components/OurLocationSection.jsx
                   <a
                     href={info.websiteUrl}
                     target="_blank"
@@ -111,13 +86,6 @@ export function OurLocationSection() {
 
                 {/* Email */}
                 <div className="flex items-center gap-3 text-muted-foreground text-md">
-<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-<<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-                  <img src={emailIcon} alt="" className="w-5 h-5 flex-shrink-0" />
-========
-                  <img src={emailIcon.src} alt="" className="w-5 h-5 flex-shrink-0" />
->>>>>>>> Stashed changes:src/legacy-pages/Contact/components/OurLocationSection.jsx
-=======
                   <Image
                     src={assetSrc(emailIcon)}
                     alt=""
@@ -125,7 +93,6 @@ export function OurLocationSection() {
                     height={20}
                     className="w-5 h-5 flex-shrink-0"
                   />
->>>>>>> Stashed changes:src/screens/Contact/components/OurLocationSection.jsx
                   <a
                     href={`mailto:${siteConfig.email}`}
                     className="hover:text-primary-blue transition-colors w-fit"
@@ -139,13 +106,6 @@ export function OurLocationSection() {
             {/* BOTTOM â€” Business Hours */}
             <div className="bg-sky-accent/20 rounded-xl p-5 md:p-6">
               <div className="flex items-center gap-2 mb-3">
-<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-<<<<<<<< Updated upstream:src/pages/Contact/components/OurLocationSection.jsx
-                <img src={clockIcon} alt="" className="w-5 h-5 flex-shrink-0" />
-========
-                <img src={clockIcon.src} alt="" className="w-5 h-5 flex-shrink-0" />
->>>>>>>> Stashed changes:src/legacy-pages/Contact/components/OurLocationSection.jsx
-=======
                 <Image
                   src={assetSrc(clockIcon)}
                   alt=""
@@ -153,7 +113,6 @@ export function OurLocationSection() {
                   height={20}
                   className="w-5 h-5 flex-shrink-0"
                 />
->>>>>>> Stashed changes:src/screens/Contact/components/OurLocationSection.jsx
                 <h4 className="text-xl font-bold text-navy font-display">
                   {location.businessHoursTitle}
                 </h4>

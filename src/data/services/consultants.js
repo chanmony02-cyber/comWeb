@@ -7,11 +7,7 @@ export const consultantsData = {
   hero: {
     title: "Expert in Consultants",
     subtitle: "Explore our range of services tailored to meet your needs.",
-<<<<<<< Updated upstream
-    heroImage: consultantHero.src,
-=======
     heroImage: assetSrc(consultantHero),
->>>>>>> Stashed changes
   },
   overview: {
     title: "Comprehensive Consulting Service Overview",
@@ -19,11 +15,7 @@ export const consultantsData = {
       "Our consulting services encompass every aspect of electrical infrastructure planning and execution. From initial feasibility studies and system design to project management and commissioning, we guide organizations through complex technical decisions with clarity and confidence.",
       "Our multidisciplinary team brings together decades of field experience, ensuring that every recommendation is grounded in practical, real-world application.",
     ],
-<<<<<<< Updated upstream
-    image: consultantOverview.src,
-=======
     image: assetSrc(consultantOverview),
->>>>>>> Stashed changes
     bgSection: true,
   },
   expertise: {

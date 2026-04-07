@@ -1,6 +1,5 @@
 // src/pages/ServiceDetail/ConsultantsPage.jsx
 
-import MainLayout from "@/layouts/MainLayout";
 import { FaqSection } from "@/components/ui/FaqSection";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import { ServiceDetailHeroSection } from "./components/ServiceDetailHeroSection";
@@ -14,7 +13,7 @@ export default function ConsultantsPage() {
   const { hero, overview, expertise, process, faqs } = consultantsData;
 
   return (
-    <MainLayout>
+    <>
       <ServiceDetailHeroSection
         title={hero.title}
         subtitle={hero.subtitle}
@@ -26,7 +25,10 @@ export default function ConsultantsPage() {
         image={overview.image}
         bgSection={overview.bgSection}
       />
-      <CoreExpertiseGrid title={expertise.title} items={expertise.items} />
+      <CoreExpertiseGrid
+        title={expertise.title}
+        items={expertise.items}
+      />
       <OurProcessSteps
         title={process.title}
         subtitle={process.subtitle}
@@ -34,6 +36,6 @@ export default function ConsultantsPage() {
       />
       <FaqSection items={faqs} />
       <GetInTouchSection />
-    </MainLayout>
+    </>
   );
 }

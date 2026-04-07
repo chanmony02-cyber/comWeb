@@ -1,18 +1,7 @@
-<<<<<<< Updated upstream:src/pages/ServiceDetail/components/EquipmentGrid.jsx
-<<<<<<<< Updated upstream:src/pages/ServiceDetail/components/EquipmentGrid.jsx
-﻿// src/pages/ServiceDetail/components/EquipmentGrid.jsx
-
-import { Link } from "react-router-dom";
-========
-import Link from "next/link";
-import Image from "next/image";
->>>>>>>> Stashed changes:src/legacy-pages/ServiceDetail/components/EquipmentGrid.jsx
-=======
 // src/pages/ServiceDetail/components/EquipmentGrid.jsx
 
 import Link from "next/link";
 import Image from "next/image";
->>>>>>> Stashed changes:src/screens/ServiceDetail/components/EquipmentGrid.jsx
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import checkCircleIcon from "@/assets/icons/check-circle.svg";
 import { assetSrc } from "@/lib/assetSrc";
@@ -20,13 +9,6 @@ import { assetSrc } from "@/lib/assetSrc";
 function CheckItem({ label }) {
   return (
     <li className="flex items-center gap-2 text-sm text-muted-foreground font-sans">
-<<<<<<< Updated upstream:src/pages/ServiceDetail/components/EquipmentGrid.jsx
-<<<<<<<< Updated upstream:src/pages/ServiceDetail/components/EquipmentGrid.jsx
-      <img src={checkCircleIcon} alt="" className="w-4 h-4 flex-shrink-0" />
-========
-      <Image src={checkCircleIcon} alt="" className="w-4 h-4 flex-shrink-0" />
->>>>>>>> Stashed changes:src/legacy-pages/ServiceDetail/components/EquipmentGrid.jsx
-=======
       <Image
         src={assetSrc(checkCircleIcon)}
         alt=""
@@ -34,7 +16,6 @@ function CheckItem({ label }) {
         height={16}
         className="w-4 h-4 flex-shrink-0"
       />
->>>>>>> Stashed changes:src/screens/ServiceDetail/components/EquipmentGrid.jsx
       {label}
     </li>
   );
@@ -63,6 +44,7 @@ export function EquipmentGrid({ title, subtitle, items }) {
                 className="group bg-card border border-border rounded-2xl shadow-sm overflow-hidden flex flex-col
                   hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
               >
+                {/* Image with padding */}
                 <div className="xl:p-10 p-6">
                   <div className="relative overflow-hidden rounded-xl h-52 xl:h-[350px]">
                     <Image
@@ -75,6 +57,7 @@ export function EquipmentGrid({ title, subtitle, items }) {
                   </div>
                 </div>
 
+                {/* Text content */}
                 <div className="px-5 pb-6 flex flex-col gap-3">
                   <p className="text-md lg:text-xl font-bold text-navy font-display">
                     {item.title}
@@ -84,7 +67,11 @@ export function EquipmentGrid({ title, subtitle, items }) {
                   </p>
                   <ul className="flex flex-col gap-2 mt-1">
                     {item.bullets.map((bullet) => (
-                      <CheckItem key={bullet} label={bullet} />
+                      <CheckItem
+                        key={bullet}
+                        label={bullet}
+                        labelClassName="text-md"
+                      />
                     ))}
                   </ul>
                 </div>
@@ -95,12 +82,4 @@ export function EquipmentGrid({ title, subtitle, items }) {
       </div>
     </section>
   );
-<<<<<<< Updated upstream:src/pages/ServiceDetail/components/EquipmentGrid.jsx
-<<<<<<<< Updated upstream:src/pages/ServiceDetail/components/EquipmentGrid.jsx
 }
-========
-}
->>>>>>>> Stashed changes:src/legacy-pages/ServiceDetail/components/EquipmentGrid.jsx
-=======
-}
->>>>>>> Stashed changes:src/screens/ServiceDetail/components/EquipmentGrid.jsx
