@@ -119,7 +119,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to={ROUTES.ELECTRICAL_EQUIPMENT}
+                  to={ROUTES.OUR_PRODUCTS}
                   className="hover:text-primary-blue transition-colors"
                 >
                   Products

@@ -1,12 +1,4 @@
-<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
 import { Link } from "react-router-dom";
-========
-<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
-import { Link } from "react-router-dom";
-========
-import Link from "next/link";
->>>>>>>> Stashed changes:src/legacy-pages/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
->>>>>>>> Stashed changes:src/pages-disabled/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
 import { ProductCard } from "@/components/ui/ProductCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ROUTES } from "@/config/routes";
@@ -53,15 +45,7 @@ export function ElectricalEquipmentCatalogSection({
           {visibleProducts.map((product) => (
             <Link
               key={product.id}
-<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
               to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
-========
-<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
-              to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
-========
-                href={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
->>>>>>>> Stashed changes:src/legacy-pages/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
->>>>>>>> Stashed changes:src/pages-disabled/ElectricalEquipment/components/ElectricalEquipmentCatalogSection.jsx
               className="block w-full"
             >
               <ProductCard

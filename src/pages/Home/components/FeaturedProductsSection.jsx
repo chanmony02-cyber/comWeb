@@ -21,7 +21,7 @@ export default function FeaturedProductsSection() {
             Check out our best products
           </p>
           <Link
-            to={ROUTES.ELECTRICAL_EQUIPMENT}
+            to={ROUTES.OUR_PRODUCTS}
             className="inline-flex items-center justify-center px-6 py-2.5 bg-primary-blue text-accent-foreground text-sm font-semibold rounded hover:bg-primary-blue/90 transition-colors font-display"
           >
             View All

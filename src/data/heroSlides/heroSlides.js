@@ -1,9 +1,6 @@
 // src/data/heroSlides/heroSlides.js
-import { ROUTES } from "@/config/routes";
-<<<<<<< Updated upstream
-=======
 import hero1 from "@/assets/images/heroSections/companyHero1.png";
->>>>>>> Stashed changes
+import { ROUTES } from "@/config/routes";
 
 export const heroSlides = [
   {
@@ -13,7 +10,11 @@ export const heroSlides = [
     description:
       "Transforming urban landscapes with intelligent electrical systems, smart metering, and sustainable energy infrastructure for modern cities.",
     buttons: [
-      { label: "Learn More", href: ROUTES.CITY_INFRASTRUCTURE, variant: "primary" },
+      {
+        label: "Learn More",
+        href: ROUTES.CITY_INFRASTRUCTURE,
+        variant: "primary",
+      },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
     image: hero1,
@@ -48,7 +49,11 @@ export const heroSlides = [
       "Elevating customer engagement and service quality",
     ],
     buttons: [
-      { label: "Explore Solutions", href: ROUTES.DISTRIBUTION_GRID, variant: "primary" },
+      {
+        label: "Explore Solutions",
+        href: ROUTES.DISTRIBUTION_GRID,
+        variant: "primary",
+      },
     ],
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&fit=crop",

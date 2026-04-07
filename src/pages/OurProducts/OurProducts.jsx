@@ -1,17 +1,3 @@
-<<<<<<<< Updated upstream:src/pages/ElectricalEquipment/ElectricalEquipment.jsx
-﻿import { useState } from "react";
-import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
-import {
-  electricalEquipmentCategories,
-  electricalEquipmentContent,
-} from "@/data/electricalEquipment/electricalEquipment";
-import { products } from "@/data/products/products";
-import { ElectricalEquipmentHeroSection } from "./components/ElectricalEquipmentHeroSection";
-import { ElectricalEquipmentCatalogSection } from "./components/ElectricalEquipmentCatalogSection";
-
-export default function ElectricalEquipment() {
-  const allCategoryValue = electricalEquipmentCategories[0]?.value ?? "all";
-========
 import { useState } from "react";
 import { GetInTouchSection } from "@/components/ui/GetInTouchSection";
 import {
@@ -24,7 +10,6 @@ import { OurProductsCatalogSection } from "./components/OurProductsCatalogSectio
 
 export default function OurProducts() {
   const allCategoryValue = ourProductsCategories[0]?.value ?? "all";
->>>>>>>> Stashed changes:src/pages/OurProducts/OurProducts.jsx
   const [activeCategory, setActiveCategory] = useState(allCategoryValue);
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12;
