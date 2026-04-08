@@ -4,7 +4,7 @@ import { ROUTES } from "@/config/routes";
 export const navItems = [
   { label: "Home", href: ROUTES.HOME },
   { label: "Products", href: "#", hasDropdown: true },
-  { label: "Solutions", href: "#", hasDropdown: true },
+  { label: "Solutions", href: "#", comingSoon: true },
   { label: "Services", href: "#", hasDropdown: true },
   { label: "Industries", href: "#", hasDropdown: true },
   { label: "Company", href: "#", hasDropdown: true },

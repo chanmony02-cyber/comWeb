@@ -8,9 +8,9 @@ export default function IndustriesSolutionSection() {
           <h2 className="text-foreground font-bold text-3xl lg:text-4xl md:text-[2.6rem] tracking-wide mb-3 font-display">
             INDUSTRIES SOLUTION
           </h2>
-          <p className="text-muted-foreground text-md lg:text-lg max-w-2xl mx-auto font-sans">
-            Tailored end-to-end infrastructure solutions for different industry
-            needs.
+          <p className="text-muted-foreground text-md lg:text-lg max-w-4xl mx-auto font-sans">
+            We combine hardware, software, and communication into a unified
+            solution as a key enabler for future-ready digital transformation.
           </p>
         </div>
         {/* UPDATED: spacing tuned for better tablet (iPad) layout */}

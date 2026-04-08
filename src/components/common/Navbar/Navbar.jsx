@@ -48,6 +48,29 @@ export function Navbar() {
 
           <nav className="hidden xl:flex text-lg items-center gap-8">
             {navItems.map((item) => {
+              if (item.comingSoon) {
+                return (
+                  <div key={item.label} className="group relative inline-flex">
+                    <button
+                      type="button"
+                      className={navLinkClassName}
+                      aria-describedby="solutions-coming-soon"
+                    >
+                      {item.label}
+                      <ChevronDown className="w-3.5 h-3.5 text-muted-foreground" />
+                    </button>
+                    <div
+                      id="solutions-coming-soon"
+                      role="status"
+                      aria-live="polite"
+                      className="pointer-events-none absolute left-1/2 bottom-full z-20 mb-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-navy px-4 py-2 text-sm font-semibold text-white shadow-lg opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0"
+                    >
+                      Coming Soon
+                    </div>
+                  </div>
+                );
+              }
+
               if (item.label === "Products") {
                 return (
                   <NavDropdown
@@ -151,6 +174,20 @@ export function Navbar() {
         {mobileOpen && (
           <div className="xl:hidden border-t border-border bg-background px-4 pb-4">
             {navItems.map((item) => {
+              if (item.comingSoon) {
+                return (
+                  <div
+                    key={item.label}
+                    className="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-border/50"
+                  >
+                    <span>{item.label}</span>
+                    <span className="rounded-full bg-navy px-3 py-1 text-[11px] font-semibold text-white">
+                      Coming Soon
+                    </span>
+                  </div>
+                );
+              }
+
               if (item.label === "Products") {
                 return (
                   <Accordion
