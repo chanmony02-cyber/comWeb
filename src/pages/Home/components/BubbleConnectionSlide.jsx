@@ -49,31 +49,31 @@ const BUBBLE_LAYOUT = [
 
 const CONNECTIONS = [
   {
-    path: "M 42 34 C 44 27, 49 22, 55 23",
+    path: "M 42 34 C 46 31, 50 27, 55 23",
     runnerDurations: [5.5, 6.8],
   },
   {
-    path: "M 55 23 C 63 21, 69 24, 73 31",
+    path: "M 55 23 C 61 24, 68 28, 73 31",
     runnerDurations: [5.95, 7.15],
   },
   {
-    path: "M 42 34 C 37 48, 39 63, 43 75",
+    path: "M 42 34 C 39 46, 39 62, 43 75",
     runnerDurations: [6.4, 7.6],
   },
   {
-    path: "M 55 23 C 50 39, 45 61, 43 75",
+    path: "M 55 23 C 50 35, 44 52, 43 75",
     runnerDurations: [6.85, 7.95],
   },
   {
-    path: "M 55 23 C 61 41, 66 60, 69 79",
+    path: "M 55 23 C 61 36, 66 58, 69 79",
     runnerDurations: [7.3, 8.25],
   },
   {
-    path: "M 73 31 C 76 45, 76 61, 69 79",
+    path: "M 73 31 C 74 44, 74 60, 69 79",
     runnerDurations: [7.75, 8.6],
   },
   {
-    path: "M 43 75 C 50 72, 59 71, 69 79",
+    path: "M 43 75 C 51 73, 60 73, 69 79",
     runnerDurations: [8.2, 8.95],
   },
 ];
@@ -129,7 +129,9 @@ function scalePathX(path, scale) {
       const scaled = nextIsX ? value * scale : value;
       nextIsX = !nextIsX;
 
-      return Number.isInteger(scaled) ? String(scaled) : scaled.toFixed(2).replace(/\.00$/, "");
+      return Number.isInteger(scaled)
+        ? String(scaled)
+        : scaled.toFixed(2).replace(/\.00$/, "");
     })
     .join(" ");
 }
@@ -366,7 +368,10 @@ export function BubbleConnectionSlide({ slide }) {
         </div>
       </div>
 
-      <div ref={networkRef} className="hidden sm:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div
+        ref={networkRef}
+        className="hidden sm:block absolute inset-0 z-0 pointer-events-none overflow-hidden"
+      >
         <svg
           className="absolute inset-0 h-full w-full"
           viewBox={`0 0 ${svgWidth} 100`}
@@ -381,7 +386,7 @@ export function BubbleConnectionSlide({ slide }) {
               width="220%"
               height="220%"
             >
-              <feGaussianBlur stdDeviation="1.4" result="blur" />
+              <feGaussianBlur stdDeviation="2.6" result="blur" />
               <feMerge>
                 <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
@@ -395,7 +400,7 @@ export function BubbleConnectionSlide({ slide }) {
                   d={path}
                   fill="none"
                   stroke="rgba(151, 230, 255, 0.16)"
-                  strokeWidth="1.75"
+                  strokeWidth="3.4"
                   strokeLinecap="round"
                   filter="url(#atom-connection-glow)"
                   vectorEffect="non-scaling-stroke"
@@ -404,7 +409,7 @@ export function BubbleConnectionSlide({ slide }) {
                   d={path}
                   fill="none"
                   stroke="rgba(90, 203, 255, 0.62)"
-                  strokeWidth="0.42"
+                  strokeWidth="1.05"
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
                 />
@@ -412,7 +417,7 @@ export function BubbleConnectionSlide({ slide }) {
                   d={path}
                   fill="none"
                   stroke="rgba(214, 130, 255, 0.5)"
-                  strokeWidth="0.24"
+                  strokeWidth="0.6"
                   strokeLinecap="round"
                   strokeDasharray="1.4 2.8"
                   className="animate-[orbitDash_10s_linear_infinite]"
