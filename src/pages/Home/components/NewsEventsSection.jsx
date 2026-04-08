@@ -46,7 +46,7 @@ export default function NewsEventsSection() {
                 <p className="text-sky-accent text-sm font-medium font-sans mb-1">
                   {item.date}
                 </p>
-                <p className="text-primary-foreground text-md font-semibold font-display leading-snug">
+                <p className="text-primary-foreground text-lg font-semibold font-display leading-snug">
                   {item.title}
                 </p>
               </div>

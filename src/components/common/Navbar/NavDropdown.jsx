@@ -42,7 +42,11 @@ export function NavDropdown({ label, items, triggerClassName = "" }) {
       >
         {items.map((item) => (
           <DropdownMenuItem key={item.label} asChild className={itemClassName}>
-            <Link to={item.href} className="w-full" onClick={() => setOpen(false)}>
+            <Link
+              to={item.href}
+              className="w-full"
+              onClick={() => setOpen(false)}
+            >
               {item.label}
             </Link>
           </DropdownMenuItem>

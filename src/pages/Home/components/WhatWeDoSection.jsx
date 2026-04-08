@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { services } from "@/data/services";
 
 export default function WhatWeDoSection() {
@@ -14,9 +15,10 @@ export default function WhatWeDoSection() {
         {/* UPDATED: refined grid for tablet (iPad) responsiveness */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((svc) => (
-            <div
+            <Link
               key={svc.title}
-              className="group h-full px-12 py-20 rounded-[20px] border border-border hover:border-accent/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center text-primary-blue flex flex-col items-center justify-start"
+              to={svc.href}
+              className="group block h-full px-12 py-20 rounded-[20px] border border-border hover:border-accent/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center text-primary-blue flex flex-col items-center justify-start focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-blue focus-visible:ring-offset-2"
             >
               <div className="flex justify-center mb-7">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-sky-accent/50 text-primary-blue [&_svg]:h-8 [&_svg]:w-8">
@@ -29,7 +31,7 @@ export default function WhatWeDoSection() {
               <p className="text-muted-foreground text-md leading-relaxed font-sans">
                 {svc.description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

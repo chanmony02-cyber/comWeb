@@ -1,3 +1,5 @@
+import { ROUTES } from "@/config/routes";
+
 export const services = [
   {
     icon: (
@@ -21,6 +23,7 @@ export const services = [
     title: "Consultants",
     description:
       "Through comprehensive assessments we help clients identify safety, efficiency, and reliability improvements.",
+    href: ROUTES.CONSULTANTS,
   },
   {
     icon: (
@@ -52,6 +55,7 @@ export const services = [
     title: "Maintenance",
     description:
       "Comprehensive maintenance solutions for electrical infrastructure, from proactive care to system stability.",
+    href: ROUTES.MAINTENANCE,
   },
   {
     icon: (
@@ -83,6 +87,6 @@ export const services = [
     title: "Inspections",
     description:
       "Thorough inspections of electrical infrastructure to identify safety risks and ensure code compliance.",
+    href: ROUTES.INSPECTIONS,
   },
 ];
-
