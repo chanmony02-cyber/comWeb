@@ -1,14 +1,14 @@
 const BUBBLE_LAYOUT = [
   {
-    x: 20,
-    y: 19,
+    x: 40,
+    y: 23,
     size: "clamp(11.6rem, 14.4vw, 14rem)",
     labelLines: ["Enhancing", "System", "Reliability"],
     delay: "0ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(92, 199, 255, 0.34), rgba(92, 199, 255, 0.12) 42%, transparent 72%)",
   },
   {
-    x: 66,
+    x: 60,
     y: 35,
     size: "clamp(11.4rem, 14vw, 13.6rem)",
     labelLines: ["Improving", "Operational", "Efficiency"],
@@ -16,24 +16,24 @@ const BUBBLE_LAYOUT = [
     glow: "radial-gradient(circle at 50% 50%, rgba(110, 216, 255, 0.3), rgba(110, 216, 255, 0.1) 42%, transparent 72%)",
   },
   {
-    x: 110,
-    y: 18,
+    x: 85,
+    y: 25,
     size: "clamp(11.6rem, 14.2vw, 13.8rem)",
     labelLines: ["Strengthening", "Resiliency"],
     delay: "360ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(82, 190, 255, 0.3), rgba(82, 190, 255, 0.1) 42%, transparent 72%)",
   },
   {
-    x: 20,
-    y: 81,
+    x: 40,
+    y: 75,
     size: "clamp(10.9rem, 13.5vw, 13.1rem)",
     labelLines: ["Ensuring", "Safety"],
     delay: "540ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(116, 178, 255, 0.24), rgba(116, 178, 255, 0.08) 42%, transparent 72%)",
   },
   {
-    x: 110,
-    y: 80,
+    x: 78,
+    y: 72,
     size: "clamp(15rem, 18.4vw, 17.5rem)",
     labelLines: [
       "Elevating\u00A0Customer",
@@ -125,39 +125,39 @@ function BubbleNode({ bubble }) {
     >
       <div className="relative -translate-x-1/2 -translate-y-1/2">
         <div
-          className="absolute inset-[-16%] rounded-full blur-3xl"
+          className="absolute inset-[-18%] rounded-full blur-3xl"
           style={{ background: bubble.glow }}
         />
         <div
-          className="relative isolate flex items-center justify-center rounded-full px-5 text-center text-primary-foreground animate-[bubbleFloat_9s_ease-in-out_infinite]"
+          className="relative isolate flex items-center justify-center overflow-visible rounded-full px-5 text-center text-primary-foreground animate-[bubbleFloat_9s_ease-in-out_infinite]"
           style={{
             width: bubble.size,
             height: bubble.size,
             animationDelay: bubble.delay,
           }}
         >
-          <div className="absolute inset-[2%] rounded-full bg-[radial-gradient(circle_at_50%_48%,rgba(10,30,70,0.92)_0%,rgba(8,25,56,0.9)_50%,rgba(7,19,41,0.84)_69%,rgba(6,15,34,0.25)_82%,rgba(6,15,34,0)_100%)]" />
+          <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_50%_42%,rgba(18,44,90,0.95)_0%,rgba(10,31,68,0.95)_48%,rgba(7,20,45,0.94)_72%,rgba(5,14,30,0.84)_100%)]" />
           <div
-            className="absolute inset-[1%] rounded-full opacity-95 animate-[orbitalSpin_18s_linear_infinite]"
+            className="absolute inset-[0.8%] rounded-full opacity-95 animate-[orbitalSpin_18s_linear_infinite]"
             style={{
               background:
-                "conic-gradient(from 210deg, rgba(130,239,255,0.95), rgba(67,195,255,0.72), rgba(67,195,255,0.22) 30%, rgba(0,0,0,0) 52%, rgba(219,126,255,0.9) 74%, rgba(117,223,255,0.96) 100%)",
+                "conic-gradient(from 208deg, rgba(140,242,255,1), rgba(76,200,255,0.82), rgba(76,200,255,0.24) 28%, rgba(0,0,0,0) 49%, rgba(208,125,255,0.94) 73%, rgba(117,223,255,1) 100%)",
               WebkitMask:
-                "radial-gradient(farthest-side, transparent calc(100% - 12px), #000 calc(100% - 8px))",
-              mask: "radial-gradient(farthest-side, transparent calc(100% - 12px), #000 calc(100% - 8px))",
+                "radial-gradient(farthest-side, transparent calc(100% - 11px), #000 calc(100% - 7px))",
+              mask: "radial-gradient(farthest-side, transparent calc(100% - 11px), #000 calc(100% - 7px))",
               filter:
                 "drop-shadow(0 0 18px rgba(91, 223, 255, 0.35)) drop-shadow(0 0 22px rgba(206, 117, 255, 0.22))",
             }}
           />
           <div
-            className="absolute inset-[6%] rounded-full border border-white/14"
+            className="absolute inset-[3.5%] rounded-full border border-white/18"
             style={{
               boxShadow:
-                "inset 0 0 24px rgba(127, 218, 255, 0.1), 0 0 26px rgba(75, 179, 255, 0.08)",
+                "inset 0 0 26px rgba(127, 218, 255, 0.08), 0 0 24px rgba(75, 179, 255, 0.06)",
             }}
           />
           <svg
-            className="absolute inset-[7%] h-[86%] w-[86%] opacity-65 mix-blend-screen"
+            className="absolute inset-[8%] h-[84%] w-[84%] opacity-55 mix-blend-screen"
             viewBox="0 0 100 100"
             aria-hidden="true"
           >
@@ -189,6 +189,7 @@ function BubbleNode({ bubble }) {
               ))}
             </g>
           </svg>
+          <div className="absolute inset-[6%] rounded-full bg-[radial-gradient(circle_at_28%_24%,rgba(255,255,255,0.12),transparent_18%),radial-gradient(circle_at_77%_27%,rgba(151,234,255,0.08),transparent_12%)]" />
           {RING_SPARKLES.map((sparkle, index) => (
             <span
               key={`${bubble.id}-sparkle-${index}`}
@@ -204,6 +205,7 @@ function BubbleNode({ bubble }) {
           ))}
           <span className="absolute left-[17%] top-[15%] h-[12%] w-[12%] rounded-full bg-white/55 blur-[1px]" />
           <span className="absolute right-[16%] top-[21%] h-[8%] w-[8%] rounded-full bg-cyan-200/45 blur-[2px]" />
+          <span className="absolute inset-[1.5%] rounded-full border border-white/8" />
           <span className="absolute inset-0 z-10 flex items-center justify-center px-4 pointer-events-none">
             <span className="block max-w-[76%] text-center text-[1.12rem] md:text-[1.16rem] font-semibold leading-[1.06] uppercase font-display whitespace-pre-line">
               <BubbleLabel bubble={bubble} />
@@ -304,13 +306,25 @@ export function BubbleConnectionSlide({ slide }) {
     .filter(Boolean);
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[#04111f]">
+    <div className="relative h-full w-full overflow-visible bg-[#04111f]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(159,204,255,0.22),transparent_28%),radial-gradient(circle_at_78%_30%,rgba(42,140,213,0.24),transparent_34%),radial-gradient(circle_at_70%_82%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(135deg,#04111f_0%,#08233d_48%,#0b4165_100%)]" />
       <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:64px_64px]" />
 
-      <div className="relative z-10 flex h-full items-center">
+      <div className="absolute inset-0 z-0 hidden md:block pointer-events-none">
+        <BubbleCluster
+          bubbles={bubbles}
+          className="absolute inset-0 w-full left-0 origin-center scale-[0.88] lg:scale-[0.94] xl:hidden"
+        />
+
+        <BubbleCluster
+          bubbles={bubbles}
+          className="absolute inset-0 w-full left-0 hidden xl:block"
+        />
+      </div>
+
+      <div className="relative z-20 flex h-full items-center">
         <div className="w-full max-w-7xl mx-auto px-6 py-10 md:px-16 lg:mx-[130px] lg:px-8">
-          <div className="relative grid grid-cols-1 gap-8 md:grid-cols-[0.95fr_1.05fr] lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="relative grid grid-cols-1 gap-8 lg:items-center">
             <div className="relative z-20 max-w-[540px]">
               <p className="mb-3 text-sm tracking-[0.15em] text-sky-accent font-display md:text-base">
                 {slide.eyebrow}
@@ -345,20 +359,8 @@ export function BubbleConnectionSlide({ slide }) {
                   ),
                 )}
               </div>
-            </div>
 
-            <div className="relative z-0 min-h-[320px] md:min-h-[400px] lg:min-h-[570px] xl:min-h-[570px]">
-              <BubbleCluster
-                bubbles={bubbles}
-                className="hidden md:block xl:hidden absolute inset-0 w-[125%] left-[-10%]"
-              />
-
-              <BubbleCluster
-                bubbles={bubbles}
-                className="hidden xl:block absolute inset-0 w-[140%] left-[-20%]"
-              />
-
-              <div className="sm:hidden grid gap-4">
+              <div className="sm:hidden mt-8 grid gap-4">
                 {bubbles.map((bubble) => (
                   <div
                     key={bubble.label}
