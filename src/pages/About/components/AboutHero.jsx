@@ -2,52 +2,56 @@ import { motion, useReducedMotion } from "framer-motion";
 import VHTLogo from "@/assets/images/VHT_Logo.png";
 import { siteConfig } from "@/config/siteConfig";
 
-const FOCUS_POINTS = [
-  {
-    label: "Reliability",
-    top: "18%",
-    left: "50%",
-    delay: 0,
-  },
-  {
-    label: "Safety",
-    top: "48%",
-    left: "84%",
-    delay: 0.2,
-  },
-  {
-    label: "Efficiency",
-    top: "80%",
-    left: "50%",
-    delay: 0.4,
-  },
-  {
-    label: "Innovation",
-    top: "48%",
-    left: "16%",
-    delay: 0.6,
-  },
-];
-
 const SERVICE_TAGS = [
-  "Electrical Power Grid",
+  "Distribution Grid",
   "City Infrastructure",
-  "Smart Agriculture",
+  "Agriculture",
 ];
 
-const NEON_STROKES = [
+const ATOM_ORBITS = [
   {
-    className: "top-[23%] left-[29%] h-[2px] w-[18%] rotate-[-18deg]",
-    delay: 0,
+    inset: "inset-[12%]",
+    tilt: "-16deg",
+    squeeze: 0.64,
+    duration: 16,
+    reverse: false,
+    particle: {
+      tone: "bg-sky-accent",
+      size: "h-3.5 w-3.5",
+      glow: "shadow-[0_0_18px_rgba(159,207,255,0.95)]",
+    },
   },
   {
-    className: "top-[31%] right-[24%] h-[2px] w-[16%] rotate-[24deg]",
-    delay: 0.25,
+    inset: "inset-[20%]",
+    tilt: "28deg",
+    squeeze: 0.78,
+    duration: 20,
+    reverse: true,
+    particle: {
+      tone: "bg-white",
+      size: "h-3 w-3",
+      glow: "shadow-[0_0_16px_rgba(255,255,255,0.9)]",
+    },
   },
   {
-    className: "bottom-[25%] left-[27%] h-[2px] w-[22%] rotate-[12deg]",
-    delay: 0.5,
+    inset: "inset-[28%]",
+    tilt: "8deg",
+    squeeze: 0.9,
+    duration: 24,
+    reverse: false,
+    particle: {
+      tone: "bg-primary-blue",
+      size: "h-2.5 w-2.5",
+      glow: "shadow-[0_0_14px_rgba(42,140,213,0.95)]",
+    },
   },
+];
+
+const SPARKS = [
+  { top: "18%", left: "32%", rotate: "-28deg", width: "w-10", delay: 0 },
+  { top: "28%", left: "78%", rotate: "18deg", width: "w-12", delay: 0.35 },
+  { top: "70%", left: "24%", rotate: "32deg", width: "w-10", delay: 0.7 },
+  { top: "79%", left: "66%", rotate: "-20deg", width: "w-14", delay: 1.05 },
 ];
 
 export function AboutHero({ title, subtitle }) {
@@ -97,78 +101,77 @@ export function AboutHero({ title, subtitle }) {
           <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center">
             <div className="relative aspect-square w-full max-w-[460px]">
               <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(42,140,213,0.22)_0%,rgba(42,140,213,0.06)_42%,transparent_72%)] blur-2xl" />
+              <div className="absolute inset-[9%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.03)_38%,transparent_74%)] blur-xl" />
 
-              <motion.img
+              <img
                 aria-hidden="true"
                 src={VHTLogo}
                 alt=""
                 className="absolute inset-0 m-auto h-[82%] w-[82%] object-contain select-none pointer-events-none opacity-10 blur-[0.5px]"
-                animate={
-                  prefersReducedMotion
-                    ? undefined
-                    : { rotate: [-3, 3, -3], scale: [0.98, 1.02, 0.98] }
-                }
-                transition={
-                  prefersReducedMotion
-                    ? undefined
-                    : { duration: 10, repeat: Infinity, ease: "easeInOut" }
-                }
               />
 
-              {NEON_STROKES.map((stroke) => (
+              {ATOM_ORBITS.map((orbit) => (
                 <motion.div
-                  key={stroke.className}
+                  key={`${orbit.inset}-${orbit.tilt}`}
                   aria-hidden="true"
-                  className={`absolute ${stroke.className} rounded-full bg-[linear-gradient(90deg,transparent,rgba(159,207,255,0.98),rgba(42,140,213,0.35),transparent)] shadow-[0_0_18px_rgba(159,207,255,0.45)]`}
+                  className="absolute inset-0"
                   animate={
                     prefersReducedMotion
                       ? undefined
                       : {
-                          opacity: [0.25, 1, 0.35],
-                          scaleX: [0.95, 1.08, 0.98],
-                          filter: [
-                            "drop-shadow(0 0 2px rgba(159,207,255,0.45))",
-                            "drop-shadow(0 0 10px rgba(159,207,255,0.8))",
-                            "drop-shadow(0 0 3px rgba(159,207,255,0.5))",
-                          ],
+                          rotate: orbit.reverse ? -360 : 360,
+                          opacity: [0.55, 0.95, 0.65],
                         }
                   }
                   transition={
                     prefersReducedMotion
                       ? undefined
                       : {
-                          duration: 3.8,
-                          delay: stroke.delay,
+                          duration: orbit.duration,
                           repeat: Infinity,
-                          ease: "easeInOut",
+                          ease: "linear",
                         }
                   }
-                />
+                >
+                  <div
+                    className={`absolute ${orbit.inset} rounded-full border border-white/12 bg-white/5`}
+                    style={{
+                      transform: `rotate(${orbit.tilt}) scaleY(${orbit.squeeze})`,
+                    }}
+                  >
+                    <div className="absolute inset-0 rounded-full shadow-[0_0_22px_rgba(159,207,255,0.18)]" />
+
+                    <span
+                      className={`absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 ${orbit.particle.size} rounded-full ${orbit.particle.tone} ${orbit.particle.glow}`}
+                    />
+
+                    <span className="absolute right-[18%] top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-white/75 shadow-[0_0_10px_rgba(255,255,255,0.8)]" />
+                  </div>
+                </motion.div>
               ))}
 
               <motion.div
                 aria-hidden="true"
-                className="absolute inset-6 rounded-full border border-white/10"
-                animate={prefersReducedMotion ? undefined : { rotate: 360 }}
+                className="absolute inset-0"
+                animate={prefersReducedMotion ? undefined : { y: [0, -6, 0] }}
                 transition={
                   prefersReducedMotion
                     ? undefined
-                    : { duration: 28, repeat: Infinity, ease: "linear" }
+                    : { duration: 6, repeat: Infinity, ease: "easeInOut" }
                 }
-              />
+              >
+                <div className="absolute inset-[14%] flex items-center justify-center rounded-full border bg-[#001439]/70 backdrop-blur-md">
+                  <img
+                    src={VHTLogo}
+                    alt={`${siteConfig.name} logo`}
+                    className="h-28 w-28 sm:h-32 sm:w-32 lg:h-40 lg:w-40 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                  />
+                </div>
+              </motion.div>
+
               <motion.div
                 aria-hidden="true"
-                className="absolute inset-16 rounded-full border border-primary-blue/25 border-dashed"
-                animate={prefersReducedMotion ? undefined : { rotate: -360 }}
-                transition={
-                  prefersReducedMotion
-                    ? undefined
-                    : { duration: 22, repeat: Infinity, ease: "linear" }
-                }
-              />
-              <motion.div
-                aria-hidden="true"
-                className="absolute inset-28 rounded-full border border-sky-accent/20"
+                className="absolute inset-[28%] rounded-full border border-sky-accent/20"
                 animate={
                   prefersReducedMotion
                     ? undefined
@@ -181,58 +184,42 @@ export function AboutHero({ title, subtitle }) {
                 }
               />
 
-              <motion.div
-                aria-hidden="true"
-                className="absolute inset-0"
-                animate={prefersReducedMotion ? undefined : { y: [0, -8, 0] }}
-                transition={
-                  prefersReducedMotion
-                    ? undefined
-                    : { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                }
-              >
-                <div className="absolute inset-0 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_0_80px_rgba(42,140,213,0.22)]" />
-
-                <div className="absolute inset-10 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.05)_38%,rgba(255,255,255,0)_72%)]" />
-
-                <div className="absolute inset-[18%] flex items-center justify-center rounded-full border border-white/15 bg-[#001439]/70 shadow-[0_0_60px_rgba(0,0,0,0.35)] backdrop-blur-md">
-                  <img
-                    src={VHTLogo}
-                    alt={`${siteConfig.name} logo`}
-                    className="h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-                  />
-                </div>
-              </motion.div>
-
-              {FOCUS_POINTS.map((point, index) => (
+              {SPARKS.map((spark) => (
                 <motion.div
-                  key={point.label}
-                  className="absolute -translate-x-1/2 -translate-y-1/2"
-                  style={{ top: point.top, left: point.left }}
-                  initial={false}
+                  key={`${spark.top}-${spark.left}`}
+                  aria-hidden="true"
+                  className="absolute flex items-center gap-1"
+                  style={{
+                    top: spark.top,
+                    left: spark.left,
+                    transform: `rotate(${spark.rotate})`,
+                  }}
                   animate={
                     prefersReducedMotion
-                      ? {}
+                      ? undefined
                       : {
-                          y: [0, -6, 0],
-                          opacity: [0.7, 1, 0.7],
+                          opacity: [0.18, 1, 0.25],
+                          scale: [0.85, 1.15, 0.9],
                         }
                   }
                   transition={
                     prefersReducedMotion
                       ? undefined
                       : {
-                          duration: 4.5 + index * 0.35,
-                          delay: point.delay,
+                          duration: 2.6,
+                          delay: spark.delay,
                           repeat: Infinity,
                           ease: "easeInOut",
                         }
                   }
                 >
-                  <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm shadow-lg">
-                    <span className="h-2 w-2 rounded-full bg-sky-accent shadow-[0_0_12px_rgba(159,207,255,0.85)]" />
-                    {point.label}
-                  </div>
+                  <span
+                    className={`h-px ${spark.width} bg-gradient-to-r from-transparent via-white/95 to-transparent`}
+                    style={{
+                      filter: "drop-shadow(0 0 8px rgba(255,255,255,0.95))",
+                    }}
+                  />
+                  <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_14px_rgba(255,255,255,0.95)]" />
                 </motion.div>
               ))}
             </div>

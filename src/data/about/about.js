@@ -23,7 +23,7 @@ export const aboutData = {
     image: companyStoryImage,
     imageAlt: "Head, heart, hand technology visual",
     paragraphs: [
-      "We exist to accelerate and enable digital transformation across sectors, including electrical power grid, city infrastructure, and agriculture. We bridge the gap between existing systems and the future ready-digital systems enhancing system reliability, strengthening resiliency, improving operational efficiency, ensuring safety, elevating customer engagement and service quality.",
+      "We exist to accelerate and enable digital transformation across sectors, including Distribution Grid, City Infrastructure, and Agriculture. We bridge the gap between existing systems and the future ready-digital systems enhancing system reliability, strengthening resiliency, improving operational efficiency, ensuring safety, elevating customer engagement and service quality.",
     ],
     checkItems: [
       { id: 1, text: "Over 15 years of industry experience" },
