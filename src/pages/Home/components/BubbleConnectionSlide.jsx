@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useRef, useState } from "react";
+
 const BUBBLE_LAYOUT = [
   {
     x: 41.5,
@@ -47,31 +49,31 @@ const BUBBLE_LAYOUT = [
 
 const CONNECTIONS = [
   {
-    path: "M 42 34 C 46 29, 50 25, 55 23",
+    path: "M 42 34 C 44 27, 49 22, 55 23",
     runnerDurations: [5.5, 6.8],
   },
   {
-    path: "M 55 23 C 62 23, 67 27, 73 31",
+    path: "M 55 23 C 63 21, 69 24, 73 31",
     runnerDurations: [5.95, 7.15],
   },
   {
-    path: "M 42 34 C 39 46, 40 60, 43 75",
+    path: "M 42 34 C 37 48, 39 63, 43 75",
     runnerDurations: [6.4, 7.6],
   },
   {
-    path: "M 55 23 C 52 40, 48 58, 43 75",
+    path: "M 55 23 C 50 39, 45 61, 43 75",
     runnerDurations: [6.85, 7.95],
   },
   {
-    path: "M 55 23 C 60 38, 65 58, 69 79",
+    path: "M 55 23 C 61 41, 66 60, 69 79",
     runnerDurations: [7.3, 8.25],
   },
   {
-    path: "M 73 31 C 73 44, 71 60, 69 79",
+    path: "M 73 31 C 76 45, 76 61, 69 79",
     runnerDurations: [7.75, 8.6],
   },
   {
-    path: "M 43 75 C 51 73, 60 73, 69 79",
+    path: "M 43 75 C 50 72, 59 71, 69 79",
     runnerDurations: [8.2, 8.95],
   },
 ];
@@ -104,6 +106,33 @@ const RING_SPARKLES = [
   { x: "82%", y: "18%", size: "0.2rem" },
   { x: "89%", y: "32%", size: "0.18rem" },
 ];
+
+const BASE_SVG_SIZE = 100;
+
+function scalePathX(path, scale) {
+  const tokens = path.match(/[a-zA-Z]|-?\d*\.?\d+/g) || [];
+  let nextIsX = true;
+
+  return tokens
+    .map((token) => {
+      if (/^[a-zA-Z]$/.test(token)) {
+        nextIsX = true;
+        return token;
+      }
+
+      const value = Number(token);
+
+      if (Number.isNaN(value)) {
+        return token;
+      }
+
+      const scaled = nextIsX ? value * scale : value;
+      nextIsX = !nextIsX;
+
+      return Number.isInteger(scaled) ? String(scaled) : scaled.toFixed(2).replace(/\.00$/, "");
+    })
+    .join(" ");
+}
 
 function BubbleLabel({ bubble, className = "" }) {
   return (
@@ -230,9 +259,37 @@ function BubbleNode({ bubble }) {
 }
 
 export function BubbleConnectionSlide({ slide }) {
+  const networkRef = useRef(null);
+  const [svgWidth, setSvgWidth] = useState(BASE_SVG_SIZE);
+
   const bubbles = slide.bubbles
     .map((label, index) => ({ ...BUBBLE_LAYOUT[index], label, id: index }))
     .filter(Boolean);
+
+  useEffect(() => {
+    const updateNetworkScale = () => {
+      if (!networkRef.current) return;
+
+      const rect = networkRef.current.getBoundingClientRect();
+      if (!rect.height) return;
+
+      setSvgWidth((rect.width / rect.height) * BASE_SVG_SIZE);
+    };
+
+    updateNetworkScale();
+    window.addEventListener("resize", updateNetworkScale);
+
+    return () => window.removeEventListener("resize", updateNetworkScale);
+  }, []);
+
+  const scaledConnections = useMemo(
+    () =>
+      CONNECTIONS.map((connection) => ({
+        ...connection,
+        path: scalePathX(connection.path, svgWidth / BASE_SVG_SIZE),
+      })),
+    [svgWidth],
+  );
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#04111f]">
@@ -309,10 +366,10 @@ export function BubbleConnectionSlide({ slide }) {
         </div>
       </div>
 
-      <div className="hidden sm:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div ref={networkRef} className="hidden sm:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <svg
-          className="absolute inset-0 h-full w-full scale-[1.03]"
-          viewBox="0 0 100 100"
+          className="absolute inset-0 h-full w-full"
+          viewBox={`0 0 ${svgWidth} 100`}
           preserveAspectRatio="none"
           aria-hidden="true"
         >
@@ -331,7 +388,7 @@ export function BubbleConnectionSlide({ slide }) {
               </feMerge>
             </filter>
           </defs>
-          {CONNECTIONS.map(({ path, runnerDurations }, index) => {
+          {scaledConnections.map(({ path, runnerDurations }, index) => {
             return (
               <g key={`${path}-${index}`}>
                 <path
