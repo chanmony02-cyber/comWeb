@@ -7,6 +7,7 @@ import distributionGridHero from "@/assets/images/industries/distribution-grid/d
 import cityInfrastructureHero from "@/assets/images/industries/city-infrastructure/city-infrastructure-hero.jpg";
 import agricultureHero from "@/assets/images/industries/agriculture/agri-banner.jpg";
 import repairing from "@/assets/images/servicesImg/repairing.jpg";
+import companyStoryImage from "@/assets/images/about/company-story.webp";
 
 export const aboutData = {
   hero: {
@@ -19,9 +20,10 @@ export const aboutData = {
     label: "About Our Company",
     title: "Building the Future of\nElectrical Infrastructure",
     stat: { value: "2+", label: "Years of Excellence" },
+    image: companyStoryImage,
+    imageAlt: "Head, heart, hand technology visual",
     paragraphs: [
-      "Founded in 2010, we have grown from a small electrical contracting firm into one of the region's most trusted providers of comprehensive electrical solutions. Our journey is marked by a relentless pursuit of excellence and innovation.",
-      "We specialize in designing, installing, and maintaining electrical systems for diverse industries including city infrastructure, power distribution networks, and agricultural facilities. Our team of committed professionals brings together decades of combined experience to deliver solutions that exceed expectations.",
+      "We exist to accelerate and enable digital transformation across sectors, including electrical power grid, city infrastructure, and agriculture. We bridge the gap between existing systems and the future ready-digital systems enhancing system reliability, strengthening resiliency, improving operational efficiency, ensuring safety, elevating customer engagement and service quality.",
     ],
     checkItems: [
       { id: 1, text: "Over 15 years of industry experience" },
@@ -55,7 +57,7 @@ export const aboutData = {
     subtitle: "Guiding principles that drive our commitment to excellence",
     missionTitle: "Our Mission",
     missionText:
-      "To be the leading provider of reliable electrical solutions that power progress across industries. We are committed to excellence in every project, ensuring safety, quality, and sustainability in all our operations.",
+      "To grow from a local tech firm into a globally recognized company.",
     missionBullets: [
       "Provide cutting-edge electrical infrastructure",
       "Ensure highest safety standards",
@@ -63,7 +65,7 @@ export const aboutData = {
     ],
     visionTitle: "Our Vision",
     visionText:
-      "To be the leading electrical solutions provider in Southeast Asia, recognized for our innovation, reliability, and contribution to building sustainable infrastructure for future generations.",
+      "Our mission is to generate a lasting value for society by delivering reliable hardware, software and robust communication technology to address real-world challenges. ",
     visionBullets: [
       "Lead industry transformation through innovation",
       "Expand regional presence and impact",
@@ -235,13 +237,6 @@ export const aboutData = {
       },
       {
         id: 5,
-        icon: "custom",
-        title: "Custom Solutions",
-        description:
-          "Tailored approaches to meet your specific requirements and challenges.",
-      },
-      {
-        id: 6,
         icon: "quality",
         title: "Quality Guaranteed",
         description: "Comprehensive warranties and guarantees on all our work.",

@@ -1,126 +1,181 @@
-﻿// src/pages/About/components/CompanyStorySection.jsx
-
 import { Link } from "react-router-dom";
-import checkmarkIcon from "@/assets/icons/checkmark.svg";
 
-function CheckIcon() {
-  return (
-    <img
-      src={checkmarkIcon}
-      alt=""
-      className="w-4 h-4 flex-shrink-0 mt-0.5"
-    />
-  );
-}
+import companyHeroImage from "@/assets/images/about/company-story.webp";
+
+const STORY_IMAGE_KEYFRAMES = `
+  @keyframes storyCardFloat {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+
+  @keyframes storyGlowPulse {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0.78;
+      transform: scale(1.06);
+    }
+  }
+
+  @keyframes storyImageDrift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate3d(0, -8px, 0) scale(1.02);
+    }
+  }
+
+  @keyframes storyImageSheen {
+    0% {
+      transform: translateX(-18%);
+      opacity: 0;
+    }
+
+    35% {
+      opacity: 0.42;
+    }
+
+    50% {
+      transform: translateX(18%);
+      opacity: 0.58;
+    }
+
+    100% {
+      transform: translateX(18%);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .story-card-float,
+    .story-card-glow,
+    .story-image-drift,
+    .story-image-sheen {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+`;
 
 export function CompanyStorySection({
   label,
   title,
   stat,
   paragraphs,
-  checkItems,
   cta,
+  image = companyHeroImage,
+  imageAlt = "Head, heart, hand technology visual",
 }) {
+  const [titlePrefix, titleSuffix = ""] = title.split(
+    "Electrical Infrastructure",
+  );
+
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="bg-background py-16 md:py-24">
       <div className="container">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-20 items-center">
-          {/* â”€â”€ Left â€” image collage with stat badge â”€â”€â”€â”€â”€â”€â”€ */}
-          <div className="relative">
-            {/* Stat badge â€” top-left overlap */}
-            <div className="absolute -top-4 -left-4 z-10 bg-primary-blue text-white rounded-xl px-5 py-4 shadow-lg text-center min-w-[90px]">
-              <p className="text-2xl xl:text-4xl font-bold font-display leading-none">
-                {stat.value}
-              </p>
-              <p className="text-xs font-sans mt-1 leading-tight opacity-90">
-                {stat.label}
-              </p>
-            </div>
-
-            {/* Two stacked images mimicking the collage in the mockup */}
-            <div className="grid grid-cols-2 gap-3 pt-6 pl-6">
-              <div className="rounded-xl overflow-hidden shadow-md col-span-1 row-span-2">
-                <img
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=500&q=80&fit=crop"
-                  alt="Electrical work"
-                  className="w-full h-full object-cover"
-                  style={{ minHeight: "280px" }}
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&fit=crop"
-                  alt="Infrastructure project"
-                  className="w-full md:h-60 h-40 object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80&fit=crop"
-                  alt="Engineering team"
-                  className="w-full md:h-60 h-40 object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* â”€â”€ Right â€” text content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-          <div>
-            {/* Label pill */}
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-sky-accent/30 text-primary-blue text-md font-semibold mb-4 font-sans">
+        <div className="grid grid-cols-1 items-center gap-12 xl:grid-cols-2 xl:gap-20">
+          <div className="order-1">
+            <span className="mb-4 inline-flex items-center rounded-full bg-sky-accent/30 px-4 py-1.5 font-sans text-md font-semibold text-primary-blue">
               {label}
             </span>
 
-            {/* Title â€” supports \n line breaks */}
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-navy font-display mb-5 leading-tight whitespace-pre-line">
-              {title.split("Electrical Infrastructure").map((part, i, arr) =>
-                i < arr.length - 1 ? (
-                  <span key={i}>
-                    {part}
-                    <span className="text-primary-blue">
-                      Electrical Infrastructure
-                    </span>
-                  </span>
-                ) : (
-                  <span key={i}>{part}</span>
-                ),
-              )}
+            <h2 className="mb-5 whitespace-pre-line font-display text-2xl font-bold leading-tight text-navy md:text-3xl lg:text-5xl">
+              {titlePrefix}
+              <span className="text-primary-blue">
+                Electrical Infrastructure
+              </span>
+              {titleSuffix}
             </h2>
 
-            {/* Paragraphs */}
-            <div className="space-y-3 mb-6">
+            <div className="mb-6 space-y-3">
               {paragraphs.map((para, i) => (
                 <p
                   key={i}
-                  className="text-muted-foreground text-md leading-relaxed font-sans"
+                  className="font-sans text-md leading-relaxed text-muted-foreground"
                 >
                   {para}
                 </p>
               ))}
             </div>
 
-            {/* Check items â€” 2-column grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {checkItems.map((item) => (
-                <div key={item.id} className="flex items-start gap-2">
-                  <CheckIcon />
-                  <span className="text-md text-foreground font-sans">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA */}
             <Link
               to={cta.href}
-              className="inline-flex items-center gap-1 px-6 py-2.5 bg-primary-blue text-white text-lg font-semibold rounded-md hover:bg-white  hover:text-primary-blue hover:border hover:border-primary-blue transition-colors font-display"
+              className="inline-flex items-center gap-1 rounded-md bg-primary-blue px-6 py-2.5 font-display text-lg font-semibold text-white transition-colors hover:border hover:border-primary-blue hover:bg-white hover:text-primary-blue"
             >
               {cta.label}
             </Link>
           </div>
+
+          <div className="relative order-2">
+            <div
+              className="story-card-glow pointer-events-none absolute -inset-6 rounded-[2rem] blur-3xl"
+              style={{
+                animation: "storyGlowPulse 7s ease-in-out infinite",
+                background:
+                  "radial-gradient(circle at 50% 40%, rgba(14, 165, 233, 0.22), transparent 62%)",
+              }}
+            />
+
+            {/* 2 years experience */}
+            {/* <div className="absolute -top-4 left-4 z-10 min-w-[120px] rounded-2xl bg-primary-blue px-5 py-4 text-center text-white shadow-lg xl:-left-6">
+              <p className="font-display text-2xl leading-none font-bold xl:text-4xl">
+                {stat.value}
+              </p>
+              <p className="mt-1 font-sans text-xs leading-tight opacity-90">
+                {stat.label}
+              </p>
+            </div> */}
+
+            <div
+              className="story-card-float relative mx-auto max-w-[720px] overflow-hidden rounded-[2rem] border border-white/70 bg-slate-950/5 shadow-[0_30px_80px_rgba(15,23,42,0.16)]"
+              style={{
+                animation: "storyCardFloat 8s ease-in-out infinite",
+                aspectRatio: "1600 / 1006",
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-navy/20 via-transparent to-primary-blue/10" />
+              <div
+                className="story-image-drift absolute inset-0"
+                style={{
+                  animation: "storyImageDrift 11s ease-in-out infinite",
+                }}
+              >
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.04]"
+                  width={1600}
+                  height={1006}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div
+                className="story-image-sheen pointer-events-none absolute inset-y-0 left-[-24%] w-1/2 bg-[linear-gradient(115deg,transparent_0%,rgba(255,255,255,0.0)_42%,rgba(255,255,255,0.18)_50%,rgba(255,255,255,0.0)_58%,transparent_100%)] mix-blend-screen"
+                style={{
+                  animation: "storyImageSheen 8.5s ease-in-out infinite",
+                }}
+              />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
+            </div>
+          </div>
         </div>
       </div>
+
+      <style>{STORY_IMAGE_KEYFRAMES}</style>
     </section>
   );
 }

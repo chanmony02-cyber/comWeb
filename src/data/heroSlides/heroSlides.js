@@ -1,6 +1,6 @@
 // src/data/heroSlides/heroSlides.js
 import { ROUTES } from "@/config/routes";
-import hero1 from "@/assets/images/heroSections/companyHero1.png";
+import hero1 from "@/assets/images/heroSections/companyHero1.webp";
 
 export const heroSlides = [
   {

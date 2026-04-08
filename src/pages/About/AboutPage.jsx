@@ -25,10 +25,10 @@ export default function AboutPage() {
       <PowerSection {...powerSection} />
       <MissionVisionSection {...mission} />
       <CoreValuesSection {...coreValues} />
-      <ServicesSection {...services} />
+      {/* <ServicesSection {...services} /> */}
       <IndustriesWeServeSection {...industries} />
       <WhyPartnerSection {...whyPartner} />
-      <TeamSection {...team} />
+      {/* <TeamSection {...team} /> */}
       {/* <PartnershipSection /> */}
       <OurLocationSection />
     </>
