@@ -50,7 +50,10 @@ const AppRouter = () => {
         <Route path={ROUTES.HOME} element={withMainLayout(<Home />)} />
         <Route path={ROUTES.HOMEPAGE} element={withMainLayout(<Home />)} />
         <Route path={ROUTES.ABOUT} element={withMainLayout(<AboutPage />)} />
-        <Route path={ROUTES.OUR_PRODUCTS} element={withMainLayout(<OurProductsPage />)} />
+        <Route
+          path={ROUTES.OUR_PRODUCTS}
+          element={withMainLayout(<OurProductsPage />)}
+        />
         <Route
           path={ROUTES.SOFTWARE_APPLICATION}
           element={withMainLayout(<SoftwareApplicationPage />)}
@@ -67,10 +70,7 @@ const AppRouter = () => {
           path={ROUTES.PROJECT_DETAIL}
           element={withMainLayout(<ProjectDetailPage />)}
         />
-        <Route
-          path={ROUTES.CONTACT}
-          element={withMainLayout(<ContactPage />)}
-        />
+        <Route path={ROUTES.CONTACT} element={withMainLayout(<ContactPage />)} />
         <Route
           path={ROUTES.DISTRIBUTION_GRID}
           element={withMainLayout(<DistributionGridPage />)}
@@ -83,10 +83,7 @@ const AppRouter = () => {
           path={ROUTES.AGRICULTURE}
           element={withMainLayout(<AgriculturePage />)}
         />
-        <Route
-          path={ROUTES.SERVICES}
-          element={withMainLayout(<ServicesPage />)}
-        />
+        <Route path={ROUTES.SERVICES} element={withMainLayout(<ServicesPage />)} />
         <Route
           path={ROUTES.CONSULTANTS}
           element={withMainLayout(<ConsultantsPage />)}
@@ -99,10 +96,7 @@ const AppRouter = () => {
           path={ROUTES.INSPECTIONS}
           element={withMainLayout(<InspectionsPage />)}
         />
-        <Route
-          path={ROUTES.NEWS}
-          element={withMainLayout(<NewsEventsPage />)}
-        />
+        <Route path={ROUTES.NEWS} element={withMainLayout(<NewsEventsPage />)} />
         <Route
           path={ROUTES.NEWS_DETAIL}
           element={withMainLayout(<NewsDetailPage />)}

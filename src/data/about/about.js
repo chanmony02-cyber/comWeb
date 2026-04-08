@@ -55,7 +55,7 @@ export const aboutData = {
     subtitle: "Guiding principles that drive our commitment to excellence",
     missionTitle: "Our Mission",
     missionText:
-      "To grow from a local tech firm into a globally recognized company.",
+      "To be the leading provider of reliable electrical solutions that power progress across industries. We are committed to excellence in every project, ensuring safety, quality, and sustainability in all our operations.",
     missionBullets: [
       "Provide cutting-edge electrical infrastructure",
       "Ensure highest safety standards",
@@ -63,7 +63,7 @@ export const aboutData = {
     ],
     visionTitle: "Our Vision",
     visionText:
-      "Our mission is to generate a lasting value for society by delivering reliable hardware, software and robust communication technology to address real-world challenges. ",
+      "To be the leading electrical solutions provider in Southeast Asia, recognized for our innovation, reliability, and contribution to building sustainable infrastructure for future generations.",
     visionBullets: [
       "Lead industry transformation through innovation",
       "Expand regional presence and impact",
