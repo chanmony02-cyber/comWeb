@@ -1,40 +1,40 @@
 const BUBBLE_LAYOUT = [
   {
-    x: 45,
-    y: 33,
-    size: "clamp(11.6rem, 14.4vw, 14rem)",
+    x: 41.5,
+    y: 34,
+    size: "clamp(11.3rem, 14vw, 13.7rem)",
     labelLines: ["Enhancing", "System", "Reliability"],
     delay: "0ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(92, 199, 255, 0.34), rgba(92, 199, 255, 0.12) 42%, transparent 72%)",
   },
   {
-    x: 60,
-    y: 25,
-    size: "clamp(11.4rem, 14vw, 13.6rem)",
+    x: 54.6,
+    y: 22.5,
+    size: "clamp(11.6rem, 14.6vw, 14.1rem)",
     labelLines: ["Improving", "Operational", "Efficiency"],
     delay: "180ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(110, 216, 255, 0.3), rgba(110, 216, 255, 0.1) 42%, transparent 72%)",
   },
   {
-    x: 75,
-    y: 33,
-    size: "clamp(11.6rem, 14.2vw, 13.8rem)",
+    x: 72.8,
+    y: 31.5,
+    size: "clamp(11.2rem, 13.8vw, 13.5rem)",
     labelLines: ["Strengthening", "Resiliency"],
     delay: "360ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(82, 190, 255, 0.3), rgba(82, 190, 255, 0.1) 42%, transparent 72%)",
   },
   {
-    x: 50,
-    y: 81,
-    size: "clamp(10.9rem, 13.5vw, 13.1rem)",
+    x: 42.6,
+    y: 74.8,
+    size: "clamp(10.7rem, 13vw, 12.7rem)",
     labelLines: ["Ensuring", "Safety"],
     delay: "540ms",
     glow: "radial-gradient(circle at 50% 50%, rgba(116, 178, 255, 0.24), rgba(116, 178, 255, 0.08) 42%, transparent 72%)",
   },
   {
-    x: 75,
-    y: 80,
-    size: "clamp(15rem, 18.4vw, 17.5rem)",
+    x: 69,
+    y: 79,
+    size: "clamp(14.7rem, 18vw, 17.1rem)",
     labelLines: [
       "Elevating\u00A0Customer",
       "Engagement And",
@@ -47,31 +47,31 @@ const BUBBLE_LAYOUT = [
 
 const CONNECTIONS = [
   {
-    path: "M 42 30 C 48 27, 54 26, 60 26",
+    path: "M 42 34 C 46 29, 50 25, 55 23",
     runnerDurations: [5.5, 6.8],
   },
   {
-    path: "M 60 26 C 66 26, 71 29, 76 34",
+    path: "M 55 23 C 62 23, 67 27, 73 31",
     runnerDurations: [5.95, 7.15],
   },
   {
-    path: "M 43 34 C 39 47, 40 64, 49 80",
+    path: "M 42 34 C 39 46, 40 60, 43 75",
     runnerDurations: [6.4, 7.6],
   },
   {
-    path: "M 60 28 C 54 43, 49 62, 49 80",
+    path: "M 55 23 C 52 40, 48 58, 43 75",
     runnerDurations: [6.85, 7.95],
   },
   {
-    path: "M 61 29 C 68 43, 73 61, 75 79",
+    path: "M 55 23 C 60 38, 65 58, 69 79",
     runnerDurations: [7.3, 8.25],
   },
   {
-    path: "M 76 34 C 77 47, 77 63, 76 79",
+    path: "M 73 31 C 73 44, 71 60, 69 79",
     runnerDurations: [7.75, 8.6],
   },
   {
-    path: "M 49 80 C 58 78, 67 78, 75 80",
+    path: "M 43 75 C 51 73, 60 73, 69 79",
     runnerDurations: [8.2, 8.95],
   },
 ];
@@ -107,13 +107,8 @@ const RING_SPARKLES = [
 
 function BubbleLabel({ bubble, className = "" }) {
   return (
-    <span className={className}>
-      {bubble.labelLines.map((line, index) => (
-        <span key={`${bubble.id}-line-${index}`}>
-          {line}
-          {index < bubble.labelLines.length - 1 ? "\n" : null}
-        </span>
-      ))}
+    <span className={className} style={{ whiteSpace: "pre-line" }}>
+      {bubble.labelLines.join("\n")}
     </span>
   );
 }
@@ -148,14 +143,14 @@ function BubbleNode({ bubble }) {
           style={{ background: bubble.glow }}
         />
         <div
-          className="relative isolate flex items-center justify-center rounded-full px-5 text-center text-primary-foreground animate-[bubbleFloat_9s_ease-in-out_infinite]"
+          className="relative isolate flex items-center justify-center rounded-full px-5 text-center text-primary-foreground shadow-[0_24px_55px_rgba(0,0,0,0.28)] animate-[bubbleFloat_9s_ease-in-out_infinite]"
           style={{
             width: bubble.size,
             height: bubble.size,
             animationDelay: bubble.delay,
           }}
         >
-          <div className="absolute inset-[2%] rounded-full bg-[radial-gradient(circle_at_50%_48%,rgba(10,30,70,0.92)_0%,rgba(8,25,56,0.9)_50%,rgba(7,19,41,0.84)_69%,rgba(6,15,34,0.25)_82%,rgba(6,15,34,0)_100%)]" />
+          <div className="absolute inset-[2%] rounded-full bg-[radial-gradient(circle_at_50%_48%,rgba(10,30,70,0.94)_0%,rgba(8,25,56,0.92)_50%,rgba(7,19,41,0.86)_69%,rgba(6,15,34,0.28)_82%,rgba(6,15,34,0)_100%)]" />
           <div
             className="absolute inset-[1%] rounded-full opacity-95 animate-[orbitalSpin_18s_linear_infinite]"
             style={{
@@ -172,7 +167,7 @@ function BubbleNode({ bubble }) {
             className="absolute inset-[6%] rounded-full border border-white/14"
             style={{
               boxShadow:
-                "inset 0 0 24px rgba(127, 218, 255, 0.1), 0 0 26px rgba(75, 179, 255, 0.08)",
+                "inset 0 0 24px rgba(127, 218, 255, 0.12), 0 0 26px rgba(75, 179, 255, 0.12)",
             }}
           />
           <svg
@@ -224,7 +219,7 @@ function BubbleNode({ bubble }) {
           <span className="absolute left-[17%] top-[15%] h-[12%] w-[12%] rounded-full bg-white/55 blur-[1px]" />
           <span className="absolute right-[16%] top-[21%] h-[8%] w-[8%] rounded-full bg-cyan-200/45 blur-[2px]" />
           <span className="absolute inset-0 z-10 flex items-center justify-center px-4 pointer-events-none">
-            <span className="block max-w-[76%] text-center text-[1.12rem] md:text-[1.16rem] font-semibold leading-[1.06] uppercase font-display whitespace-pre-line">
+            <span className="block max-w-[76%] text-center text-[1.04rem] md:text-[1.12rem] font-semibold leading-[1.05] uppercase font-display tracking-[0.01em]">
               <BubbleLabel bubble={bubble} />
             </span>
           </span>
@@ -241,22 +236,23 @@ export function BubbleConnectionSlide({ slide }) {
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#04111f]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(159,204,255,0.22),transparent_28%),radial-gradient(circle_at_78%_30%,rgba(42,140,213,0.24),transparent_34%),radial-gradient(circle_at_70%_82%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(135deg,#04111f_0%,#08233d_48%,#0b4165_100%)]" />
-      <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:64px_64px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(141,186,255,0.18),transparent_26%),radial-gradient(circle_at_74%_28%,rgba(42,140,213,0.28),transparent_33%),radial-gradient(circle_at_83%_72%,rgba(78,175,255,0.24),transparent_30%),radial-gradient(circle_at_56%_50%,rgba(0,0,0,0.08),transparent_48%),linear-gradient(135deg,#04111f_0%,#071d33_43%,#0a3960_74%,#0d4f82_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(4,17,31,0.2)_0%,rgba(4,17,31,0.08)_32%,rgba(4,17,31,0)_58%,rgba(4,17,31,0.14)_100%)]" />
+      <div className="absolute inset-0 opacity-22 [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:68px_68px]" />
 
       <div className="relative z-10 flex h-full items-center">
         <div className="w-full max-w-7xl mx-auto px-6 py-10 md:px-16 lg:mx-[130px] lg:px-8">
-          <div className="relative z-20 max-w-[540px]">
-            <p className="mb-3 text-sm tracking-[0.15em] text-sky-accent font-display md:text-base">
+          <div className="relative z-20 max-w-[470px]">
+            <p className="mb-4 text-sm tracking-[0.22em] text-sky-accent font-display md:text-base">
               {slide.eyebrow}
             </p>
             <h1
-              className="mb-5 text-4xl font-bold leading-[1.05] text-primary-foreground font-display md:text-5xl lg:text-[3.25rem]"
+              className="mb-6 text-4xl font-extrabold leading-[0.98] text-primary-foreground font-display md:text-5xl lg:text-[4rem]"
               style={{ whiteSpace: "pre-line" }}
             >
               {slide.title}
             </h1>
-            <p className="mb-8 max-w-[470px] text-base leading-relaxed text-primary-foreground/85 font-sans md:text-[1.05rem]">
+            <p className="mb-9 max-w-[440px] text-[1.02rem] leading-[1.65] text-primary-foreground/86 font-sans md:text-[1.08rem]">
               {slide.description}
             </p>
             <div className="flex flex-wrap gap-3">
@@ -265,7 +261,7 @@ export function BubbleConnectionSlide({ slide }) {
                   <a
                     key={btn.label}
                     href={btn.href}
-                    className="inline-flex items-center justify-center rounded bg-primary-blue px-7 py-[11px] text-[0.95rem] font-semibold text-accent-foreground transition-colors duration-200 hover:bg-primary-blue/90 font-display"
+                    className="inline-flex items-center justify-center rounded bg-[#3193d7] px-7 py-[13px] text-[0.95rem] font-semibold text-accent-foreground transition-colors duration-200 hover:bg-[#2586cc] font-display shadow-[0_10px_24px_rgba(49,147,215,0.25)]"
                   >
                     {btn.label}
                   </a>
@@ -273,7 +269,7 @@ export function BubbleConnectionSlide({ slide }) {
                   <a
                     key={btn.label}
                     href={btn.href}
-                    className="inline-flex items-center justify-center rounded border border-primary-foreground/65 px-7 py-[11px] text-[0.95rem] font-semibold text-primary-foreground transition-all duration-200 hover:border-primary-foreground hover:bg-primary-foreground/15 font-display"
+                    className="inline-flex items-center justify-center rounded border border-primary-foreground/65 px-7 py-[13px] text-[0.95rem] font-semibold text-primary-foreground transition-all duration-200 hover:border-primary-foreground hover:bg-primary-foreground/15 font-display"
                   >
                     {btn.label}
                   </a>
@@ -315,7 +311,7 @@ export function BubbleConnectionSlide({ slide }) {
 
       <div className="hidden sm:block absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <svg
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full scale-[1.03]"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -341,8 +337,8 @@ export function BubbleConnectionSlide({ slide }) {
                 <path
                   d={path}
                   fill="none"
-                  stroke="rgba(151, 230, 255, 0.12)"
-                  strokeWidth="1.4"
+                  stroke="rgba(151, 230, 255, 0.16)"
+                  strokeWidth="1.75"
                   strokeLinecap="round"
                   filter="url(#atom-connection-glow)"
                   vectorEffect="non-scaling-stroke"
@@ -350,18 +346,18 @@ export function BubbleConnectionSlide({ slide }) {
                 <path
                   d={path}
                   fill="none"
-                  stroke="rgba(90, 203, 255, 0.5)"
-                  strokeWidth="0.38"
+                  stroke="rgba(90, 203, 255, 0.62)"
+                  strokeWidth="0.42"
                   strokeLinecap="round"
                   vectorEffect="non-scaling-stroke"
                 />
                 <path
                   d={path}
                   fill="none"
-                  stroke="rgba(214, 130, 255, 0.42)"
-                  strokeWidth="0.22"
+                  stroke="rgba(214, 130, 255, 0.5)"
+                  strokeWidth="0.24"
                   strokeLinecap="round"
-                  strokeDasharray="1.5 2.8"
+                  strokeDasharray="1.4 2.8"
                   className="animate-[orbitDash_10s_linear_infinite]"
                   vectorEffect="non-scaling-stroke"
                 />
