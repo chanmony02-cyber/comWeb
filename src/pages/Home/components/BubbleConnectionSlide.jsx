@@ -49,31 +49,31 @@ const BUBBLE_LAYOUT = [
 
 const CONNECTIONS = [
   {
-    path: "M 42 34 C 46 31, 50 27, 55 23",
+    path: "M 42 34 C 46 34, 49 28, 55 23",
     runnerDurations: [5.5, 6.8],
   },
   {
-    path: "M 55 23 C 61 24, 68 28, 73 31",
+    path: "M 55 23 C 61 26, 58 29, 73 31",
     runnerDurations: [5.95, 7.15],
   },
   {
-    path: "M 42 34 C 39 46, 39 62, 43 75",
+    path: "M 42 34 C 39 45, 39 61, 43 75",
     runnerDurations: [6.4, 7.6],
   },
   {
-    path: "M 55 23 C 50 35, 44 52, 43 75",
+    path: "M 55 23 C 49 38, 56 46, 43 75",
     runnerDurations: [6.85, 7.95],
   },
   {
-    path: "M 55 23 C 61 36, 66 58, 69 79",
+    path: "M 55 23 C 61 37, 66 58, 69 79",
     runnerDurations: [7.3, 8.25],
   },
   {
-    path: "M 73 31 C 74 44, 74 60, 69 79",
+    path: "M 73 31 C 74 43, 74 60, 69 79",
     runnerDurations: [7.75, 8.6],
   },
   {
-    path: "M 43 75 C 51 73, 60 73, 69 79",
+    path: "M 43 75 C 50 72, 60 72, 69 79",
     runnerDurations: [8.2, 8.95],
   },
 ];
