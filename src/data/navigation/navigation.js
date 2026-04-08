@@ -12,7 +12,7 @@ export const navItems = [
 
 export const productsDropdownItems = [
   { label: "Our Products", href: ROUTES.OUR_PRODUCTS },
-  { label: "Software application", href: ROUTES.SOFTWARE_APPLICATION },
+  { label: "Software Application", href: ROUTES.SOFTWARE_APPLICATION },
 ];
 
 export const companyDropdownItems = [

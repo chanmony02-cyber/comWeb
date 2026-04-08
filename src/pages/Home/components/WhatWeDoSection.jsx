@@ -4,11 +4,8 @@ export default function WhatWeDoSection() {
   return (
     <section className="py-20 bg-background">
       <div className="container text-center">
-        <p className="text-primary-blue text-sm font-semibold tracking-widest uppercase mb-2 font-display">
-          OUR SERVICES
-        </p>
         <h2 className="text-foreground font-bold text-4xl md:text-5xl mb-4 font-display">
-          WHAT WE DO?
+          OUR SERVICES
         </h2>
         <p className="text-muted-foreground text-md max-w-2xl mx-auto mb-14 leading-relaxed font-sans">
           We deliver comprehensive solutions for electrical infrastructure, from

@@ -10,7 +10,7 @@ const BUBBLE_LAYOUT = [
     glow: "radial-gradient(circle at 50% 50%, rgba(92, 199, 255, 0.34), rgba(92, 199, 255, 0.12) 42%, transparent 72%)",
   },
   {
-    x: 54.6,
+    x: 56,
     y: 22.5,
     size: "clamp(11.6rem, 14.6vw, 14.1rem)",
     labelLines: ["Improving", "Operational", "Efficiency"],
@@ -35,7 +35,7 @@ const BUBBLE_LAYOUT = [
   },
   {
     x: 69,
-    y: 79,
+    y: 76,
     size: "clamp(14.7rem, 18vw, 17.1rem)",
     labelLines: [
       "Elevating\u00A0Customer",
@@ -47,6 +47,7 @@ const BUBBLE_LAYOUT = [
   },
 ];
 
+// curved arm
 const CONNECTIONS = [
   {
     path: "M 42 34 C 46 34, 49 28, 55 23",
