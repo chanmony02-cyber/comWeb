@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { NavDropdown } from "@/components/common/Navbar/NavDropdown";
 import { TopBar } from "@/components/common/Navbar/TopBar";
 import VHTLogo from "@/assets/images/VHT_Logo.png";
+import { siteConfig } from "@/config/siteConfig";
 import {
   companyDropdownItems,
   industriesDropdownItems,
@@ -42,8 +43,11 @@ export function Navbar() {
       <TopBar />
       <div className="border-b border-border">
         <div className="container flex items-center justify-between h-[var(--nav-height)]">
-          <Link to={ROUTES.HOME} className="flex items-center">
+          <Link to={ROUTES.HOME} className="flex items-center gap-3">
             <img src={VHTLogo} alt="VHT Logo" className="h-14 w-auto" />
+            <span className="inline-flex font-sans text-sm sm:text-lg font-semibold tracking-[0.03em] uppercase text-foreground">
+              {siteConfig.name}
+            </span>
           </Link>
 
           <nav className="hidden xl:flex text-lg items-center gap-8">

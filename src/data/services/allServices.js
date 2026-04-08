@@ -49,9 +49,9 @@ export const allServicesData = {
     items: [
       {
         id: 1,
-        title: "Expert Team",
+        title: "Trusted Local Expert Team",
         description:
-          "Highly trained professionals with years of industry experience.",
+          "Reliable local experts with proven experience you can trust.",
       },
       {
         id: 2,

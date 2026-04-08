@@ -37,7 +37,7 @@ export const heroSlides = [
   {
     id: 3,
     variant: "bubble-network",
-    eyebrow: "VH Technology",
+    eyebrow: "VHT Company",
     title: "CORE VALUES",
     description:
       "Our products are the building blocks of digital infrastructure, engineered to provide:",
