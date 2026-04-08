@@ -242,17 +242,17 @@ export function BubbleConnectionSlide({ slide }) {
 
       <div className="relative z-10 flex h-full items-center">
         <div className="w-full max-w-7xl mx-auto px-6 py-10 md:px-16 lg:mx-[130px] lg:px-8">
-          <div className="relative z-20 max-w-[470px]">
-            <p className="mb-4 text-sm tracking-[0.22em] text-sky-accent font-display md:text-base">
+          <div className="relative z-20 max-w-[600px]">
+            <p className="mb-4 text-md tracking-[0.22em] text-sky-accent font-display md:text-lg">
               {slide.eyebrow}
             </p>
             <h1
-              className="mb-6 text-4xl font-extrabold leading-[0.98] text-primary-foreground font-display md:text-5xl lg:text-[4rem]"
+              className="mb-6 text-4xl font-black leading-[0.98] tracking-[-0.02em] text-primary-foreground font-display md:text-5xl lg:text-[4rem]"
               style={{ whiteSpace: "pre-line" }}
             >
               {slide.title}
             </h1>
-            <p className="mb-9 max-w-[440px] text-[1.02rem] leading-[1.65] text-primary-foreground/86 font-sans md:text-[1.08rem]">
+            <p className="mb-9 max-w-[540px] text-md leading-[1.65] text-primary-foreground font-sans md:text-lg">
               {slide.description}
             </p>
             <div className="flex flex-wrap gap-3">
@@ -261,7 +261,7 @@ export function BubbleConnectionSlide({ slide }) {
                   <a
                     key={btn.label}
                     href={btn.href}
-                    className="inline-flex items-center justify-center rounded bg-[#3193d7] px-7 py-[13px] text-[0.95rem] font-semibold text-accent-foreground transition-colors duration-200 hover:bg-[#2586cc] font-display shadow-[0_10px_24px_rgba(49,147,215,0.25)]"
+                    className="inline-flex items-center justify-center rounded bg-[#3193d7] px-7 py-[13px] text-md font-semibold text-accent-foreground transition-colors duration-200 hover:bg-[#2586cc] font-display shadow-[0_10px_24px_rgba(49,147,215,0.25)]"
                   >
                     {btn.label}
                   </a>
@@ -269,7 +269,7 @@ export function BubbleConnectionSlide({ slide }) {
                   <a
                     key={btn.label}
                     href={btn.href}
-                    className="inline-flex items-center justify-center rounded border border-primary-foreground/65 px-7 py-[13px] text-[0.95rem] font-semibold text-primary-foreground transition-all duration-200 hover:border-primary-foreground hover:bg-primary-foreground/15 font-display"
+                    className="inline-flex items-center justify-center rounded border border-primary-foreground/65 px-7 py-[13px] text-md font-semibold text-primary-foreground transition-all duration-200 hover:border-primary-foreground hover:bg-primary-foreground/15 font-display"
                   >
                     {btn.label}
                   </a>
@@ -299,7 +299,7 @@ export function BubbleConnectionSlide({ slide }) {
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center px-4 pointer-events-none">
-                  <div className="block max-w-[78%] text-center text-[1.08rem] font-semibold leading-[1.06] uppercase font-display whitespace-pre-line">
+                  <div className="block max-w-[78%] text-center text-md font-semibold leading-[1.06] uppercase font-display whitespace-pre-line md:text-lg">
                     <BubbleLabel bubble={bubble} />
                   </div>
                 </div>
