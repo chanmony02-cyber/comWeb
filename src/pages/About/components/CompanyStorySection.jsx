@@ -87,39 +87,8 @@ export function CompanyStorySection({
     <section className="bg-background py-16 md:py-24">
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-12 xl:grid-cols-2 xl:gap-20">
-          <div className="order-1">
-            <span className="mb-4 inline-flex items-center rounded-full bg-sky-accent/30 px-4 py-1.5 font-sans text-md font-semibold text-primary-blue">
-              {label}
-            </span>
-
-            <h2 className="mb-5 whitespace-pre-line font-display text-2xl font-bold leading-tight text-navy md:text-3xl lg:text-5xl">
-              {titlePrefix}
-              <span className="text-primary-blue">
-                Electrical Infrastructure
-              </span>
-              {titleSuffix}
-            </h2>
-
-            <div className="mb-6 space-y-3">
-              {paragraphs.map((para, i) => (
-                <p
-                  key={i}
-                  className="font-sans text-md leading-relaxed text-muted-foreground"
-                >
-                  {para}
-                </p>
-              ))}
-            </div>
-
-            <Link
-              to={cta.href}
-              className="inline-flex items-center gap-1 rounded-md bg-primary-blue px-6 py-2.5 font-display text-lg font-semibold text-white transition-colors hover:border hover:border-primary-blue hover:bg-white hover:text-primary-blue"
-            >
-              {cta.label}
-            </Link>
-          </div>
-
-          <div className="relative order-2">
+          {/* Left */}
+          <div className="relative order-1">
             <div
               className="story-card-glow pointer-events-none absolute -inset-6 rounded-[2rem] blur-3xl"
               style={{
@@ -171,6 +140,38 @@ export function CompanyStorySection({
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10" />
             </div>
+          </div>
+          {/* Right */}
+          <div className="order-2">
+            <span className="mb-4 inline-flex items-center rounded-full bg-sky-accent/30 px-4 py-1.5 font-sans text-md font-semibold text-primary-blue">
+              {label}
+            </span>
+
+            <h2 className="mb-5 whitespace-pre-line font-display text-2xl font-bold leading-tight text-navy md:text-3xl lg:text-5xl">
+              {titlePrefix}
+              <span className="text-primary-blue">
+                Electrical Infrastructure
+              </span>
+              {titleSuffix}
+            </h2>
+
+            <div className="mb-6 space-y-3">
+              {paragraphs.map((para, i) => (
+                <p
+                  key={i}
+                  className="font-sans text-md leading-relaxed text-muted-foreground"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+
+            <Link
+              to={cta.href}
+              className="inline-flex items-center gap-1 rounded-md bg-primary-blue px-6 py-2.5 font-display text-lg font-semibold text-white transition-colors hover:border hover:border-primary-blue hover:bg-white hover:text-primary-blue"
+            >
+              {cta.label}
+            </Link>
           </div>
         </div>
       </div>
