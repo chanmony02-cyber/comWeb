@@ -8,9 +8,10 @@ const SERVICE_TAGS = [
   "Agriculture",
 ];
 
+// Atom Orbit
 const ATOM_ORBITS = [
   {
-    inset: "inset-[12%]",
+    inset: "inset-[8%]",
     tilt: "-16deg",
     squeeze: 0.64,
     duration: 16,
@@ -22,7 +23,7 @@ const ATOM_ORBITS = [
     },
   },
   {
-    inset: "inset-[20%]",
+    inset: "inset-[16%]",
     tilt: "28deg",
     squeeze: 0.78,
     duration: 20,
@@ -34,7 +35,7 @@ const ATOM_ORBITS = [
     },
   },
   {
-    inset: "inset-[28%]",
+    inset: "inset-[24%]",
     tilt: "8deg",
     squeeze: 0.9,
     duration: 24,
@@ -110,6 +111,7 @@ export function AboutHero({ title, subtitle }) {
                 className="absolute inset-0 m-auto h-[82%] w-[82%] object-contain select-none pointer-events-none opacity-10 blur-[0.5px]"
               />
 
+              {/* // Atom Orbit */}
               {ATOM_ORBITS.map((orbit) => (
                 <motion.div
                   key={`${orbit.inset}-${orbit.tilt}`}
@@ -171,7 +173,7 @@ export function AboutHero({ title, subtitle }) {
 
               <motion.div
                 aria-hidden="true"
-                className="absolute inset-[28%] rounded-full border border-sky-accent/20"
+                className="absolute inset-[22%] rounded-full border border-sky-accent/20"
                 animate={
                   prefersReducedMotion
                     ? undefined

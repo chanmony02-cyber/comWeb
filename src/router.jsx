@@ -2,6 +2,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "@/layouts/MainLayout";
+import { ScrollToTop } from "@/components/common/ScrollToTop";
 import { ROUTES } from "@/config/routes";
 
 const Home = lazy(() => import("@/pages/Home"));
@@ -46,6 +47,7 @@ const withMainLayout = (page) => <MainLayout>{page}</MainLayout>;
 const AppRouter = () => {
   return (
     <Suspense fallback={null}>
+      <ScrollToTop />
       <Routes>
         <Route path={ROUTES.HOME} element={withMainLayout(<Home />)} />
         <Route path={ROUTES.HOMEPAGE} element={withMainLayout(<Home />)} />
