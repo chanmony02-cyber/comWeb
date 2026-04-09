@@ -168,7 +168,7 @@ export function CompanyStorySection({
 
             <Link
               to={cta.href}
-              className="inline-flex items-center gap-1 rounded-md bg-primary-blue px-6 py-2.5 font-display text-lg font-semibold text-white transition-colors hover:border hover:border-primary-blue hover:bg-white hover:text-primary-blue"
+              className="inline-flex items-center gap-1 rounded-md border border-transparent bg-primary-blue px-6 py-2.5 font-display text-lg font-semibold text-white transition-colors hover:border-primary-blue hover:bg-white hover:text-primary-blue"
             >
               {cta.label}
             </Link>
