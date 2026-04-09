@@ -40,6 +40,11 @@ NO → src/pages/[PageName]/components/
 # ── CANONICAL FOLDER MAP ─────────────────────────────────────
 
 src/
+├── assets/
+│    ├── images/
+│    ├── icons/
+│    ├── fonts/
+│    └── media/
 ├── components/
 │ ├── common/ # Navbar, Footer, TopBar, Button
 │ └── ui/ # Reusable across 2+ unrelated pages
