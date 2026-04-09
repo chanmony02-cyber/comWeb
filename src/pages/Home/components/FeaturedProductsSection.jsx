@@ -13,7 +13,7 @@ export default function FeaturedProductsSection() {
             Featured Products
           </h2>
           <p className="text-muted-foreground text-md mb-5 font-sans">
-            Check out our best products
+            Explore a few real products from our catalog
           </p>
           <Link
             to={ROUTES.OUR_PRODUCTS}
@@ -29,7 +29,12 @@ export default function FeaturedProductsSection() {
               to={product.href || ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
               className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="overflow-hidden h-[360px] sm:h-[560px]">
+              <div className="overflow-hidden h-[360px] sm:h-[560px] relative">
+                {product.category ? (
+                  <span className="absolute left-4 top-4 z-10 rounded-full bg-navy px-3 py-1 text-xs font-semibold text-white">
+                    {product.category}
+                  </span>
+                ) : null}
                 <img
                   src={product.image}
                   alt={product.title}
