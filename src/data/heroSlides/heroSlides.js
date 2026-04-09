@@ -6,7 +6,7 @@ import hero2 from "@/assets/images/heroSections/HeroSection2-3.png";
 export const heroSlides = [
   {
     id: 1,
-    eyebrow: "VHT COMPANY",
+    eyebrow: "VHT | INNOVATION FOR A BETTER TOMORROW",	
     title: "VISION & MISSION",
     content: [
       {
@@ -31,10 +31,9 @@ export const heroSlides = [
   },
   {
     id: 2,
-    eyebrow: "OUR MISSION",
-    title: "WE MAKE QUALITY",
-    description:
-      "Providing innovative electrical infrastructure solutions for utilities and enterprises. Excellence in consulting, maintenance, and inspection services.",
+    eyebrow: "",
+    title: "We design and deliver intergrate digital transformation solution though:",
+    description: "Hardware Development | Software Development | Commuication",
     buttons: [
       { label: "About Us", href: ROUTES.HOME, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },

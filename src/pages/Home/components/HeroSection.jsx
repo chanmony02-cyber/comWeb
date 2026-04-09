@@ -54,101 +54,105 @@ export default function HeroSection() {
     >
       {/* Desktop: opacity-based slides */}
       <div className="hidden xl:block absolute inset-0">
-        {heroSlides.map((slide, i) => (
+        {heroSlides.map((slide, i) =>
           (() => {
             const hasStructuredCopy = Array.isArray(slide.content);
 
             return (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              i === current ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-          >
-            {slide.variant === "bubble-network" ? (
-              <BubbleConnectionSlide slide={slide} />
-            ) : (
-              <>
-                <img
-                  src={slide.image}
-                  alt={slide.title.replace("\n", " ")}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+              <div
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  i === current
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                {slide.variant === "bubble-network" ? (
+                  <BubbleConnectionSlide slide={slide} />
+                ) : (
+                  <>
+                    <img
+                      src={slide.image}
+                      alt={slide.title.replace("\n", " ")}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
 
-                <div
-                  className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
-                />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+                    />
 
-                <div className="relative z-10 h-full flex items-center">
-                  <div className="w-full max-w-7xl mx-[130px] px-8 md:px-16">
-                    {/* Text is here */}
-                    <div className={`max-w-[800px] ${hasStructuredCopy ? "max-w-[760px]" : ""}`}>
-                      <p
-                        className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-3 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                      >
-                        {slide.eyebrow}
-                      </p>
-                      <h1
-                        className={`text-primary-foreground font-bold leading-[1.05] mb-5 text-4xl md:text-5xl lg:text-[3.25rem] font-display transition-all duration-700 delay-150 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                        style={{ whiteSpace: "pre-line" }}
-                      >
-                        {slide.title}
-                      </h1>
-                      {hasStructuredCopy ? (
+                    <div className="relative z-10 h-full flex items-center">
+                      <div className="w-full max-w-7xl mx-[130px] px-8 md:px-16">
+                        {/* Text is here */}
                         <div
-                          className={`mb-8 space-y-4 max-w-[620px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                          className={`max-w-[800px] ${hasStructuredCopy ? "max-w-[760px]" : ""}`}
                         >
-                          {slide.content.map((item) => (
-                            <p
-                              key={item.label}
-                              className="text-base md:text-[1.05rem] leading-relaxed"
+                          <p
+                            className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-3 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                          >
+                            {slide.eyebrow}
+                          </p>
+                          <h1
+                            className={`text-primary-foreground font-bold leading-[1.05] mb-5 text-4xl md:text-5xl lg:text-[3.25rem] font-display transition-all duration-700 delay-150 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                            style={{ whiteSpace: "pre-line" }}
+                          >
+                            {slide.title}
+                          </h1>
+                          {hasStructuredCopy ? (
+                            <div
+                              className={`mb-8 space-y-4 max-w-[620px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
-                              <span className="block mb-1 text-sky-accent text-sm md:text-base tracking-[0.18em] font-display">
-                                {item.label}
-                              </span>
-                              {item.text}
-                            </p>
-                          ))}
-                        </div>
-                      ) : (
-                        <p
-                          className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[470px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                        >
-                          {slide.description}
-                        </p>
-                      )}
-                      <div
-                        className={`flex flex-wrap gap-3 transition-all duration-700 delay-300 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                      >
-                        {slide.buttons.map((btn) =>
-                          btn.variant === "primary" ? (
-                            <a
-                              key={btn.label}
-                              href={btn.href}
-                              className="inline-flex items-center justify-center px-7 py-[11px] rounded bg-primary-blue text-accent-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-blue/90 transition-colors duration-200"
-                            >
-                              {btn.label}
-                            </a>
+                              {slide.content.map((item) => (
+                                <p
+                                  key={item.label}
+                                  className="text-base md:text-[1.05rem] leading-relaxed"
+                                >
+                                  <span className="block mb-1 text-sky-accent text-sm md:text-base tracking-[0.18em] font-display">
+                                    {item.label}
+                                  </span>
+                                  {item.text}
+                                </p>
+                              ))}
+                            </div>
                           ) : (
-                            <a
-                              key={btn.label}
-                              href={btn.href}
-                              className="inline-flex items-center justify-center px-7 py-[11px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-foreground/15 hover:border-primary-foreground transition-all duration-200"
+                            <p
+                              className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[470px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
-                              {btn.label}
-                            </a>
-                          ),
-                        )}
+                              {slide.description}
+                            </p>
+                          )}
+                          <div
+                            className={`flex flex-wrap gap-3 transition-all duration-700 delay-300 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                          >
+                            {slide.buttons.map((btn) =>
+                              btn.variant === "primary" ? (
+                                <a
+                                  key={btn.label}
+                                  href={btn.href}
+                                  className="inline-flex items-center justify-center px-7 py-[11px] rounded bg-primary-blue text-accent-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-blue/90 transition-colors duration-200"
+                                >
+                                  {btn.label}
+                                </a>
+                              ) : (
+                                <a
+                                  key={btn.label}
+                                  href={btn.href}
+                                  className="inline-flex items-center justify-center px-7 py-[11px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-foreground/15 hover:border-primary-foreground transition-all duration-200"
+                                >
+                                  {btn.label}
+                                </a>
+                              ),
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
+                  </>
+                )}
+              </div>
             );
-          })()
-        ))}
+          })(),
+        )}
       </div>
 
       {/* Mobile: swipe-based slides */}
@@ -157,93 +161,97 @@ export default function HeroSection() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {heroSlides.map((slide, i) => (
+        {heroSlides.map((slide, i) =>
           (() => {
             const hasStructuredCopy = Array.isArray(slide.content);
 
             return (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              i === current ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-          >
-            {slide.variant === "bubble-network" ? (
-              <BubbleConnectionSlide slide={slide} />
-            ) : (
-              <>
-                <img
-                  src={slide.image}
-                  alt={slide.title.replace("\n", " ")}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div
-                  className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
-                />
-                <div className="relative z-10 h-full flex items-center">
-                  <div className="w-full max-w-7xl mx-auto px-6">
-                    <div className={`max-w-[580px] ${hasStructuredCopy ? "max-w-[620px]" : ""}`}>
-                      <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
-                        {slide.eyebrow}
-                      </p>
-                      <h1
-                        className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
-                        style={{ whiteSpace: "pre-line" }}
-                      >
-                        {slide.title}
-                      </h1>
-                      {hasStructuredCopy ? (
-                        <div className="mb-6 space-y-4 text-primary-foreground/90 font-sans">
-                          {slide.content.map((item) => (
-                            <p
-                              key={item.label}
-                              className="text-sm leading-relaxed"
-                            >
-                              <span className="block mb-1 text-sky-accent text-xs tracking-[0.18em] font-display">
-                                {item.label}
-                              </span>
-                              {item.text}
-                            </p>
-                          ))}
-                        </div>
-                      ) : (
-                        <p className="text-primary-foreground/85 text-sm leading-relaxed mb-6 max-w-[470px] font-sans">
-                          {slide.description}
-                        </p>
-                      )}
-                      <div className="flex flex-wrap gap-3">
-                        {slide.buttons.map((btn) =>
-                          btn.variant === "primary" ? (
-                            <a
-                              key={btn.label}
-                              href={btn.href}
-                              className="inline-flex items-center justify-center px-6 py-[10px] rounded bg-primary-blue text-accent-foreground font-semibold text-sm font-display"
-                            >
-                              {btn.label}
-                            </a>
+              <div
+                key={slide.id}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  i === current
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                {slide.variant === "bubble-network" ? (
+                  <BubbleConnectionSlide slide={slide} />
+                ) : (
+                  <>
+                    <img
+                      src={slide.image}
+                      alt={slide.title.replace("\n", " ")}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+                    />
+                    <div className="relative z-10 h-full flex items-center">
+                      <div className="w-full max-w-7xl mx-auto px-6">
+                        <div
+                          className={`max-w-[580px] ${hasStructuredCopy ? "max-w-[620px]" : ""}`}
+                        >
+                          <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
+                            {slide.eyebrow}
+                          </p>
+                          <h1
+                            className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
+                            style={{ whiteSpace: "pre-line" }}
+                          >
+                            {slide.title}
+                          </h1>
+                          {hasStructuredCopy ? (
+                            <div className="mb-6 space-y-4 text-primary-foreground/90 font-sans">
+                              {slide.content.map((item) => (
+                                <p
+                                  key={item.label}
+                                  className="text-sm leading-relaxed"
+                                >
+                                  <span className="block mb-1 text-sky-accent text-xs tracking-[0.18em] font-display">
+                                    {item.label}
+                                  </span>
+                                  {item.text}
+                                </p>
+                              ))}
+                            </div>
                           ) : (
-                            <a
-                              key={btn.label}
-                              href={btn.href}
-                              className="inline-flex items-center justify-center px-6 py-[10px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-sm font-display"
-                            >
-                              {btn.label}
-                            </a>
-                          ),
-                        )}
+                            <p className="text-primary-foreground/85 text-sm leading-relaxed mb-6 max-w-[470px] font-sans">
+                              {slide.description}
+                            </p>
+                          )}
+                          <div className="flex flex-wrap gap-3">
+                            {slide.buttons.map((btn) =>
+                              btn.variant === "primary" ? (
+                                <a
+                                  key={btn.label}
+                                  href={btn.href}
+                                  className="inline-flex items-center justify-center px-6 py-[10px] rounded bg-primary-blue text-accent-foreground font-semibold text-sm font-display"
+                                >
+                                  {btn.label}
+                                </a>
+                              ) : (
+                                <a
+                                  key={btn.label}
+                                  href={btn.href}
+                                  className="inline-flex items-center justify-center px-6 py-[10px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-sm font-display"
+                                >
+                                  {btn.label}
+                                </a>
+                              ),
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
+                  </>
+                )}
+              </div>
             );
-          })()
-        ))}
+          })(),
+        )}
       </div>
 
-      {/* Arrows â€“ desktop only */}
+      {/* Arrows desktop only */}
       {[
         ["prev", prev],
         ["next", next],
