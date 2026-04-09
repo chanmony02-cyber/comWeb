@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import VHTLogo from "@/assets/images/VHT_Logo.png";
+import VHTLogo from "@/assets/images/VHT_Logo - Stroke.png";
 import { siteConfig } from "@/config/siteConfig";
 
 const SERVICE_TAGS = [
@@ -104,13 +104,6 @@ export function AboutHero({ title, subtitle }) {
               <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(42,140,213,0.22)_0%,rgba(42,140,213,0.06)_42%,transparent_72%)] blur-2xl" />
               <div className="absolute inset-[9%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.03)_38%,transparent_74%)] blur-xl" />
 
-              <img
-                aria-hidden="true"
-                src={VHTLogo}
-                alt=""
-                className="absolute inset-0 m-auto h-[82%] w-[82%] object-contain select-none pointer-events-none opacity-10 blur-[0.5px]"
-              />
-
               {/* // Atom Orbit */}
               {ATOM_ORBITS.map((orbit) => (
                 <motion.div
@@ -162,29 +155,14 @@ export function AboutHero({ title, subtitle }) {
                     : { duration: 6, repeat: Infinity, ease: "easeInOut" }
                 }
               >
-                <div className="absolute inset-[14%] flex items-center justify-center rounded-full border bg-[#001439]/70 backdrop-blur-md">
+                <div className="absolute inset-[14%] flex items-center justify-center rounded-full bg-[#001439]/70 shadow-[0_0_0_1px_rgba(255,255,255,0.9),0_0_36px_rgba(159,207,255,0.55),0_0_90px_rgba(255,255,255,0.22)] backdrop-blur-md">
                   <img
                     src={VHTLogo}
                     alt={`${siteConfig.name} logo`}
-                    className="h-28 w-28 sm:h-32 sm:w-32 lg:h-40 lg:w-40 object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                    className="h-28 w-28 sm:h-32 sm:w-32 lg:h-40 lg:w-40 object-contain drop-shadow-[0_0_28px_rgba(255,255,255,0.35)]"
                   />
                 </div>
               </motion.div>
-
-              <motion.div
-                aria-hidden="true"
-                className="absolute inset-[22%] rounded-full border border-sky-accent/20"
-                animate={
-                  prefersReducedMotion
-                    ? undefined
-                    : { scale: [1, 1.04, 1], opacity: [0.55, 0.9, 0.55] }
-                }
-                transition={
-                  prefersReducedMotion
-                    ? undefined
-                    : { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
-                }
-              />
 
               {SPARKS.map((spark) => (
                 <motion.div
