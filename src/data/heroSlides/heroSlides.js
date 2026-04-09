@@ -6,10 +6,18 @@ import hero2 from "@/assets/images/heroSections/HeroSection2-3.png";
 export const heroSlides = [
   {
     id: 1,
-    eyebrow: "SMART INFRASTRUCTURE",
-    title: "FUTURE-READY CITIES",
-    description:
-      "Transforming urban landscapes with intelligent electrical systems, smart metering, and sustainable energy infrastructure for modern cities.",
+    eyebrow: "VHT COMPANY",
+    title: "VISION & MISSION",
+    content: [
+      {
+        label: "VISION:",
+        text: "To grow from a local tech firm into a globally recognized company.",
+      },
+      {
+        label: "MISSION:",
+        text: "Our mission is to create lasting value for society by delivering reliable hardware, software, and robust communication technology that addresses real-world challenges.",
+      },
+    ],
     buttons: [
       {
         label: "Learn More",
@@ -18,7 +26,7 @@ export const heroSlides = [
       },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
-    image: hero2,
+    image: hero1,
     overlay: "from-primary/5 via-primary/20 to-accent/5",
   },
   {
@@ -31,7 +39,7 @@ export const heroSlides = [
       { label: "About Us", href: ROUTES.HOME, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
-    image: hero1,
+    image: hero2,
     overlay: "from-primary/85 via-primary/60 to-accent/25",
   },
   {

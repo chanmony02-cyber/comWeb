@@ -55,6 +55,10 @@ export default function HeroSection() {
       {/* Desktop: opacity-based slides */}
       <div className="hidden xl:block absolute inset-0">
         {heroSlides.map((slide, i) => (
+          (() => {
+            const hasStructuredCopy = Array.isArray(slide.content);
+
+            return (
           <div
             key={slide.id}
             className={`absolute inset-0 transition-opacity duration-700 ${
@@ -78,7 +82,7 @@ export default function HeroSection() {
                 <div className="relative z-10 h-full flex items-center">
                   <div className="w-full max-w-7xl mx-[130px] px-8 md:px-16">
                     {/* Text is here */}
-                    <div className="max-w-[800px]">
+                    <div className={`max-w-[800px] ${hasStructuredCopy ? "max-w-[760px]" : ""}`}>
                       <p
                         className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-3 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                       >
@@ -90,11 +94,29 @@ export default function HeroSection() {
                       >
                         {slide.title}
                       </h1>
-                      <p
-                        className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[470px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                      >
-                        {slide.description}
-                      </p>
+                      {hasStructuredCopy ? (
+                        <div
+                          className={`mb-8 space-y-4 max-w-[620px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                        >
+                          {slide.content.map((item) => (
+                            <p
+                              key={item.label}
+                              className="text-base md:text-[1.05rem] leading-relaxed"
+                            >
+                              <span className="block mb-1 text-sky-accent text-sm md:text-base tracking-[0.18em] font-display">
+                                {item.label}
+                              </span>
+                              {item.text}
+                            </p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p
+                          className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[470px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                        >
+                          {slide.description}
+                        </p>
+                      )}
                       <div
                         className={`flex flex-wrap gap-3 transition-all duration-700 delay-300 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                       >
@@ -124,6 +146,8 @@ export default function HeroSection() {
               </>
             )}
           </div>
+            );
+          })()
         ))}
       </div>
 
@@ -134,6 +158,10 @@ export default function HeroSection() {
         onTouchEnd={handleTouchEnd}
       >
         {heroSlides.map((slide, i) => (
+          (() => {
+            const hasStructuredCopy = Array.isArray(slide.content);
+
+            return (
           <div
             key={slide.id}
             className={`absolute inset-0 transition-opacity duration-700 ${
@@ -154,7 +182,7 @@ export default function HeroSection() {
                 />
                 <div className="relative z-10 h-full flex items-center">
                   <div className="w-full max-w-7xl mx-auto px-6">
-                    <div className="max-w-[580px]">
+                    <div className={`max-w-[580px] ${hasStructuredCopy ? "max-w-[620px]" : ""}`}>
                       <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
                         {slide.eyebrow}
                       </p>
@@ -164,9 +192,25 @@ export default function HeroSection() {
                       >
                         {slide.title}
                       </h1>
-                      <p className="text-primary-foreground/85 text-sm leading-relaxed mb-6 max-w-[470px] font-sans">
-                        {slide.description}
-                      </p>
+                      {hasStructuredCopy ? (
+                        <div className="mb-6 space-y-4 text-primary-foreground/90 font-sans">
+                          {slide.content.map((item) => (
+                            <p
+                              key={item.label}
+                              className="text-sm leading-relaxed"
+                            >
+                              <span className="block mb-1 text-sky-accent text-xs tracking-[0.18em] font-display">
+                                {item.label}
+                              </span>
+                              {item.text}
+                            </p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-primary-foreground/85 text-sm leading-relaxed mb-6 max-w-[470px] font-sans">
+                          {slide.description}
+                        </p>
+                      )}
                       <div className="flex flex-wrap gap-3">
                         {slide.buttons.map((btn) =>
                           btn.variant === "primary" ? (
@@ -194,6 +238,8 @@ export default function HeroSection() {
               </>
             )}
           </div>
+            );
+          })()
         ))}
       </div>
 
