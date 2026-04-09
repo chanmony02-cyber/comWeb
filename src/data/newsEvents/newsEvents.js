@@ -3,6 +3,8 @@
 const NEWS_IMG =
   "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80&fit=crop";
 
+export const newsEventFilters = ["All", "News", "Events"];
+
 export const newsEventsItems = [
   {
     id: 1,

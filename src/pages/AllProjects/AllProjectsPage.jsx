@@ -1,15 +1,9 @@
 import { useState } from "react";
-import { allProjects } from "@/data/projects/projects";
+import { projectFilters, allProjects } from "@/data/projects/projects";
 import { AllProjectsHeroSection } from "./components/AllProjectsHeroSection";
 import { ProjectsListingSection } from "./components/ProjectsListingSection";
 
 const PAGE_SIZE = 6;
-const FILTERS = [
-  "All",
-  "Distribution Grid",
-  "Agriculture",
-  "City Infrastructure",
-];
 
 export default function AllProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -40,7 +34,7 @@ export default function AllProjectsPage() {
     <>
       <AllProjectsHeroSection title="All Projects" />
       <ProjectsListingSection
-        filters={FILTERS}
+        filters={projectFilters}
         activeFilter={activeFilter}
         onFilter={handleFilter}
         visibleProjects={visible}

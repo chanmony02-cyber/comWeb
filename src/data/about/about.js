@@ -15,6 +15,67 @@ export const aboutData = {
     subtitle:
       "Discover our story, values, and the passion that drives us to deliver excellence in every project.",
   },
+  heroVisuals: {
+    serviceTags: [
+      "Distribution Grid",
+      "City Infrastructure",
+      "Agriculture",
+    ],
+    atomOrbits: [
+      {
+        inset: "inset-[8%]",
+        tilt: "-16deg",
+        squeeze: 0.64,
+        duration: 16,
+        reverse: false,
+        particle: {
+          tone: "bg-sky-accent",
+          size: "h-3.5 w-3.5",
+          glow: "shadow-[0_0_18px_rgba(159,207,255,0.95)]",
+        },
+      },
+      {
+        inset: "inset-[16%]",
+        tilt: "28deg",
+        squeeze: 0.78,
+        duration: 20,
+        reverse: true,
+        particle: {
+          tone: "bg-white",
+          size: "h-3 w-3",
+          glow: "shadow-[0_0_16px_rgba(255,255,255,0.9)]",
+        },
+      },
+      {
+        inset: "inset-[24%]",
+        tilt: "8deg",
+        squeeze: 0.9,
+        duration: 24,
+        reverse: false,
+        particle: {
+          tone: "bg-primary-blue",
+          size: "h-2.5 w-2.5",
+          glow: "shadow-[0_0_14px_rgba(42,140,213,0.95)]",
+        },
+      },
+    ],
+    sparks: [
+      { top: "18%", left: "32%", rotate: "-28deg", width: "w-10", delay: 0 },
+      { top: "28%", left: "78%", rotate: "18deg", width: "w-12", delay: 0.35 },
+      { top: "70%", left: "24%", rotate: "32deg", width: "w-10", delay: 0.7 },
+      { top: "79%", left: "66%", rotate: "-20deg", width: "w-14", delay: 1.05 },
+    ],
+    microSparks: [
+      { top: "14%", left: "42%", delay: 0.1 },
+      { top: "22%", left: "71%", delay: 0.55 },
+      { top: "35%", left: "86%", delay: 0.25 },
+      { top: "62%", left: "84%", delay: 0.85 },
+      { top: "76%", left: "56%", delay: 0.4 },
+      { top: "68%", left: "18%", delay: 1.15 },
+      { top: "40%", left: "10%", delay: 0.7 },
+      { top: "24%", left: "18%", delay: 1.35 },
+    ],
+  },
 
   story: {
     label: "About Our Company",

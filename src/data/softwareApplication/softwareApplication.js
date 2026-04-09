@@ -65,6 +65,23 @@ export const softwareApplicationData = {
       "Animated phone shell with floating motion",
       "Masked data and compact operator views",
     ],
+    preview: {
+      dashboardCards: [
+        { label: "Active Devices", value: "10", tone: "bg-green-400/90" },
+        { label: "Active Gateways", value: "5", tone: "bg-orange-400/90" },
+      ],
+      dashboardTrend: [28, 54, 42, 70, 60, 86, 64],
+      applicationItems: [
+        { name: "A1", meta: "0 Device" },
+        { name: "A2", meta: "0 Device" },
+        { name: "APP003", meta: "0 Device" },
+      ],
+      gatewayItems: [
+        { name: "A1", status: "Never seen" },
+        { name: "A2", status: "Never seen" },
+        { name: "A3", status: "Never seen" },
+      ],
+    },
     slides: [
       {
         id: "login",

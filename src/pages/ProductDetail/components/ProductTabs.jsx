@@ -1,9 +1,5 @@
 import { useState } from "react";
-
-const TABS = [
-  { key: "description", label: "Description" },
-  { key: "specification", label: "Specification" },
-];
+import { productTabs } from "@/data/products/products";
 
 const formatSpecLabel = (label) =>
   label
@@ -25,7 +21,7 @@ export function ProductTabs({
       <div className="rounded-xl border border-border bg-white overflow-hidden">
         {/* Tab buttons */}
         <div className="flex border-b border-border">
-          {TABS.map((tab) => (
+          {productTabs.map((tab) => (
             <button
               key={tab.key}
               type="button"

@@ -6,17 +6,13 @@ import { CompanyStorySection } from "./components/CompanyStorySection";
 import { PowerSection } from "./components/PowerSection";
 import { MissionVisionSection } from "./components/MissionVisionSection";
 import { CoreValuesSection } from "./components/CoreValuesSection";
-import { ServicesSection } from "./components/ServicesSection";
 import { IndustriesWeServeSection } from "./components/IndustriesWeServeSection";
 import { WhyPartnerSection } from "./components/WhyPartnerSection";
-import { TeamSection } from "./components/TeamSection";
-// import PartnershipSection from "../Home/components/PartnershipSection";
 import { OurLocationSection } from "@/pages/Contact/components/OurLocationSection";
 
 export default function AboutPage() {
-  const { hero, story, powerSection, mission, coreValues, services } =
+  const { hero, story, powerSection, mission, coreValues, industries, whyPartner } =
     aboutData;
-  const { industries, whyPartner, team } = aboutData;
 
   return (
     <>
@@ -25,11 +21,8 @@ export default function AboutPage() {
       <PowerSection {...powerSection} />
       <MissionVisionSection {...mission} />
       <CoreValuesSection {...coreValues} />
-      {/* <ServicesSection {...services} /> */}
       <IndustriesWeServeSection {...industries} />
       <WhyPartnerSection {...whyPartner} />
-      {/* <TeamSection {...team} /> */}
-      {/* <PartnershipSection /> */}
       <OurLocationSection />
     </>
   );

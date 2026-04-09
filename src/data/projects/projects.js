@@ -21,6 +21,13 @@ const IMG_AG_2 =
 const IMG_AG_3 =
   "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&q=80&fit=crop";
 
+export const projectFilters = [
+  "All",
+  "Distribution Grid",
+  "Agriculture",
+  "City Infrastructure",
+];
+
 export const allProjects = [
   // ── Distribution Grid ────────────────────────────────────
   {
@@ -226,5 +233,3 @@ export const allProjects = [
 ];
 
 // ── Recent Projects (subset used on the Home page) ────────────────────────────
-// Picks the first 6 items so the homepage always reflects real project data.
-export const recentProjects = allProjects.slice(0, 6);

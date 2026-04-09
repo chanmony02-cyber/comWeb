@@ -23,25 +23,6 @@ const SLIDE_VARIANTS = {
   exit: { opacity: 0, y: -18, scale: 0.98 },
 };
 
-const DASHBOARD_CARDS = [
-  { label: "Active Devices", value: "10", tone: "bg-green-400/90" },
-  { label: "Active Gateways", value: "5", tone: "bg-orange-400/90" },
-];
-
-const DASHBOARD_TREND = [28, 54, 42, 70, 60, 86, 64];
-
-const APPLICATION_ITEMS = [
-  { name: "A1", meta: "0 Device" },
-  { name: "A2", meta: "0 Device" },
-  { name: "APP003", meta: "0 Device" },
-];
-
-const GATEWAY_ITEMS = [
-  { name: "A1", status: "Never seen" },
-  { name: "A2", status: "Never seen" },
-  { name: "A3", status: "Never seen" },
-];
-
 function useLowPowerExperience() {
   const prefersReducedMotion = useReducedMotion();
   const [isSmallViewport, setIsSmallViewport] = useState(false);
@@ -151,7 +132,7 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
           <span>9:41</span>
         </div>
         <div className="mt-5 grid gap-3">
-          {DASHBOARD_CARDS.map((card) => (
+          {dashboardCards.map((card) => (
             <div key={card.label} className="rounded-3xl border border-white/20 bg-white/10 p-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] uppercase tracking-[0.18em] text-white/75">
@@ -175,7 +156,7 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
             <span>Live</span>
           </div>
           <div className="mt-3 flex items-end gap-2">
-            {DASHBOARD_TREND.map((height) => (
+            {dashboardTrend.map((height) => (
               <span
                 key={height}
                 className="flex-1 rounded-t-full bg-white/80"
@@ -195,7 +176,7 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
         <span>9:41</span>
       </div>
       <div className="mt-5 grid gap-3">
-        {DASHBOARD_CARDS.map((card) => (
+        {dashboardCards.map((card) => (
           <div
             key={card.label}
             className="rounded-3xl border border-white/20 bg-white/10 p-3 backdrop-blur-sm"
@@ -227,7 +208,7 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
           <span>Live</span>
         </div>
         <div className="mt-3 flex items-end gap-2">
-          {DASHBOARD_TREND.map((height, index) => (
+          {dashboardTrend.map((height, index) => (
             <motion.span
               key={index}
               className="flex-1 rounded-t-full bg-white/80"
@@ -259,7 +240,7 @@ function PhoneApplicationScreen({ reducedMotion = false }) {
           Search applications
         </div>
         <div className="mt-4 space-y-3">
-          {APPLICATION_ITEMS.map((item) => (
+          {applicationItems.map((item) => (
             <div
               key={item.name}
               className="rounded-2xl border border-white bg-sky-accent/25 px-4 py-3 shadow-sm"
@@ -285,7 +266,7 @@ function PhoneApplicationScreen({ reducedMotion = false }) {
         Search applications
       </div>
       <div className="mt-4 space-y-3">
-        {APPLICATION_ITEMS.map((item, index) => (
+        {applicationItems.map((item, index) => (
           <motion.div
             key={item.name}
             className="rounded-2xl border border-white bg-sky-accent/25 px-4 py-3 shadow-sm"
@@ -312,7 +293,7 @@ function PhoneGatewayScreen() {
         <span>9:41</span>
       </div>
       <div className="mt-5 space-y-3">
-        {GATEWAY_ITEMS.map((item) => (
+        {gatewayItems.map((item) => (
           <div
             key={item.name}
             className="rounded-2xl border border-border/70 bg-white px-4 py-3 shadow-sm"
@@ -353,6 +334,8 @@ export function MobileExperienceSection({ mobileExperience }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const activeSlide = mobileExperience.slides[activeSlideIndex];
   const reduceMotion = useLowPowerExperience();
+  const { dashboardCards, dashboardTrend, applicationItems, gatewayItems } =
+    mobileExperience.preview;
 
   useEffect(() => {
     if (reduceMotion || mobileExperience.slides.length <= 1) {

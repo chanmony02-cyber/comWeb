@@ -1,15 +1,10 @@
 // src/pages/Home/components/FeaturedProductsSection.jsx
 
 import { Link } from "react-router-dom";
-import { products } from "@/data/products/products";
+import { featuredProducts } from "@/data/featuredProducts/featuredProducts";
 import { ROUTES } from "@/config/routes";
 
-// Pick whichever 3 product IDs you want to feature on the homepage
-const FEATURED_IDS = [1, 5, 7];
-
 export default function FeaturedProductsSection() {
-  const featuredProducts = products.filter((p) => FEATURED_IDS.includes(p.id));
-
   return (
     <section className="py-20 bg-section-alt">
       <div className="container">
@@ -31,19 +26,19 @@ export default function FeaturedProductsSection() {
           {featuredProducts.map((product) => (
             <Link
               key={product.id}
-              to={ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+              to={product.href || ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
               className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="overflow-hidden h-[360px] sm:h-[560px]">
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={product.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-5">
                 <h3 className="text-foreground font-bold text-xl mb-2 font-display">
-                  {product.name}
+                  {product.title}
                 </h3>
                 <p className="text-muted-foreground text-md leading-relaxed font-sans">
                   {product.description}

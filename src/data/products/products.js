@@ -7,6 +7,11 @@ import productPanelBoard from "@/assets/images/products/product-panel-board.jpg"
 import productSurgeArrester from "@/assets/images/products/product-surge-arrester.jpg";
 import productTransformer from "@/assets/images/products/product-transformer.jpg";
 
+export const productTabs = [
+  { key: "description", label: "Description" },
+  { key: "specification", label: "Specification" },
+];
+
 export const products = [
   {
     id: 1,

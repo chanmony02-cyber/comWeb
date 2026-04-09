@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { newsEventsItems } from "@/data/newsEvents/newsEvents";
+import { newsEventFilters, newsEventsItems } from "@/data/newsEvents/newsEvents";
 import { NewsEventsHeroSection } from "./components/NewsEventsHeroSection";
 import { NewsEventsListingSection } from "./components/NewsEventsListingSection";
 
 const PAGE_SIZE = 6;
-const FILTERS = ["All", "News", "Events"];
 
 export default function NewsEventsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -35,7 +34,7 @@ export default function NewsEventsPage() {
     <>
       <NewsEventsHeroSection title="News & Events" />
       <NewsEventsListingSection
-        filters={FILTERS}
+        filters={newsEventFilters}
         activeFilter={activeFilter}
         onFilter={handleFilter}
         visibleItems={visible}
