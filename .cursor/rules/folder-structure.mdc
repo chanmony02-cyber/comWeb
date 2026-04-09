@@ -1,0 +1,195 @@
+---
+description: Enforces the correct folder structure and where to place every type of file
+alwaysApply: true
+---
+
+<!--
+  AI INSTRUCTION
+  ==============
+  Apply this rule on EVERY task — whether creating a new file, moving a file,
+  or suggesting where code should live. Always use the decision tree below
+  before placing any file. Never deviate from the canonical folder map.
+-->
+
+# Folder Structure Rules
+
+## Decision Tree — Run This Before Placing Any File
+
+```
+Is it used on 2+ UNRELATED pages?
+  ✅ YES → src/components/ui/
+  ❌ NO  →
+    Is it a layout shell (Navbar, Footer, TopBar)?
+      ✅ YES → src/components/common/[Name]/
+      ❌ NO  →
+        Is it shared across 2+ pages in the SAME section?
+          ✅ YES → src/pages/[SectionGroup]/components/
+          ❌ NO  → src/pages/[PageName]/components/
+```
+
+## Canonical Folder Map
+
+```
+src/
+├── assets/
+│    ├── images/
+│    ├── icons/
+│    ├── fonts/
+│    └── media/
+├── components/
+│   ├── common/                    # App-wide shell — Navbar, Footer, TopBar, Button
+│   │   ├── Navbar/
+│   │   │   └── Navbar.jsx
+│   │   ├── Footer/
+│   │   │   └── Footer.jsx
+│   │   ├── Button/
+│   │   │   └── Button.jsx
+│   │   └── TopBar/
+│   │       └── TopBar.jsx
+│   │
+│   └── ui/                        # Reusable across 2+ unrelated pages
+│       ├── SectionHeader.jsx
+│       ├── GetInTouchForm.jsx
+│       ├── FAQAccordion.jsx
+│       ├── ProductCard.jsx
+│       ├── ServiceCard.jsx
+│       ├── BackButton.jsx
+│       └── StatsBar.jsx
+│
+├── pages/
+│   ├── Home/
+│   │   ├── Home.jsx
+│   │   ├── index.js
+│   │   └── components/
+│   │       ├── HeroSection.jsx
+│   │       ├── WhatWeDoSection.jsx
+│   │       ├── FeaturedProductsSection.jsx
+│   │       ├── IndustriesSolutionSection.jsx
+│   │       ├── RecentProjectsSection.jsx
+│   │       └── PartnershipSection.jsx
+│   │
+│   ├── About/
+│   │   ├── About.jsx
+│   │   ├── index.js
+│   │   └── components/
+│   │       ├── AboutHeroSection.jsx
+│   │       ├── MissionVisionSection.jsx
+│   │       ├── CoreValuesSection.jsx
+│   │       ├── MeetLeadersSection.jsx
+│   │       └── DiverseExpertiseSection.jsx
+│   │
+│   ├── Products/
+│   │   ├── ProductsPage.jsx
+│   │   ├── index.js
+│   │   └── components/
+│   │       ├── ProductsHero.jsx
+│   │       ├── ProductCategoryTabs.jsx
+│   │       └── ProductGrid.jsx
+│   │
+│   ├── ProductDetail/
+│   │   ├── ProductDetailPage.jsx
+│   │   ├── index.js
+│   │   └── components/
+│   │       ├── ProductImageGallery.jsx
+│   │       ├── ProductInfoPanel.jsx
+│   │       ├── ProductTabs.jsx
+│   │       └── RelatedProducts.jsx
+│   │
+│   ├── Services/
+│   │   ├── ServicesPage.jsx
+│   │   ├── index.js
+│   │   └── components/
+│   │       ├── ServicesHero.jsx
+│   │       ├── OurServicesGrid.jsx
+│   │       └── WhyChooseUsSection.jsx
+│   │
+│   ├── ServiceDetail/             # Shared by Consultants, Maintenance, Inspections
+│   │   ├── ConsultantsPage.jsx
+│   │   ├── MaintenancePage.jsx
+│   │   ├── InspectionsPage.jsx
+│   │   ├── index.js
+│   │   └── components/
+│   │       ├── ServiceDetailHero.jsx
+│   │       ├── ServiceOverview.jsx
+│   │       ├── CoreExpertiseGrid.jsx
+│   │       ├── OurProcessSteps.jsx
+│   │       ├── EquipmentInspectionGrid.jsx
+│   │       └── CommonIssuesGrid.jsx
+│   │
+│   ├── Industries/
+│   │   └── DistributionGrid/
+│   │       ├── DistributionGridPage.jsx
+│   │       ├── index.js
+│   │       └── components/
+│   │           ├── IndustryHero.jsx
+│   │           ├── ProblemSection.jsx
+│   │           ├── OurSolutionsGrid.jsx
+│   │           └── RecentProjectsList.jsx
+│   │
+│   ├── Solutions/
+│   │   └── SoftwareApplication/
+│   │       ├── SoftwareAppPage.jsx
+│   │       ├── index.js
+│   │       └── components/
+│   │           ├── SoftwareHero.jsx
+│   │           ├── KeyFeaturesSection.jsx
+│   │           ├── PlatformCapabilitiesGrid.jsx
+│   │           ├── MonitorOnTheGo.jsx
+│   │           ├── PerformanceInsights.jsx
+│   │           ├── WhoItsBuiltFor.jsx
+│   │           └── HowItWorksSection.jsx
+│   │
+│   └── Contact/
+│       ├── ContactPage.jsx
+│       └── index.js
+│
+├── layouts/
+│   ├── MainLayout.jsx             # TopBar + Navbar + {children} + Footer
+│   └── AdminLayout.jsx
+│
+├── data/                          # ALL static data arrays live here — never in components
+│   ├── products/products.js
+│   ├── services.jsx               # .jsx because entries contain inline SVG icons
+│   ├── industries/industries.js
+│   ├── projects/projects.js
+│   ├── partners/partners.js
+│   ├── navigation/navigation.js
+│   └── faqs/faqs.js
+│   └── ...
+│
+├── hooks/
+│   ├── useScrollPosition.js
+│   ├── useMediaQuery.js
+│   └── useForm.js
+│
+├── config/
+│   ├── routes.js                  # All route path constants
+│   └── siteConfig.js             # Company name, phone, email, social, address
+│
+├── services/
+│   ├── api.js
+│   └── contactService.js
+│
+├── utils/
+│   ├── formatDate.js
+│   ├── validators.js
+│   └── constants.js
+│
+└── styles/
+    └── index.css                  # Tailwind directives + CSS custom properties
+```
+
+## Naming Conventions
+
+- Component files → `PascalCase.jsx` (e.g. `SectionHeader.jsx`)
+- Data files → `camelCase.js`, use `.jsx` only if the file contains JSX (inline SVG)
+- Hook files → `camelCase.js` prefixed with `use` (e.g. `useScrollPosition.js`)
+- Utility files → `camelCase.js` (e.g. `formatDate.js`)
+- Every page folder → must have `index.js` that re-exports the page default
+
+## Page Section Rule
+
+- Every page folder should split section-level UI into a local `components/` folder.
+- Keep the page file focused on composition, data plumbing, and layout only.
+- If a page has multiple substantial sections, each section should live in its own component file under `src/pages/[PageName]/components/`.
+- Do not keep reusable or section-sized JSX inline in the page file when it can be extracted cleanly.
