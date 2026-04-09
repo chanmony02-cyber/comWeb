@@ -46,7 +46,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden bg-navy select-none"
+      className="relative w-full h-[500px] md:h-[600px] lg:h-[800px] overflow-hidden bg-navy select-none"
       // To turn off autoplay when mouse is over the slider
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -81,11 +81,12 @@ export default function HeroSection() {
                       className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
                     />
 
+                    {/* Text is here */}
                     <div className="relative z-10 h-full flex items-center">
-                      <div className="w-full max-w-7xl mx-[130px] px-8 md:px-16">
-                        {/* Text is here */}
+                      {/* padding */}
+                      <div className="w-full max-w-7xl mx-[200px] px-0">
                         <div
-                          className={`max-w-[800px] ${hasStructuredCopy ? "max-w-[760px]" : ""}`}
+                          className={`max-w-900px] ${hasStructuredCopy ? "max-w-[800px]" : ""}`}
                         >
                           <p
                             className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-3 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
@@ -100,7 +101,7 @@ export default function HeroSection() {
                           </h1>
                           {hasStructuredCopy ? (
                             <div
-                              className={`mb-8 space-y-4 max-w-[620px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`mb-8 space-y-4 max-w-[650px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.content.map((item) => (
                                 <p
@@ -116,7 +117,7 @@ export default function HeroSection() {
                             </div>
                           ) : (
                             <p
-                              className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[470px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[580px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.description}
                             </p>
