@@ -55,6 +55,56 @@ const SPARKS = [
   { top: "79%", left: "66%", rotate: "-20deg", width: "w-14", delay: 1.05 },
 ];
 
+const MICRO_SPARKS = [
+  { top: "14%", left: "42%", delay: 0.1 },
+  { top: "22%", left: "71%", delay: 0.55 },
+  { top: "35%", left: "86%", delay: 0.25 },
+  { top: "62%", left: "84%", delay: 0.85 },
+  { top: "76%", left: "56%", delay: 0.4 },
+  { top: "68%", left: "18%", delay: 1.15 },
+  { top: "40%", left: "10%", delay: 0.7 },
+  { top: "24%", left: "18%", delay: 1.35 },
+];
+
+// const ELECTRIC_SPARKS = [
+//   {
+//     top: "6%",
+//     left: "14%",
+//     rotate: "-18deg",
+//     width: "w-28",
+//     height: "h-6",
+//     delay: 0,
+//     d: "M2 18L10 12L16 20L23 9L30 15L38 7L46 18L54 12L61 20L69 11L77 16L86 9L98 14",
+//   },
+//   {
+//     top: "14%",
+//     right: "7%",
+//     rotate: "14deg",
+//     width: "w-24",
+//     height: "h-5",
+//     delay: 0.4,
+//     d: "M3 14L11 8L18 18L26 10L33 15L41 6L49 13L58 9L66 16L74 8L83 14L91 7L98 11",
+//   },
+//   {
+//     bottom: "10%",
+//     left: "18%",
+//     rotate: "20deg",
+//     width: "w-20",
+//     height: "h-5",
+//     delay: 0.8,
+//     d: "M2 16L9 11L15 19L23 9L30 17L38 8L46 15L54 10L61 19L69 12L77 18L85 10L98 16",
+//   },
+//   {
+//     bottom: "18%",
+//     right: "10%",
+//     rotate: "-12deg",
+//     width: "w-26",
+//     height: "h-6",
+//     delay: 1.1,
+//     d: "M1 16L9 9L17 18L24 12L31 20L39 10L47 17L55 8L63 15L71 10L80 18L88 11L98 15",
+//   },
+// ];
+
 export function AboutHero({ title, subtitle }) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -202,6 +252,92 @@ export function AboutHero({ title, subtitle }) {
                   <span className="h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_14px_rgba(255,255,255,0.95)]" />
                 </motion.div>
               ))}
+
+              {MICRO_SPARKS.map((spark) => (
+                <motion.span
+                  key={`micro-${spark.top}-${spark.left}`}
+                  aria-hidden="true"
+                  className="absolute h-1 w-1 rounded-full bg-white/95 shadow-[0_0_12px_rgba(255,255,255,0.95)]"
+                  style={{ top: spark.top, left: spark.left }}
+                  animate={
+                    prefersReducedMotion
+                      ? undefined
+                      : {
+                          opacity: [0.1, 1, 0.15],
+                          scale: [0.6, 1.4, 0.8],
+                        }
+                  }
+                  transition={
+                    prefersReducedMotion
+                      ? undefined
+                      : {
+                          duration: 1.8,
+                          delay: spark.delay,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }
+                  }
+                />
+              ))}
+
+              {/* {ELECTRIC_SPARKS.map((spark) => (
+                <motion.svg
+                  key={`electric-${spark.delay}-${spark.rotate}`}
+                  aria-hidden="true"
+                  viewBox="0 0 100 40"
+                  className={`absolute ${spark.width} ${spark.height} overflow-visible`}
+                  style={{
+                    top: spark.top,
+                    right: spark.right,
+                    bottom: spark.bottom,
+                    left: spark.left,
+                    transform: `rotate(${spark.rotate})`,
+                  }}
+                  animate={
+                    prefersReducedMotion
+                      ? undefined
+                      : {
+                          opacity: [0.1, 1, 0.15],
+                          scale: [0.9, 1.05, 0.92],
+                        }
+                  }
+                  transition={
+                    prefersReducedMotion
+                      ? undefined
+                      : {
+                          duration: 1.6,
+                          delay: spark.delay,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }
+                  }
+                >
+                  <path
+                    d={spark.d}
+                    fill="none"
+                    stroke="rgba(159,207,255,0.9)"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity="0.35"
+                    style={{
+                      filter: "drop-shadow(0 0 10px rgba(159,207,255,0.9))",
+                    }}
+                  />
+                  <path
+                    d={spark.d}
+                    fill="none"
+                    stroke="rgba(255,255,255,0.98)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={{
+                      filter:
+                        "drop-shadow(0 0 6px rgba(159,207,255,0.95)) drop-shadow(0 0 12px rgba(255,255,255,0.7))",
+                    }}
+                  />
+                </motion.svg>
+              ))} */}
             </div>
           </div>
         </div>

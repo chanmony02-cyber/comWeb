@@ -31,9 +31,9 @@ export function MissionVisionSection({
         </div>
 
         {/* Mission + Vision cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Mission */}
-          <div className=" h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
+          <div className=" h-full bg-card border border-border rounded-2xl p-6 xl:p-16 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
               <img
@@ -48,6 +48,7 @@ export function MissionVisionSection({
             <p className="text-muted-foreground text-xl leading-relaxed font-sans">
               {missionText}
             </p>
+            {/* Bullet list at here */}
             {/* <ul className="flex flex-col gap-2 mt-1">
               {missionBullets.map((bullet, i) => (
                 <li
@@ -62,7 +63,7 @@ export function MissionVisionSection({
           </div>
 
           {/* Vision */}
-          <div className="h-full bg-card border border-border rounded-2xl p-8 xl:p-20 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
+          <div className="h-full bg-card border border-border rounded-2xl p-6 xl:p-16 flex flex-col gap-5 shadow-sm hover:-translate-y-1 hover:shadow-md hover:border-primary-blue/30 transition-all duration-300">
             {/* Icon */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-primary-blue/10 flex items-center justify-center">
               <img
@@ -77,6 +78,7 @@ export function MissionVisionSection({
             <p className="text-muted-foreground text-xl leading-relaxed font-sans">
               {visionText}
             </p>
+            {/* Bullet list at here */}
             {/* <ul className="flex flex-col gap-2 mt-1">
               {visionBullets.map((bullet, i) => (
                 <li
