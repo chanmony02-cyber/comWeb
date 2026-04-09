@@ -155,7 +155,7 @@ export function Footer() {
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="hover:text-primary-blue transition-colors"
+                  className="inline-flex whitespace-nowrap hover:text-primary-blue transition-colors"
                 >
                   {siteConfig.phone}
                 </a>

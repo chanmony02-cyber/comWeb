@@ -1,6 +1,7 @@
 // src/data/heroSlides/heroSlides.js
 import { ROUTES } from "@/config/routes";
-import hero1 from "@/assets/images/heroSections/companyHero1.webp";
+import hero1 from "@/assets/images/heroSections/Banner1.webp";
+import hero2 from "@/assets/images/heroSections/HeroSection2-3.png";
 
 export const heroSlides = [
   {
@@ -17,7 +18,7 @@ export const heroSlides = [
       },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
-    image: hero1,
+    image: hero2,
     overlay: "from-primary/5 via-primary/20 to-accent/5",
   },
   {
@@ -30,8 +31,7 @@ export const heroSlides = [
       { label: "About Us", href: ROUTES.HOME, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&fit=crop",
+    image: hero1,
     overlay: "from-primary/85 via-primary/60 to-accent/25",
   },
   {

@@ -205,7 +205,7 @@ export function BubbleConnectionSlide({ slide }) {
 
       <div className="relative z-10 flex h-full items-center">
         <div className="w-full max-w-7xl mx-auto px-6 py-10 md:px-16 lg:mx-[130px] lg:px-8">
-          <div className="relative z-20 max-w-[600px]">
+          <div className="relative z-20 max-w-[600px] lg:pl-8 xl:pl-12">
             <p className="mb-4 text-md tracking-[0.22em] text-sky-accent font-display md:text-lg">
               {slide.eyebrow}
             </p>
