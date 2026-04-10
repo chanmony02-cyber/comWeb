@@ -9,7 +9,13 @@ const PANEL_CLASS =
 export default function ScreenPreview({ type, className = "" }) {
   if (type === "login") {
     return (
-      <div className={cn(PANEL_CLASS, className)}>
+      <div
+        className={cn(
+          PANEL_CLASS,
+          "flex flex-col items-center justify-center",
+          className,
+        )}
+      >
         <div className="flex items-center justify-center">
           <div className="h-14 w-14 rounded-full bg-sky-accent/70 flex items-center justify-center shadow-inner">
             <img
@@ -19,7 +25,7 @@ export default function ScreenPreview({ type, className = "" }) {
             />
           </div>
         </div>
-        <div className="mt-4 space-y-3">
+        <div className="mt-12 space-y-3 w-full max-w-xs">
           <div className="h-9 rounded-full bg-muted/70 border border-border/60 flex items-center px-3 text-[10px] text-muted-foreground">
             Select tenant
           </div>

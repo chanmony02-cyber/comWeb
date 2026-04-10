@@ -46,6 +46,7 @@ export function SoftwareApplicationHero({ hero }) {
             </Button>
           </div>
         </div>
+        {/* Phone section */}
         <div className="relative">
           <div className="rounded-[36px] border border-white/30 bg-white/10 p-6 backdrop-blur">
             <ScreenPreview type="dashboard" />
