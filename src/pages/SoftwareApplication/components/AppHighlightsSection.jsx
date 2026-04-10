@@ -15,7 +15,7 @@ export function AppHighlightsSection({ screens }) {
           align="left"
           titleClassName="text-3xl md:text-4xl lg:text-5xl"
         />
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16">
           {screens.items.map((screen) => (
             <div
               key={screen.id}

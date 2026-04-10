@@ -28,8 +28,7 @@ export const softwareApplicationData = {
       {
         id: "dashboard",
         title: "Operational dashboard",
-        description:
-          "Status rings and quick totals reveal health at a glance.",
+        description: "Status rings and quick totals reveal health at a glance.",
         points: ["Device health split", "Gateway uptime", "Map filters"],
       },
       {
@@ -49,8 +48,7 @@ export const softwareApplicationData = {
       {
         id: "more",
         title: "Account & support",
-        description:
-          "Profile, dark mode, and help access in one place.",
+        description: "Profile, dark mode, and help access in one place.",
         points: ["Role profile", "Dark mode toggle", "Help & logout"],
       },
     ],
@@ -72,14 +70,14 @@ export const softwareApplicationData = {
       ],
       dashboardTrend: [28, 54, 42, 70, 60, 86, 64],
       applicationItems: [
-        { name: "A1", meta: "0 Device" },
-        { name: "A2", meta: "0 Device" },
-        { name: "APP003", meta: "0 Device" },
+        { name: "Zone 1", meta: "0 Device" },
+        { name: "Zone 2", meta: "0 Device" },
+        { name: "Zone 3", meta: "0 Device" },
       ],
       gatewayItems: [
-        { name: "A1", status: "Never seen" },
-        { name: "A2", status: "Never seen" },
-        { name: "A3", status: "Never seen" },
+        { name: "Zone 1", status: "Never seen" },
+        { name: "Zone 2", status: "Never seen" },
+        { name: "Zone 3", status: "Never seen" },
       ],
     },
     slides: [
@@ -179,7 +177,6 @@ export const softwareApplicationData = {
   },
   cta: {
     title: "Ready to explore the software application?",
-    subtitle:
-      "We can tailor the UI to your operation and deployment model.",
+    subtitle: "We can tailor the UI to your operation and deployment model.",
   },
 };

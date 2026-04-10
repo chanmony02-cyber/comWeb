@@ -48,8 +48,8 @@ export default function HeroSection() {
     <section
       className="relative w-full h-[500px] md:h-[600px] lg:h-[730px] overflow-hidden bg-navy select-none"
       // To turn off autoplay when mouse is over the slider
-      // onMouseEnter={() => setPaused(true)}
-      // onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
       aria-label="Hero Slider"
     >
       {/* Desktop: opacity-based slides */}
@@ -84,13 +84,13 @@ export default function HeroSection() {
                     {/* Text is here */}
                     <div className="relative z-10 h-full flex items-center">
                       {/* padding */}
-                      <div className="w-full max-w-7xl mx-[200px] px-0">
+                      <div className=" max-w-7xl mx-[200px] px-0 ">
                         <div
                           className={`${hasStructuredCopy ? "max-w-[800px]" : "max-w-[900px]"}`}
                         >
                           {/* DESKTOP EYEBROW - Change text-sm, text-base for font size */}
                           <p
-                            className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                            className={` text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                           >
                             {slide.eyebrow}
                           </p>
@@ -100,7 +100,7 @@ export default function HeroSection() {
                               className={`text-primary-foreground font-bold leading-[1.05] mb-5 font-display transition-all duration-700 delay-150 ${
                                 slide.emphasizeLabels
                                   ? "text-5xl md:text-6xl lg:text-[4rem]"
-                                  : "text-4xl md:text-3xl lg:text-4xl"
+                                  : "text-4xl md:text-3xl lg:text-[39px]"
                               } ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                               style={{ whiteSpace: "pre-line" }}
                             >
@@ -110,7 +110,7 @@ export default function HeroSection() {
                           {hasStructuredCopy ? (
                             // DESKTOP STRUCTURED COPY (TYPE 1: Vision/Mission style)
                             <div
-                              className={`mb-8 space-y-10 max-w-[750px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`mb-8 space-y-10 max-w-[800px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.content.map((item) => (
                                 // Description body text - Change text-lg, text-xl for size
@@ -123,7 +123,7 @@ export default function HeroSection() {
                                     className={`block mb-1 font-sans ${
                                       slide.emphasizeLabels
                                         ? // label style - Change text-lg, text-xl, text-4xl for emphasizeLabels=true
-                                          "text-sky-accent text-lg md:text-xl lg:text-4xl font-bold uppercase tracking-wide"
+                                          "text-sky-accent text-lg md:text-xl lg:text-5xl font-bold uppercase tracking-wide"
                                         : "text-sky-accent text-sm md:text-base tracking-[0.18em]"
                                     }`}
                                   >
