@@ -131,7 +131,7 @@ export default function HeroSection() {
                             </div>
                           ) : (
                             <p
-                              className={`text-primary-foreground/85 text-base md:text-[1.05rem] leading-relaxed mb-8 max-w-[580px] font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-base md:text-[1.05rem] leading-relaxed mb-8 ${slide.preventWrap ? "max-w-[900px]" : "max-w-[580px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""} transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.description}
                             </p>
@@ -238,7 +238,9 @@ export default function HeroSection() {
                               ))}
                             </div>
                           ) : (
-                            <p className="text-primary-foreground/85 text-sm leading-relaxed mb-6 max-w-[470px] font-sans">
+                            <p
+                              className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-sm leading-relaxed mb-6 ${slide.preventWrap ? "max-w-full" : "max-w-[470px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""}`}
+                            >
                               {slide.description}
                             </p>
                           )}

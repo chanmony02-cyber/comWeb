@@ -32,16 +32,15 @@ export default function IndustriesSolutionSection() {
               </div>
               {/* Text */}
               <div className="w-full md:w-1/2">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="w-2.5 h-2.5 rounded-full bg-primary-blue flex-shrink-0" />
-                  <h3 className="text-foreground font-bold text-2xl md:text-3xl font-display">
+                <div className="flex items-center gap-3 mb-5">
+                  <h3 className="text-foreground font-bold text-2xl md:text-4xl font-display">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-5 max-w-md font-sans">
+                <p className="text-muted-foreground text-lg leading-relaxed mb-5 max-w-2xl font-sans text-justify">
                   {item.description}
                 </p>
-                <ul className="flex flex-col gap-2">
+                {/* <ul className="flex flex-col gap-2">
                   {item.bullets.map((b) => (
                     <li
                       key={b}
@@ -51,7 +50,7 @@ export default function IndustriesSolutionSection() {
                       {b}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             </div>
           ))}

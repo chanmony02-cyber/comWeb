@@ -37,6 +37,8 @@ export const heroSlides = [
       "We design and deliver intergrate digital transformation solution though:",
     description:
       "Hardware Development | Software Development | Communication Technology",
+    useSecondaryColor: true,
+    preventWrap: true,
     buttons: [
       { label: "About Us", href: ROUTES.HOME, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
