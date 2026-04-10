@@ -1,7 +1,7 @@
 // src/data/heroSlides/heroSlides.js
 import { ROUTES } from "@/config/routes";
-import hero1 from "@/assets/images/heroSections/Test1.png";
-import hero2 from "@/assets/images/heroSections/Herosction2.png";
+import hero1 from "@/assets/images/heroSections/Herosection1.png";
+import hero2 from "@/assets/images/heroSections/Herosection2.png";
 
 export const heroSlides = [
   {
