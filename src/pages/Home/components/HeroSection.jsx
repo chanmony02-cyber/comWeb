@@ -113,7 +113,7 @@ export default function HeroSection() {
                                 <p
                                   key={item.label}
                                   // desciription style
-                                  className="text-lg md:text-xl lg:text-xl leading-relaxed text-justify"
+                                  className="text-lg md:text-xl lg:text-xl leading-relaxed"
                                 >
                                   <span
                                     className={`block mb-1 font-display ${

@@ -8,7 +8,7 @@ import cityInfrastructureHero from "@/assets/images/industries/city-infrastructu
 import agricultureHero from "@/assets/images/industries/agriculture/agri-banner.jpg";
 import repairing from "@/assets/images/servicesImg/repairing.jpg";
 // import repairing from "@/assets/images/about/repairing_reach.jpg";
-import companyStoryImage from "@/assets/images/about/company-story.webp";
+import companyStoryImage from "@/assets/images/about/company-story.jpg";
 
 export const aboutData = {
   hero: {
@@ -17,11 +17,7 @@ export const aboutData = {
       "Discover our story, values, and the passion that drives us to deliver excellence in every project.",
   },
   heroVisuals: {
-    serviceTags: [
-      "Distribution Grid",
-      "City Infrastructure",
-      "Agriculture",
-    ],
+    serviceTags: ["Distribution Grid", "City Infrastructure", "Agriculture"],
     atomOrbits: [
       {
         inset: "inset-[8%]",

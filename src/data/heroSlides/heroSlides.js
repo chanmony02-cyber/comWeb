@@ -1,7 +1,7 @@
 // src/data/heroSlides/heroSlides.js
 import { ROUTES } from "@/config/routes";
 import hero1 from "@/assets/images/heroSections/Test1.png";
-import hero2 from "@/assets/images/heroSections/HeroSection2-3.png";
+import hero2 from "@/assets/images/heroSections/Herosction 2-2.png";
 
 export const heroSlides = [
   {
@@ -42,7 +42,8 @@ export const heroSlides = [
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
     image: hero2,
-    overlay: "from-primary/85 via-primary/60 to-accent/25",
+    // overlay: "from-primary/85 via-primary/60 to-accent/25",
+    overlay: "from-primary/45 via-primary/60 to-accent/35",
   },
   {
     id: 3,
