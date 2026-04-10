@@ -305,25 +305,141 @@ export default function ScreenPreview({ type, className = "" }) {
   }
 
   if (type === "application") {
+    const applications = [
+      { name: "Zone 1", devices: 11 },
+      { name: "Zone 2", devices: 13 },
+      { name: "Zone 3", devices: 14 },
+    ];
+
     return (
-      <div className={cn(PANEL_CLASS, className)}>
+      // Height of the phone
+      <div
+        className={cn(PANEL_CLASS, "flex flex-col min-h-[505px]", className)}
+      >
+        {/* Header */}
         <div className="h-6 rounded-lg bg-sky-accent/70 flex items-center justify-center text-[10px] font-semibold">
           Application
         </div>
-        <div className="mt-3 space-y-2">
-          <div className="h-8 rounded-full bg-muted/70 border border-border/60 flex items-center px-3 text-[10px] text-muted-foreground">
-            Search
+
+        {/* Search Bar */}
+        <div className="mt-3 mb-3">
+          <div className="h-8 rounded-full bg-white border border-muted flex items-center px-3 text-[10px] text-muted-foreground gap-2">
+            <svg
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search"
+              className="flex-1 bg-transparent outline-none placeholder-muted-foreground text-[10px]"
+            />
           </div>
-          <div className="space-y-2">
-            {["Zone 1", "Zone 2", "Zone 3"].map((item) => (
-              <div
-                key={item}
-                className="h-8 rounded-xl bg-sky-accent/40 border border-white flex items-center justify-between px-3 text-[10px]"
-              >
-                <span className="font-semibold">Name: {item}</span>
-                <span className="text-muted-foreground">0 Device</span>
+        </div>
+
+        {/* Applications List */}
+        <div className="space-y-2 flex-1 overflow-y-auto pb-2">
+          {applications.map((app, index) => (
+            <div
+              key={index}
+              className="h-10 rounded-lg bg-sky-accent/40 border border-sky-accent/50 flex items-center justify-between px-3 text-[10px]"
+            >
+              <span className="font-semibold text-navy">
+                {index + 1}. Name: {app.name}
+              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-muted-foreground">
+                  {app.devices} Device
+                </span>
+                <svg
+                  className="w-3 h-3 text-muted-foreground"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="mt-3 flex items-center justify-around pt-2 border-t border-white/50 text-[8px]">
+          {/* Dashboard - Unselected */}
+          <div className="flex flex-col items-center gap-1">
+            <svg
+              className="w-5 h-5 text-gray-400"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <rect x="3" y="3" width="8" height="8" />
+              <rect x="13" y="3" width="8" height="8" />
+              <rect x="3" y="13" width="8" height="8" />
+              <rect x="13" y="13" width="8" height="8" />
+            </svg>
+            <span className="text-gray-400">Dashboard</span>
+          </div>
+
+          {/* Application - Selected */}
+          <div className="flex flex-col items-center gap-1">
+            <svg
+              className="w-5 h-5 text-navy"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              {/* Top row - 3 squares */}
+              <rect x="3" y="3" width="4" height="4" />
+              <rect x="10" y="3" width="4" height="4" />
+              <rect x="17" y="3" width="4" height="4" />
+              {/* Middle row - 3 squares */}
+              <rect x="3" y="10" width="4" height="4" />
+              <rect x="10" y="10" width="4" height="4" />
+              <rect x="17" y="10" width="4" height="4" />
+              {/* Bottom row - 3 squares */}
+              <rect x="3" y="17" width="4" height="4" />
+              <rect x="10" y="17" width="4" height="4" />
+              <rect x="17" y="17" width="4" height="4" />
+            </svg>
+            <span className="font-semibold text-navy">Application</span>
+          </div>
+
+          {/* Gateway - Unselected */}
+          <div className="flex flex-col items-center gap-1">
+            <svg
+              className="w-5 h-5 text-gray-400"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M7 2h10v6H7V2M5 10h14v10H5V10M7 11v8M11 11v8M15 11v8M19 11v8"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                fill="none"
+              />
+              <rect x="8" y="20" width="8" height="1" fill="currentColor" />
+            </svg>
+            <span className="text-gray-400">Gateway</span>
+          </div>
+
+          {/* More - Unselected */}
+          <div className="flex flex-col items-center gap-1">
+            <svg
+              className="w-5 h-5 text-gray-400"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <circle cx="6" cy="12" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <circle cx="18" cy="12" r="2" />
+            </svg>
+            <span className="text-gray-400">More</span>
           </div>
         </div>
       </div>
