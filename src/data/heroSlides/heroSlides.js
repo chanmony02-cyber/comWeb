@@ -34,10 +34,11 @@ export const heroSlides = [
     id: 2,
     eyebrow: "",
     title:
-      "We design and deliver intergrate digital transformation solution though:",
-    description: "Hardware Development | Software Development | Commuication",
+      "We design and deliver intergrate digital transformation solution through:",
+    description:
+      "Hardware Development | Software Development | Communication Technology",
     buttons: [
-      { label: "About Us", href: ROUTES.HOME, variant: "primary" },
+      { label: "About Us", href: ROUTES.ABOUT, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
     image: hero2,
