@@ -1,9 +1,10 @@
 ﻿import VHTLogo from "@/assets/images/VHT_Logo.png";
 import sampleMap from "@/assets/images/sampleMap.png";
 import { cn } from "@/lib/utils";
+import { BottomNavigation } from "./BottomNavigation";
 
 const PANEL_CLASS =
-  "rounded-[24px] bg-white/90 border border-white/80 p-4 text-navy shadow-sm";
+  "rounded-[24px] bg-white/90 border border-white/80 p-4 text-navy shadow-sm flex flex-col min-h-[500px]";
 
 export default function ScreenPreview({ type, className = "" }) {
   if (type === "login") {
@@ -111,7 +112,9 @@ export default function ScreenPreview({ type, className = "" }) {
     };
 
     return (
-      <div className={cn(PANEL_CLASS, className)}>
+      <div
+        className={cn(PANEL_CLASS, "flex flex-col min-h-[505px]", className)}
+      >
         {/* Header */}
         <div className="h-6 rounded-lg bg-sky-accent/70 flex items-center justify-center text-[10px] font-semibold">
           Dashboard
@@ -228,78 +231,7 @@ export default function ScreenPreview({ type, className = "" }) {
           </div>
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="mt-3 flex items-center justify-around pt-2 border-t border-white/50 text-[8px]">
-          {/* Dashboard - Selected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-navy"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <rect x="3" y="3" width="8" height="8" />
-              <rect x="13" y="3" width="8" height="8" />
-              <rect x="3" y="13" width="8" height="8" />
-              <rect x="13" y="13" width="8" height="8" />
-            </svg>
-            <span className="font-semibold text-navy">Dashboard</span>
-          </div>
-
-          {/* Application - Unselected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              {/* Top row - 3 squares */}
-              <rect x="3" y="3" width="4" height="4" />
-              <rect x="10" y="3" width="4" height="4" />
-              <rect x="17" y="3" width="4" height="4" />
-              {/* Middle row - 3 squares */}
-              <rect x="3" y="10" width="4" height="4" />
-              <rect x="10" y="10" width="4" height="4" />
-              <rect x="17" y="10" width="4" height="4" />
-              {/* Bottom row - 3 squares */}
-              <rect x="3" y="17" width="4" height="4" />
-              <rect x="10" y="17" width="4" height="4" />
-              <rect x="17" y="17" width="4" height="4" />
-            </svg>
-            <span className="text-gray-400">Application</span>
-          </div>
-
-          {/* Gateway - Unselected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M7 2h10v6H7V2M5 10h14v10H5V10M7 11v8M11 11v8M15 11v8M19 11v8"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <rect x="8" y="20" width="8" height="1" fill="currentColor" />
-            </svg>
-            <span className="text-gray-400">Gateway</span>
-          </div>
-
-          {/* More - Unselected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <circle cx="6" cy="12" r="2" />
-              <circle cx="12" cy="12" r="2" />
-              <circle cx="18" cy="12" r="2" />
-            </svg>
-            <span className="text-gray-400">More</span>
-          </div>
-        </div>
+        <BottomNavigation activeTab="dashboard" />
       </div>
     );
   }
@@ -312,9 +244,9 @@ export default function ScreenPreview({ type, className = "" }) {
     ];
 
     return (
-      // Height of the phone
+      // Height of the phone (Application list)
       <div
-        className={cn(PANEL_CLASS, "flex flex-col min-h-[505px]", className)}
+        className={cn(PANEL_CLASS, "flex flex-col min-h-[500px]", className)}
       >
         {/* Header */}
         <div className="h-6 rounded-lg bg-sky-accent/70 flex items-center justify-center text-[10px] font-semibold">
@@ -370,89 +302,20 @@ export default function ScreenPreview({ type, className = "" }) {
           ))}
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="mt-3 flex items-center justify-around pt-2 border-t border-white/50 text-[8px]">
-          {/* Dashboard - Unselected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <rect x="3" y="3" width="8" height="8" />
-              <rect x="13" y="3" width="8" height="8" />
-              <rect x="3" y="13" width="8" height="8" />
-              <rect x="13" y="13" width="8" height="8" />
-            </svg>
-            <span className="text-gray-400">Dashboard</span>
-          </div>
-
-          {/* Application - Selected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-navy"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              {/* Top row - 3 squares */}
-              <rect x="3" y="3" width="4" height="4" />
-              <rect x="10" y="3" width="4" height="4" />
-              <rect x="17" y="3" width="4" height="4" />
-              {/* Middle row - 3 squares */}
-              <rect x="3" y="10" width="4" height="4" />
-              <rect x="10" y="10" width="4" height="4" />
-              <rect x="17" y="10" width="4" height="4" />
-              {/* Bottom row - 3 squares */}
-              <rect x="3" y="17" width="4" height="4" />
-              <rect x="10" y="17" width="4" height="4" />
-              <rect x="17" y="17" width="4" height="4" />
-            </svg>
-            <span className="font-semibold text-navy">Application</span>
-          </div>
-
-          {/* Gateway - Unselected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M7 2h10v6H7V2M5 10h14v10H5V10M7 11v8M11 11v8M15 11v8M19 11v8"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <rect x="8" y="20" width="8" height="1" fill="currentColor" />
-            </svg>
-            <span className="text-gray-400">Gateway</span>
-          </div>
-
-          {/* More - Unselected */}
-          <div className="flex flex-col items-center gap-1">
-            <svg
-              className="w-5 h-5 text-gray-400"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <circle cx="6" cy="12" r="2" />
-              <circle cx="12" cy="12" r="2" />
-              <circle cx="18" cy="12" r="2" />
-            </svg>
-            <span className="text-gray-400">More</span>
-          </div>
-        </div>
+        <BottomNavigation activeTab="application" />
       </div>
     );
   }
 
   if (type === "gateway") {
     return (
-      <div className={cn(PANEL_CLASS, className)}>
+      <div
+        className={cn(PANEL_CLASS, "flex flex-col min-h-[505px]", className)}
+      >
         <div className="h-6 rounded-lg bg-sky-accent/70 flex items-center justify-center text-[10px] font-semibold">
           Gateway
         </div>
-        <div className="mt-3 space-y-2">
+        <div className="mt-3 space-y-2 flex-1 overflow-y-auto">
           <div className="h-8 rounded-full bg-muted/70 border border-border/60 flex items-center px-3 text-[10px] text-muted-foreground">
             Search
           </div>
@@ -474,16 +337,18 @@ export default function ScreenPreview({ type, className = "" }) {
             ))}
           </div>
         </div>
+
+        <BottomNavigation activeTab="gateway" />
       </div>
     );
   }
 
   return (
-    <div className={cn(PANEL_CLASS, className)}>
+    <div className={cn(PANEL_CLASS, "flex flex-col min-h-[505px]", className)}>
       <div className="h-6 rounded-lg bg-sky-accent/70 flex items-center justify-center text-[10px] font-semibold">
         More
       </div>
-      <div className="mt-3 space-y-2">
+      <div className="mt-3 space-y-2 flex-1 overflow-y-auto pb-2">
         <div className="rounded-2xl bg-section-alt border border-white p-3 flex items-center gap-2 text-[10px]">
           <div className="w-8 h-8 rounded-full bg-primary-blue/20" />
           <div className="flex-1">
@@ -502,6 +367,8 @@ export default function ScreenPreview({ type, className = "" }) {
           Log out
         </div>
       </div>
+
+      <BottomNavigation activeTab="more" />
     </div>
   );
 }
