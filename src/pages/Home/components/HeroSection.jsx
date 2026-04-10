@@ -107,7 +107,7 @@ export default function HeroSection() {
                           )}
                           {hasStructuredCopy ? (
                             <div
-                              className={`mb-8 space-y-10 max-w-[700px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`mb-8 space-y-10 max-w-[750px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.content.map((item) => (
                                 <p
@@ -119,7 +119,7 @@ export default function HeroSection() {
                                     className={`block mb-1 font-display ${
                                       slide.emphasizeLabels
                                         ? // label style
-                                          "text-sky-accent text-lg md:text-xl lg:text-4xl font-semibold uppercase tracking-wide"
+                                          "text-sky-accent text-lg md:text-xl lg:text-4xl font-bold uppercase tracking-wide"
                                         : "text-sky-accent text-sm md:text-base tracking-[0.18em]"
                                     }`}
                                   >

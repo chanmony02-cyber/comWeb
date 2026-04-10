@@ -1,13 +1,13 @@
 // src/data/heroSlides/heroSlides.js
 import { ROUTES } from "@/config/routes";
 import hero1 from "@/assets/images/heroSections/Test1.png";
-import hero2 from "@/assets/images/heroSections/Herosction 2-2.png";
+import hero2 from "@/assets/images/heroSections/Herosction2.png";
 
 export const heroSlides = [
   {
     id: 1,
     eyebrow: "VHT | INNOVATION FOR A BETTER TOMORROW",
-    title: "",
+    title: "", //"VISION & MISSION"
     emphasizeLabels: true,
     content: [
       {
@@ -22,7 +22,7 @@ export const heroSlides = [
     buttons: [
       {
         label: "Learn More",
-        href: ROUTES.ABOUT,
+        href: ROUTES.CITY_INFRASTRUCTURE,
         variant: "primary",
       },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
@@ -34,16 +34,15 @@ export const heroSlides = [
     id: 2,
     eyebrow: "",
     title:
-      "We design and deliver intergrate digital transformation solution through:",
+      "We design and deliver intergrate digital transformation solution though:",
     description:
       "Hardware Development | Software Development | Communication Technology",
     buttons: [
-      { label: "About Us", href: ROUTES.ABOUT, variant: "primary" },
+      { label: "About Us", href: ROUTES.HOME, variant: "primary" },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
     ],
     image: hero2,
     // overlay: "from-primary/85 via-primary/60 to-accent/25",
-    overlay: "from-primary/45 via-primary/60 to-accent/35",
   },
   {
     id: 3,
