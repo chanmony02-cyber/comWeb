@@ -22,7 +22,7 @@ export const heroSlides = [
     buttons: [
       {
         label: "Learn More",
-        href: ROUTES.CITY_INFRASTRUCTURE,
+        href: ROUTES.ABOUT,
         variant: "primary",
       },
       { label: "Contact Us", href: ROUTES.CONTACT, variant: "outline" },
