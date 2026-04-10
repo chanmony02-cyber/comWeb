@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { BubbleConnectionSlide } from "./BubbleConnectionSlide";
+import { BubbleConnectionSlide } from "../BubbleConnectionSlide";
 
 /**
  * HeroBubbleSlide - Type 4: Bubble Network hero with animated connections

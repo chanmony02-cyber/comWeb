@@ -1,9 +1,9 @@
 ﻿import { useState, useEffect, useCallback, useRef } from "react";
 import { heroSlides } from "@/data/heroSlides/heroSlides";
-import { HeroVisionMissionSlide } from "./HeroVisionMissionSlide";
-import { HeroDigitalTransformSlide } from "./HeroDigitalTransformSlide";
-import { HeroCoreValuesSlide } from "./HeroCoreValuesSlide";
-import { HeroBubbleSlide } from "./HeroBubbleSlide";
+import { HeroVisionMissionSlide } from "./HeroSlides/HeroVisionMissionSlide";
+import { HeroDigitalTransformSlide } from "./HeroSlides/HeroDigitalTransformSlide";
+import { HeroCoreValuesSlide } from "./HeroSlides/HeroCoreValuesSlide";
+import { HeroBubbleSlide } from "./HeroSlides/HeroBubbleSlide";
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
