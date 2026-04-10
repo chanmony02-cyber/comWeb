@@ -46,13 +46,13 @@ export function SoftwareApplicationHero({ hero }) {
             </Button>
           </div>
         </div>
-        {/* Phone section */}
+        {/* Phone */}
         <div className="relative">
           <div className="rounded-[36px] border border-white/30 bg-white/10 p-6 backdrop-blur">
             <ScreenPreview type="dashboard" />
           </div>
           <div className="absolute -bottom-10 -left-10 hidden md:block w-44">
-            <ScreenPreview type="login" className="shadow-lg" />
+            <ScreenPreview type="login" className="shadow-lg h-40" />
           </div>
           <div className="absolute -top-8 right-2 hidden md:block w-44">
             <ScreenPreview type="gateway" className="shadow-lg" />

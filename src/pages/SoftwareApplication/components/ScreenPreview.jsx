@@ -32,7 +32,7 @@ export default function ScreenPreview({ type, className = "" }) {
           <div className="h-9 rounded-full bg-navy text-white text-[10px] font-semibold flex items-center justify-center tracking-wide">
             LOGIN
           </div>
-          <div className="text-center text-[10px] text-muted-foreground">
+          <div className="mt- text-center text-[10px] text-muted-foreground">
             Version 1.x
           </div>
         </div>
