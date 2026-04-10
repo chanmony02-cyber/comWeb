@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    // ── Core Formatting & Linting ──────────────────────────────
+    "esbenp.prettier-vscode",           // Prettier — code formatter
+    "dbaeumer.vscode-eslint",           // ESLint — linting
+
+    // ── Tailwind CSS ───────────────────────────────────────────
+    "bradlc.vscode-tailwindcss",        // Tailwind CSS IntelliSense
+
+    // ── Path Aliases (@/ support) ──────────────────────────────
+    "christian-kohler.path-intellisense", // Path IntelliSense
+    "ionutvmi.path-autocomplete",         // Path Autocomplete
+
+    // ── React & JSX ───────────────────────────────────────────
+    "dsznajder.es7-react-js-snippets",  // React snippets (rfce, rafce, etc.)
+
+    // ── AI Assistant ───────────────────────────────────────────
+    "github.copilot",                   // GitHub Copilot (reads .github/copilot-instructions.md)
+    "github.copilot-chat",              // Copilot Chat
+
+    // ── Git ────────────────────────────────────────────────────
+    "eamodio.gitlens",                  // GitLens
+
+    // ── DX Extras ─────────────────────────────────────────────
+    "streetsidesoftware.code-spell-checker", // Spell checker
+    "formulahendry.auto-rename-tag",         // Auto rename paired HTML/JSX tags
+    "steoates.autoimport"                    // Auto import suggestions
+  ]
+}

@@ -46,7 +46,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-[500px] md:h-[600px] lg:h-[800px] overflow-hidden bg-navy select-none"
+      className="relative w-full h-[500px] md:h-[600px] lg:h-[730px] overflow-hidden bg-navy select-none"
       // To turn off autoplay when mouse is over the slider
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -89,26 +89,40 @@ export default function HeroSection() {
                           className={`max-w-900px] ${hasStructuredCopy ? "max-w-[800px]" : ""}`}
                         >
                           <p
-                            className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-3 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                            className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                           >
                             {slide.eyebrow}
                           </p>
-                          <h1
-                            className={`text-primary-foreground font-bold leading-[1.05] mb-5 text-4xl md:text-5xl lg:text-[3.25rem] font-display transition-all duration-700 delay-150 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                            style={{ whiteSpace: "pre-line" }}
-                          >
-                            {slide.title}
-                          </h1>
+                          {slide.title && (
+                            <h1
+                              className={`text-primary-foreground font-bold leading-[1.05] mb-5 font-display transition-all duration-700 delay-150 ${
+                                slide.emphasizeLabels
+                                  ? "text-5xl md:text-6xl lg:text-[4rem]"
+                                  : "text-4xl md:text-5xl lg:text-[3.25rem]"
+                              } ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              style={{ whiteSpace: "pre-line" }}
+                            >
+                              {slide.title}
+                            </h1>
+                          )}
                           {hasStructuredCopy ? (
                             <div
-                              className={`mb-8 space-y-4 max-w-[650px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`mb-8 space-y-10 max-w-[700px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.content.map((item) => (
                                 <p
                                   key={item.label}
-                                  className="text-base md:text-[1.05rem] leading-relaxed"
+                                  // desciription style
+                                  className="text-lg md:text-xl lg:text-xl leading-relaxed text-justify"
                                 >
-                                  <span className="block mb-1 text-sky-accent text-sm md:text-base tracking-[0.18em] font-display">
+                                  <span
+                                    className={`block mb-1 font-display ${
+                                      slide.emphasizeLabels
+                                        ? // label style
+                                          "text-sky-accent text-lg md:text-xl lg:text-4xl font-semibold uppercase tracking-wide"
+                                        : "text-sky-accent text-sm md:text-base tracking-[0.18em]"
+                                    }`}
+                                  >
                                     {item.label}
                                   </span>
                                   {item.text}
@@ -195,20 +209,28 @@ export default function HeroSection() {
                           <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
                             {slide.eyebrow}
                           </p>
-                          <h1
-                            className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
-                            style={{ whiteSpace: "pre-line" }}
-                          >
-                            {slide.title}
-                          </h1>
+                          {slide.title ? (
+                            <h1
+                              className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
+                              style={{ whiteSpace: "pre-line" }}
+                            >
+                              {slide.title}
+                            </h1>
+                          ) : null}
                           {hasStructuredCopy ? (
                             <div className="mb-6 space-y-4 text-primary-foreground/90 font-sans">
                               {slide.content.map((item) => (
                                 <p
                                   key={item.label}
-                                  className="text-sm leading-relaxed"
+                                  className="text-base md:text-lg leading-relaxed"
                                 >
-                                  <span className="block mb-1 text-sky-accent text-xs tracking-[0.18em] font-display">
+                                  <span
+                                    className={`block mb-1 font-display ${
+                                      slide.emphasizeLabels
+                                        ? "text-primary-foreground text-base md:text-lg font-semibold uppercase tracking-wide"
+                                        : "text-sky-accent text-xs tracking-[0.18em]"
+                                    }`}
+                                  >
                                     {item.label}
                                   </span>
                                   {item.text}

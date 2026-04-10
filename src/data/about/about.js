@@ -7,6 +7,7 @@ import distributionGridHero from "@/assets/images/industries/distribution-grid/d
 import cityInfrastructureHero from "@/assets/images/industries/city-infrastructure/city-infrastructure-hero.jpg";
 import agricultureHero from "@/assets/images/industries/agriculture/agri-banner.jpg";
 import repairing from "@/assets/images/servicesImg/repairing.jpg";
+// import repairing from "@/assets/images/about/repairing_reach.jpg";
 import companyStoryImage from "@/assets/images/about/company-story.webp";
 
 export const aboutData = {
