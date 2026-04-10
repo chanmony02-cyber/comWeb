@@ -34,7 +34,7 @@ export const heroSlides = [
     id: 2,
     eyebrow: "",
     title:
-      "WE DESIGN AND DELIVER INTERGRATE DIGITAL TRANSFORMATION SOLUTION THOUGH:",
+      "WE DESIGN AND DELIVER INTERGRATE DIGITAL TRANSFORMATION SOLUTION THROUGH:",
     description:
       "Hardware Development | Software Development | Communication Technology",
     useSecondaryColor: true,

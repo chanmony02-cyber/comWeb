@@ -98,7 +98,7 @@ export default function HeroSection() {
                               className={`text-primary-foreground font-bold leading-[1.05] mb-5 font-display transition-all duration-700 delay-150 ${
                                 slide.emphasizeLabels
                                   ? "text-5xl md:text-6xl lg:text-[4rem]"
-                                  : "text-4xl md:text-5xl lg:text-[3.25rem]"
+                                  : "text-4xl md:text-3xl lg:text-4xl"
                               } ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                               style={{ whiteSpace: "pre-line" }}
                             >
