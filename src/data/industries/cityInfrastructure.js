@@ -11,7 +11,7 @@ import { ROUTES } from "@/config/routes";
 
 export const cityInfrastructureData = {
   hero: {
-    title: "City Infrastructure Digital Transformation",
+    title: "City Infrastructure",
     subtitle:
       "Powering urban development with reliable electrical systems for transportation, water, and public utilities.",
     backgroundImage: cHero,

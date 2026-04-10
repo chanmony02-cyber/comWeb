@@ -35,7 +35,9 @@ function useLowPowerExperience() {
 
     const viewportQuery = window.matchMedia("(max-width: 767px)");
     const connection =
-      navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      navigator.connection ||
+      navigator.mozConnection ||
+      navigator.webkitConnection;
 
     const updateViewport = () => {
       setIsSmallViewport(viewportQuery.matches);
@@ -50,8 +52,8 @@ function useLowPowerExperience() {
       setIsSlowConnection(
         Boolean(
           connection.saveData ||
-            connection.effectiveType === "slow-2g" ||
-            connection.effectiveType === "2g",
+          connection.effectiveType === "slow-2g" ||
+          connection.effectiveType === "2g",
         ),
       );
     };
@@ -123,7 +125,11 @@ function PhoneLoginScreen() {
   );
 }
 
-function PhoneDashboardScreen({ reducedMotion = false }) {
+function PhoneDashboardScreen({
+  reducedMotion = false,
+  dashboardCards = [],
+  dashboardTrend = [],
+}) {
   if (reducedMotion) {
     return (
       <div className="flex h-full flex-col rounded-[28px] bg-gradient-to-br from-navy via-primary-blue to-sky-accent p-4 text-white shadow-inner">
@@ -133,7 +139,10 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
         </div>
         <div className="mt-5 grid gap-3">
           {dashboardCards.map((card) => (
-            <div key={card.label} className="rounded-3xl border border-white/20 bg-white/10 p-3">
+            <div
+              key={card.label}
+              className="rounded-3xl border border-white/20 bg-white/10 p-3"
+            >
               <div className="flex items-center justify-between">
                 <span className="text-[10px] uppercase tracking-[0.18em] text-white/75">
                   {card.label}
@@ -196,7 +205,11 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
                 className="h-full rounded-full bg-white/85"
                 initial={{ width: "30%" }}
                 animate={{ width: ["30%", "82%", "46%"] }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
             </div>
           </div>
@@ -228,7 +241,10 @@ function PhoneDashboardScreen({ reducedMotion = false }) {
   );
 }
 
-function PhoneApplicationScreen({ reducedMotion = false }) {
+function PhoneApplicationScreen({
+  reducedMotion = false,
+  applicationItems = [],
+}) {
   if (reducedMotion) {
     return (
       <div className="flex h-full flex-col rounded-[28px] bg-gradient-to-br from-[#f8fbff] via-white to-[#eef7ff] p-4 text-navy shadow-inner">
@@ -285,7 +301,7 @@ function PhoneApplicationScreen({ reducedMotion = false }) {
   );
 }
 
-function PhoneGatewayScreen() {
+function PhoneGatewayScreen({ gatewayItems = [] }) {
   return (
     <div className="flex h-full flex-col rounded-[28px] bg-gradient-to-br from-[#eff6ff] via-white to-[#f3f8ff] p-4 text-navy shadow-inner">
       <div className="flex items-center justify-between text-[10px] text-muted-foreground">
@@ -315,16 +331,29 @@ function PhoneGatewayScreen() {
   );
 }
 
-function renderPhoneScreen(id, reducedMotion) {
+function renderPhoneScreen(id, reducedMotion, previewData = {}) {
   switch (id) {
     case "login":
       return <PhoneLoginScreen />;
     case "dashboard":
-      return <PhoneDashboardScreen reducedMotion={reducedMotion} />;
+      return (
+        <PhoneDashboardScreen
+          reducedMotion={reducedMotion}
+          dashboardCards={previewData.dashboardCards || []}
+          dashboardTrend={previewData.dashboardTrend || []}
+        />
+      );
     case "application":
-      return <PhoneApplicationScreen reducedMotion={reducedMotion} />;
+      return (
+        <PhoneApplicationScreen
+          reducedMotion={reducedMotion}
+          applicationItems={previewData.applicationItems || []}
+        />
+      );
     case "gateway":
-      return <PhoneGatewayScreen />;
+      return (
+        <PhoneGatewayScreen gatewayItems={previewData.gatewayItems || []} />
+      );
     default:
       return <PhoneLoginScreen />;
   }
@@ -418,7 +447,11 @@ export function MobileExperienceSection({ mobileExperience }) {
               </div>
               <div className="overflow-hidden rounded-[2rem] border border-white/20 bg-white p-2">
                 <div className="h-[420px] sm:h-[460px]">
-                  {renderPhoneScreen(activeSlide.id, true)}
+                  {renderPhoneScreen(
+                    activeSlide.id,
+                    true,
+                    mobileExperience.preview,
+                  )}
                 </div>
               </div>
               <div className="mx-auto mt-3 h-1.5 w-24 rounded-full bg-white/40" />
@@ -449,7 +482,11 @@ export function MobileExperienceSection({ mobileExperience }) {
                     transition={{ duration: 0.35, ease: "easeOut" }}
                     className="h-[540px]"
                   >
-                    {renderPhoneScreen(activeSlide.id, false)}
+                    {renderPhoneScreen(
+                      activeSlide.id,
+                      false,
+                      mobileExperience.preview,
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>

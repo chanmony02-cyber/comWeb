@@ -48,8 +48,8 @@ export default function HeroSection() {
     <section
       className="relative w-full h-[500px] md:h-[600px] lg:h-[730px] overflow-hidden bg-navy select-none"
       // To turn off autoplay when mouse is over the slider
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      // onMouseEnter={() => setPaused(true)}
+      // onMouseLeave={() => setPaused(false)}
       aria-label="Hero Slider"
     >
       {/* Desktop: opacity-based slides */}
@@ -73,12 +73,12 @@ export default function HeroSection() {
                   <>
                     <img
                       src={slide.image}
-                      alt={slide.title.replace("\n", " ")}
+                      alt={(slide.title || "").replace("\n", " ")}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
 
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay || ""}`}
                     />
 
                     {/* Text is here */}
@@ -86,7 +86,7 @@ export default function HeroSection() {
                       {/* padding */}
                       <div className="w-full max-w-7xl mx-[200px] px-0">
                         <div
-                          className={`max-w-900px] ${hasStructuredCopy ? "max-w-[800px]" : ""}`}
+                          className={`${hasStructuredCopy ? "max-w-[800px]" : "max-w-[900px]"}`}
                         >
                           <p
                             className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
@@ -131,7 +131,7 @@ export default function HeroSection() {
                             </div>
                           ) : (
                             <p
-                              className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-base md:text-[1.05rem] leading-relaxed mb-8 ${slide.preventWrap ? "max-w-[900px]" : "max-w-[580px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""} transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
+                              className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-base md:text-xl leading-relaxed mb-8 ${slide.preventWrap ? "max-w-[900px]" : "max-w-[580px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""} transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.description}
                             </p>
@@ -139,7 +139,7 @@ export default function HeroSection() {
                           <div
                             className={`flex flex-wrap gap-3 transition-all duration-700 delay-300 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                           >
-                            {slide.buttons.map((btn) =>
+                            {(slide.buttons || []).map((btn) =>
                               btn.variant === "primary" ? (
                                 <a
                                   key={btn.label}
@@ -195,11 +195,11 @@ export default function HeroSection() {
                   <>
                     <img
                       src={slide.image}
-                      alt={slide.title.replace("\n", " ")}
+                      alt={(slide.title || "").replace("\n", " ")}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay || ""}`}
                     />
                     <div className="relative z-10 h-full flex items-center">
                       <div className="w-full max-w-7xl mx-auto px-6">
@@ -245,7 +245,7 @@ export default function HeroSection() {
                             </p>
                           )}
                           <div className="flex flex-wrap gap-3">
-                            {slide.buttons.map((btn) =>
+                            {(slide.buttons || []).map((btn) =>
                               btn.variant === "primary" ? (
                                 <a
                                   key={btn.label}
