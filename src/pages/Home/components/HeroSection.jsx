@@ -1,8 +1,9 @@
-﻿////////////////////// new verison code
-
-import { useState, useEffect, useCallback, useRef } from "react";
+﻿import { useState, useEffect, useCallback, useRef } from "react";
 import { heroSlides } from "@/data/heroSlides/heroSlides";
-import { BubbleConnectionSlide } from "./BubbleConnectionSlide";
+import { HeroVisionMissionSlide } from "./HeroVisionMissionSlide";
+import { HeroDigitalTransformSlide } from "./HeroDigitalTransformSlide";
+import { HeroCoreValuesSlide } from "./HeroCoreValuesSlide";
+import { HeroBubbleSlide } from "./HeroBubbleSlide";
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
@@ -44,6 +45,22 @@ export default function HeroSection() {
     setPaused(false);
   };
 
+  /**
+   * Render the appropriate hero slide component based on slide type
+   * Each slide type has its own isolated component with independent styling and logic
+   */
+  const renderSlideComponent = useCallback((slide, isActive) => {
+    if (slide.variant === "bubble-network") {
+      return <HeroCoreValuesSlide slide={slide} isActive={isActive} />;
+    }
+
+    if (Array.isArray(slide.content)) {
+      return <HeroVisionMissionSlide slide={slide} isActive={isActive} />;
+    }
+
+    return <HeroDigitalTransformSlide slide={slide} isActive={isActive} />;
+  }, []);
+
   return (
     <section
       className="relative w-full h-[500px] md:h-[600px] lg:h-[730px] overflow-hidden bg-navy select-none"
@@ -54,125 +71,16 @@ export default function HeroSection() {
     >
       {/* Desktop: opacity-based slides */}
       <div className="hidden xl:block absolute inset-0">
-        {heroSlides.map((slide, i) =>
-          (() => {
-            const hasStructuredCopy = Array.isArray(slide.content);
-
-            return (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-700 ${
-                  i === current
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
-                }`}
-              >
-                {slide.variant === "bubble-network" ? (
-                  <BubbleConnectionSlide slide={slide} />
-                ) : (
-                  <>
-                    <img
-                      src={slide.image}
-                      alt={(slide.title || "").replace("\n", " ")}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay || ""}`}
-                    />
-
-                    {/* Text is here */}
-                    <div className="relative z-10 h-full flex items-center">
-                      {/* padding */}
-                      <div className=" max-w-7xl mx-[200px] px-0 ">
-                        <div
-                          className={`${hasStructuredCopy ? "max-w-[800px]" : "max-w-[900px]"}`}
-                        >
-                          {/* DESKTOP EYEBROW - Change text-sm, text-base for font size */}
-                          <p
-                            className={` text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                          >
-                            {slide.eyebrow}
-                          </p>
-                          {slide.title && (
-                            // DESKTOP MAIN TITLE - Change text sizes: text-4xl, text-5xl, etc. Adjust md: and lg: breakpoints
-                            <h1
-                              className={`text-primary-foreground font-bold leading-[1.05] mb-5 font-display transition-all duration-700 delay-150 ${
-                                slide.emphasizeLabels
-                                  ? "text-5xl md:text-6xl lg:text-[4rem]"
-                                  : "text-4xl md:text-3xl lg:text-[39px]"
-                              } ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                              style={{ whiteSpace: "pre-line" }}
-                            >
-                              {slide.title}
-                            </h1>
-                          )}
-                          {hasStructuredCopy ? (
-                            // DESKTOP STRUCTURED COPY (TYPE 1: Vision/Mission style)
-                            <div
-                              className={`mb-8 space-y-10 max-w-[800px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                            >
-                              {slide.content.map((item) => (
-                                // Description body text - Change text-lg, text-xl for size
-                                <p
-                                  key={item.label}
-                                  className="text-lg md:text-xl lg:text-xl leading-relaxed"
-                                >
-                                  {/* DESKTOP STRUCTURED COPY LABELS (e.g., "VISION:", "MISSION:") - Change text-lg, text-xl, text-4xl */}
-                                  <span
-                                    className={`block mb-1 font-sans ${
-                                      slide.emphasizeLabels
-                                        ? // label style - Change text-lg, text-xl, text-4xl for emphasizeLabels=true
-                                          "text-sky-accent text-lg md:text-xl lg:text-5xl font-bold uppercase tracking-wide"
-                                        : "text-sky-accent text-sm md:text-base tracking-[0.18em]"
-                                    }`}
-                                  >
-                                    {item.label}
-                                  </span>
-                                  {item.text}
-                                </p>
-                              ))}
-                            </div>
-                          ) : (
-                            // DESKTOP REGULAR SLIDE DESCRIPTION (TYPE 2: Regular slide with title + description) - Change text-base, text-xl
-                            <p
-                              className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-base md:text-xl leading-relaxed mb-8 ${slide.preventWrap ? "max-w-[900px]" : "max-w-[580px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""} transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                            >
-                              {slide.description}
-                            </p>
-                          )}
-                          <div
-                            className={`flex flex-wrap gap-3 transition-all duration-700 delay-300 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
-                          >
-                            {(slide.buttons || []).map((btn) =>
-                              btn.variant === "primary" ? (
-                                <a
-                                  key={btn.label}
-                                  href={btn.href}
-                                  className="inline-flex items-center justify-center px-7 py-[11px] rounded bg-primary-blue text-accent-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-blue/90 transition-colors duration-200"
-                                >
-                                  {btn.label}
-                                </a>
-                              ) : (
-                                <a
-                                  key={btn.label}
-                                  href={btn.href}
-                                  className="inline-flex items-center justify-center px-7 py-[11px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-[0.95rem] font-display hover:bg-primary-foreground/15 hover:border-primary-foreground transition-all duration-200"
-                                >
-                                  {btn.label}
-                                </a>
-                              ),
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
-            );
-          })(),
-        )}
+        {heroSlides.map((slide, i) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              i === current ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            {renderSlideComponent(slide, i === current)}
+          </div>
+        ))}
       </div>
 
       {/* Mobile: swipe-based slides */}
@@ -181,110 +89,16 @@ export default function HeroSection() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        {heroSlides.map((slide, i) =>
-          (() => {
-            const hasStructuredCopy = Array.isArray(slide.content);
-
-            return (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 transition-opacity duration-700 ${
-                  i === current
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
-                }`}
-              >
-                {slide.variant === "bubble-network" ? (
-                  <BubbleConnectionSlide slide={slide} />
-                ) : (
-                  <>
-                    <img
-                      src={slide.image}
-                      alt={(slide.title || "").replace("\n", " ")}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${slide.overlay || ""}`}
-                    />
-                    <div className="relative z-10 h-full flex items-center">
-                      <div className="w-full max-w-7xl mx-auto px-6">
-                        <div
-                          className={`max-w-[580px] ${hasStructuredCopy ? "max-w-[620px]" : ""}`}
-                        >
-                          {/* MOBILE EYEBROW - Change text-sm for font size */}
-                          <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
-                            {slide.eyebrow}
-                          </p>
-                          {slide.title ? (
-                            // MOBILE MAIN TITLE - Change text-3xl for font size
-                            <h1
-                              className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
-                              style={{ whiteSpace: "pre-line" }}
-                            >
-                              {slide.title}
-                            </h1>
-                          ) : null}
-                          {hasStructuredCopy ? (
-                            // MOBILE STRUCTURED COPY (TYPE 1: Vision/Mission style)
-                            <div className="mb-6 space-y-4 text-primary-foreground/90 font-sans">
-                              {slide.content.map((item) => (
-                                // Description body text - Change text-base, text-lg for size
-                                <p
-                                  key={item.label}
-                                  className="text-base md:text-lg leading-relaxed"
-                                >
-                                  {/* MOBILE STRUCTURED COPY LABELS (e.g., "VISION:", "MISSION:") - Change text-base, text-lg */}
-                                  <span
-                                    className={`block mb-1 font-display ${
-                                      slide.emphasizeLabels
-                                        ? "text-primary-foreground text-base md:text-lg font-semibold uppercase tracking-wide"
-                                        : "text-sky-accent text-xs tracking-[0.18em]"
-                                    }`}
-                                  >
-                                    {item.label}
-                                  </span>
-                                  {item.text}
-                                </p>
-                              ))}
-                            </div>
-                          ) : (
-                            // MOBILE REGULAR SLIDE DESCRIPTION (TYPE 2: Regular slide with title + description) - Change text-sm
-                            <p
-                              className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-sm leading-relaxed mb-6 ${slide.preventWrap ? "max-w-full" : "max-w-[470px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""}`}
-                            >
-                              {slide.description}
-                            </p>
-                          )}
-                          <div className="flex flex-wrap gap-3">
-                            {(slide.buttons || []).map((btn) =>
-                              btn.variant === "primary" ? (
-                                <a
-                                  key={btn.label}
-                                  href={btn.href}
-                                  className="inline-flex items-center justify-center px-6 py-[10px] rounded bg-primary-blue text-accent-foreground font-semibold text-sm font-display"
-                                >
-                                  {btn.label}
-                                </a>
-                              ) : (
-                                <a
-                                  key={btn.label}
-                                  href={btn.href}
-                                  className="inline-flex items-center justify-center px-6 py-[10px] rounded border border-primary-foreground/65 text-primary-foreground font-semibold text-sm font-display"
-                                >
-                                  {btn.label}
-                                </a>
-                              ),
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
-            );
-          })(),
-        )}
+        {heroSlides.map((slide, i) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              i === current ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            {renderSlideComponent(slide, i === current)}
+          </div>
+        ))}
       </div>
 
       {/* Arrows desktop only */}
