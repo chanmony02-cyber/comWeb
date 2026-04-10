@@ -120,7 +120,7 @@ export default function HeroSection() {
                                 >
                                   {/* DESKTOP STRUCTURED COPY LABELS (e.g., "VISION:", "MISSION:") - Change text-lg, text-xl, text-4xl */}
                                   <span
-                                    className={`block mb-1 font-display ${
+                                    className={`block mb-1 font-sans ${
                                       slide.emphasizeLabels
                                         ? // label style - Change text-lg, text-xl, text-4xl for emphasizeLabels=true
                                           "text-sky-accent text-lg md:text-xl lg:text-4xl font-bold uppercase tracking-wide"
