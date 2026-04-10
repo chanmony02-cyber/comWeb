@@ -88,12 +88,14 @@ export default function HeroSection() {
                         <div
                           className={`${hasStructuredCopy ? "max-w-[800px]" : "max-w-[900px]"}`}
                         >
+                          {/* DESKTOP EYEBROW - Change text-sm, text-base for font size */}
                           <p
                             className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                           >
                             {slide.eyebrow}
                           </p>
                           {slide.title && (
+                            // DESKTOP MAIN TITLE - Change text sizes: text-4xl, text-5xl, etc. Adjust md: and lg: breakpoints
                             <h1
                               className={`text-primary-foreground font-bold leading-[1.05] mb-5 font-display transition-all duration-700 delay-150 ${
                                 slide.emphasizeLabels
@@ -106,19 +108,21 @@ export default function HeroSection() {
                             </h1>
                           )}
                           {hasStructuredCopy ? (
+                            // DESKTOP STRUCTURED COPY (TYPE 1: Vision/Mission style)
                             <div
                               className={`mb-8 space-y-10 max-w-[750px] text-primary-foreground/90 font-sans transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
                               {slide.content.map((item) => (
+                                // Description body text - Change text-lg, text-xl for size
                                 <p
                                   key={item.label}
-                                  // desciription style
                                   className="text-lg md:text-xl lg:text-xl leading-relaxed"
                                 >
+                                  {/* DESKTOP STRUCTURED COPY LABELS (e.g., "VISION:", "MISSION:") - Change text-lg, text-xl, text-4xl */}
                                   <span
                                     className={`block mb-1 font-display ${
                                       slide.emphasizeLabels
-                                        ? // label style
+                                        ? // label style - Change text-lg, text-xl, text-4xl for emphasizeLabels=true
                                           "text-sky-accent text-lg md:text-xl lg:text-4xl font-bold uppercase tracking-wide"
                                         : "text-sky-accent text-sm md:text-base tracking-[0.18em]"
                                     }`}
@@ -130,6 +134,7 @@ export default function HeroSection() {
                               ))}
                             </div>
                           ) : (
+                            // DESKTOP REGULAR SLIDE DESCRIPTION (TYPE 2: Regular slide with title + description) - Change text-base, text-xl
                             <p
                               className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-base md:text-xl leading-relaxed mb-8 ${slide.preventWrap ? "max-w-[900px]" : "max-w-[580px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""} transition-all duration-700 delay-200 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                             >
@@ -206,10 +211,12 @@ export default function HeroSection() {
                         <div
                           className={`max-w-[580px] ${hasStructuredCopy ? "max-w-[620px]" : ""}`}
                         >
+                          {/* MOBILE EYEBROW - Change text-sm for font size */}
                           <p className="text-sky-accent text-sm tracking-[0.15em] mb-3 font-display">
                             {slide.eyebrow}
                           </p>
                           {slide.title ? (
+                            // MOBILE MAIN TITLE - Change text-3xl for font size
                             <h1
                               className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
                               style={{ whiteSpace: "pre-line" }}
@@ -218,12 +225,15 @@ export default function HeroSection() {
                             </h1>
                           ) : null}
                           {hasStructuredCopy ? (
+                            // MOBILE STRUCTURED COPY (TYPE 1: Vision/Mission style)
                             <div className="mb-6 space-y-4 text-primary-foreground/90 font-sans">
                               {slide.content.map((item) => (
+                                // Description body text - Change text-base, text-lg for size
                                 <p
                                   key={item.label}
                                   className="text-base md:text-lg leading-relaxed"
                                 >
+                                  {/* MOBILE STRUCTURED COPY LABELS (e.g., "VISION:", "MISSION:") - Change text-base, text-lg */}
                                   <span
                                     className={`block mb-1 font-display ${
                                       slide.emphasizeLabels
@@ -238,6 +248,7 @@ export default function HeroSection() {
                               ))}
                             </div>
                           ) : (
+                            // MOBILE REGULAR SLIDE DESCRIPTION (TYPE 2: Regular slide with title + description) - Change text-sm
                             <p
                               className={`${slide.useSecondaryColor ? "text-sky-accent" : "text-primary-foreground/85"} text-sm leading-relaxed mb-6 ${slide.preventWrap ? "max-w-full" : "max-w-[470px]"} font-sans ${slide.preventWrap ? "whitespace-normal break-words" : ""}`}
                             >
