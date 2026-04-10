@@ -208,7 +208,7 @@ export function BubbleConnectionSlide({ slide }) {
               {slide.eyebrow}
             </p>
             <h1
-              className="mb-6 text-4xl font-black leading-[0.98] tracking-[-0.02em] text-primary-foreground font-display md:text-5xl lg:text-[4rem]"
+              className="mb-6 text-4xl font-black leading-[0.98] tracking-[-0.02em] text-primary-foreground font-display md:text-5xl lg:text-6xl"
               style={{ whiteSpace: "pre-line" }}
             >
               {slide.title}

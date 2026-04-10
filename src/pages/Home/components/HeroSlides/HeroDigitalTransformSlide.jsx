@@ -28,7 +28,7 @@ export const HeroDigitalTransformSlide = memo(
         {/* Hero content - Desktop */}
         <div className="hidden xl:flex relative z-10 h-full items-center">
           <div className="max-w-7xl mx-[200px] px-0">
-            <div className={`max-w-[900px]`}>
+            <div className={`max-w-[1400px]`}>
               {/* Eyebrow text */}
               <p
                 className={`text-sky-accent text-sm md:text-base tracking-[0.15em] mb-6 font-display transition-all duration-700 delay-100 ${
@@ -43,7 +43,7 @@ export const HeroDigitalTransformSlide = memo(
               {/* Main title */}
               {slide.title && (
                 <h1
-                  className={`text-primary-foreground font-bold leading-[1.05] mb-5 font-display transition-all duration-700 delay-150 text-4xl md:text-3xl lg:text-[39px] ${
+                  className={`text-primary-foreground font-bold leading-[1.2] mb-5 font-display transition-all duration-700 delay-150 text-3xl md:text-4xl lg:text-5xl max-w-full ${
                     isActive
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-5"
@@ -121,7 +121,7 @@ export const HeroDigitalTransformSlide = memo(
               {/* Mobile title */}
               {slide.title && (
                 <h1
-                  className="text-primary-foreground font-bold leading-[1.05] mb-5 text-3xl font-display"
+                  className="text-primary-foreground font-bold leading-[1.2] mb-5 text-xl font-display"
                   style={{ whiteSpace: "pre-line" }}
                 >
                   {slide.title}
