@@ -26,7 +26,9 @@ export default function FeaturedProductsSection() {
           {featuredProducts.map((product) => (
             <Link
               key={product.id}
-              to={product.href || ROUTES.PRODUCT_DETAIL.replace(":id", product.id)}
+              to={
+                product.href || ROUTES.PRODUCT_DETAIL.replace(":id", product.id)
+              }
               className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="overflow-hidden h-[360px] sm:h-[560px] relative">
@@ -38,16 +40,17 @@ export default function FeaturedProductsSection() {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  // =======================================
+                  className=" w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-5">
                 <h3 className="text-foreground font-bold text-xl mb-2 font-display">
                   {product.title}
                 </h3>
-                <p className="text-muted-foreground text-md leading-relaxed font-sans">
+                {/* <p className="text-muted-foreground text-md leading-relaxed font-sans">
                   {product.description}
-                </p>
+                </p> */}
               </div>
             </Link>
           ))}

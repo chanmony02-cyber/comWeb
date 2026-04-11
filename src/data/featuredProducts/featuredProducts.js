@@ -1,7 +1,7 @@
 import { ROUTES } from "@/config/routes";
 import { products } from "@/data/products/products";
 
-const featuredProductIds = [1, 4, 5];
+const featuredProductIds = [1, 2, 3];
 
 export const featuredProducts = featuredProductIds
   .map((id) => products.find((product) => product.id === id))

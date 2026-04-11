@@ -1,11 +1,14 @@
 import productCircuitBreaker from "@/assets/images/products/product-circuit-breaker.jpg";
 import productCapacitor from "@/assets/images/products/product-capacitor.jpg";
-import productCurrentTransformer from "@/assets/images/products/product-current-transformer.jpg";
+import productCurrentTransformer from "@/assets/images/products/automatic-circuit-recloser.png";
 import productFuse from "@/assets/images/products/product-fuse.jpg";
 import productGrounding from "@/assets/images/products/product-grounding.jpg";
 import productPanelBoard from "@/assets/images/products/product-panel-board.jpg";
 import productSurgeArrester from "@/assets/images/products/product-surge-arrester.jpg";
 import productTransformer from "@/assets/images/products/product-transformer.jpg";
+// VH Product
+import moElec from "@/assets/images/products/VH_Product/MoElec-Front NoBG.png";
+import vhGatex from "@/assets/images/products/VH_Product/Gatex.png";
 
 export const productTabs = [
   { key: "description", label: "Description" },
@@ -15,17 +18,10 @@ export const productTabs = [
 export const products = [
   {
     id: 1,
-    name: "Circuit Breaker",
+    name: "MoElec VHL230",
     category: "LV",
-    image: productCircuitBreaker,
-    images: [
-      productCircuitBreaker,
-      productFuse,
-      productCircuitBreaker,
-      productSurgeArrester,
-      productFuse,
-      productFuse,
-    ],
+    image: moElec,
+    images: [moElec],
     description:
       "Protects low-voltage circuits from overloads and short circuits.",
     features: [
@@ -58,10 +54,10 @@ export const products = [
   },
   {
     id: 2,
-    name: "Fuse Link",
+    name: "VH Gatex",
     category: "LV",
-    image: productFuse,
-    images: [productFuse, productSurgeArrester, productFuse],
+    image: vhGatex,
+    images: [vhGatex],
     description: "Fast-acting fuse links for reliable LV protection.",
     features: [
       "Fast-acting response for overload protection",
