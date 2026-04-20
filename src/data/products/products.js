@@ -1,6 +1,6 @@
 import productCircuitBreaker from "@/assets/images/products/product-circuit-breaker.jpg";
 import productCapacitor from "@/assets/images/products/product-capacitor.jpg";
-import productCurrentTransformer from "@/assets/images/products/automatic-circuit-recloser.png";
+import productCurrentTransformer from "@/assets/images/products/product-current-transformer.jpg";
 import productFuse from "@/assets/images/products/product-fuse.jpg";
 import productGrounding from "@/assets/images/products/product-grounding.jpg";
 import productPanelBoard from "@/assets/images/products/product-panel-board.jpg";
@@ -77,7 +77,7 @@ export const products = [
   },
   {
     id: 3,
-    name: "Current Transformer",
+    name: "Auto Circuit Recloser",
     category: "MV",
     image: productCurrentTransformer,
     images: [productCurrentTransformer, productSurgeArrester, productFuse],

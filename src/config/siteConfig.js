@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "VHT Company",
+  name: "VH Technology",
   description:
     "Delivering innovative technology solutions that empower businesses to achieve their full potential.",
   phone: "+(855) 89 228 888 / 93 228 888",
