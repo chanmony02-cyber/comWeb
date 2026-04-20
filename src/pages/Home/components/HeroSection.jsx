@@ -11,6 +11,8 @@ export default function HeroSection() {
   const intervalRef = useRef(null);
   const touchStartX = useRef(0);
   const AUTO_PLAY = 5000;
+  const isMobileCoreValuesSlide =
+    heroSlides[current]?.variant === "bubble-network";
 
   const goTo = useCallback(
     (i) => setCurrent((i + heroSlides.length) % heroSlides.length),
@@ -63,10 +65,14 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative w-full h-[500px] md:h-[600px] lg:h-[730px] overflow-hidden bg-navy select-none"
+      className={`relative w-full overflow-hidden bg-navy select-none ${
+        isMobileCoreValuesSlide
+          ? "h-[820px] md:h-[600px] lg:h-[730px]"
+          : "h-[500px] md:h-[600px] lg:h-[730px]"
+      }`}
       // To turn off autoplay when mouse is over the slider
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      // onMouseEnter={() => setPaused(true)}
+      // onMouseLeave={() => setPaused(false)}
       aria-label="Hero Slider"
     >
       {/* Desktop: opacity-based slides */}
