@@ -55,39 +55,46 @@ function MovingDot({ path, duration, color, radius, glowRadius }) {
     </g>
   );
 }
-
 const mobileBubbleLayout = [
   {
     x: 23,
     y: 19,
-    size: "clamp(5.4rem, 23vw, 6.8rem)",
-    labelClassName: "!max-w-[68%] !text-[0.68rem] !leading-[1.02] !translate-y-[1px]",
+    size: "clamp(6.2rem, 30vw, 8.4rem)",
+    labelClassName:
+      "!max-w-[86%] !text-[0.72rem] !leading-[1.02] !translate-y-[0px] !break-normal",
+    labelLines: ["Enhancing System", "Reliability"],
   },
   {
     x: 56,
     y: 13,
-    size: "clamp(5.8rem, 24vw, 7.2rem)",
-    labelClassName: "!max-w-[68%] !text-[0.66rem] !leading-[1.02] !translate-y-[1px]",
+    size: "clamp(6.2rem, 30vw, 8.4rem)",
+    labelClassName:
+      "!max-w-[86%] !text-[0.72rem] !leading-[1.02] !translate-y-[0px] !break-normal",
+    labelLines: ["Improving Operational", "Efficiency"],
   },
   {
     x: 85,
     y: 28,
-    size: "clamp(5.3rem, 22vw, 6.6rem)",
-    labelClassName: "!max-w-[62%] !text-[0.6rem] !leading-[1.02] !translate-y-[1px]",
-    labelLines: ["Strengthening", "Resiliency"],
+    size: "clamp(6rem, 28vw, 8rem)",
+    labelClassName:
+      "!max-w-[86%] !text-[0.72rem] !leading-[1.02] !translate-y-[0px] !break-normal",
+    labelLines: ["Strengthening Resiliency"],
   },
   {
     x: 22,
     y: 66,
-    size: "clamp(5.2rem, 22vw, 6.4rem)",
-    labelClassName: "!max-w-[64%] !text-[0.66rem] !leading-[1.02] !translate-y-[1px]",
+    size: "clamp(5.8rem, 26vw, 7.6rem)",
+    labelClassName:
+      "!max-w-[82%] !text-[0.72rem] !leading-[1.02] !translate-y-[0px] !break-normal",
+    labelLines: ["Ensuring Safety"],
   },
   {
     x: 72,
     y: 75,
-    size: "clamp(6.8rem, 29vw, 8.4rem)",
-    labelClassName: "!max-w-[62%] !text-[0.58rem] !leading-[1.01] !translate-y-[1px]",
-    labelLines: ["Elevating", "Customer", "Engagement", "And Service", "Quality"],
+    size: "clamp(6.8rem, 34vw, 9rem)",
+    labelClassName:
+      "!max-w-[92%] !text-[0.72rem] !leading-[1.02] !translate-y-[0px] !break-normal",
+    labelLines: ["Elevating Customer", "Engagement And Service", "Quality"],
   },
 ];
 
@@ -124,6 +131,7 @@ const mobileBubbleConnections = [
 
 function BubbleNode({ bubble, labelClassName = "" }) {
   const clipId = `bubble-clip-${bubble.id}`;
+  const effectiveLabelClassName = labelClassName || bubble.labelClassName || "";
 
   return (
     <div
@@ -214,9 +222,9 @@ function BubbleNode({ bubble, labelClassName = "" }) {
           ))}
           <span className="absolute left-[17%] top-[15%] h-[12%] w-[12%] rounded-full bg-white/55 blur-[1px]" />
           <span className="absolute right-[16%] top-[21%] h-[8%] w-[8%] rounded-full bg-cyan-200/45 blur-[2px]" />
-          <span className="absolute inset-0 z-10 flex items-center justify-center px-[18%] py-[16%] pointer-events-none">
+          <span className="absolute inset-0 z-10 flex items-center justify-center px-6 md:px-8 py-3 md:py-4 pointer-events-none">
             <span
-              className={`block max-w-[76%] text-center text-[1.04rem] md:text-[1.12rem] font-semibold leading-[1.05] uppercase font-display tracking-[0.01em] ${labelClassName}`}
+              className={`inline-block mx-auto w-auto max-w-none text-center text-[0.92rem] md:text-[1.02rem] font-semibold leading-[1.02] uppercase font-display tracking-[0.01em] break-words ${effectiveLabelClassName}`}
             >
               <BubbleLabel bubble={bubble} />
             </span>
@@ -335,51 +343,53 @@ export function BubbleConnectionSlide({ slide }) {
                     </feMerge>
                   </filter>
                 </defs>
-                {mobileBubbleConnections.map(({ path, runnerDurations }, index) => (
-                  <g key={`${path}-${index}`}>
-                    <path
-                      d={path}
-                      fill="none"
-                      stroke="rgba(151, 230, 255, 0.2)"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                      filter="url(#mobile-connection-glow)"
-                      vectorEffect="non-scaling-stroke"
-                    />
-                    <path
-                      d={path}
-                      fill="none"
-                      stroke="rgba(90, 203, 255, 0.82)"
-                      strokeWidth="0.9"
-                      strokeLinecap="round"
-                      vectorEffect="non-scaling-stroke"
-                    />
-                    <path
-                      d={path}
-                      fill="none"
-                      stroke="rgba(214, 130, 255, 0.5)"
-                      strokeWidth="0.6"
-                      strokeLinecap="round"
-                      strokeDasharray="1.4 2.8"
-                      className="animate-[orbitDash_10s_linear_infinite]"
-                      vectorEffect="non-scaling-stroke"
-                    />
-                    <MovingDot
-                      path={path}
-                      duration={`${runnerDurations[0]}s`}
-                      color="rgba(169, 240, 255, 0.98)"
-                      radius="0.6"
-                      glowRadius="1.3"
-                    />
-                    <MovingDot
-                      path={path}
-                      duration={`${runnerDurations[1]}s`}
-                      color="rgba(233, 146, 255, 0.98)"
-                      radius="0.5"
-                      glowRadius="1"
-                    />
-                  </g>
-                ))}
+                {mobileBubbleConnections.map(
+                  ({ path, runnerDurations }, index) => (
+                    <g key={`${path}-${index}`}>
+                      <path
+                        d={path}
+                        fill="none"
+                        stroke="rgba(151, 230, 255, 0.2)"
+                        strokeWidth="2.8"
+                        strokeLinecap="round"
+                        filter="url(#mobile-connection-glow)"
+                        vectorEffect="non-scaling-stroke"
+                      />
+                      <path
+                        d={path}
+                        fill="none"
+                        stroke="rgba(90, 203, 255, 0.82)"
+                        strokeWidth="0.9"
+                        strokeLinecap="round"
+                        vectorEffect="non-scaling-stroke"
+                      />
+                      <path
+                        d={path}
+                        fill="none"
+                        stroke="rgba(214, 130, 255, 0.5)"
+                        strokeWidth="0.6"
+                        strokeLinecap="round"
+                        strokeDasharray="1.4 2.8"
+                        className="animate-[orbitDash_10s_linear_infinite]"
+                        vectorEffect="non-scaling-stroke"
+                      />
+                      <MovingDot
+                        path={path}
+                        duration={`${runnerDurations[0]}s`}
+                        color="rgba(169, 240, 255, 0.98)"
+                        radius="0.6"
+                        glowRadius="1.3"
+                      />
+                      <MovingDot
+                        path={path}
+                        duration={`${runnerDurations[1]}s`}
+                        color="rgba(233, 146, 255, 0.98)"
+                        radius="0.5"
+                        glowRadius="1"
+                      />
+                    </g>
+                  ),
+                )}
               </svg>
 
               {mobileBubbles.map((bubble) => (

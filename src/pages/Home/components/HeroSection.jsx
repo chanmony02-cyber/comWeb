@@ -71,8 +71,8 @@ export default function HeroSection() {
           : "h-[500px] md:h-[600px] lg:h-[730px]"
       }`}
       // To turn off autoplay when mouse is over the slider
-      // onMouseEnter={() => setPaused(true)}
-      // onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
       aria-label="Hero Slider"
     >
       {/* Desktop: opacity-based slides */}
